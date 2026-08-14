@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eina de coordenades — Montbrull</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=IM+Fell+English&display=swap');
+    *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+        --fons:   #f2ead8;
+        --sup:    #faf5e8;
+        --fosc:   #2a1f0e;
+        --text:   #1e1408;
+        --suau:   #5c4a2a;
+        --or:     #b8860b;
+        --accent: #8b2e0a;
+        --vora:   #c8b48a;
+    }
+
+    body {
+        font-family: 'IM Fell English', Georgia, serif;
+        background: var(--fons);
+        color: var(--text);
+        line-height: 1.6;
+        padding: 1rem;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-family: 'Cinzel', serif;
+        font-size: 1.4rem;
+        color: var(--accent);
+        margin-bottom: .3rem;
+    }
+    h1::before { content: '📐 '; }
+
+    .intro {
+        font-size: .9rem;
+        color: var(--suau);
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--vora);
+    }
+
+    /* --- Barra de controls --- */
+    .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        align-items: center;
+        padding: .75rem;
+        background: var(--sup);
+        border: 1px solid var(--vora);
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+
+    button, label.fitxer {
+        font-family: 'Cinzel', serif;
+        font-size: .75rem;
+        font-weight: 600;
+        letter-spacing: .04em;
+        padding: .5rem .9rem;
+        min-height: 38px;
+        background: var(--sup);
+        border: 1px solid var(--vora);
+        border-radius: 4px;
+        color: var(--suau);
+        cursor: pointer;
+        transition: all .2s;
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+    }
+    button:hover, label.fitxer:hover { border-color: var(--or); color: var(--accent); }
+    button.actiu { background: var(--or); border-color: var(--or); color: var(--fosc); }
+    input[type=file] { display: none; }
+
+    .separador { width: 1px; height: 26px; background: var(--vora); }
+
+    /* --- Zona del mapa --- */
+    #contenidor {
+        position: relative;
+        border: 2px solid var(--vora);
+        border-radius: 5px;
+        overflow: hidden;
+        background: repeating-conic-gradient(#e8e0cc 0% 25%, #ddd4bc 0% 50%) 50%/20px 20px;
+        min-height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #contenidor.te-imatge { display: block; }
+
+    #buit {
+        padding: 3rem 1rem;
+        text-align: center;
+        color: var(--suau);
+        font-style: italic;
+    }
+    #buit span { font-size: 2.5rem; display: block; margin-bottom: .5rem; font-style: normal; }
+
+    #svg-mapa { width: 100%; display: block; cursor: crosshair; }
+
+    .punt-marcat  { fill: var(--accent); stroke: #fff; stroke-width: .3; }
+    .linia-guia   { fill: rgba(184,134,11,.25); stroke: var(--or); stroke-width: .5; }
+    .etiqueta-num { fill: #fff; font-size: 2.2px; text-anchor: middle;
+                    font-family: 'Cinzel', serif; pointer-events: none; }
+
+    /* --- Sortida --- */
+    .sortida { margin-top: 1rem; }
+    .sortida h2 {
+        font-family: 'Cinzel', serif;
+        font-size: .8rem;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--suau);
+        margin-bottom: .4rem;
+        display: flex; align-items: center; gap: .5rem;
+    }
+    .sortida h2::after { content: ''; flex: 1; height: 1px; background: var(--vora); }
+
+    pre {
+        background: var(--fosc);
+        color: #c8e6a0;
+        font-family: 'Courier New', monospace;
+        font-size: .78rem;
+        padding: .85rem;
+        border-radius: 5px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-break: break-all;
+        min-height: 3rem;
+        line-height: 1.5;
+    }
+
+    .info {
+        font-size: .8rem;
+        color: var(--suau);
+        background: rgba(184,134,11,.1);
+        border: 1px solid var(--or);
+        border-radius: 4px;
+        padding: .6rem .8rem;
+        margin-bottom: 1rem;
+        font-family: 'Courier New', monospace;
+    }
+
+    .ajuda {
+        font-size: .82rem;
+        color: var(--suau);
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--vora);
+    }
+    .ajuda ol { padding-left: 1.3rem; margin-top: .4rem; }
+    .ajuda li { margin-bottom: .35rem; }
+    .ajuda code {
+        background: rgba(184,134,11,.15);
+        padding: .1rem .3rem;
+        border-radius: 3px;
+        font-size: .9em;
+    }
+</style>
+</head>
+<body>
+
+<h1>Eina de coordenades</h1>
+<p class="intro">
+    Carrega el mapa del teu poble i clica-hi a sobre per obtenir les coordenades
+    en el sistema del projecte. Serveix tant per dibuixar zones (mode
+    <em>Polígon</em>) com per situar punts d'interès (mode <em>Punt</em>).
+    Tot funciona al teu navegador: la imatge no s'envia enlloc.
+</p>
+
+<div class="controls">
+    <label class="fitxer">
+        📁 Carregar imatge
+        <input type="file" id="entrada-fitxer" accept="image/*">
+    </label>
+
+    <div class="separador"></div>
+
+    <button id="mode-poligon" class="actiu">⬡ Polígon (zona)</button>
+    <button id="mode-punt">📍 Punt (PI)</button>
+
+    <div class="separador"></div>
+
+    <button id="desfer">↶ Desfer</button>
+    <button id="netejar">✕ Netejar</button>
+    <button id="copiar">📋 Copiar</button>
+</div>
+
+<div class="info" id="info">Cap imatge carregada.</div>
+
+<div id="contenidor">
+    <div id="buit">
+        <span>🗺️</span>
+        Carrega la imatge del mapa per començar
+    </div>
+</div>
+
+<div class="sortida">
+    <h2>Per a l'HTML i per a zones.js</h2>
+    <pre id="sortida-1">—</pre>
+</div>
+
+<div class="sortida">
+    <h2>Detall dels punts</h2>
+    <pre id="sortida-2">—</pre>
+</div>
+
+<div class="ajuda">
+    <strong>Com fer-ho servir</strong>
+
+    <p style="margin:.5rem 0 .3rem"><em>A) Per al mapa principal (index.html)</em></p>
+    <ol>
+        <li>Carrega la imatge del mapa del poble.</li>
+        <li>Copia el <code>viewBox</code> de la barra blava a l'etiqueta
+            <code>&lt;svg id="mapa-poble"&gt;</code> d'<code>index.html</code>,
+            i el mateix número al <code>height</code> de l'<code>&lt;image&gt;</code>.</li>
+        <li>En mode <strong>Polígon</strong>, clica els vèrtexs d'una zona. Enganxa el
+            resultat a l'atribut <code>d</code> de la zona a <code>index.html</code>
+            i al camp <code>formaArea</code> de <code>dades/zones.js</code>.</li>
+        <li>Prem <em>Netejar</em> i repeteix per a cada zona.</li>
+    </ol>
+
+    <p style="margin:.7rem 0 .3rem"><em>B) Per al mapa d'una zona (zona.html)</em></p>
+    <ol>
+        <li>Carrega la imatge d'aquella zona (ex: <code>zona-centre.jpg</code>).</li>
+        <li>Copia el número del <code>viewBox</code> al camp <code>alcadaViewBox</code>
+            d'aquesta zona a <code>dades/zones.js</code>.</li>
+        <li>En mode <strong>Punt</strong>, clica sobre cada monument i copia les
+            <code>coordenades</code> al PI corresponent de <code>dades/punts.js</code>.</li>
+    </ol>
+
+    <p style="margin:.7rem 0 0; padding:.6rem .8rem; background:rgba(139,46,10,.08);
+              border-left:3px solid var(--accent); border-radius:3px;">
+        <strong>Important:</strong> cada imatge té la seva pròpia alçada de viewBox.
+        La <code>y</code> d'un punt no va de 0 a 100, sinó de 0 a l'alçada de la
+        imatge d'aquella zona. L'eina ja et dona sempre valors dins del rang correcte.
+    </p>
+</div>
+
+<script>
+'use strict';
+
+const NS = 'http://www.w3.org/2000/svg';
+
+let mode        = 'poligon';   // 'poligon' | 'punt'
+let punts       = [];          // [{x, y}]
+let ampladaVB   = 100;         // amplada del viewBox (sempre 100)
+let alcadaVB    = 100;         // alçada del viewBox (segons proporció)
+let urlImatge   = null;
+
+const elContenidor = document.getElementById('contenidor');
+const elBuit       = document.getElementById('buit');
+const elInfo       = document.getElementById('info');
+const elSortida1   = document.getElementById('sortida-1');
+const elSortida2   = document.getElementById('sortida-2');
+
+/* ---------- Càrrega de la imatge ---------- */
+document.getElementById('entrada-fitxer').addEventListener('change', event => {
+    const fitxer = event.target.files[0];
+    if (!fitxer) return;
+
+    const lector = new FileReader();
+    lector.onload = e => {
+        const img = new Image();
+        img.onload = () => {
+            urlImatge = e.target.result;
+            // El viewBox sempre fa 100 d'ample; l'alçada segueix la proporció
+            alcadaVB = +(100 * img.height / img.width).toFixed(2);
+            elInfo.textContent =
+                `${fitxer.name} · ${img.width}×${img.height} px  →  viewBox="0 0 100 ${alcadaVB}"`;
+            punts = [];
+            construirSVG();
+            actualitzarSortida();
+        };
+        img.src = e.target.result;
+    };
+    lector.readAsDataURL(fitxer);
+});
+
+/* ---------- Construcció del SVG ---------- */
+function construirSVG() {
+    elBuit.remove?.();
+    elContenidor.classList.add('te-imatge');
+    elContenidor.innerHTML = '';
+
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('id', 'svg-mapa');
+    svg.setAttribute('viewBox', `0 0 100 ${alcadaVB}`);
+    svg.setAttribute('xmlns', NS);
+
+    const img = document.createElementNS(NS, 'image');
+    img.setAttribute('href', urlImatge);
+    img.setAttribute('x', '0');
+    img.setAttribute('y', '0');
+    img.setAttribute('width', '100');
+    img.setAttribute('height', alcadaVB);
+    svg.appendChild(img);
+
+    const capa = document.createElementNS(NS, 'g');
+    capa.setAttribute('id', 'capa-punts');
+    svg.appendChild(capa);
+
+    svg.addEventListener('click', afegirPunt);
+    elContenidor.appendChild(svg);
+}
+
+/* ---------- Clic: converteix píxels a unitats de viewBox ---------- */
+function afegirPunt(event) {
+    const svg = event.currentTarget;
+    const r   = svg.getBoundingClientRect();
+    const x = +(((event.clientX - r.left) / r.width)  * 100).toFixed(1);
+    const y = +(((event.clientY - r.top)  / r.height) * alcadaVB).toFixed(1);
+
+    if (mode === 'punt') punts = [{ x, y }];   // en mode punt només n'hi ha un
+    else                 punts.push({ x, y });
+
+    dibuixar();
+    actualitzarSortida();
+}
+
+/* ---------- Dibuix dels marcadors i del polígon ---------- */
+function dibuixar() {
+    const capa = document.getElementById('capa-punts');
+    if (!capa) return;
+    capa.innerHTML = '';
+
+    if (mode === 'poligon' && punts.length > 1) {
+        const pol = document.createElementNS(NS, 'polygon');
+        pol.setAttribute('points', punts.map(p => `${p.x},${p.y}`).join(' '));
+        pol.setAttribute('class', 'linia-guia');
+        capa.appendChild(pol);
+    }
+
+    punts.forEach((p, i) => {
+        const c = document.createElementNS(NS, 'circle');
+        c.setAttribute('cx', p.x);
+        c.setAttribute('cy', p.y);
+        c.setAttribute('r', '1.4');
+        c.setAttribute('class', 'punt-marcat');
+        capa.appendChild(c);
+
+        if (mode === 'poligon') {
+            const t = document.createElementNS(NS, 'text');
+            t.setAttribute('x', p.x);
+            t.setAttribute('y', p.y + 0.8);
+            t.setAttribute('class', 'etiqueta-num');
+            t.textContent = i + 1;
+            capa.appendChild(t);
+        }
+    });
+}
+
+/* ---------- Sortida de text ---------- */
+function actualitzarSortida() {
+    if (punts.length === 0) {
+        elSortida1.textContent = '—';
+        elSortida2.textContent = '—';
+        return;
+    }
+
+    if (mode === 'punt') {
+        const p = punts[0];
+        elSortida1.textContent = `coordenades: { x: ${p.x}, y: ${p.y} },`;
+        elSortida2.textContent =
+            `// A dades/punts.js, dins del punt d'interès:\n` +
+            `coordenades: { x: ${p.x}, y: ${p.y} },`;
+        return;
+    }
+
+    const d = 'M' + punts.map(p => `${p.x},${p.y}`).join(' L') + ' Z';
+    elSortida1.textContent =
+        `<!-- index.html -->\n` +
+        `<path d="${d}"/>\n\n` +
+        `// dades/zones.js\n` +
+        `formaArea: '${d}',`;
+
+    elSortida2.textContent = punts
+        .map((p, i) => `${String(i + 1).padStart(2, ' ')}.  x: ${String(p.x).padStart(5)}   y: ${String(p.y).padStart(5)}`)
+        .join('\n');
+}
+
+/* ---------- Botons ---------- */
+document.getElementById('mode-poligon').addEventListener('click', function () {
+    mode = 'poligon';
+    this.classList.add('actiu');
+    document.getElementById('mode-punt').classList.remove('actiu');
+    punts = []; dibuixar(); actualitzarSortida();
+});
+
+document.getElementById('mode-punt').addEventListener('click', function () {
+    mode = 'punt';
+    this.classList.add('actiu');
+    document.getElementById('mode-poligon').classList.remove('actiu');
+    punts = []; dibuixar(); actualitzarSortida();
+});
+
+document.getElementById('desfer').addEventListener('click', () => {
+    punts.pop(); dibuixar(); actualitzarSortida();
+});
+
+document.getElementById('netejar').addEventListener('click', () => {
+    punts = []; dibuixar(); actualitzarSortida();
+});
+
+document.getElementById('copiar').addEventListener('click', async function () {
+    try {
+        await navigator.clipboard.writeText(elSortida1.textContent);
+        const abans = this.textContent;
+        this.textContent = '✓ Copiat';
+        setTimeout(() => { this.textContent = abans; }, 1200);
+    } catch (e) {
+        alert('El navegador no permet copiar automàticament. Selecciona el text i copia\'l a mà.');
+    }
+});
+</script>
+
+</body>
+</html>

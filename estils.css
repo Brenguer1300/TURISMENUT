@@ -1,0 +1,1375 @@
+/* ============================================================
+   estils.css — Montbrull, Guia de Punts d'Interès
+   Ordre: variables → reset → base → components → utilitats
+          → media queries
+   Convenció: kebab-case en català, valors en rem excepte
+   píxels de touch-target i z-index.
+   ============================================================ */
+
+
+/* ============================================================
+   1. VARIABLES GLOBALS
+   Modificar aquí per personalitzar tot l'aspecte visual.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=IM+Fell+English:ital@0;1&family=Cinzel:wght@400;600&display=swap');
+
+:root {
+    /* --- Paleta principal: pergamí i tinta vella --- */
+    --color-fons:               #f2ead8;   /* pergamí clar */
+    --color-fons-fosc:          #e4d8be;   /* pergamí fosc, superfícies elevades */
+    --color-fons-menu:          #2a1f0e;   /* fusta de noguera */
+    --color-text:               #1e1408;   /* tinta sèpia molt fosca */
+    --color-text-suau:          #5c4a2a;   /* tinta sèpia mitjana */
+    --color-text-invertit:      #f2ead8;   /* text sobre fons fosc */
+    --color-text-menu:          #ffffff;   /* blanc pur: text del menú lateral */
+    --color-accent:             #8b2e0a;   /* vermell oxid, tinta roja de scriptorium */
+    --color-accent-clar:        #c4571e;   /* vermell clar, hover */
+    --color-accent-or:          #b8860b;   /* or vell, detalls decoratius */
+    --color-accent-or-clar:     #d4a820;   /* or brillant, hover */
+    --color-superficie:         #faf5e8;   /* blanc pergamí, targetes */
+    --color-vora:               #c8b48a;   /* vora pergamí */
+    --color-vora-forta:         #8b6e3a;   /* vora marró */
+    --color-ombra:              rgba(30, 20, 8, 0.18);
+    --color-ombra-forta:        rgba(30, 20, 8, 0.40);
+    --color-coberta:            rgba(20, 12, 4, 0.65);  /* fons fosc menú obert */
+
+    /* --- Colors estrelles de rellevància --- */
+    --color-estrella-activa:    #b8860b;   /* or vell */
+    --color-estrella-buida:     #c8b48a;   /* pergamí fosc */
+
+    /* --- Colors zones del mapa (per a SVG fill) --- */
+    --color-zona-centre:        rgba(139, 46, 10,  0.18);
+    --color-zona-moli:          rgba(15,  90, 60,  0.18);
+    --color-zona-castell:       rgba(60,  40, 100, 0.18);
+    --color-zona-vinyes:        rgba(80,  110, 20, 0.18);
+    --color-zona-hover:         rgba(184, 134, 11, 0.30);
+
+    /* --- Tipografia --- */
+    --font-titol:    'Cinzel', 'Palatino Linotype', 'Book Antiqua', serif;
+    --font-cos:      'IM Fell English', 'Palatino Linotype', Georgia, serif;
+    --font-mono:     'Courier New', Courier, monospace;
+
+    --mida-text-base:    1rem;        /* 16px */
+    --mida-text-petit:   0.8125rem;   /* ~13px */
+    --mida-text-mitja:   0.9375rem;   /* 15px */
+    --mida-text-gran:    1.1875rem;   /* ~19px */
+    --mida-titol-petit:  1.375rem;    /* ~22px */
+    --mida-titol:        1.875rem;    /* 30px */
+    --mida-titol-gran:   2.5rem;      /* 40px */
+    --alçada-linia:      1.7;
+
+    /* --- Espaiat --- */
+    --espai-xs:     0.25rem;
+    --espai-petit:  0.5rem;
+    --espai-mitja:  1rem;
+    --espai-gran:   1.5rem;
+    --espai-extra:  2.25rem;
+    --espai-doble:  3.5rem;
+
+    /* --- Touch targets (accessibilitat mòbil, mínim 44px) --- */
+    --mida-touch:   44px;
+
+    /* --- Menú lateral --- */
+    --amplada-menu:    288px;
+    --durada-animacio: 260ms;
+    --corba-animacio:  cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* --- Vores i radis --- */
+    --radi-petit:   3px;
+    --radi-mitja:   6px;
+    --radi-gran:    10px;
+    --amplada-vora: 1px;
+
+    /* --- Decoració: patró de textura (SVG inline com a data URI) --- */
+    --textura-fons: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='60' height='60' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+
+    /* --- Z-index escala --- */
+    --z-mapa:       1;
+    --z-marcadors:  2;
+    --z-coberta:    90;
+    --z-menu:       100;
+    --z-capçalera:  50;
+}
+
+
+/* ============================================================
+   2. RESET I NORMALITZACIÓ
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;  /* evita zoom de text iOS en rotar */
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family:      var(--font-cos);
+    font-size:        var(--mida-text-base);
+    line-height:      var(--alçada-linia);
+    color:            var(--color-text);
+    background-color: var(--color-fons);
+    background-image: var(--textura-fons);
+    min-height:       100dvh;
+    overflow-x:       hidden;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    font-size:   inherit;
+    color:       inherit;
+    background:  none;
+    border:      none;
+    cursor:      pointer;
+    line-height: inherit;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: var(--color-accent-clar);
+}
+
+/*
+   L'atribut `hidden` ha de guanyar sempre.
+   Cal !important perquè els selectors d'ID amb `display:flex`
+   (#capçalera-zona, #barra-filtre…) tenen més especificitat que la
+   regla `[hidden] { display: none }` del navegador i, sense això,
+   els elements amagats seguirien sent visibles.
+*/
+[hidden] {
+    display: none !important;
+}
+
+/* Focus visible per a tots els elements interactius */
+:focus-visible {
+    outline:        2px solid var(--color-accent-or);
+    outline-offset: 3px;
+    border-radius:  var(--radi-petit);
+}
+
+/* Zoom de text iOS: inputs sempre 16px */
+input,
+select,
+textarea {
+    font-size: 16px;
+    font-family: var(--font-cos);
+}
+
+/* Redueix moviment per a usuaris sensibles */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration:   0.01ms !important;
+        transition-duration:  0.01ms !important;
+    }
+}
+
+
+/* ============================================================
+   3. TIPOGRAFIA BASE
+   ============================================================ */
+
+h1, h2, h3, h4 {
+    font-family:  var(--font-titol);
+    font-weight:  600;
+    line-height:  1.25;
+    color:        var(--color-text);
+    letter-spacing: 0.02em;
+}
+
+h1 { font-size: var(--mida-titol); }
+h2 { font-size: var(--mida-titol-petit); }
+h3 { font-size: var(--mida-text-gran); font-weight: 400; }
+h4 { font-size: var(--mida-text-base); font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; }
+
+p {
+    max-width: 65ch;
+    margin-bottom: var(--espai-mitja);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* Cursiva per a atribucions i cites */
+em {
+    font-style: italic;
+    color: var(--color-text-suau);
+}
+
+/* Separador decoratiu medieval: ❧ o ✦ */
+hr {
+    border: none;
+    text-align: center;
+    color: var(--color-accent-or);
+    font-size: var(--mida-text-gran);
+    margin: var(--espai-gran) 0;
+}
+
+hr::before {
+    content: '✦';
+    display: inline-block;
+    letter-spacing: 0.5em;
+}
+
+
+/* ============================================================
+   4. COMPONENT: CAPÇALERA PRINCIPAL
+   ============================================================ */
+
+#capçalera-principal {
+    position:       sticky;
+    top:            0;
+    z-index:        var(--z-capçalera);
+    display:        flex;
+    align-items:    center;
+    gap:            var(--espai-mitja);
+    padding:        0 var(--espai-mitja);
+    height:         var(--mida-touch);
+    min-height:     var(--mida-touch);
+    background-color: var(--color-fons-menu);
+    border-bottom:  2px solid var(--color-accent-or);
+    /* Ornament superior: filera de punts daurats */
+    box-shadow:     0 2px 8px var(--color-ombra-forta);
+}
+
+#capçalera-principal::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: repeating-linear-gradient(
+        to right,
+        var(--color-accent-or) 0px,
+        var(--color-accent-or) 4px,
+        transparent 4px,
+        transparent 10px
+    );
+}
+
+#titol-poble {
+    font-family:    var(--font-titol);
+    font-size:      var(--mida-text-gran);
+    font-weight:    600;
+    color:          var(--color-accent-or);
+    letter-spacing: 0.08em;
+    flex:           1;
+    white-space:    nowrap;
+    overflow:       hidden;
+    text-overflow:  ellipsis;
+}
+
+/* Emoji de bandera/blasó davant del títol */
+#titol-poble::before {
+    content: '🏰 ';
+    font-size: 1em;
+    letter-spacing: 0;
+}
+
+
+/* ============================================================
+   5. COMPONENT: BOTÓ MENÚ (hamburguesa)
+   ============================================================ */
+
+#boto-menu {
+    display:        flex;
+    align-items:    center;
+    justify-content: center;
+    min-width:      var(--mida-touch);
+    min-height:     var(--mida-touch);
+    font-size:      1.375rem;
+    color:          var(--color-text-invertit);
+    border-radius:  var(--radi-petit);
+    transition:     color var(--durada-animacio) ease,
+                    background-color var(--durada-animacio) ease;
+    flex-shrink:    0;
+}
+
+#boto-menu:hover,
+#boto-menu:focus-visible {
+    color:            var(--color-accent-or);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ============================================================
+   6. COMPONENT: SELECTOR D'IDIOMA
+   ============================================================ */
+
+#selector-idioma {
+    display:   flex;
+    gap:       var(--espai-xs);
+    flex-shrink: 0;
+}
+
+#selector-idioma button {
+    min-width:      var(--mida-touch);
+    min-height:     calc(var(--mida-touch) - 8px);
+    padding:        0 var(--espai-petit);
+    font-family:    var(--font-titol);
+    font-size:      var(--mida-text-petit);
+    font-weight:    600;
+    letter-spacing: 0.06em;
+    color:          var(--color-text-invertit);
+    border:         1px solid rgba(255, 255, 255, 0.15);
+    border-radius:  var(--radi-petit);
+    opacity:        0.55;
+    transition:     opacity var(--durada-animacio) ease,
+                    border-color var(--durada-animacio) ease,
+                    color var(--durada-animacio) ease;
+}
+
+#selector-idioma button:hover {
+    opacity: 0.85;
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+#selector-idioma button[aria-pressed="true"] {
+    opacity:         1;
+    color:           var(--color-accent-or);
+    border-color:    var(--color-accent-or);
+    background-color: rgba(184, 134, 11, 0.12);
+}
+
+
+/* ============================================================
+   7. COMPONENT: MENÚ LATERAL (drawer)
+   ============================================================ */
+
+/* --- Coberta fosca darrere el menú (mòbil) --- */
+#coberta-menu {
+    display:          none;
+    position:         fixed;
+    inset:            0;
+    background-color: var(--color-coberta);
+    z-index:          var(--z-coberta);
+    opacity:          0;
+    transition:       opacity var(--durada-animacio) var(--corba-animacio);
+}
+
+#coberta-menu.visible {
+    display: block;
+}
+
+#coberta-menu.activa {
+    opacity: 1;
+}
+
+/* --- Drawer --- */
+#menu-lateral {
+    position:         fixed;
+    top:              0;
+    left:             0;
+    height:           100%;
+    width:            var(--amplada-menu);
+    background-color: var(--color-fons-menu);
+    background-image: var(--textura-fons);
+    border-right:     2px solid var(--color-accent-or);
+    transform:        translateX(-100%);
+    transition:       transform var(--durada-animacio) var(--corba-animacio);
+    z-index:          var(--z-menu);
+    overflow-y:       auto;
+    overscroll-behavior: contain;
+    display:          flex;
+    flex-direction:   column;
+}
+
+/* Ornament vertical esquerre (filera de diamants) */
+#menu-lateral::after {
+    content: '';
+    position: absolute;
+    top: 0; right: -2px; bottom: 0;
+    width: 2px;
+    background: repeating-linear-gradient(
+        to bottom,
+        var(--color-accent-or) 0px,
+        var(--color-accent-or) 4px,
+        transparent 4px,
+        transparent 12px
+    );
+    pointer-events: none;
+}
+
+#menu-lateral.obert {
+    transform: translateX(0);
+}
+
+/* --- Capçalera del menú --- */
+#capçalera-menu {
+    display:     flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:     var(--espai-mitja) var(--espai-gran);
+    border-bottom: 1px solid rgba(184, 134, 11, 0.35);
+    min-height:  var(--mida-touch);
+    flex-shrink: 0;
+}
+
+#capçalera-menu .titol-menu {
+    font-family:    var(--font-titol);
+    font-size:      var(--mida-text-mitja);
+    font-weight:    600;
+    color:          var(--color-accent-or);
+    letter-spacing: 0.06em;
+}
+
+/* Emoji de pergamí davant del nom del menú */
+#capçalera-menu .titol-menu::before {
+    content: '📜 ';
+}
+
+#boto-tancar-menu {
+    min-width:  var(--mida-touch);
+    min-height: var(--mida-touch);
+    display:    flex;
+    align-items: center;
+    justify-content: center;
+    font-size:  1.25rem;
+    color:      var(--color-text-invertit);
+    opacity:    0.6;
+    border-radius: var(--radi-petit);
+    transition: opacity var(--durada-animacio) ease;
+}
+
+#boto-tancar-menu:hover,
+#boto-tancar-menu:focus-visible {
+    opacity: 1;
+    color: var(--color-accent-or);
+}
+
+/* --- Llista de navegació del menú --- */
+#menu-lateral ul {
+    padding: var(--espai-petit) 0;
+    flex: 1;
+}
+
+#menu-lateral ul li {
+    border-bottom: 1px solid rgba(184, 134, 11, 0.12);
+}
+
+#menu-lateral ul li:last-child {
+    border-bottom: none;
+}
+
+#menu-lateral ul li button {
+    display:     flex;
+    align-items: center;
+    gap:         var(--espai-mitja);
+    width:       100%;
+    min-height:  var(--mida-touch);
+    padding:     var(--espai-petit) var(--espai-gran);
+    font-family: var(--font-cos);
+    font-size:   var(--mida-text-base);
+    font-style:  italic;
+    /* Blanc pur per a màxima llegibilitat sobre el fons fosc del menú */
+    color:       var(--color-text-menu);
+    text-align:  left;
+    transition:  color var(--durada-animacio) ease,
+                 background-color var(--durada-animacio) ease,
+                 padding-left var(--durada-animacio) ease;
+}
+
+/*
+   Icona de cada secció.
+   IMPORTANT: l'emoji l'insereix funcions.js dins d'un <span class="icona-seccio">
+   llegint EMOJIS_SECCIONS. NO s'ha d'afegir també per CSS amb ::before,
+   o l'emoji apareixeria duplicat.
+*/
+#menu-lateral ul li button .icona-seccio {
+    font-style:  normal;
+    font-size:   1.15em;
+    flex-shrink: 0;
+    opacity:     0.85;
+    transition:  opacity var(--durada-animacio) ease;
+}
+
+#menu-lateral ul li button:hover,
+#menu-lateral ul li button:focus-visible,
+#menu-lateral ul li button[aria-current="true"] {
+    color:            var(--color-accent-or-clar);
+    background-color: rgba(184, 134, 11, 0.16);
+    padding-left:     calc(var(--espai-gran) + var(--espai-petit));
+}
+
+/*
+   La secció activa porta, a més, una barra daurada a l'esquerra
+   perquè es distingeixi de l'estat de hover.
+*/
+#menu-lateral ul li button[aria-current="true"] {
+    box-shadow: inset 3px 0 0 var(--color-accent-or);
+    font-style: normal;
+    font-weight: 600;
+}
+
+#menu-lateral ul li button:hover .icona-seccio,
+#menu-lateral ul li button:focus-visible .icona-seccio,
+#menu-lateral ul li button[aria-current="true"] .icona-seccio {
+    opacity: 1;
+}
+
+/* Peu del menú: crèdits / versió */
+#peu-menu {
+    padding:     var(--espai-gran);
+    border-top:  1px solid rgba(184, 134, 11, 0.20);
+    font-size:   var(--mida-text-petit);
+    color:       rgba(255, 255, 255, 0.55);
+    text-align:  center;
+    font-style:  italic;
+    flex-shrink: 0;
+}
+
+
+/* ============================================================
+   8. COMPONENT: ÀREA DE CONTINGUT PRINCIPAL
+   ============================================================ */
+
+#contingut-principal {
+    display:   flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+
+/* ============================================================
+   9. COMPONENT: SECCIÓ MAPA (index.html)
+   ============================================================ */
+
+#seccio-mapa {
+    flex:       1;
+    position:   relative;
+    background-color: #d8cdb0;   /* color terrós neutre sota el SVG */
+    border-bottom: 1px solid var(--color-vora-forta);
+}
+
+/* Marc decoratiu al voltant del mapa */
+#seccio-mapa::before {
+    content:  '';
+    position: absolute;
+    inset:    var(--espai-petit);
+    border:   1px solid var(--color-accent-or);
+    pointer-events: none;
+    z-index:  var(--z-marcadors);
+    opacity:  0.4;
+}
+
+#mapa-poble {
+    width:   100%;
+    height:  100%;
+    display: block;
+}
+
+/* --- Zones clicables del mapa SVG --- */
+.zona-clicable {
+    cursor:  pointer;
+    outline: none;   /* el focus-visible el gestiona el SVG pare */
+}
+
+.zona-clicable path,
+.zona-clicable polygon {
+    /*
+       Sobre una fotografia cal un farciment molt lleu i un contorn
+       blanc translúcid: així la zona es distingeix sense tapar
+       el mapa que hi ha a sota.
+    */
+    fill:             rgba(255, 255, 255, 0.10);
+    stroke:           rgba(255, 255, 255, 0.75);
+    stroke-width:     0.6;
+    stroke-dasharray: 1.5 1;
+    transition:   fill var(--durada-animacio) ease,
+                  stroke var(--durada-animacio) ease,
+                  stroke-width var(--durada-animacio) ease;
+}
+
+.zona-clicable text,
+.etiqueta-zona {
+    font-family: var(--font-titol);
+    font-size:   4px;   /* unitats del viewBox */
+    font-weight: 600;
+    fill:        #ffffff;
+    letter-spacing: 0.05em;
+    text-anchor: middle;
+    pointer-events: none;
+    /*
+       Contorn fosc perquè el text es llegeixi sobre qualsevol
+       fotografia, clara o fosca. paint-order fa que el traç
+       es pinti DARRERE del farciment i no el mengi.
+    */
+    paint-order:  stroke;
+    stroke:       rgba(20, 12, 4, 0.85);
+    stroke-width: 1.1px;
+    stroke-linejoin: round;
+}
+
+.zona-clicable:hover path,
+.zona-clicable:hover polygon,
+.zona-clicable:focus-visible path,
+.zona-clicable:focus-visible polygon {
+    fill:             var(--color-zona-hover);
+    stroke:           var(--color-accent-or-clar);
+    stroke-width:     1;
+    stroke-dasharray: none;   /* contorn continu en passar-hi per sobre */
+}
+
+.zona-clicable:hover text,
+.zona-clicable:focus-visible text {
+    fill: var(--color-accent-or-clar);
+}
+
+/*
+   NOTA: sobre una fotografia no s'apliquen colors de farciment per
+   zona; taparien el mapa. Si el teu mapa és un dibuix pla i vols
+   distingir les zones amb color, descomenta aquest bloc:
+
+   .zona-clicable[data-id-zona="zona-centre"]  path    { fill: var(--color-zona-centre); }
+   .zona-clicable[data-id-zona="zona-moli"]    path    { fill: var(--color-zona-moli); }
+   .zona-clicable[data-id-zona="zona-castell"] polygon { fill: var(--color-zona-castell); }
+   .zona-clicable[data-id-zona="zona-vinyes"]  path    { fill: var(--color-zona-vinyes); }
+*/
+
+
+/* ============================================================
+   10. COMPONENT: SECCIÓ CONTINGUT (seccions del menú)
+   ============================================================ */
+
+/*
+   Quan una secció del menú està activa, aquest panell substitueix
+   la vista de mapa i ocupa tot l'espai disponible. El `flex: 1`
+   fa que empenyi el peu cap avall encara que el text sigui curt.
+*/
+#seccio-contingut {
+    flex:       1;
+    padding:    var(--espai-gran) var(--espai-mitja) var(--espai-extra);
+    background-color: var(--color-superficie);
+    background-image: var(--textura-fons);
+    animation:  entrar-contingut 0.25s ease forwards;
+    /* Text llegible: amplada màxima i centrat en pantalles grans */
+    max-width:  72ch;
+    margin:     0 auto;
+    width:      100%;
+}
+
+@keyframes entrar-contingut {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Títol de la secció activa */
+#seccio-contingut h2 {
+    font-size:    var(--mida-titol-petit);
+    color:        var(--color-accent);
+    margin-bottom: var(--espai-mitja);
+    padding-bottom: var(--espai-petit);
+    border-bottom: 1px solid var(--color-vora);
+}
+
+/* Contingut HTML generat per JS */
+#seccio-contingut p {
+    color: var(--color-text-suau);
+    font-size: var(--mida-text-base);
+}
+
+#seccio-contingut ul,
+#seccio-contingut ol {
+    list-style:  disc;
+    padding-left: var(--espai-gran);
+    margin-bottom: var(--espai-mitja);
+    color: var(--color-text-suau);
+}
+
+#seccio-contingut li {
+    margin-bottom: var(--espai-petit);
+    line-height: var(--alçada-linia);
+}
+
+#seccio-contingut strong {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+
+/* ============================================================
+   11. COMPONENT: MAPA DE ZONA (zona.html)
+   ============================================================ */
+
+#capçalera-zona {
+    display:     flex;
+    align-items: center;
+    gap:         var(--espai-mitja);
+    padding:     var(--espai-mitja);
+    background-color: var(--color-fons-fosc);
+    border-bottom: 1px solid var(--color-vora-forta);
+    min-height:  var(--mida-touch);
+}
+
+#nom-zona {
+    font-size:  var(--mida-text-gran);
+    flex:       1;
+    font-style: italic;
+}
+
+/* Boto tornar (compartit entre pàgines) */
+.boto-tornar {
+    display:        flex;
+    align-items:    center;
+    gap:            var(--espai-xs);
+    min-width:      var(--mida-touch);
+    min-height:     var(--mida-touch);
+    padding:        0 var(--espai-mitja);
+    font-family:    var(--font-titol);
+    font-size:      var(--mida-text-petit);
+    font-weight:    600;
+    letter-spacing: 0.05em;
+    color:          var(--color-text-suau);
+    border:         1px solid var(--color-vora);
+    border-radius:  var(--radi-petit);
+    background-color: var(--color-superficie);
+    transition:     color var(--durada-animacio) ease,
+                    border-color var(--durada-animacio) ease,
+                    background-color var(--durada-animacio) ease;
+    flex-shrink:    0;
+}
+
+.boto-tornar::before {
+    content:   '◂';
+    font-size: 0.9em;
+}
+
+.boto-tornar:hover,
+.boto-tornar:focus-visible {
+    color:            var(--color-accent);
+    border-color:     var(--color-accent);
+    background-color: rgba(139, 46, 10, 0.06);
+}
+
+/* Mapa de zona */
+/*
+   La proporció d'aquest contenidor la fixa funcions.js amb
+   `style.aspectRatio = "100 / <alcadaViewBox>"`, llegint el valor
+   de la zona a zones.js. Així la imatge no es deforma ni es retalla,
+   i l'espai queda reservat abans de carregar-la (sense salts de layout).
+   Per això aquí NO s'hi posa cap max-height ni aspect-ratio fix.
+*/
+#contenidor-mapa-zona {
+    position:   relative;
+    background-color: #d8cdb0;
+    overflow:   hidden;
+}
+
+#mapa-zona {
+    width:  100%;
+    height: auto;
+    display: block;
+}
+
+/*
+   Marcadors dels PIs sobre el mapa de zona.
+
+   ATENCIÓ: aquests elements són SVG, no HTML. funcions.js genera,
+   dins de #mapa-zona, aquesta estructura per a cada punt d'interès:
+
+     <g class="marcador-punt" data-estrelles="3" role="button" tabindex="0">
+       <circle class="cercle-marcador" cx=".." cy=".." r=".."/>
+       <text   class="text-marcador"   x=".."  y="..">⚜️</text>
+     </g>
+
+   L'emoji i el radi els posa el JS (EMOJI_MARCADOR_BASE /
+   EMOJI_MARCADOR_IMPRESCINDIBLE). El CSS NO ha d'afegir cap emoji
+   amb ::before o apareixeria duplicat.
+   En SVG no funcionen position/width/height: cal usar transform,
+   transform-box i transform-origin.
+*/
+.marcador-punt {
+    cursor: pointer;
+    transform-box:    fill-box;
+    transform-origin: center center;
+    transition: transform var(--durada-animacio) ease,
+                filter    var(--durada-animacio) ease;
+    filter: drop-shadow(0 0.3px 0.6px var(--color-ombra-forta));
+}
+
+.marcador-punt .cercle-marcador {
+    fill:         var(--color-superficie);
+    stroke:       var(--color-accent);
+    stroke-width: 0.6;
+    opacity:      0.9;
+    transition:   fill   var(--durada-animacio) ease,
+                  stroke var(--durada-animacio) ease,
+                  opacity var(--durada-animacio) ease;
+}
+
+.marcador-punt .text-marcador {
+    pointer-events: none;   /* el clic el rep el <g>, no el text */
+    user-select:    none;
+}
+
+/* Hover i focus: creix lleugerament i el cercle s'omple d'or */
+.marcador-punt:hover,
+.marcador-punt:focus-visible {
+    transform: scale(1.18) translateY(-0.6px);
+    filter:    drop-shadow(0 0.8px 1.6px var(--color-ombra-forta));
+}
+
+.marcador-punt:hover .cercle-marcador,
+.marcador-punt:focus-visible .cercle-marcador {
+    fill:    var(--color-accent-or);
+    stroke:  var(--color-accent);
+    opacity: 1;
+}
+
+/* Diferenciació visual per rellevància: els imprescindibles destaquen més */
+.marcador-punt[data-estrelles="1"] .cercle-marcador { opacity: 0.75; stroke-width: 0.4; }
+.marcador-punt[data-estrelles="2"] .cercle-marcador { opacity: 0.85; stroke-width: 0.5; }
+.marcador-punt[data-estrelles="3"] .cercle-marcador { opacity: 1;    stroke-width: 0.8; }
+
+
+/* ============================================================
+   12. COMPONENT: FILTRE D'ESTRELLES (zona.html)
+   ============================================================ */
+
+#barra-filtre {
+    display:     flex;
+    align-items: center;
+    gap:         var(--espai-petit);
+    padding:     var(--espai-petit) var(--espai-mitja);
+    background-color: var(--color-fons-fosc);
+    border-bottom: 1px solid var(--color-vora);
+    overflow-x:  auto;
+    scrollbar-width: none;
+}
+
+#barra-filtre::-webkit-scrollbar {
+    display: none;
+}
+
+#barra-filtre .etiqueta-filtre {
+    font-size:      var(--mida-text-petit);
+    font-family:    var(--font-titol);
+    color:          var(--color-text-suau);
+    letter-spacing: 0.04em;
+    white-space:    nowrap;
+    flex-shrink:    0;
+}
+
+#filtre-estrelles {
+    display:    flex;
+    gap:        var(--espai-xs);
+    flex-shrink: 0;
+}
+
+#filtre-estrelles button {
+    min-height:     var(--mida-touch);
+    padding:        0 var(--espai-mitja);
+    font-family:    var(--font-titol);
+    font-size:      var(--mida-text-petit);
+    font-weight:    600;
+    color:          var(--color-text-suau);
+    border:         1px solid var(--color-vora);
+    border-radius:  var(--radi-petit);
+    background-color: var(--color-superficie);
+    white-space:    nowrap;
+    transition:     all var(--durada-animacio) ease;
+}
+
+#filtre-estrelles button:hover {
+    border-color:     var(--color-accent-or);
+    color:            var(--color-accent);
+    background-color: rgba(184, 134, 11, 0.08);
+}
+
+#filtre-estrelles button[aria-pressed="true"] {
+    border-color:     var(--color-accent-or);
+    color:            var(--color-fons-menu);
+    background-color: var(--color-accent-or);
+}
+
+
+/* ============================================================
+   13. COMPONENT: LLISTA DE PUNTS D'INTERÈS (zona.html)
+   ============================================================ */
+
+#llista-punts {
+    padding: var(--espai-mitja);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espai-mitja);
+}
+
+/*
+   Cada targeta va dins d'un <li> (obligatori en un <ul role="list">).
+   El <li> ha de ser flex perquè el <button> de dins ocupi tota l'amplada.
+*/
+#llista-punts > li {
+    display: flex;
+}
+
+/* Targeta d'un punt d'interès a la llista */
+.targeta-punt {
+    display:          flex;
+    gap:              var(--espai-mitja);
+    padding:          var(--espai-mitja);
+    background-color: var(--color-superficie);
+    background-image: var(--textura-fons);
+    border:           1px solid var(--color-vora);
+    border-left:      3px solid var(--color-accent-or);
+    border-radius:    var(--radi-petit);
+    cursor:           pointer;
+    transition:       border-color var(--durada-animacio) ease,
+                      box-shadow var(--durada-animacio) ease,
+                      transform var(--durada-animacio) ease;
+    text-align:       left;
+    width:            100%;
+}
+
+.targeta-punt:hover,
+.targeta-punt:focus-visible {
+    border-color:     var(--color-accent);
+    border-left-color: var(--color-accent);
+    box-shadow:       0 3px 12px var(--color-ombra);
+    transform:        translateX(2px);
+}
+
+.targeta-punt .miniatura {
+    width:         72px;
+    height:        72px;
+    object-fit:    cover;
+    border-radius: var(--radi-petit);
+    border:        1px solid var(--color-vora);
+    flex-shrink:   0;
+}
+
+/* Placeholder si no hi ha imatge */
+.targeta-punt .miniatura-absent {
+    width:            72px;
+    height:           72px;
+    background-color: var(--color-fons-fosc);
+    border:           1px solid var(--color-vora);
+    border-radius:    var(--radi-petit);
+    display:          flex;
+    align-items:      center;
+    justify-content:  center;
+    font-size:        1.75rem;
+    flex-shrink:      0;
+    color:            var(--color-vora-forta);
+}
+
+.targeta-punt .info-punt {
+    flex:     1;
+    min-width: 0;
+}
+
+.targeta-punt .nom-punt-targeta {
+    font-family:   var(--font-titol);
+    font-size:     var(--mida-text-base);
+    font-weight:   600;
+    color:         var(--color-text);
+    white-space:   nowrap;
+    overflow:      hidden;
+    text-overflow: ellipsis;
+    margin-bottom: var(--espai-xs);
+}
+
+.targeta-punt .estil-punt {
+    font-size:  var(--mida-text-petit);
+    font-style: italic;
+    color:      var(--color-text-suau);
+    margin-bottom: var(--espai-xs);
+}
+
+.targeta-punt .any-punt {
+    font-size:  var(--mida-text-petit);
+    color:      var(--color-text-suau);
+    font-family: var(--font-titol);
+    letter-spacing: 0.03em;
+}
+
+.targeta-punt .any-punt::before {
+    content: '🗓 ';
+    font-size: 0.9em;
+}
+
+/* Missatge de "cap resultat" */
+#missatge-sense-resultats {
+    /* És un <li> dins de #llista-punts: ha d'ocupar tota l'amplada */
+    flex: 1;
+    display: block;
+    text-align: center;
+    padding:    var(--espai-doble) var(--espai-mitja);
+    color:      var(--color-text-suau);
+    font-style: italic;
+    font-size:  var(--mida-text-gran);
+}
+
+#missatge-sense-resultats::before {
+    content: '🔍\A';
+    white-space: pre;
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: var(--espai-mitja);
+    font-style: normal;
+}
+
+
+/* ============================================================
+   14. COMPONENT: FITXA DE PUNT D'INTERÈS (punt-interes.html)
+   ============================================================ */
+
+#fitxa-punt-interes {
+    display:        flex;
+    flex-direction: column;
+    min-height:     100dvh;
+}
+
+/* Imatge destacada */
+#contenidor-imatge {
+    position:    relative;
+    width:       100%;
+    aspect-ratio: 4 / 3;
+    overflow:    hidden;
+    background-color: var(--color-fons-fosc);
+    flex-shrink: 0;
+}
+
+#imatge-punt {
+    width:      100%;
+    height:     100%;
+    object-fit: cover;
+    display:    block;
+    /* Vinyeta als costats per donar profunditat */
+    mask-image: linear-gradient(
+        to bottom,
+        black 60%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 60%,
+        transparent 100%
+    );
+}
+
+/* Gradient sobre la imatge per llegibilitat del títol */
+#contenidor-imatge::after {
+    content:  '';
+    position: absolute;
+    bottom:   0; left: 0; right: 0;
+    height:   45%;
+    background: linear-gradient(transparent, rgba(30, 20, 8, 0.7));
+    pointer-events: none;
+}
+
+/* Detalls del PI: nom, any, estil, estrelles */
+#detalls-punt {
+    padding:          var(--espai-gran) var(--espai-mitja) var(--espai-mitja);
+    background-color: var(--color-superficie);
+    background-image: var(--textura-fons);
+    border-bottom:    1px solid var(--color-vora);
+}
+
+#nom-punt {
+    font-size:    var(--mida-titol);
+    color:        var(--color-accent);
+    margin-bottom: var(--espai-mitja);
+    line-height:  1.15;
+}
+
+/* Taula de metadades (any, estil, zona) */
+#detalls-punt dl {
+    display:   grid;
+    grid-template-columns: auto 1fr;
+    gap:       var(--espai-xs) var(--espai-mitja);
+    margin-bottom: var(--espai-mitja);
+}
+
+#detalls-punt dt {
+    font-family:    var(--font-titol);
+    font-size:      var(--mida-text-petit);
+    font-weight:    600;
+    letter-spacing: 0.05em;
+    color:          var(--color-text-suau);
+    text-transform: uppercase;
+    align-self:     center;
+}
+
+#detalls-punt dd {
+    font-size:  var(--mida-text-base);
+    color:      var(--color-text);
+    font-style: italic;
+}
+
+/* Estrelles de rellevància */
+#estrelles-rellevancia {
+    display:    flex;
+    gap:        3px;
+    font-size:  1.25rem;
+    margin-top: var(--espai-petit);
+    line-height: 1;
+}
+
+.estrella-activa  { color: var(--color-estrella-activa); }
+.estrella-buida   { color: var(--color-estrella-buida); }
+
+/* Badge de rellevància amb text */
+.badge-rellevancia {
+    display:          inline-flex;
+    align-items:      center;
+    gap:              var(--espai-xs);
+    padding:          var(--espai-xs) var(--espai-petit);
+    background-color: rgba(184, 134, 11, 0.12);
+    border:           1px solid var(--color-accent-or);
+    border-radius:    var(--radi-petit);
+    font-family:      var(--font-titol);
+    font-size:        var(--mida-text-petit);
+    font-weight:      600;
+    color:            var(--color-accent-or);
+    letter-spacing:   0.04em;
+    margin-top:       var(--espai-petit);
+}
+
+/* Bloc de descripció */
+#descripcio-punt {
+    flex:    1;
+    padding: var(--espai-gran) var(--espai-mitja);
+    background-color: var(--color-fons);
+    background-image: var(--textura-fons);
+}
+
+/* Primera lletra capital en estil medieval */
+#text-descripcio::first-letter {
+    font-family:    var(--font-titol);
+    font-size:      3.2em;
+    font-weight:    600;
+    color:          var(--color-accent);
+    float:          left;
+    line-height:    0.8;
+    margin-right:   0.08em;
+    margin-top:     0.05em;
+}
+
+#text-descripcio {
+    font-size:  var(--mida-text-base);
+    color:      var(--color-text);
+    max-width:  100%;
+    line-height: var(--alçada-linia);
+	white-space: pre-line;
+}
+
+/* Botó tornar a la fitxa */
+#boto-tornar {
+    composes: boto-tornar;   /* herència semàntica via JS que afegirà classe */
+    display:        flex;
+    align-items:    center;
+    gap:            var(--espai-xs);
+    margin:         var(--espai-gran) var(--espai-mitja);
+    min-height:     var(--mida-touch);
+    padding:        0 var(--espai-gran);
+    font-family:    var(--font-titol);
+    font-size:      var(--mida-text-mitja);
+    font-weight:    600;
+    letter-spacing: 0.05em;
+    color:          var(--color-text-suau);
+    border:         1px solid var(--color-vora-forta);
+    border-radius:  var(--radi-petit);
+    background-color: var(--color-superficie);
+    align-self:     flex-start;
+    transition:     all var(--durada-animacio) ease;
+}
+
+#boto-tornar::before {
+    content: '◂ ';
+}
+
+#boto-tornar:hover,
+#boto-tornar:focus-visible {
+    color:            var(--color-accent);
+    border-color:     var(--color-accent);
+    background-color: rgba(139, 46, 10, 0.06);
+}
+
+
+/* ============================================================
+   15. UTILITATS
+   ============================================================ */
+
+/* Amagat visualment però llegible per lectors de pantalla */
+.sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Animació d'entrada genèrica */
+.entrar {
+    animation: entrar-contingut 0.3s ease forwards;
+}
+
+/* Separador ornamental reutilitzable */
+.separador-ornamental {
+    text-align: center;
+    color:      var(--color-accent-or);
+    font-size:  var(--mida-text-petit);
+    letter-spacing: 0.4em;
+    user-select: none;
+    padding: var(--espai-petit) 0;
+}
+
+.separador-ornamental::before {
+    content: '· ✦ ·';
+}
+
+/* Touch-targets mínims per a tot element interactiu */
+button,
+.zona-clicable,
+.marcador-punt,
+[role="button"] {
+    min-width:  var(--mida-touch);
+    min-height: var(--mida-touch);
+    cursor:     pointer;
+}
+
+
+/* ============================================================
+   16. MEDIA QUERIES — MOBILE-FIRST
+   ============================================================ */
+
+/* ── Tauleta (768px+) ────────────────────────────────────── */
+@media (min-width: 768px) {
+
+    /* El menú lateral deixa de ser un drawer i es queda fix */
+    #menu-lateral {
+        position:  sticky;
+        top:       0;
+        height:    100dvh;
+        transform: none !important;   /* mai amagat en tauleta */
+    }
+
+    /* La coberta no té sentit en tauleta */
+    #coberta-menu {
+        display: none !important;
+    }
+
+    /* El botó d'hamburguesa s'amaga */
+    #boto-menu {
+        display: none;
+    }
+
+    /* Layout de dues columnes: menú + contingut */
+    body {
+        display: grid;
+        grid-template-columns: var(--amplada-menu) 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    /* La capçalera ocupa tota l'amplada */
+    #capçalera-principal {
+        grid-column: 1 / -1;
+    }
+
+    #menu-lateral {
+        grid-column: 1;
+        grid-row:    2;
+    }
+
+    #contingut-principal {
+        grid-column: 2;
+        grid-row:    2;
+    }
+
+    /* Mapa de zona: aspecte fix per aprofitar l'espai */
+    /*
+       En pantalles grans limitem l'ALÇADA en píxels perquè un mapa
+       molt apaïsat no ompli tota la pantalla, però mantenim la
+       proporció que ha fixat el JS.
+    */
+    #contenidor-mapa-zona {
+        max-height: 60vh;
+    }
+
+    #mapa-zona {
+        max-height: 60vh;
+        width: auto;
+        margin: 0 auto;
+    }
+
+    /* Fitxa PI: layout horitzontal */
+    #fitxa-punt-interes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:    auto auto 1fr;
+        min-height: calc(100dvh - var(--mida-touch));
+    }
+
+    #contenidor-imatge {
+        grid-column:  1;
+        grid-row:     1 / 4;
+        aspect-ratio: auto;
+        height:       100%;
+    }
+
+    #detalls-punt {
+        grid-column: 2;
+        grid-row:    1;
+    }
+
+    #descripcio-punt {
+        grid-column: 2;
+        grid-row:    2;
+    }
+
+    #boto-tornar {
+        grid-column: 2;
+        grid-row:    3;
+        align-self:  end;
+    }
+}
+
+/* ── Escriptori gran (1200px+) ───────────────────────────── */
+@media (min-width: 1200px) {
+
+    :root {
+        --amplada-menu: 300px;
+    }
+
+    #titol-poble {
+        font-size: var(--mida-titol-petit);
+    }
+
+    #contenidor-imatge {
+        aspect-ratio: 3 / 4;  /* imatge més alta en escriptori */
+    }
+
+    /* Llista de PIs: dues columnes */
+    #llista-punts {
+        display:               grid;
+        grid-template-columns: 1fr 1fr;
+        gap:                   var(--espai-mitja);
+    }
+}

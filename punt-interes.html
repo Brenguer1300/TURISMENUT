@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+        El contingut d'aquesta pàgina depèn del paràmetre ?pi= de la URL.
+        El JS actualitzarà <title>, <meta name="description"> i tots els
+        camps de la fitxa en carregar via renderitzarFitxaPunt().
+    -->
+    <meta name="description" content="Fitxa d'un punt d'interès de Montbrull.">
+    <meta name="theme-color" content="#2a1f0e">
+
+    <title>Punt d'interès — Montbrull</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏰</text></svg>">
+    <link rel="stylesheet" href="estils.css">
+</head>
+<body>
+
+    <!-- ============================================================
+         MENÚ LATERAL
+         Idèntic a index.html i zona.html.
+         ============================================================ -->
+    <nav id="menu-lateral"
+         aria-label="Menú principal"
+         aria-hidden="true">
+
+        <div id="capçalera-menu">
+            <span class="titol-menu">Montbrull</span>
+            <button id="boto-tancar-menu"
+                    aria-label="Tancar menú">✕</button>
+        </div>
+
+        <ul role="list">
+            <li>
+                <button data-seccio="introduccio"
+                        aria-controls="seccio-contingut"
+                        aria-expanded="false">
+                    Introducció
+                </button>
+            </li>
+            <li>
+                <button data-seccio="mapa"
+                        aria-current="false">
+                    Mapa
+                </button>
+            </li>
+            <li>
+                <button data-seccio="historia"
+                        aria-controls="seccio-contingut"
+                        aria-expanded="false">
+                    Història
+                </button>
+            </li>
+            <li>
+                <button data-seccio="rutes"
+                        aria-controls="seccio-contingut"
+                        aria-expanded="false">
+                    Rutes
+                </button>
+            </li>
+            <li>
+                <button data-seccio="arquitectura"
+                        aria-controls="seccio-contingut"
+                        aria-expanded="false">
+                    Arquitectura
+                </button>
+            </li>
+            <li>
+                <button data-seccio="informacio-practica"
+                        aria-controls="seccio-contingut"
+                        aria-expanded="false">
+                    Informació pràctica
+                </button>
+            </li>
+        </ul>
+
+        <p id="peu-menu">Montbrull · Guia de Patrimoni</p>
+
+    </nav><!-- /menu-lateral -->
+
+
+    <div id="coberta-menu"
+         aria-hidden="true"
+         role="presentation"></div>
+
+
+    <!-- ============================================================
+         CONTINGUT PRINCIPAL
+         ============================================================ -->
+    <main id="contingut-principal">
+
+        <!-- Capçalera sticky -->
+        <header id="capçalera-principal">
+
+            <button id="boto-menu"
+                    aria-label="Obrir menú"
+                    aria-controls="menu-lateral"
+                    aria-expanded="false">☰</button>
+
+            <h1 id="titol-poble">Montbrull</h1>
+
+            <div id="selector-idioma"
+                 role="group"
+                 aria-label="Selecció d'idioma">
+                <button data-idioma="ca"
+                        aria-pressed="true"
+                        aria-label="Català">CA</button>
+                <button data-idioma="es"
+                        aria-pressed="false"
+                        aria-label="Castellà">ES</button>
+                <button data-idioma="en"
+                        aria-pressed="false"
+                        aria-label="English">EN</button>
+            </div>
+
+        </header><!-- /capçalera-principal -->
+
+
+        <!-- ========================================================
+             FITXA DEL PUNT D'INTERÈS
+             <article> és l'element semàntic correcte: la fitxa és
+             un contingut autònom que té sentit per si mateix.
+             Tot el contingut l'omple renderitzarFitxaPunt().
+             ======================================================== -->
+        <article id="fitxa-punt-interes"
+                 aria-labelledby="nom-punt">
+
+            <!-- ====================================================
+                 IMATGE DESTACADA
+                 src i alt els omple el JS (alt = nom del PI en
+                 l'idioma actiu). L'onerror del JS substitueix la
+                 imatge per un placeholder emoji si no existeix.
+                 ==================================================== -->
+            <div id="contenidor-imatge">
+                <!--
+                    src buit intencionadament: el JS el defineix.
+                    Si el navegador intenta carregar src="" alguns
+                    navegadors fan una petició al document arrel —
+                    per evitar-ho usem src="data:," (URI mínima vàlida
+                    que no dispara cap petició de xarxa).
+                -->
+                <img id="imatge-punt"
+                     src="data:,"
+                     alt=""
+                     loading="eager"
+                     decoding="async">
+            </div><!-- /contenidor-imatge -->
+
+
+            <!-- ====================================================
+                 DETALLS: NOM, METADADES I ESTRELLES
+                 ==================================================== -->
+            <section id="detalls-punt"
+                     aria-label="Informació del punt d'interès">
+
+                <!-- El JS omple textContent d'aquest h1 -->
+                <h1 id="nom-punt" aria-live="polite"></h1>
+
+                <!--
+                    Llista de definicions: etiqueta → valor.
+                    Les <dt> usen data-i18n perquè el JS les tradueixi.
+                    Les <dd> les omple el JS directament per id.
+                -->
+                <dl>
+                    <dt data-i18n="any-construccio">Any:</dt>
+                    <dd id="any-construccio"></dd>
+
+                    <dt data-i18n="estil-arquitectonic">Estil:</dt>
+                    <dd id="estil-arquitectonic"></dd>
+
+                    <dt data-i18n="zona-pertany">Zona:</dt>
+                    <dd id="zona-pertany"></dd>
+                </dl>
+
+                <!--
+                    Bloc d'estrelles:
+                    · role="img" → el lector de pantalla l'anuncia com a imatge
+                    · aria-label → el JS hi posa "2 de 3 estrelles" (traduït)
+                    · innerHTML  → el JS hi insereix les <span> de les estrelles
+                                   i el badge de rellevància
+                -->
+                <div id="estrelles-rellevancia"
+                     role="img"
+                     aria-label=""></div>
+
+            </section><!-- /detalls-punt -->
+
+
+            <!-- ====================================================
+                 DESCRIPCIÓ
+                 El JS omple textContent de #text-descripcio
+                 (mai innerHTML per seguretat: el text ve de dades).
+                 La primera lletra capital la fa el CSS (::first-letter).
+                 ==================================================== -->
+            <section id="descripcio-punt"
+                     aria-label="Descripció">
+
+                <p id="text-descripcio" aria-live="polite"></p>
+
+            </section><!-- /descripcio-punt -->
+
+
+            <!-- ====================================================
+                 SEPARADOR ORNAMENTAL
+                 Decoració pura, invisible per a lectors de pantalla.
+                 ==================================================== -->
+            <div class="separador-ornamental" aria-hidden="true"></div>
+
+
+            <!-- ====================================================
+                 BOTÓ TORNAR
+                 Torna a la pàgina anterior del historial.
+                 El text el tradueix el JS via UI['tornar'].
+                 Accessible amb teclat sense JS gràcies a onclick.
+                 ==================================================== -->
+            <button id="boto-tornar"
+                    onclick="history.back()"
+                    aria-label="Tornar a la llista de punts d'interès">
+                <!-- El JS omple el textContent amb "◂ Tornar" traduït -->
+            </button>
+
+        </article><!-- /fitxa-punt-interes -->
+
+
+        <!-- ========================================================
+             SECCIÓ DE CONTINGUT DEL MENÚ LATERAL
+             Apareix quan l'usuari obra una secció del menú.
+             ======================================================== -->
+        <section id="seccio-contingut"
+                 aria-live="polite"
+                 aria-atomic="false"
+                 hidden>
+        </section><!-- /seccio-contingut -->
+
+
+    </main><!-- /contingut-principal -->
+
+
+    <!-- ============================================================
+         AVÍS SENSE JAVASCRIPT
+         ============================================================ -->
+    <noscript>
+        <div style="padding:1.5rem;background:#f2ead8;border:2px solid #8b2e0a;
+                    font-family:Georgia,serif;color:#1e1408;text-align:center;
+                    position:fixed;top:0;left:0;right:0;z-index:9999;">
+            <p lang="ca">⚠️ Aquesta aplicació requereix JavaScript per funcionar.</p>
+            <p lang="es">⚠️ Esta aplicación requiere JavaScript para funcionar.</p>
+            <p lang="en">⚠️ This application requires JavaScript to work.</p>
+        </div>
+    </noscript>
+
+
+    <!-- ============================================================
+         SCRIPTS — ordre obligatori: traduccions → zones → punts → funcions
+         ============================================================ -->
+    <script src="dades/traduccions.js"></script>
+    <script src="dades/zones.js"></script>
+    <script src="dades/punts.js"></script>
+    <script src="funcions.js"></script>
+
+</body>
+</html>

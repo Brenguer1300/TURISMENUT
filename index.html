@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Descobreix Montbrull: mapa interactiu dels punts d'interès del poble.">
+    <meta name="theme-color" content="#2a1f0e">
+
+    <title>Montbrull — Guia de Punts d'Interès</title>
+
+    <!-- Favicon inline (emogi de castell, funciona a Chrome/Firefox) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏰</text></svg>">
+
+    <link rel="stylesheet" href="estils.css">
+</head>
+<body>
+
+    <!-- ============================================================
+         MENÚ LATERAL
+         Drawer en mòbil · columna fixa en tauleta/escriptori
+         aria-hidden gestionat per JS (obrirMenu / tancarMenu)
+         ============================================================ -->
+    <nav id="menu-lateral"
+         aria-label="Menú principal"
+         aria-hidden="true">
+
+        <!-- Capçalera del drawer -->
+        <div id="capçalera-menu">
+            <span class="titol-menu">Montbrull</span>
+            <button id="boto-tancar-menu"
+                    aria-label="Tancar menú">✕</button>
+        </div>
+
+        <!-- Navegació de seccions -->
+        <ul role="list">
+            <li>
+                <button data-seccio="introduccio"
+                        aria-controls="seccio-contingut"
+                        aria-expanded="false">
+                    Introducció
+                </button>
+            </li>
+            <li>
+                <button data-seccio="mapa"
+                        aria-controls="seccio-mapa"
+                        aria-current="true">
+                    Mapa
+                </button>
+            </li>
+            <li>
+                <button data-seccio="historia"
+                        aria-controls="seccio-contingut"
+                        aria-expanded="false">
+                    Història
+                </button>
+            </li>
+            <li>
+                <button data-seccio="rutes"
+                        aria-controls="seccio-contingut"
+                        aria-expanded="false">
+                    Rutes
+                </button>
+            </li>
+            <li>
+                <button data-seccio="arquitectura"
+                        aria-controls="seccio-contingut"
+                        aria-expanded="false">
+                    Arquitectura
+                </button>
+            </li>
+            <li>
+                <button data-seccio="informacio-practica"
+                        aria-controls="seccio-contingut"
+                        aria-expanded="false">
+                    Informació pràctica
+                </button>
+            </li>
+        </ul>
+
+        <!-- Peu del drawer -->
+        <p id="peu-menu">Montbrull · Guia de Patrimoni</p>
+
+    </nav><!-- /menu-lateral -->
+
+
+    <!-- Coberta fosca darrere el menú quan és obert en mòbil -->
+    <div id="coberta-menu"
+         aria-hidden="true"
+         role="presentation"></div>
+
+
+    <!-- ============================================================
+         CONTINGUT PRINCIPAL
+         ============================================================ -->
+    <main id="contingut-principal">
+
+        <!-- Capçalera sticky -->
+        <header id="capçalera-principal">
+
+            <button id="boto-menu"
+                    aria-label="Obrir menú"
+                    aria-controls="menu-lateral"
+                    aria-expanded="false">☰</button>
+
+            <!-- El JS omple aquest text des de UI['titol-app'] -->
+            <h1 id="titol-poble">Montbrull</h1>
+
+            <div id="selector-idioma"
+                 role="group"
+                 aria-label="Selecció d'idioma">
+                <button data-idioma="ca"
+                        aria-pressed="true"
+                        aria-label="Català">CA</button>
+                <button data-idioma="es"
+                        aria-pressed="false"
+                        aria-label="Castellà">ES</button>
+                <button data-idioma="en"
+                        aria-pressed="false"
+                        aria-label="English">EN</button>
+            </div>
+
+        </header><!-- /capçalera-principal -->
+
+
+        <!-- ========================================================
+             SECCIÓ MAPA PRINCIPAL
+             El SVG conté les zones hardcoded. JS afegirà events i
+             podrà regenerar les zones des de zones.js si cal.
+             viewBox="0 0 100 63.14": x de 0 a 100, y de 0 a 63.14.
+             ======================================================== -->
+           <section id="seccio-mapa"
+                 aria-label="Mapa interactiu del poble de Montbrull">
+
+            <svg id="mapa-poble"
+                 viewBox="0 0 100 100"
+                 preserveAspectRatio="xMidYMid meet"
+                 role="img"
+                 aria-label="Mapa de Montbrull amb quatre zones clicables"
+                 xmlns="http://www.w3.org/2000/svg">
+
+                <title>Mapa de Montbrull</title>
+                <desc>
+                    Mapa esquemàtic del poble de Montbrull amb quatre zones
+                    d'interès: Centre Històric, Barri del Molí, Zona del
+                    Castell i Zona de les Vinyes.
+                </desc>
+
+                <!-- ================================================
+                     FONS DEL MAPA: la teva imatge real
+                     ================================================
+                     PAS 1 · Posa el fitxer a: imatges/mapa-poble.jpg
+
+                     PAS 2 · Ajusta el viewBox de dalt a la proporció
+                     REAL de la teva imatge, o sortirà deformada:
+
+                         alçadaViewBox = 100 × (alçadaPx / ampladaPx)
+
+                     Exemples:
+                         imatge 1600×1200 (4:3)  → viewBox="0 0 100 75"
+                         imatge 1920×1080 (16:9) → viewBox="0 0 100 56.25"
+                         imatge 1000×1400 (5:7)  → viewBox="0 0 100 140"
+                         imatge quadrada         → viewBox="0 0 100 100"
+
+                     PAS 3 · Posa la mateixa alçada al height de sota.
+
+                     Amb això, la coordenada x va sempre de 0 a 100
+                     (percentatge de l'amplada) i la y de 0 a l'alçada
+                     del viewBox. Fes servir eina-coordenades.html per
+                     obtenir els valors clicant sobre la imatge.
+                     ================================================ -->
+                <image href="imatges/mapa-poble.jpg"
+                       x="0" y="0"
+                       width="100" height="63"
+                       preserveAspectRatio="xMidYMid slice"/>
+
+
+                <!-- ================================================
+                     ZONES CLICABLES
+                     ================================================
+                     Els polígons de sota són EXEMPLES: no coincidiran
+                     amb la teva imatge. Substitueix cada atribut "d"
+                     (o "points") per les coordenades reals que
+                     t'indiqui eina-coordenades.html.
+
+                     Recorda actualitzar també dades/zones.js amb els
+                     mateixos valors al camp formaArea.
+                     ================================================ -->
+
+                <!-- Zona 1: PLAÇA VILA -->
+                <g class="zona-clicable"
+                   data-id-zona="zona-vila"
+                   tabindex="0"
+                   role="button"
+                   aria-label="Explorar Plaça Vila">
+					<path d="M33.9,37.7 L33.9,40.6 L37.3,40.8 L37.5,37.6 Z"/>
+                    <text x="24" y="42" class="etiqueta-zona">Plaça</text>
+                </g>
+
+                <!-- Zona 2: PLAÇA MONESTIR -->
+                <g class="zona-clicable"
+                   data-id-zona="zona-monestir"
+                   tabindex="0"
+                   role="button"
+                   aria-label="Explorar Plaça Monestir">
+                    <path d="M30,35.4 L30.3,38 L34.4,37.8 L34.6,35.2 Z"/>
+                    <text x="18" y="36" class="etiqueta-zona">Monestir</text>
+                </g>
+
+                <!-- Zona 3: BARRI DEL PEDREGUET-->
+                <g class="zona-clicable"
+                   data-id-zona="zona-pedreguet"
+                   tabindex="0"
+                   role="button"
+                   aria-label="Explorar Barri del Pedreguet">
+                    <path d="M35.2,42.1 L40.7,41.9 L40.7,48.7 L35.6,48.8 Z"/>
+                    <text x="55" y="45" class="etiqueta-zona">Pedreguet</text>
+                </g>
+
+                <!-- Zona 4: SANT CLIMENT -->
+                <g class="zona-clicable"
+                   data-id-zona="zona-santcliment"
+                   tabindex="0"
+                   role="button"
+                   aria-label="Explorar Sant Climent">
+                    <path d="M85.2,44.6 L86.1,58.2 L98.8,59.1 L98.7,45 Z"/>
+                    <text x="65" y="55" class="etiqueta-zona">Sant Climent</text>
+                </g>
+				
+		      <!-- Zona : FONTPICANT-->
+                <g class="zona-clicable"
+                   data-id-zona="zona-fontpicant"
+                   tabindex="0"
+                   role="button"
+                   aria-label="Explorar Font Picant">
+                    <path d="M1,1 L1.3,10.4 L14.7,11.1 L15.1,1 Z"/>
+                    <text x="15" y="15" class="etiqueta-zona">Font Picant</text>
+                </g>
+
+                <!-- ================================================
+                     DECORACIÓ: Rosa dels vents / ornament cartogràfic
+                     (cantó inferior dret, fora de les zones)
+                     ================================================ -->
+                <g transform="translate(89, 82)" opacity="0.30">
+                    <!-- Punts cardinals -->
+                    <polygon points="0,-5 1,-1.5 -1,-1.5" fill="#8b4513"/><!-- N -->
+                    <polygon points="0,5 1,1.5 -1,1.5"  fill="#8b6e3a"/><!-- S -->
+                    <polygon points="-5,0 -1.5,1 -1.5,-1" fill="#8b6e3a"/><!-- O -->
+                    <polygon points="5,0 1.5,1 1.5,-1"  fill="#8b6e3a"/><!-- E -->
+                    <!-- Cercle central -->
+                    <circle cx="0" cy="0" r="1.2"
+                            fill="none" stroke="#8b4513" stroke-width="0.3"/>
+                    <!-- N -->
+                    <text x="0" y="-6.5"
+                          text-anchor="middle"
+                          font-family="'Cinzel', serif"
+                          font-size="2.5"
+                          font-weight="600"
+                          fill="#8b4513">N</text>
+                </g>
+
+                <!-- Ornament de marc: cantoneres -->
+                <g stroke="#b8860b" stroke-width="0.4" fill="none" opacity="0.5">
+                    <!-- Cantonera superior esquerra -->
+                    <path d="M 1,5 L 1,1 L 5,1"/>
+                    <!-- Cantonera superior dreta -->
+                    <path d="M 95,1 L 99,1 L 99,5"/>
+                    <!-- Cantonera inferior esquerra -->
+                    <path d="M 1,95 L 1,99 L 5,99"/>
+                    <!-- Cantonera inferior dreta -->
+                    <path d="M 95,99 L 99,99 L 99,95"/>
+                </g>
+
+            </svg><!-- /mapa-poble -->
+
+        </section><!-- /seccio-mapa -->
+
+
+
+        <!-- ========================================================
+             SECCIÓ CONTINGUT (seccions del menú)
+             Oculta per defecte. JS en gestiona la visibilitat
+             i en canvia el contingut via mostrarSeccio().
+             ======================================================== -->
+        <section id="seccio-contingut"
+                 aria-live="polite"
+                 aria-atomic="false"
+                 hidden>
+            <!-- El JS inserirà aquí el títol i el text de la secció -->
+        </section><!-- /seccio-contingut -->
+
+
+    </main><!-- /contingut-principal -->
+
+
+    <!-- ============================================================
+         AVÍS SENSE JAVASCRIPT
+         ============================================================ -->
+    <noscript>
+        <div style="padding:1.5rem;background:#f2ead8;border:2px solid #8b2e0a;
+                    font-family:Georgia,serif;color:#1e1408;text-align:center;
+                    position:fixed;top:0;left:0;right:0;z-index:9999;">
+            <p lang="ca">⚠️ Aquesta aplicació requereix JavaScript per funcionar.</p>
+            <p lang="es">⚠️ Esta aplicación requiere JavaScript para funcionar.</p>
+            <p lang="en">⚠️ This application requires JavaScript to work.</p>
+        </div>
+    </noscript>
+
+
+    <!-- ============================================================
+         SCRIPTS — ordre obligatori: traduccions → zones → punts → funcions
+         ============================================================ -->
+    <script src="dades/traduccions.js"></script>
+    <script src="dades/zones.js"></script>
+    <script src="dades/punts.js"></script>
+    <script src="funcions.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+        El contingut d'aquesta pàgina depèn del paràmetre ?zona= de la URL.
+        El JS actualitzarà <title> i <meta name="description"> en carregar.
+    -->
+    <meta name="description" content="Explora una zona de Montbrull i els seus punts d'interès.">
+    <meta name="theme-color" content="#2a1f0e">
+
+    <title>Zona — Montbrull</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏰</text></svg>">
+    <link rel="stylesheet" href="estils.css">
+</head>
+<body>
+
+    <!-- ============================================================
+         MENÚ LATERAL
+         Idèntic a index.html — el JS l'omple i el gestiona igual.
+         ============================================================ -->
+    <nav id="menu-lateral"
+         aria-label="Menú principal"
+         aria-hidden="true">
+
+        <div id="capçalera-menu">
+            <span class="titol-menu">Montbrull</span>
+            <button id="boto-tancar-menu"
+                    aria-label="Tancar menú">✕</button>
+        </div>
+
+        <ul role="list">
+            <li>
+                <button data-seccio="introduccio"
+                        aria-controls="seccio-contingut-menu"
+                        aria-expanded="false">
+                    Introducció
+                </button>
+            </li>
+            <li>
+                <button data-seccio="mapa"
+                        aria-controls="seccio-mapa-zona"
+                        aria-current="true">
+                    Mapa
+                </button>
+            </li>
+            <li>
+                <button data-seccio="historia"
+                        aria-controls="seccio-contingut-menu"
+                        aria-expanded="false">
+                    Història
+                </button>
+            </li>
+            <li>
+                <button data-seccio="rutes"
+                        aria-controls="seccio-contingut-menu"
+                        aria-expanded="false">
+                    Rutes
+                </button>
+            </li>
+            <li>
+                <button data-seccio="arquitectura"
+                        aria-controls="seccio-contingut-menu"
+                        aria-expanded="false">
+                    Arquitectura
+                </button>
+            </li>
+            <li>
+                <button data-seccio="informacio-practica"
+                        aria-controls="seccio-contingut-menu"
+                        aria-expanded="false">
+                    Informació pràctica
+                </button>
+            </li>
+        </ul>
+
+        <p id="peu-menu">Montbrull · Guia de Patrimoni</p>
+
+    </nav><!-- /menu-lateral -->
+
+
+    <div id="coberta-menu"
+         aria-hidden="true"
+         role="presentation"></div>
+
+
+    <!-- ============================================================
+         CONTINGUT PRINCIPAL
+         ============================================================ -->
+    <main id="contingut-principal">
+
+        <!-- Capçalera sticky — igual que index.html -->
+        <header id="capçalera-principal">
+
+            <button id="boto-menu"
+                    aria-label="Obrir menú"
+                    aria-controls="menu-lateral"
+                    aria-expanded="false">☰</button>
+
+            <h1 id="titol-poble">Montbrull</h1>
+
+            <div id="selector-idioma"
+                 role="group"
+                 aria-label="Selecció d'idioma">
+                <button data-idioma="ca"
+                        aria-pressed="true"
+                        aria-label="Català">CA</button>
+                <button data-idioma="es"
+                        aria-pressed="false"
+                        aria-label="Castellà">ES</button>
+                <button data-idioma="en"
+                        aria-pressed="false"
+                        aria-label="English">EN</button>
+            </div>
+
+        </header><!-- /capçalera-principal -->
+
+
+        <!-- ========================================================
+             CAPÇALERA DE ZONA
+             El JS omple #nom-zona amb el nom traduït de la zona.
+             ======================================================== -->
+        <div id="capçalera-zona">
+
+            <!-- Botó tornar a index.html -->
+            <a href="index.html"
+               class="boto-tornar"
+               aria-label="Tornar al mapa principal">Tornar</a>
+
+            <!-- El JS insereix l'emoji + nom de la zona -->
+            <h2 id="nom-zona" aria-live="polite"></h2>
+
+        </div><!-- /capçalera-zona -->
+
+
+        <!-- ========================================================
+             MAPA DE ZONA
+             El JS crea el SVG dinàmicament dins aquest contenidor
+             via renderitzarMapaZona(). El SVG extern es carrega com
+             a <image> dins el SVG generat.
+             ======================================================== -->
+        <section id="seccio-mapa-zona"
+                 aria-label="Mapa de la zona">
+
+            <!--
+                El contenidor ha d'existir buit:
+                renderitzarMapaZona() hi insereix l'SVG complet.
+                L'alçada mínima evita el CLS (Cumulative Layout Shift)
+                mentre el mapa es genera.
+            -->
+            <div id="contenidor-mapa-zona"
+                 role="img"
+                 aria-label="Mapa de la zona amb marcadors dels punts d'interès">
+            </div>
+
+        </section><!-- /seccio-mapa-zona -->
+
+
+        <!-- ========================================================
+             BARRA DE FILTRE D'ESTRELLES
+             Filtra els PIs visibles al mapa i a la llista.
+             El JS gestiona aria-pressed i l'estat actiu.
+             ======================================================== -->
+        <div id="barra-filtre">
+
+            <span class="etiqueta-filtre"
+                  aria-hidden="true">
+                <!-- L'emoji s'afegeix per CSS (::before no cal JS) -->
+                Filtre
+            </span>
+
+            <div id="filtre-estrelles"
+                 role="group"
+                 aria-label="Filtre per rellevància">
+
+                <!--
+                    data-estrelles="0" → mostra tots
+                    data-estrelles="1" → ≥ 1 estrella (recomanats)
+                    data-estrelles="2" → ≥ 2 estrelles (destacats)
+                    data-estrelles="3" → = 3 estrelles (imprescindibles)
+                    El text d'aquests botons es tradueix per JS.
+                -->
+                <button data-estrelles="0"
+                        aria-pressed="true"
+                        class="actiu">Tots</button>
+
+                <button data-estrelles="1"
+                        aria-pressed="false">★</button>
+
+                <button data-estrelles="2"
+                        aria-pressed="false">★★</button>
+
+                <button data-estrelles="3"
+                        aria-pressed="false">★★★</button>
+
+            </div><!-- /filtre-estrelles -->
+
+        </div><!-- /barra-filtre -->
+
+
+        <!-- ========================================================
+             LLISTA DE PUNTS D'INTERÈS
+             El JS genera les targetes dinàmicament via
+             renderitzarLlistaPunts(). Si no hi ha resultats
+             apareix el missatge de traduccions.js['sense-resultats'].
+             ======================================================== -->
+        <section id="seccio-llista"
+                 aria-label="Llista de punts d'interès">
+
+            <!--
+                Contenidor buit: renderitzarLlistaPunts() hi insereix
+                els botons .targeta-punt o #missatge-sense-resultats.
+            -->
+            <ul id="llista-punts"
+                role="list"
+                aria-live="polite"
+                aria-atomic="false">
+            </ul>
+
+        </section><!-- /seccio-llista -->
+
+
+        <!-- ========================================================
+             SECCIÓ DE CONTINGUT DEL MENÚ LATERAL
+             Apareix quan l'usuari prem una secció del menú,
+             igual que a index.html, però aquí es mostra sota
+             la llista de PIs (no sota el mapa principal).
+             ======================================================== -->
+        <section id="seccio-contingut"
+                 aria-live="polite"
+                 aria-atomic="false"
+                 hidden>
+        </section><!-- /seccio-contingut -->
+
+
+    </main><!-- /contingut-principal -->
+
+
+    <!-- ============================================================
+         AVÍS SENSE JAVASCRIPT
+         ============================================================ -->
+    <noscript>
+        <div style="padding:1.5rem;background:#f2ead8;border:2px solid #8b2e0a;
+                    font-family:Georgia,serif;color:#1e1408;text-align:center;
+                    position:fixed;top:0;left:0;right:0;z-index:9999;">
+            <p lang="ca">⚠️ Aquesta aplicació requereix JavaScript per funcionar.</p>
+            <p lang="es">⚠️ Esta aplicación requiere JavaScript para funcionar.</p>
+            <p lang="en">⚠️ This application requires JavaScript to work.</p>
+        </div>
+    </noscript>
+
+
+    <!-- ============================================================
+         SCRIPTS — ordre obligatori: traduccions → zones → punts → funcions
+         ============================================================ -->
+    <script src="dades/traduccions.js"></script>
+    <script src="dades/zones.js"></script>
+    <script src="dades/punts.js"></script>
+    <script src="funcions.js"></script>
+
+</body>
+</html>
