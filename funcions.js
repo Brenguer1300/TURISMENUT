@@ -580,17 +580,27 @@ function mostrarSeccio(idSeccio) {
         return;
     }
 
+    // --- Cas 2: no som a la pàgina principal ---
+    // Des de zona.html o punt-interes.html, les seccions del menú
+    // (història, gastronomia, etc.) no s'han d'obrir sobre la pàgina
+    // actual perquè afegirien text sota el mapa/fitxa. Redirigim a
+    // index.html amb un query param i allà s'obrirà la secció.
+    if (obtenirPaginaActual() !== 'index.html') {
+        window.location.href = `index.html?seccio=${encodeURIComponent(idSeccio)}`;
+        return;
+    }
+
     const elSeccio = document.getElementById('seccio-contingut');
     if (!elSeccio) return;
 
-    // --- Cas 2: es torna a prémer la secció activa → torna al mapa ---
+    // --- Cas 3: es torna a prémer la secció activa → torna al mapa ---
     if (seccioActiva === idSeccio && paginaTeVistaMapa()) {
         mostrarVistaMapa();
         tancarMenuEnMobil();
         return;
     }
 
-    // --- Cas 3: mostra el text de la secció i amaga el mapa ---
+    // --- Cas 4: mostra el text de la secció i amaga el mapa ---
     commutarVistaMapa(false);
 
     seccioActiva = idSeccio;
@@ -824,6 +834,14 @@ function inicialitzarPaginaPrincipal() {
     //    i s'assegura que el panell de text estigui amagat)
     mostrarVistaMapa();
 
+    // 6. Si venim d'una altra pàgina amb ?seccio=<id>, obrim aquella
+    //    secció directament (permet navegar des de zona.html o
+    //    punt-interes.html cap a una secció del menú principal).
+    const seccioSolicitada = obtenirParametreUrl('seccio');
+    if (seccioSolicitada && NOMS_SECCIONS && NOMS_SECCIONS[seccioSolicitada]) {
+        mostrarSeccio(seccioSolicitada);
+    }
+
     console.info(`[Montbrull] Pàgina principal inicialitzada. Idioma: ${idiomaActual}`);
 }
 
@@ -993,6 +1011,14 @@ function crearElementMarcador(punt, cx, cy) {
         ? traduir(UI['aria-marcador-pi'])
         : 'Veure {nom}';
     g.setAttribute('aria-label', interpolar(plantilla, { nom: nomPunt }));
+
+    // --- Tooltip nadiu del navegador ---
+    // Sense aquest <title> fill, el navegador puja per l'arbre SVG i mostra
+    // el <title> del <svg> pare (el nom de la zona), fent que TOTS els
+    // marcadors ensenyin el mateix text en passar-hi el cursor per sobre.
+    const titolMarcador = document.createElementNS(espaiNoms, 'title');
+    titolMarcador.textContent = nomPunt;
+    g.appendChild(titolMarcador);
 
     // --- Cercle de fons (hit area visible) ---
     const radi = punt.estrelles === 3 ? 4.0 : punt.estrelles === 2 ? 3.2 : 2.6;
@@ -1193,7 +1219,7 @@ function generarHTMLTargetaPunt(punt) {
                 <div class="info-punt">
                     <div class="nom-punt-targeta">${nom}</div>
                     <div class="estil-punt">${estil}</div>
-                    <div class="any-punt">${punt.any}</div>
+                    ${punt.any ? `<div class="any-punt">${punt.any}</div>` : ''}
                     <div class="estrelles-targeta"
                          role="img"
                          aria-label="${etiquetaAriaEstrelles(punt.estrelles)}">
@@ -1439,10 +1465,20 @@ function renderitzarFitxaPunt(punt) {
         elNom.textContent = traduir(punt.nom);
     }
 
-    // --- Any de construcció ---
+    // --- Any de construcció (opcional: pot ser número, text tipus 'S. XIX', o absent) ---
     const elAny = document.getElementById('any-construccio');
     if (elAny) {
-        elAny.textContent = punt.any;
+        // El <dt> germà és l'etiqueta "Any:" que cal amagar alhora
+        const elAnyLabel = document.querySelector('dt[data-i18n="any-construccio"]');
+        if (punt.any !== undefined && punt.any !== null && punt.any !== '') {
+            elAny.textContent = punt.any;
+            elAny.hidden = false;
+            if (elAnyLabel) elAnyLabel.hidden = false;
+        } else {
+            elAny.textContent = '';
+            elAny.hidden = true;
+            if (elAnyLabel) elAnyLabel.hidden = true;
+        }
     }
 
     // --- Estil arquitectònic ---

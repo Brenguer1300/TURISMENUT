@@ -43,7 +43,12 @@
     --color-zona-moli:          rgba(15,  90, 60,  0.18);
     --color-zona-castell:       rgba(60,  40, 100, 0.18);
     --color-zona-vinyes:        rgba(80,  110, 20, 0.18);
-    --color-zona-hover:         rgba(184, 134, 11, 0.30);
+
+    /* --- Zones del mapa: groc per defecte, lila al hover --- */
+    --color-zona-defecte:       rgba(184, 134, 11, 0.22);   /* or vell translúcid */
+    --color-zona-defecte-vora:  rgba(184, 134, 11, 0.85);   /* contorn or vell */
+    --color-zona-hover:         rgba(157, 111, 209, 0.38);  /* lavanda translúcida */
+    --color-zona-hover-vora:    #9d6fd1;                    /* lavanda plena */
 
     /* --- Tipografia --- */
     --font-titol:    'Cinzel', 'Palatino Linotype', 'Book Antiqua', serif;
@@ -592,13 +597,13 @@ hr::before {
 .zona-clicable path,
 .zona-clicable polygon {
     /*
-       Sobre una fotografia cal un farciment molt lleu i un contorn
-       blanc translúcid: així la zona es distingeix sense tapar
-       el mapa que hi ha a sota.
+       Per defecte: farciment i contorn en or vell, prou visibles
+       sobre la fotografia però sense tapar-la. El contorn discontinu
+       manté la sensació d'esbós heràldic.
     */
-    fill:             rgba(255, 255, 255, 0.10);
-    stroke:           rgba(255, 255, 255, 0.75);
-    stroke-width:     0.6;
+    fill:             var(--color-zona-defecte);
+    stroke:           var(--color-zona-defecte-vora);
+    stroke-width:     0.7;
     stroke-dasharray: 1.5 1;
     transition:   fill var(--durada-animacio) ease,
                   stroke var(--durada-animacio) ease,
@@ -623,6 +628,7 @@ hr::before {
     stroke:       rgba(20, 12, 4, 0.85);
     stroke-width: 1.1px;
     stroke-linejoin: round;
+    transition:   fill var(--durada-animacio) ease;
 }
 
 .zona-clicable:hover path,
@@ -630,14 +636,14 @@ hr::before {
 .zona-clicable:focus-visible path,
 .zona-clicable:focus-visible polygon {
     fill:             var(--color-zona-hover);
-    stroke:           var(--color-accent-or-clar);
+    stroke:           var(--color-zona-hover-vora);
     stroke-width:     1;
     stroke-dasharray: none;   /* contorn continu en passar-hi per sobre */
 }
 
 .zona-clicable:hover text,
 .zona-clicable:focus-visible text {
-    fill: var(--color-accent-or-clar);
+    fill: var(--color-zona-hover-vora);   /* lavanda */
 }
 
 /*
@@ -1175,7 +1181,6 @@ hr::before {
     color:      var(--color-text);
     max-width:  100%;
     line-height: var(--alçada-linia);
-	white-space: pre-line;
 }
 
 /* Botó tornar a la fitxa */

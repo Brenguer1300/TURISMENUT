@@ -1,11 +1,21 @@
 // ============================================================
 // DADES: Punts d'interès de Montbrull
 // ============================================================
-// Les coordenades x/y són PERCENTATGES (0.0–100.0) sobre el
-// mapa SVG de la zona corresponent (viewBox="0 0 100 100").
+// SISTEMA DE COORDENADES
 //
-//   x: 0.0 = extrem esquerre   · x: 100.0 = extrem dret
-//   y: 0.0 = extrem superior   · y: 100.0 = extrem inferior
+// Les coordenades x/y situen el marcador sobre la imatge del mapa
+// DE LA ZONA a la qual pertany el punt (no sobre el mapa principal).
+//
+//   x → sempre de 0 a 100          (percentatge de l'amplada)
+//   y → de 0 a `alcadaViewBox`     (valor definit per a cada zona
+//                                   a dades/zones.js)
+//
+// ATENCIÓ: y NO arriba a 100. Amb una imatge apaïsada de 1351×853,
+// alcadaViewBox val 63.14, així que y ha d'estar entre 0 i 63.14.
+// Un valor de y més gran deixaria el marcador fora de la imatge.
+//
+// Fes servir eina-coordenades.html en mode "Punt": carrega-hi la
+// imatge de la zona, clica sobre el monument i copia el resultat.
 //
 // Distribució per zones:
 //   zona-centre  → pi-001, pi-002, pi-003, pi-004  (4 PIs)
@@ -30,7 +40,10 @@
  *                                   sobre el mapa SVG de la zona corresponent
  * @property {string}  imatge      - Ruta a la fotografia del PI
  * @property {{ca:string, es:string, en:string}} nom        - Nom en els 3 idiomes
- * @property {number}  any         - Any de construcció o primera documentació
+ * @property {(number|string)} [any]  - Opcional. Any de construcció (p. ex. 1342)
+ *                                       o període en text lliure (p. ex. 'S. XIX',
+ *                                       'segle XII', 'c. 1400'). Si s'omet, la
+ *                                       fila "Any" no es mostra a la fitxa.
  * @property {{ca:string, es:string, en:string}} estil      - Estil arquitectònic en els 3 idiomes
  * @property {{ca:string, es:string, en:string}} descripcio - Descripció en els 3 idiomes
  */
@@ -216,7 +229,6 @@ const PUNTS_INTERES = [
                  open to the public Tuesday to Sunday.`,
         },
     },
-
 
     // ============================================================
     // ZONA: Barri del Molí (zona-moli)
