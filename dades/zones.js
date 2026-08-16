@@ -74,7 +74,7 @@ const ZONES = [
             es: 'Plaza del Monasterio',
             en: 'Abby Square',
         },
-        arxiuMapa: 'imatges/mapes-zones/zona-monestir.svg',
+        arxiuMapa: 'imatges/mapes-zones/zona-monestir.jpg',
         formaArea: 'M30,35.4 L30.3,38 L34.4,37.8 L34.6,35.2 Z',
         centreEtiqueta: { x: 30, y: 33 },
     },
@@ -92,7 +92,7 @@ const ZONES = [
             es: 'Zona del Castillo',
             en: 'Castle Area',
         },
-        arxiuMapa: 'imatges/mapes-zones/zona-pedreguet.svg',
+        arxiuMapa: 'imatges/mapes-zones/zona-pedreguet.jpg',
         // Polígon de 5 punts per donar-li una forma lleugerament irregular
         // que segueixi el pendent imaginari del turó
         formaArea: 'M35.2,42.1 L40.7,41.9 L40.7,48.7 L35.6,48.8 Z',
@@ -100,37 +100,20 @@ const ZONES = [
     },
 
     // ----------------------------------------------------------
-    // Zona 4: Zona de les Vinyes
+    // Zona 4: CARRER DE LA BARROCA
     // Rectangle inferior: columnes 25-98, files 61-95
     // Conté: la cooperativa agrícola, el celler modernista i
     //        el mirador de les vinyes
     // ----------------------------------------------------------
     {
-        id: 'zona-santcliment',
+        id: 'zona-barroca',
         nom: {
             ca: 'Zona Sant Climent',
             es: 'Zona de Sant Climent',
             en: 'Sant Climent Area',
         },
-        arxiuMapa: 'imatges/mapes-zones/zona-santcliment.svg',
+        arxiuMapa: 'imatges/mapes-zones/zona-barroca.jpg',
         formaArea: 'M85.2,44.6 L86.1,58.2 L98.8,59.1 L98.7,45 Z',
-        centreEtiqueta: { x: 61, y: 78 },
-    },
-	// ----------------------------------------------------------
-    // Zona 5: FONTPICANT
-    // Rectangle inferior: columnes 25-98, files 61-95
-    // Conté: la cooperativa agrícola, el celler modernista i
-    //        el mirador de les vinyes
-    // ----------------------------------------------------------
-    {
-        id: 'zona-fontpicant',
-        nom: {
-            ca: 'Zona Sde la Font Picant',
-            es: 'Zona de la Font Picant',
-            en: 'Font Picant Area',
-        },
-        arxiuMapa: 'imatges/mapes-zones/zona-fontpicant.svg',
-        formaArea: 'M1,1 L1.3,10.4 L14.7,11.1 L15.1,1 Z',
         centreEtiqueta: { x: 61, y: 78 },
     },
 

@@ -571,20 +571,20 @@ hr::before {
     border-bottom: 1px solid var(--color-vora-forta);
 }
 
-/* Marc decoratiu al voltant del mapa */
-#seccio-mapa::before {
-    content:  '';
-    position: absolute;
-    inset:    var(--espai-petit);
-    border:   1px solid var(--color-accent-or);
-    pointer-events: none;
-    z-index:  var(--z-marcadors);
-    opacity:  0.4;
-}
+/* NOTA: s'ha retirat el marc decoratiu (#seccio-mapa::before)
+   per deixar el mapa a sang, sense recuadre al voltant. */
 
 #mapa-poble {
     width:   100%;
-    height:  100%;
+    /*
+       height:auto fa que el SVG ocupi l'alçada que li correspon per
+       la proporció del seu viewBox, i que quedi ancorat a dalt de la
+       secció (que segueix sent flexible amb flex:1). Així evitem que
+       el navegador el centri verticalment i deixi buit a sobre en
+       pantalles altes. Si sobra espai a sota, el fons terrós de
+       #seccio-mapa el cobreix.
+    */
+    height:  auto;
     display: block;
 }
 

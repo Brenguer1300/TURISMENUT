@@ -25,15 +25,15 @@
 const UI = {
 
     // --- Capçalera i navegació general ---
-    'titol-app':            { ca: 'Montbrull',           es: 'Montbrull',              en: 'Montbrull'              },
+    'titol-app':            { ca: 'Amer',           es: 'Amer',              en: 'Amer'              },
     'obrir-menu':           { ca: 'Obrir menú',          es: 'Abrir menú',             en: 'Open menu'              },
     'tancar-menu':          { ca: 'Tancar menú',         es: 'Cerrar menú',            en: 'Close menu'             },
     'tornar':               { ca: 'Tornar',              es: 'Volver',                 en: 'Back'                   },
 
     // --- Mapa principal ---
-    'mapa-poble-label':     { ca: 'Mapa interactiu de Montbrull',
-                              es: 'Mapa interactivo de Montbrull',
-                              en: 'Interactive map of Montbrull'                                                     },
+    'mapa-poble-label':     { ca: 'Mapa interactiu de Amer',
+                              es: 'Mapa interactivo de Amer',
+                              en: 'Interactive map of Amer'                                                     },
     'instruccio-mapa':      { ca: 'Toca una zona per explorar-la',
                               es: 'Toca una zona para explorarla',
                               en: 'Tap a zone to explore it'                                                         },
@@ -114,11 +114,13 @@ const NOMS_SECCIONS = {
 const CONTINGUT_SECCIONS = {
 
     'introduccio': {
-        ca: `<p>Benvinguts a <strong>Montbrull</strong>, un petit municipi de la Catalunya central
-             enclavat entre vinyes i boscos de roure. Amb poc més de 800 habitants,
-             conserva intacte el seu nucli medieval, les seves tradicions vitivinícoles
-             i una hospitalitat que fa tornar els qui el visiten.</p>
-             <p>Passejar pels seus carrers empedrats és fer un viatge de vuit segles enrere.</p>`,
+        ca: `<p>Benvinguts a <strong>Amer</strong>, ón els carrers estrets empedrats i l'olor de fum a l'hivern fan deixar enrere les preocupacions
+			<br> No serà cap sorpresa, aquí no trobareu cap Sagrada Família ni la seu comarcal dels Thyssen.
+			Si hi ha és de mil anys de història, història petita i amagada. No la veureu als llibres ni se'n fan documentals. <br>
+			Aquí tenim la història de la gent de carrer, no eren ni abats ni cavallers ni tampoc burgesos.
+			
+		</p>
+             <p>És la història de la gent menuda que no tenía un escrivà que li guardés registre, acompanyeu-nos a trobar-la.</p>`,
 
         es: `<p>Bienvenidos a <strong>Montbrull</strong>, un pequeño municipio de la Cataluña
              central enclavado entre viñedos y bosques de roble. Con poco más de 800 habitantes,
@@ -134,14 +136,38 @@ const CONTINGUT_SECCIONS = {
     },
 
     'historia': {
-        ca: `<p>Montbrull apareix documentat per primera vegada l'any <strong>1163</strong>
-             en una carta de població atorgada pel comte Ramon Berenguer IV. Al llarg de
-             l'edat mitjana va créixer a redós del seu castell, avui en ruïnes però
-             encara visible des de qualsevol punt del poble.</p>
-             <p>Al segle XVIII, la indústria tèxtil i el comerç del vi van donar una nova
-             prosperitat al municipi, reflectida en les cases pairals del carrer Major.</p>
-             <p>Durant la guerra del Francès (1808-1814) el poble va patir importants
-             danys, dels quals va trigar dècades a recuperar-se.</p>`,
+        ca: `<p>La hstòria d'Amer comença amb la fundació del monestir al 949. <br>
+		No és que abans no hi hagués hagut vida, sinó que no en consta documentació. <br>
+		Com la majoria de monestirs el d'Amer va anar acumulant donacions i riqueses i aixó va atraure població que es va anar instal·lant on va poder. <br>
+		Per entendre la importància del monestir, penseu que fins a 6 monjos d'aquest van ser escollits presidents de la Generalitat. <br>
+		Aixó el que indica és que o bé les famílies nobles enviaven els seus fills ja instruïts al monestir (i utilitzaven la influència familiar per ser escollits) <br>
+		O bé l'escriptorium del monestir era tant bo que els monjos sortien prou ben preparats per ser-ho. <br>
+		Probablement una mica de cada cosa. <br>
+		L'establiment del mercat setmanal al S.XII és un altre indicador de prosperitat. <br>
+		La prosperitat va començar a devallar amb la crisi del S.XV, el gran terratrèmol de 1427, 
+		l'any de la picor 1471 o la pesta de 1483 no van ajudar precisament. 
+		El monestir va seguir subsistint, amb millor o major encerts, fins la desamortització de 1835. <br>
+		<br><strong>I la gent menuda on queda?</strong><br>
+		El monestir, edificis annexos i horts ocupaven gran part del que ara és el poble antic. 
+		La gent, atreta per la seguretat que aportava el monestir i les possibilitats de comerç 
+		es va anar instal·lant on podia. I com avui dia als vorals de la autopista hi ha barraquisme 
+		la població es va anar instal·lant a la carretera reial que duia a Girona, encara avui carrer Girona. <br>
+		És l'actual barri del Pedreguet. <br><br>
+		Tinguem present que la comunitat de monjos es dedicava a resar, tenir cura del monestir, etc, sí. <br>
+		Però l'abat.. l'abat a efectes pràctics era un senyor feudal més, s'assegurava que tothom pagués els seus impostos, <br>
+		administrava justícia (empresonaments), era l'autoritat absoluta. <br>
+		I com? Us imagineu els monjos armats, patrullant els carrers i defensant els murs del monestir? <br>
+		LLEIG<br>
+		Millor externalitzem, i així a l'entrada del poble hi havia el Castell de Estela (avui ruinós) 
+		otorgat a un baró, controlava l'accés al poble i en cas de necessitat era prou aprop per socórrer els monjos. <br>
+		No consten revoltes però si se sap que al 1335 l'Abat renuncià als anomenats "mals usos" 
+		i tampoc consta que se li apareguès un arcàngel per fer-lo canviar de parer. <br>
+		Les guerres dels remences a la segona meitat del S.XV, entre d'altres, van aportar a Amer disposar de Batlle. <br>
+		Quedant així separada la població de la administració directa de l'Abat. <br><br>
+		Acabant ja: <br>
+		El S.XVIII va ser de bonaça amb un gran increment de població<br> 
+		Al S.XIX hi va haver una incipient industrialització accelerada amb la arribada del ferrocarril Girona-Olot (popularment el carrilet).
+			</p>`,
 
         es: `<p>Montbrull aparece documentado por primera vez en el año <strong>1163</strong>
              en una carta de población otorgada por el conde Ramón Berenguer IV. A lo largo de
@@ -165,12 +191,12 @@ const CONTINGUT_SECCIONS = {
     'rutes': {
         ca: `<p>Montbrull ofereix tres rutes senyalitzades adaptades a tots els nivells:</p>
              <ul>
-               <li><strong>Ruta del Nucli Antic</strong> — 1,2 km · 45 min · fàcil.
-                   Recorre els principals monuments del centre històric.</li>
-               <li><strong>Ruta de les Vinyes</strong> — 4,5 km · 2 h · moderat.
-                   Circular per les vinyes amb vistes panoràmiques al castell.</li>
-               <li><strong>Ruta del Bosc de Mas Pujol</strong> — 8 km · 3,5 h · mitjà.
-                   Senda forestal fins a l'ermita de Sant Roc (s. XIV).</li>
+               <li><strong>Ruta de SantaBrígida</strong> — 1,2 km · 45 min · fàcil.
+                   Recorre els principals monuments del centre històric.
+				   https://es.wikiloc.com/rutas-senderismo/amer-santa-brigida-23507062</li>
+               <li><strong>Ruta de voramera i el Carrilet</strong> — 4,5 km · 2 h · moderat.
+                   Circular pel poble  https://www.wikiloc.com/nordic-walking-trails/amer-voramera-75666065.</li>
+              
              </ul>
              <p>Tots els itineraris disposen de panells informatius i codis QR
              amb contingut addicional.</p>`,
@@ -201,17 +227,36 @@ const CONTINGUT_SECCIONS = {
     },
 
     'arquitectura': {
-        ca: `<p>El patrimoni arquitectònic de Montbrull abraça sis segles d'història.
-             Destaquen tres estils principals:</p>
-             <ul>
-               <li><strong>Gòtic català</strong> (ss. XIV-XV): l'església de Sant Pere
-                   i la porta de la Muralla en són els millors exemples.</li>
-               <li><strong>Renaixement</strong> (s. XVI): la Plaça Major i el portal
-                   de Can Torrentó mostren la influència italiana del moment.</li>
-               <li><strong>Modernisme</strong> (1890-1920): el Casino dels Vinyaters
-                   i la façana de la Cooperativa Agrícola aporten un toc singular
-                   al conjunt del nucli.</li>
-             </ul>`,
+        ca: `<p>Perdoneu, sí. Creiem cal petita introducció de l'arquitectura abans de començar.<br>
+             Història de la arquitectura:</p>
+             Avui en día, amb formigó armat i acer, no hi pensem, quan has construït cuatre parets
+			 et trobes amb problemes per: <br>
+			 <ul>
+               <li>Crear un espai per passar (porta) </li>
+			   <li>Crear un espai per ventilar i il·luminar (finestra)</li>
+			  </ul>
+			  Penseu en quan els nens intenten construïr una cabana, o que la humanitat no va viure en coves perquè els agradés estar a les fosques durant el dia o respirant fum de les fogueres. <br>
+			 No us costarà trobar com els abats i senyors contractaven mestres d'obres i picapedrers per fer una volta de canó (Romànic) o Arcs Ojivals (Gòtic). <br>
+			 Aquí ens centrarem en la "arquitectura popular", la que no ha deixat rastre escrit. Cada ú s'aixecava casa seva com podía. <br>
+			 <br>
+			 Sol·lucions:<br>
+			 <br><strong>Podem posar una biga de fusta.</strong><br>
+			 Tot el pes de la paret (i pisos superiors) caurà sobre aquesta biga.<br>
+			 Ha de ser fusta molt bona, molt gruixuda i... resumint no aguanta. 
+			 <br>Només apta per finestres molt petites i només als pisos superiors.<br>
+			 <br><strong>Podem posar una gran roca.</strong><br>
+			 No és ideal, però funciona millor.<br>
+			 Tenim el que són les LLINDES: blocs de pedra gruixuda que permeten una amplada digna d'una porta.<br>
+			 No només estàn a la part més visible de la entrada, també són costoses de fer.<br>
+			 Aquí és on trobareu sovint la inscripció amb l'any, el nom del propietari, la seva professió o un goig a la Mare de Déu.<br>
+			 Si tens una llinda, tens una casa. És un orgull.<br>
+			 <br><strong>Perque no copiem la porta ovalada de l'esglèsia?</strong><br>
+			 Tu.. tu tens cuartos eh, aixó et permet una entrada per on pot passar un carro!<br>
+			 La tecnología tampoc és moderna, els romans ja la feien. Però per fer suficients peces de pedra en forma trapezoidal que encaixin a la perfecció<br>
+			 i reparteixin el pes de uniformement a ambdós costats... necessites un picapedrer de qualitat.<br>
+			 En trobareu tìpicament a les masies reformades al SXVIII
+			 quan la exportació de vi donava bons beneficis.
+			 `,
 
         es: `<p>El patrimonio arquitectónico de Montbrull abarca seis siglos de historia.
              Destacan tres estilos principales:</p>
@@ -239,19 +284,44 @@ const CONTINGUT_SECCIONS = {
     },
 
     'informacio-practica': {
-        ca: `<p><strong>Com arribar-hi</strong><br>
-             En cotxe: C-37 des de Manresa, sortida Montbrull km 42.<br>
-             En autobús: línia regional L-14, parada Montbrull Centre (dilluns a dissabte).</p>
+        ca: `<p><strong>Telèfons interés</strong><br>
+             Ajuntament: 972 431 112 <br>
+			 Mossos Santa Coloma Farners: 972 18 16 75 <br>
+			 Cap d'Anglés:  972 421 498 <br>
+			 Farmàcia d'Amer: 972430316
+             </p>
              <p><strong>Aparcament</strong><br>
-             Aparcament gratuït a la zona esportiva (Carrer del Molí, s/n),
-             a 5 minuts caminant del nucli antic.</p>
-             <p><strong>Oficina de Turisme</strong><br>
-             Plaça Major, 1 · Tel. 938 00 00 00<br>
-             Primavera/tardor: dl-dv 9-14 h · ds 10-14 h<br>
-             Estiu (jul-ago): dl-dg 9-19 h</p>
+             Amb excepció dels migdies laborables no acostuma a haver problemes d'aparcament.
+			Amb tot trobareu sempre espai a l'aparcament municipal, a la dreta de la carretera en direcció Olot:	Carrer del Riu Rogent, s/n
+             <br>
+			 a 5 minuts caminant del nucli antic.</p>
+             <p><strong>Gasolineres</strong><br>
+             A la sortida del poble en direcció Olot trobareu una gasolinera Repsol que disposa també de botiga de 6 a 21h<br>
+			 Amb tot, a l'entrada d'Anglés trobareu a la primera rotonda dues gasolineres low cost que es fan competència.
+			 
+			 </p> 
+			 <p><strong>Alimentació</strong><br>
+			 Excepte a la farmàcia i l'estanc, podeu fer la compra a quasi qualsevol botiga.
+			 Els forns de pa tenen brics de llet i pasta seca, a la pastisseria pots trobat tabac i revistes...
+             Amb tot, entrant la vila hi ha un supermercat Charter i un Suma a la plaça. <br>
+			 
+			 Aquí el pa és bo, hi ha més de 6 forns de pa. Cada família té el seu i no ens mullarem però compreu-ne!.
+			 
+			 </p>
+			 <p><strong>Especialitat d'Amer</strong><br>
+             Típic d'Amer són els Capricis, els trobareu a la Pastisseria Puigdemont a Sant Miquel 6  <br>
+			 Destaquem també els Rocs de la Pastisseria Martoni (Plaça de la Vila 31)						 			 
+			 </p>
+			 
+			 <p><strong>Ón menjar</strong><br>
+			 A l'Snack Bar (tocant a la farmàcia) podreu esmorzar, dinar, sopar i pendre una cervesa a la fresca a bon preu <br>
+			 A tots els bars de la plaça trobareu menú diari i si voleu seure amb calma recomanem Can Co-Absis, darrere l'absis del Monestir.
+			 
+					 
+			 </p>
+			 
              <p><strong>Allotjament</strong><br>
-             El municipi compta amb 2 cases rurals i 1 hostal.
-             Consulta disponibilitat a l'Oficina de Turisme.</p>`,
+             Confiem que no us calgui i ens recomaneu.</p>`,
 
         es: `<p><strong>Cómo llegar</strong><br>
              En coche: C-37 desde Manresa, salida Montbrull km 42.<br>

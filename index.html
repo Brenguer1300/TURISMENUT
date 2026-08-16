@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Descobreix Montbrull: mapa interactiu dels punts d'interès del poble.">
+    <meta name="description" content="Descobreix Amer: mapa interactiu dels punts d'interès del poble.">
     <meta name="theme-color" content="#2a1f0e">
 
-    <title>Montbrull — Guia de Punts d'Interès</title>
+    <title>Amer — Guia de Punts d'Interès</title>
 
     <!-- Favicon inline (emogi de castell, funciona a Chrome/Firefox) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏰</text></svg>">
@@ -26,7 +26,7 @@
 
         <!-- Capçalera del drawer -->
         <div id="capçalera-menu">
-            <span class="titol-menu">Montbrull</span>
+            <span class="titol-menu">Amer</span>
             <button id="boto-tancar-menu"
                     aria-label="Tancar menú">✕</button>
         </div>
@@ -78,7 +78,7 @@
         </ul>
 
         <!-- Peu del drawer -->
-        <p id="peu-menu">Montbrull · Guia de Patrimoni</p>
+        <p id="peu-menu">Amer · Turismenut</p>
 
     </nav><!-- /menu-lateral -->
 
@@ -103,7 +103,7 @@
                     aria-expanded="false">☰</button>
 
             <!-- El JS omple aquest text des de UI['titol-app'] -->
-            <h1 id="titol-poble">Montbrull</h1>
+            <h1 id="titol-poble">Amer</h1>
 
             <div id="selector-idioma"
                  role="group"
@@ -129,20 +129,20 @@
              viewBox="0 0 100 63.14": x de 0 a 100, y de 0 a 63.14.
              ======================================================== -->
            <section id="seccio-mapa"
-                 aria-label="Mapa interactiu del poble de Montbrull">
+                 aria-label="Mapa interactiu del poble d'Amer">
 
             <svg id="mapa-poble"
-                 viewBox="0 0 100 63"
+                 viewBox="0 0 100 88"
                  preserveAspectRatio="xMidYMid meet"
                  role="img"
-                 aria-label="Mapa de Montbrull amb quatre zones clicables"
+                 aria-label="Mapa d'Amer amb quatre zones clicables"
                  xmlns="http://www.w3.org/2000/svg">
 
-                <title>Mapa de Montbrull</title>
+                <title>Mapa</title>
                 <desc>
-                    Mapa esquemàtic del poble de Montbrull amb quatre zones
-                    d'interès: Centre Històric, Barri del Molí, Zona del
-                    Castell i Zona de les Vinyes.
+                    Mapa esquemàtic del poble de Amer amb quatre zones
+                    d'interès: Centre de la Vila, Barri del Pedreguet, Zona del
+                    Monestir i Carrer de la Barroca.
                 </desc>
 
                 <!-- ================================================
@@ -170,7 +170,7 @@
                      ================================================ -->
                 <image href="imatges/mapa-poble.jpg"
                        x="0" y="0"
-                       width="100" height="63"
+                       width="100" height="88"
                        preserveAspectRatio="xMidYMid slice"/>
 
 
@@ -192,8 +192,8 @@
                    tabindex="0"
                    role="button"
                    aria-label="Explorar Plaça Vila">
-					<path d="M33.9,37.7 L33.9,40.6 L37.3,40.8 L37.5,37.6 Z"/>
-                    <text x="24" y="42" class="etiqueta-zona">Plaça</text>
+					<path d="M51.8,51.2 L52.3,56.4 L61,56.2 L60.4,50.5 Z"/>
+                    <text x="40" y="56" class="etiqueta-zona">Plaça</text>
                 </g>
 
                 <!-- Zona 2: PLAÇA MONESTIR -->
@@ -202,8 +202,8 @@
                    tabindex="0"
                    role="button"
                    aria-label="Explorar Plaça Monestir">
-                    <path d="M30,35.4 L30.3,38 L34.4,37.8 L34.6,35.2 Z"/>
-                    <text x="18" y="36" class="etiqueta-zona">Monestir</text>
+                    <path d="M56.2,48.8 L46.9,48.7 L47,40.8 L56.8,40.8 Z"/>
+                    <text x="30" y="46" class="etiqueta-zona">Monestir</text>
                 </g>
 
                 <!-- Zona 3: BARRI DEL PEDREGUET-->
@@ -212,63 +212,23 @@
                    tabindex="0"
                    role="button"
                    aria-label="Explorar Barri del Pedreguet">
-                    <path d="M35.2,42.1 L40.7,41.9 L40.7,48.7 L35.6,48.8 Z"/>
-                    <text x="55" y="45" class="etiqueta-zona">Pedreguet</text>
+                    <path d="M69.1,77.8 L55.3,77.9 L53.5,58.7 L68.4,58.5 Z"/>
+                    <text x="35" y="70" class="etiqueta-zona">Pedreguet</text>
                 </g>
 
-                <!-- Zona 4: SANT CLIMENT -->
+                <!-- Zona 4: CARRER DE LA BARROCA -->
                 <g class="zona-clicable"
-                   data-id-zona="zona-santcliment"
+                   data-id-zona="zona-barroca"
                    tabindex="0"
                    role="button"
-                   aria-label="Explorar Sant Climent">
-                    <path d="M85.2,44.6 L86.1,58.2 L98.8,59.1 L98.7,45 Z"/>
-                    <text x="65" y="55" class="etiqueta-zona">Sant Climent</text>
+                   aria-label="Explorar Carrer de la Barroca">
+                    <path d="M66.8,39.6 L67.1,47.8 L58.6,47.8 L58.6,39.1 Z"/>
+                    <text x="70" y="35" class="etiqueta-zona">Barroca</text>
                 </g>
 				
-		      <!-- Zona : FONTPICANT-->
-                <g class="zona-clicable"
-                   data-id-zona="zona-fontpicant"
-                   tabindex="0"
-                   role="button"
-                   aria-label="Explorar Font Picant">
-                    <path d="M1,1 L1.3,10.4 L14.7,11.1 L15.1,1 Z"/>
-                    <text x="15" y="15" class="etiqueta-zona">Font Picant</text>
-                </g>
 
-                <!-- ================================================
-                     DECORACIÓ: Rosa dels vents / ornament cartogràfic
-                     (cantó inferior dret, fora de les zones)
-                     ================================================ -->
-                <g transform="translate(89, 82)" opacity="0.30">
-                    <!-- Punts cardinals -->
-                    <polygon points="0,-5 1,-1.5 -1,-1.5" fill="#8b4513"/><!-- N -->
-                    <polygon points="0,5 1,1.5 -1,1.5"  fill="#8b6e3a"/><!-- S -->
-                    <polygon points="-5,0 -1.5,1 -1.5,-1" fill="#8b6e3a"/><!-- O -->
-                    <polygon points="5,0 1.5,1 1.5,-1"  fill="#8b6e3a"/><!-- E -->
-                    <!-- Cercle central -->
-                    <circle cx="0" cy="0" r="1.2"
-                            fill="none" stroke="#8b4513" stroke-width="0.3"/>
-                    <!-- N -->
-                    <text x="0" y="-6.5"
-                          text-anchor="middle"
-                          font-family="'Cinzel', serif"
-                          font-size="2.5"
-                          font-weight="600"
-                          fill="#8b4513">N</text>
-                </g>
-
-                <!-- Ornament de marc: cantoneres -->
-                <g stroke="#b8860b" stroke-width="0.4" fill="none" opacity="0.5">
-                    <!-- Cantonera superior esquerra -->
-                    <path d="M 1,5 L 1,1 L 5,1"/>
-                    <!-- Cantonera superior dreta -->
-                    <path d="M 95,1 L 99,1 L 99,5"/>
-                    <!-- Cantonera inferior esquerra -->
-                    <path d="M 1,95 L 1,99 L 5,99"/>
-                    <!-- Cantonera inferior dreta -->
-                    <path d="M 95,99 L 99,99 L 99,95"/>
-                </g>
+                <!-- NOTA: s'ha retirat la rosa dels vents decorativa
+                     per deixar el mapa net, sense ornaments. -->
 
             </svg><!-- /mapa-poble -->
 

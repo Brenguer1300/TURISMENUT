@@ -53,18 +53,16 @@ const PUNTS_INTERES = [
 
 
     // ============================================================
-    // ZONA: Centre Històric (zona-centre)
-    // Mapa de zona: imatges/mapes-zones/zona-centre.svg
-    // Els 4 PIs es distribueixen per les quatre subàrees naturals
-    // del nucli: l'àrea religiosa (nord), la plaça central, el
-    // portal de la muralla (est) i el carrer Major (sud).
+    // ZONA: Centre Plaça Vila (zona-vila)
+    // Mapa de zona: imatges/mapes-zones/zona-vila.svg
+    // Els PIs es distribueixen per les quatre subàrees naturals
     // ============================================================
 
     {
         id: 'pi-001',
         idZona: 'zona-vila',
         estrelles: 2,                                // Imprescindible
-        coordenades: { x: 45.3, y: 37.7 },          // Àrea nord: la nau de l'església domina
+        coordenades: {  x:47 ,  y: 31 },          // Àrea nord: la nau de l'església domina
         imatge: 'imatges/punts-interes/pi-001.jpg',
         nom: {
             ca: 'Plaça de la Vila',
@@ -127,7 +125,7 @@ const PUNTS_INTERES = [
             es: 'Can Panosa',
             en: 'Can Panosa',
         },
-        any: 1800,
+        any: 'S.XVII',
         estil: {
             ca: 'Gòtic tardà',
             es: 'Gótico tardío',
@@ -164,11 +162,11 @@ const PUNTS_INTERES = [
             es: 'Can Gultresa',
             en: 'Can Gultresa',
         },
-        any: 1900,
+        any: 1883,
         estil: {
-            ca: 'Gòtic militar',
-            es: 'Gótico militar',
-            en: 'Military Gothic',
+            ca: 'Modernisme',
+            es: 'Modernismo',
+            en: 'Modernisme',
         },
         descripcio: {
             ca: `Can Gultresa. Plaça de la Vila 5.
@@ -197,18 +195,18 @@ const PUNTS_INTERES = [
         id: 'pi-004',
         idZona: 'zona-vila',
         estrelles: 1,                                // Recomanat
-        coordenades: { x:  46.1,   y:  53.2 },          // Àrea sud: carrer Major
+        coordenades: { x:  46.1,   y:  48 },          // Àrea sud: carrer Major
         imatge: 'imatges/punts-interes/pi-004.jpg',
         nom: {
             ca: 'Llinda de Can Mundet',
             es: 'Llinda de Can Mundet',
             en: 'Llinda de Can Mundet',
         },
-        any: 1561,
+        any: 'S. XIV',
         estil: {
-            ca: 'Renaixement català',
-            es: 'Renacimiento catalán',
-            en: 'Catalan Renaissance',
+            ca: 'Gòtic',
+            es: 'Gótico',
+            en: 'Gotic',
         },
         descripcio: {
             ca: `Llinda de Can Mundet. Plaça de la Vila 26.
@@ -230,37 +228,30 @@ const PUNTS_INTERES = [
         },
     },
 
-    // ============================================================
-    // ZONA: Barri del Molí (zona-moli)
-    // Mapa de zona: imatges/mapes-zones/zona-moli.svg
-    // Zona estreta i allargada al costat del Rec de Montbrull.
-    // Els 2 PIs es situen al nord (molí) i al centre (font).
-    // ============================================================
-
     {
         id: 'pi-005',
-        idZona: 'zona-moli',
-        estrelles: 2,                                // Destacat
-        coordenades: { x: 52.0, y: 28.0 },          // Nord de la zona: molí prop del rec
+        idZona: 'zona-vila',
+        estrelles: 1,                                // Destacat
+        coordenades: { x:  34.8,   y:  48 },          // Nord de la zona: molí prop del rec
         imatge: 'imatges/punts-interes/pi-005.jpg',
         nom: {
-            ca: 'Molí Fariner de Can Puig',
-            es: 'Molino Harinero de Can Puig',
-            en: 'Can Puig Flour Mill',
+            ca: 'Ca Espinet',
+            es: 'Ca Espinet',
+            en: 'Ca Espinet',
         },
-        any: 1408,
+        any: 'S.XIX',
         estil: {
-            ca: 'Arquitectura rural medieval',
-            es: 'Arquitectura rural medieval',
-            en: 'Medieval rural architecture',
+            ca: 'Modernisme',
+            es: 'Modernismo',
+            en: 'Modernisme',
         },
         descripcio: {
-            ca: `El Molí Fariner de Can Puig és un dels molins hidràulics medievals millor conservats de la
-                 comarca. Documentat des del 1408, aprofitava el cabal del Rec de Montbrull per accionar
-                 dues moles de pedra calcària. L'edifici de planta rectangular amb coberta de lloses i la
-                 bassa exterior amb el canal d'alimentació es conserven gairebé intactes. L'any 2015 es va
-                 restaurar la roda de fusta i s'hi va instal·lar un circuit interpretatiu que explica el
-                 procés de molta tradicional. Visitable els caps de setmana de maig a octubre.`,
+            ca: `Ca l'Espinet. Plaça de la Vila 20.
+			Edifici estret, d'una sola crugia, que s'aboca a la plaça de la Vila amb una façana d'estil romàntic, 
+			emmarcada amb dues falses pilastres d'ordre gegant i coronada amb una cornisa decorada damunt la qual hi ha una barana d'obra entre dos gerros.
+			Les llindes dels dos primers pisos estan ornamentades amb relleus vegetals i figures femenines.
+			El parament cec està acabat amb un fals encoixinat.
+`,
             es: `El Molino Harinero de Can Puig es uno de los molinos hidráulicos medievales mejor conservados
                  de la comarca. Documentado desde 1408, aprovechaba el caudal del Rec de Montbrull para
                  accionar dos muelas de piedra caliza. El edificio de planta rectangular con cubierta de
@@ -278,27 +269,137 @@ const PUNTS_INTERES = [
 
     {
         id: 'pi-006',
-        idZona: 'zona-moli',
+        idZona: 'zona-vila',
         estrelles: 1,                                // Recomanat
-        coordenades: { x: 48.0, y: 62.0 },          // Centre de la zona: encreuament de carrers
+        coordenades: { x:    29 ,  y:  32.1},          // Centre de la zona: encreuament de carrers
         imatge: 'imatges/punts-interes/pi-006.jpg',
         nom: {
-            ca: 'Font del Rec',
-            es: 'Fuente del Rec',
-            en: 'Rec Fountain',
+            ca: 'Can Guifre',
+            es: 'Can Guifre',
+            en: 'Can Guifre',
         },
-        any: 1723,
+        any: 1930,
         estil: {
-            ca: 'Barroc popular',
-            es: 'Barroco popular',
-            en: 'Vernacular Baroque',
+            ca: 'Eclèctic',
+            es: 'Eclectico',
+            en: 'Eclectico',
         },
         descripcio: {
-            ca: `La Font del Rec és una de les fonts públiques més antigues de Montbrull en ús continuat.
-                 Construïda el 1723 per sufragi popular, presenta un frontó triangular amb la data gravada
-                 i quatre brolladors de ferro forjat en forma de cap de lleó. Enmig del Barri del Molí,
-                 durant segles va ser el punt d'abastiment d'aigua de la zona nord del poble. La llegenda
-                 local diu que beure'n l'aigua el dia de Sant Joan garanteix un any de bona salut.`,
+            ca: `Can Guifre. Plaça de la Vila 13.
+			     Construït al segon terç del S.XIX és la única csa de la plaça amb .
+				 La particularitat és que si us acosteu a la porta sota la porchada podreu veure la singularitat
+				 amb que es podia resoldre la absència de porters automàtics. 
+				 Nota, mireu al sostre!`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+	    {
+        id: 'pi-007',
+        idZona: 'zona-vila',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x:    20 ,  y:  38},          // Centre de la zona: encreuament de carrers
+        imatge: 'imatges/punts-interes/pi-007.jpg',
+        nom: {
+            ca: 'Can Junquera',
+            es: 'Can Junquera',
+            en: 'Can Junquera',
+        },
+        any: 1930,
+        estil: {
+            ca: 'Eclèctic',
+            es: 'Eclectico',
+            en: 'Eclectico',
+        },
+        descripcio: {
+            ca: `Can Junquera. Carrer Narcís Junquera 1.
+			     Edifici entre mitgeres de l'any 1895, d'estil eclèctic. Consta de planta baixa i dos pisos. 
+				 El pis principal amb balcó corregut i el pis superior amb tres balcons individuals. 
+				 L'ornamentació destaca pels frisos esgrafiats de color vermell i els guardapols del pis principal. 
+				 Va ser la casa de la família Junquera, de la que era l'alcalde perpetu durant el Franquisme.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+	 {
+        id: 'pi-008',
+        idZona: 'zona-vila',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x:    8 ,  y:  16},          // Centre de la zona: encreuament de carrers
+        imatge: 'imatges/punts-interes/pi-008.jpg',
+        nom: {
+            ca: 'Can Soler',
+            es: 'Can Soler',
+            en: 'Can Soler',
+        },
+        any: 1930,
+        estil: {
+            ca: 'Eclèctic',
+            es: 'Eclectico',
+            en: 'Eclectico',
+        },
+        descripcio: {
+            ca: `Can Soler. Carrer Narcís Junquera 8.
+			     Edifici entre mitgeres de planta baixa i dos pisos. El pis principal té un balcó corregut mentre que el superior té tres balcons individuals, 
+				 tots ells amb la barana bombada. L'ornamentació dels dos pisos està basada en uns plafons i un fals encoixinat que juguen amb els colors blanc i vermell, 
+				 invertits en un pis i en l'altre.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+	 {
+        id: 'pi-009',
+        idZona: 'zona-vila',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x:    62 ,  y:  36},          // Centre de la zona: encreuament de carrers
+        imatge: 'imatges/punts-interes/pi-009.jpg',
+        nom: {
+            ca: 'Ajuntament',
+            es: 'Ayuntamiento',
+            en: 'Council City',
+        },
+        any: 1930,
+        estil: {
+            ca: 'Noucentisme',
+            es: 'Noucentismo',
+            en: 'Newcentury',
+        },
+        descripcio: {
+            ca: `Ajuntament. Plaça de la Vila 2.
+			     Edifici Noucentista molt simplista. Destaca l'esgrafiat central amb l'escut del poble
+`,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
                  y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
@@ -315,182 +416,48 @@ const PUNTS_INTERES = [
 
 
     // ============================================================
-    // ZONA: Zona del Castell (zona-castell)
-    // Mapa de zona: imatges/mapes-zones/zona-castell.svg
-    // Zona en pendent, al turó que domina el poble.
-    // PI-007 a la cima (castell), PI-008 a mig pendent (mirador).
+    // ZONA: Zona del Monestir (zona-monestir)
+    // Mapa de zona: imatges/mapes-zones/zona-monestir.jpg
+    // Zona historica
     // ============================================================
 
-    {
-        id: 'pi-007',
-        idZona: 'zona-castell',
-        estrelles: 3,                                // Imprescindible
-        coordenades: { x: 42.0, y: 25.0 },          // Cima del turó, zona nord-central
-        imatge: 'imatges/punts-interes/pi-007.jpg',
-        nom: {
-            ca: 'Ruïnes del Castell de Montbrull',
-            es: 'Ruinas del Castillo de Montbrull',
-            en: 'Montbrull Castle Ruins',
-        },
-        any: 1163,
-        estil: {
-            ca: 'Romànic militar',
-            es: 'Románico militar',
-            en: 'Military Romanesque',
-        },
-        descripcio: {
-            ca: `Les ruïnes del Castell de Montbrull constitueixen el primer nucli documentat del municipi,
-                 esmentat per primera vegada a la carta de població de 1163. De la fortalesa original es
-                 conserven la torre de l'homenatge de planta circular —amb murs d'1,8 metres de gruix—,
-                 tres panys de muralla i les restes de la cisterna subterrània. Les excavacions arqueològiques
-                 dels anys 1994-1998 van posar al descobert ceràmica andalusina del segle XI, indici d'una
-                 ocupació anterior a la conquesta cristiana. Des del terrat de la torre, en dies clars, es
-                 divisa el Montseny i el Pirineu oriental.`,
-            es: `Las ruinas del Castillo de Montbrull constituyen el primer núcleo documentado del municipio,
-                 mencionado por primera vez en la carta de población de 1163. De la fortaleza original se
-                 conservan la torre del homenaje de planta circular —con muros de 1,8 metros de grosor—,
-                 tres lienzos de muralla y los restos de la cisterna subterránea. Las excavaciones
-                 arqueológicas de 1994-1998 sacaron a la luz cerámica andalusí del siglo XI, indicio de
-                 una ocupación anterior a la conquista cristiana. Desde la azotea de la torre, en días
-                 claros, se divisa el Montseny y el Pirineo oriental.`,
-            en: `The ruins of Montbrull Castle are the earliest documented nucleus of the municipality,
-                 first mentioned in the 1163 settlement charter. Surviving from the original fortress are
-                 the circular keep — with walls 1.8 metres thick —, three curtain wall sections, and the
-                 remains of the underground cistern. Archaeological excavations in 1994–1998 uncovered
-                 11th-century Andalusian ceramics, evidence of pre-Christian occupation. From the top
-                 of the keep, on clear days, both Montseny and the eastern Pyrenees are visible.`,
-        },
-    },
-
-    {
-        id: 'pi-008',
-        idZona: 'zona-castell',
-        estrelles: 1,                                // Recomanat
-        coordenades: { x: 28.0, y: 65.0 },          // Mig pendent, accés sud al castell
-        imatge: 'imatges/punts-interes/pi-008.jpg',
-        nom: {
-            ca: 'Mirador de la Vinya Vella',
-            es: 'Mirador de la Viña Vieja',
-            en: 'Old Vineyard Viewpoint',
-        },
-        any: 1998,                                   // Any de construcció del mirador actual
-        estil: {
-            ca: 'Equipament contemporani',
-            es: 'Equipamiento contemporáneo',
-            en: 'Contemporary facility',
-        },
-        descripcio: {
-            ca: `El Mirador de la Vinya Vella es troba a mig camí de la pujada al castell, en una terrassa
-                 natural que domina el conjunt del nucli antic i les vinyes de la plana. La plataforma
-                 d'obra vista i l'entramat de fusta, construïts l'any 1998 a partir del projecte de
-                 l'arquitecte local Pau Grau, es van dissenyar per integrar-se en el paisatge sense
-                 pertorbar la vista del castell. Disposa de taules de lectura del paisatge amb
-                 identificació dels principals elements del territori. Accessible des de la Ruta de
-                 les Vinyes i des de la Ruta del Castell.`,
-            es: `El Mirador de la Viña Vieja se encuentra a mitad de camino de la subida al castillo,
-                 en una terraza natural que domina el conjunto del casco antiguo y los viñedos de la
-                 llanura. La plataforma de obra vista y el entramado de madera, construidos en 1998 a
-                 partir del proyecto del arquitecto local Pau Grau, se diseñaron para integrarse en el
-                 paisaje sin perturbar la vista del castillo. Dispone de mesas de lectura del paisaje con
-                 identificación de los principales elementos del territorio. Accesible desde la Ruta de
-                 los Viñedos y desde la Ruta del Castillo.`,
-            en: `The Old Vineyard Viewpoint stands halfway up to the castle, on a natural terrace
-                 overlooking the old town and the vineyards of the plain below. The exposed-brick platform
-                 and wooden framework, built in 1998 to a design by local architect Pau Grau, were
-                 conceived to blend into the landscape without obstructing views of the castle. It features
-                 landscape-reading panels identifying the main elements of the surrounding territory.
-                 Accessible from both the Vineyard Route and the Castle Route.`,
-        },
-    },
-
-
-    // ============================================================
-    // ZONA: Zona de les Vinyes (zona-vinyes)
-    // Mapa de zona: imatges/mapes-zones/zona-vinyes.svg
-    // Zona plana al peu del turó, amb la cooperativa i el celler.
-    // PI-009 a l'est (cooperativa), PI-010 a l'oest (celler).
-    // ============================================================
-
-    {
-        id: 'pi-009',
-        idZona: 'zona-vinyes',
-        estrelles: 2,                                // Destacat
-        coordenades: { x: 68.0, y: 42.0 },          // Est de la zona: entrada principal
-        imatge: 'imatges/punts-interes/pi-009.jpg',
-        nom: {
-            ca: 'Cooperativa Agrícola de Montbrull',
-            es: 'Cooperativa Agrícola de Montbrull',
-            en: 'Montbrull Agricultural Cooperative',
-        },
-        any: 1913,
-        estil: {
-            ca: 'Modernisme industrial',
-            es: 'Modernismo industrial',
-            en: 'Industrial Modernisme',
-        },
-        descripcio: {
-            ca: `Fundada el 1913 per 34 pagesos associats, la Cooperativa Agrícola de Montbrull és la
-                 institució viva més antiga del municipi. L'edifici principal, projectat per un deixeble
-                 de Puig i Cadafalch i inaugurat el 1917, destaca per la façana de maó vist amb ornaments
-                 de ceràmica daurada i les grans finestres d'arc parabòlic que inunden de llum la nau
-                 de vinificació. Avui elabora set referències de vi DO Catalunya i organitza visites
-                 guiades amb tast els dissabtes al matí entre abril i novembre.`,
-            es: `Fundada en 1913 por 34 payeses asociados, la Cooperativa Agrícola de Montbrull es la
-                 institución viva más antigua del municipio. El edificio principal, proyectado por un
-                 discípulo de Puig i Cadafalch e inaugurado en 1917, destaca por la fachada de ladrillo
-                 visto con ornamentos de cerámica dorada y los grandes ventanales de arco parabólico que
-                 inundan de luz la nave de vinificación. Hoy elabora siete referencias de vino DO
-                 Catalunya y organiza visitas guiadas con cata los sábados por la mañana entre abril
-                 y noviembre.`,
-            en: `Founded in 1913 by 34 associated farmers, the Montbrull Agricultural Cooperative is the
-                 oldest active institution in the municipality. The main building, designed by a disciple
-                 of Puig i Cadafalch and inaugurated in 1917, is notable for its exposed brick façade with
-                 gilded ceramic ornaments and the large parabolic-arch windows that flood the winery hall
-                 with light. Today it produces seven DO Catalunya wines and runs guided tours with tastings
-                 every Saturday morning from April to November.`,
-        },
-    },
-
-    {
+		 {
         id: 'pi-010',
-        idZona: 'zona-vinyes',
+        idZona: 'zona-monestir',
         estrelles: 1,                                // Recomanat
-        coordenades: { x: 28.0, y: 68.0 },          // Oest de la zona: mas aïllat
+        coordenades: { x:    62 ,  y:  36},          // Centre de la zona: encreuament de carrers
         imatge: 'imatges/punts-interes/pi-010.jpg',
         nom: {
-            ca: 'Celler Modernista de Can Marfà',
-            es: 'Bodega Modernista de Can Marfà',
-            en: 'Can Marfà Modernista Winery',
+            ca: 'Monestir',
+            es: 'Monasterio',
+            en: 'Monastery',
         },
-        any: 1904,
+        any: 1930,
         estil: {
-            ca: 'Modernisme',
-            es: 'Modernismo',
-            en: 'Modernisme',
+            ca: 'Noucentisme',
+            es: 'Noucentismo',
+            en: 'Newcentury',
         },
         descripcio: {
-            ca: `El Celler de Can Marfà és un dels escassos cellers particulars modernistes conservats
-                 a la comarca. Construït el 1904 per encàrrec de la família Marfà, combina elements
-                 neogòtics —els arcs apuntats de la façana nord— amb la racionalitat funcional pròpia de
-                 l'arquitectura vitivinícola de l'època. L'interior manté les bótes de roure originals
-                 i la premsa de viga de fusta del segle XIX. Visitable prèvia reserva a través de
-                 l'Oficina de Turisme de Montbrull. El mas adjacent és residència privada i no és
-                 accessible al públic.`,
-            es: `La Bodega de Can Marfà es uno de los escasos lagares particulares modernistas conservados
-                 en la comarca. Construido en 1904 por encargo de la familia Marfà, combina elementos
-                 neogóticos —los arcos apuntados de la fachada norte— con la racionalidad funcional propia
-                 de la arquitectura vitivinícola de la época. El interior mantiene las barricas de roble
-                 originales y la prensa de viga de madera del siglo XIX. Visitable previa reserva a través
-                 de la Oficina de Turismo de Montbrull. El mas adyacente es residencia privada y no es
-                 accesible al público.`,
-            en: `Can Marfà Winery is one of the rare privately-owned Modernista wineries still intact in
-                 the region. Built in 1904 for the Marfà family, it blends Neo-Gothic elements — the
-                 pointed arches on the north façade — with the functional rationality typical of wine
-                 architecture of the period. The interior retains the original oak barrels and a 19th-century
-                 wooden beam press. Visits by prior booking through the Montbrull Tourist Office. The
-                 adjacent farmhouse is a private residence and is not open to the public.`,
+            ca: `Ajuntament. Plaça de la Vila 2.
+			     Edifici Noucentista molt simplista. Destaca l'esgrafiat central amb l'escut del poble
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
         },
     },
+
+
+
 
 
 ];
