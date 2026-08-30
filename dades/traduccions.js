@@ -90,7 +90,7 @@ const UI = {
  * @type {Object.<string, {ca: string, es: string, en: string}>}
  */
 const NOMS_SECCIONS = {
-    'introduccio':          { ca: 'Introducció',         es: 'Introducción',           en: 'Introduction'           },
+    'introduccio':          { ca: 'Presentació',         es: 'Introducción',           en: 'Introduction'           },
     'mapa':                 { ca: 'Mapa',                es: 'Mapa',                   en: 'Map'                    },
     'historia':             { ca: 'Història',            es: 'Historia',               en: 'History'                },
     'rutes':                { ca: 'Rutes',               es: 'Rutas',                  en: 'Routes'                 },
@@ -114,13 +114,13 @@ const NOMS_SECCIONS = {
 const CONTINGUT_SECCIONS = {
 
     'introduccio': {
-        ca: `<p>Benvinguts a <strong>Amer</strong>, ón els carrers estrets empedrats i l'olor de fum a l'hivern fan deixar enrere les preocupacions
-			<br> No serà cap sorpresa, aquí no trobareu cap Sagrada Família ni la seu comarcal dels Thyssen.
-			Si hi ha és de mil anys de història, història petita i amagada. No la veureu als llibres ni se'n fan documentals. <br>
-			Aquí tenim la història de la gent de carrer, no eren ni abats ni cavallers ni tampoc burgesos.
+        ca: `<p>Benvinguts a <strong>Amer</strong>, ón els carrers estrets i empedrats, l'olor de fum de les xemeneies a l'hivern i el silenci dels matins de diumenge t'embriaguen sense voler.
+			<br> No serà cap sorpresa, no veureu aquí ni estàtues de grans generals ni tampoc cap arc del triomf.
+			Sí queda però el testimoni de mil anys de història,  aquí tenim la història de la gent de a peu.  <br>
+			
 			
 		</p>
-             <p>És la història de la gent menuda que no tenía un escrivà que li guardés registre, acompanyeu-nos a trobar-la.</p>`,
+             <p>És la història de la gent menuda, que no tenía un escrivà que li guardés registre, acompanyeu-nos a trobar-la.</p>`,
 
         es: `<p>Bienvenidos a <strong>Montbrull</strong>, un pequeño municipio de la Cataluña
              central enclavado entre viñedos y bosques de roble. Con poco más de 800 habitantes,
@@ -146,7 +146,7 @@ const CONTINGUT_SECCIONS = {
 		L'establiment del mercat setmanal al S.XII és un altre indicador de prosperitat. <br>
 		La prosperitat va començar a devallar amb la crisi del S.XV, el gran terratrèmol de 1427, 
 		l'any de la picor 1471 o la pesta de 1483 no van ajudar precisament. 
-		El monestir va seguir subsistint, amb millor o major encerts, fins la desamortització de 1835. <br>
+		El monestir va seguir subsistint, amb alts i baixos, fins la desamortització de 1835. <br>
 		<br><strong>I la gent menuda on queda?</strong><br>
 		El monestir, edificis annexos i horts ocupaven gran part del que ara és el poble antic. 
 		La gent, atreta per la seguretat que aportava el monestir i les possibilitats de comerç 
@@ -164,9 +164,10 @@ const CONTINGUT_SECCIONS = {
 		i tampoc consta que se li apareguès un arcàngel per fer-lo canviar de parer. <br>
 		Les guerres dels remences a la segona meitat del S.XV, entre d'altres, van aportar a Amer disposar de Batlle. <br>
 		Quedant així separada la població de la administració directa de l'Abat. <br><br>
-		Acabant ja: <br>
-		El S.XVIII va ser de bonaça amb un gran increment de població<br> 
-		Al S.XIX hi va haver una incipient industrialització accelerada amb la arribada del ferrocarril Girona-Olot (popularment el carrilet).
+		Resumint: <br>
+		El "casc antic" el trobareu a un extrem del poble al carrer Girona (Barri del Pedreguet)<br> 
+		La plaça de la vila, actual centre neuràlgic, es va urbanitzar després de la desamortització, amb la clausura del monestir.
+		De l'antic monestir en queda la actual esglèsia de Santa Maria, la resta es va anar reaprofitant en habitatges.
 			</p>`,
 
         es: `<p>Montbrull aparece documentado por primera vez en el año <strong>1163</strong>
@@ -189,7 +190,7 @@ const CONTINGUT_SECCIONS = {
     },
 
     'rutes': {
-        ca: `<p>Montbrull ofereix tres rutes senyalitzades adaptades a tots els nivells:</p>
+        ca: `<p>Amer ofereix tres rutes senyalitzades adaptades a tots els nivells:</p>
              <ul>
                <li><strong>Ruta de SantaBrígida</strong> — 1,2 km · 45 min · fàcil.
                    Recorre els principals monuments del centre històric.
@@ -284,11 +285,12 @@ const CONTINGUT_SECCIONS = {
     },
 
     'informacio-practica': {
-        ca: `<p><strong>Telèfons interés</strong><br>
-             Ajuntament: 972 431 112 <br>
-			 Mossos Santa Coloma Farners: 972 18 16 75 <br>
-			 Cap d'Anglés:  972 421 498 <br>
-			 Farmàcia d'Amer: 972430316
+        ca: `
+			<p><strong>Telèfons interés</strong><br>
+             Ajuntament: 972 431 112 / informaciot@amer.cat <br>
+			 Mossos Santa Coloma Farners: 972 181 675 / Carrer Francesc Moragas 65-67, Santa Coloma de Farners <br>
+			 Cap d'Anglés:  972 421 498 / Jardins de Can Cendra, Anglés <br>
+			 Farmàcia d'Amer: 972 430 316 / Av. de la Selva 63, Amer
              </p>
              <p><strong>Aparcament</strong><br>
              Amb excepció dels migdies laborables no acostuma a haver problemes d'aparcament.
@@ -322,6 +324,52 @@ const CONTINGUT_SECCIONS = {
 			 
              <p><strong>Allotjament</strong><br>
              Confiem que no us calgui i ens recomaneu.</p>`,
+
+        es: `<p><strong>Cómo llegar</strong><br>
+             En coche: C-37 desde Manresa, salida Montbrull km 42.<br>
+             En autobús: línea regional L-14, parada Montbrull Centre (lunes a sábado).</p>
+             <p><strong>Aparcamiento</strong><br>
+             Aparcamiento gratuito en la zona deportiva (Carrer del Molí, s/n),
+             a 5 minutos andando del casco antiguo.</p>
+             <p><strong>Oficina de Turismo</strong><br>
+             Plaza Mayor, 1 · Tel. 938 00 00 00<br>
+             Primavera/otoño: lu-vi 9-14 h · sá 10-14 h<br>
+             Verano (jul-ago): lu-do 9-19 h</p>
+             <p><strong>Alojamiento</strong><br>
+             El municipio cuenta con 2 casas rurales y 1 hostal.
+             Consulta disponibilidad en la Oficina de Turismo.</p>`,
+
+        en: `<p><strong>Getting there</strong><br>
+             By car: C-37 from Manresa, Montbrull exit km 42.<br>
+             By bus: regional line L-14, stop Montbrull Centre (Monday to Saturday).</p>
+             <p><strong>Parking</strong><br>
+             Free parking at the sports area (Carrer del Molí, s/n),
+             5 minutes' walk from the old town.</p>
+             <p><strong>Tourist Office</strong><br>
+             Plaça Major, 1 · Tel. +34 938 00 00 00<br>
+             Spring/autumn: Mon–Fri 9am–2pm · Sat 10am–2pm<br>
+             Summer (Jul–Aug): Mon–Sun 9am–7pm</p>
+             <p><strong>Accommodation</strong><br>
+             The municipality has 2 rural houses and 1 guesthouse.
+             Check availability at the Tourist Office.</p>`,
+    },
+	'sardana': {
+        ca: `
+			<p><strong>Tradició sardanística</strong><br>
+             La tradició sardanística d'Amer és i ha estat molt important. Proba d'aixó en són Pere Buixó i Pere Fontàs compositors de sardanes.
+             </p>
+			 
+			 <p><strong>Sardana de l'alcalde</strong><br>
+			 És una composicó única de la sardana que té la peculiaritat que el cercle no es tanca mai.<br>
+			 Es balla sempre per la festa major, el cercle de la sardana, que romandrà obert, l'inicia l'alcalde<br>
+			 I poc a poc s'hi van sumant els veïns quedant així figuradament tot el poble ballant la mateixa sardana.<br>
+			 Ara a l'alcalde se'l pot veure com a font de poder, però si tenim present la història del poble i l'abat, que tot el poble es posés de forma física 
+			 rere el seu alcalde, que era qui podia prevenir-los dels abusos de l'abat... bé és una lectura que ens agrada de fer. <br>
+			  <p><strong>La peça de la sardana</strong><br>
+			  La tradició manava que l'alcalde triaria cada any la peça que sonaria al ballar-se la sardana de l'alcalde.
+			  Es va donar la circumstància que Pere Fontàs fent el servei militar va quedar impossibilitat, de tal manera que només podia viure  dels drets d'autor de les seves
+			  composicions. Es va triar sempre una peça seva per al ball, de forma que ha quedat ja lligat la sardana de l'alcalde amb la peça Festa Milenaria.
+            `,
 
         es: `<p><strong>Cómo llegar</strong><br>
              En coche: C-37 desde Manresa, salida Montbrull km 42.<br>

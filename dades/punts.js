@@ -413,7 +413,86 @@ const PUNTS_INTERES = [
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
         },
     },
-
+    // ============================================================
+    // ZONA: CARRER DE LA BARROCA zona-barroca
+    // Mapa de zona: imatges/mapes-zones/zona-vila.svg
+    // Els PIs es distribueixen per les quatre subàrees naturals
+    // ============================================================
+	 {
+        id: 'pi-010',
+        idZona: 'zona-barroca',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x:    64 ,  y:  18},          // Centre de la zona: encreuament de carrers
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'La Torre',
+            es: 'La Torre',
+            en: 'La Torre',
+        },
+        any: 1925,
+        estil: {
+            ca: 'Modernisme',
+            es: 'Modernismo',
+            en: 'Newcentury',
+        },
+        descripcio: {
+            ca: `La Torre. Carrer de la Barroca 1. 
+			
+			     Casa d'estiueig formada per diferents cossos i terrasses, dels quals el més destacat, i que ha donat nom a la casa, 
+				 és una torratxa mirador, de planta quadrada, circumdada per un balcó i amb coronament piramidal.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+{
+        id: 'pi-011',
+        idZona: 'zona-barroca',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x:    36 ,  y:  26},          // Centre de la zona: encreuament de carrers
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Can Pujades',
+            es: 'Can Pujades',
+            en: 'Can Pujades',
+        },
+        any: 'Anys 20',
+        estil: {
+            ca: 'Modernisme',
+            es: 'Modernismo',
+            en: 'Newcentury',
+        },
+        descripcio: {
+            ca: `Can Pujades. Carrer de la Barroca 5. 
+			
+			     Edifici construït cap a la darreria dels anys vint del segle passat, d'una sola planta, amb pati al davant. La façana, coronada amb una balustrada de tres trams,
+				 presenta una destacada ornamentació al voltant de les tres obertures, on les llindes mostren uns relleus de caire vegetal de gust modernista.
+				 També estan decorades les mènsules que sostenen la cornisa.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
 
     // ============================================================
     // ZONA: Zona del Monestir (zona-monestir)
@@ -421,26 +500,69 @@ const PUNTS_INTERES = [
     // Zona historica
     // ============================================================
 
-		 {
-        id: 'pi-010',
+	 {
+        id: 'pi-012',
         idZona: 'zona-monestir',
-        estrelles: 1,                                // Recomanat
-        coordenades: { x:    62 ,  y:  36},          // Centre de la zona: encreuament de carrers
+        estrelles: 2,                                // Recomanat
+        coordenades: { x: 50, y: 6},          // Centre de la zona: encreuament de carrers
         imatge: 'imatges/punts-interes/pi-010.jpg',
         nom: {
-            ca: 'Monestir',
-            es: 'Monasterio',
-            en: 'Monastery',
+            ca: 'Absis Monestir',
+            es: 'Abis del Monasterio',
+            en: 'Monastery Absis',
         },
-        any: 1930,
+        any: "S.XII",
         estil: {
-            ca: 'Noucentisme',
-            es: 'Noucentismo',
+            ca: 'Romànic',
+            es: 'Romanico',
             en: 'Newcentury',
         },
         descripcio: {
-            ca: `Ajuntament. Plaça de la Vila 2.
-			     Edifici Noucentista molt simplista. Destaca l'esgrafiat central amb l'escut del poble
+            ca: `Absis del Monestir.  Carrer Jacint Verdaguer.
+			
+			     La capçalera de Santa Maria, restaurada modernament, és la part que conserva de forma més íntegra l'aspecte original del temple romànic. 
+				 Inicialment tenia un absis central flanquejat per dues absidioles. 
+				 Posteriorment s'hi va afegir un altre absis, amb un tipus de carreuat més gran i regular. Tots quatre presenten arcuacions i lesenes de tipus llombard.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+	
+	 {
+        id: 'pi-013',
+        idZona: 'zona-monestir',
+        estrelles: 2,                                // Recomanat
+        coordenades: { x: 45, y: 51},          // Centre de la zona: encreuament de carrers
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Can Món',
+            es: 'Can Món',
+            en: 'Can Món',
+        },
+        any: "S.XIV",
+        estil: {
+            ca: 'Romànic',
+            es: 'Romanico',
+            en: 'Newcentury',
+        },
+        descripcio: {
+            ca: `Can Món.  Carrer Narcís Junquera / Plaça del Monestir.
+			
+			     Interessant edifici format per dos cossos en L, un dels quals travessa el carrer Narcís Junquera deixant obert un pas inferior que clou la plaça del Monestir.
+				 La casa ocupa una part de l'antiga casa de l'Abat. La façana que dóna a la plaça, del segle XVI, mostra un balcó que conserva el guardapols motllurat 
+				 ornamentat amb garlandes i detalls florals. És remarcable la façana de l'antiga capella, amb pilastres estriades i frontó triangular, d'estil renaixentista. 
+				 La façana que dóna al carrer Junquera és molt posterior, de la fi del segle XIX, d'estil historicista.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -456,7 +578,483 @@ const PUNTS_INTERES = [
         },
     },
 
+ {
+        id: 'pi-014',
+        idZona: 'zona-monestir',
+        estrelles: 2,                                // Recomanat
+        coordenades: { x: 55, y: 45},          // Centre de la zona: encreuament de carrers
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Can Boles',
+            es: 'Can Boles',
+            en: 'Can Boles',
+        },
+        any: "S.XIV",
+        estil: {
+            ca: 'Romànic',
+            es: 'Romanico',
+            en: 'Newcentury',
+        },
+        descripcio: {
+            ca: `Can Boles.  Plaça del Monestir 5.
+			
+			     Edifici del segle XVI, amb modificacions posteriors (hi ha llindes amb dates del segle XVIII),
+				 va ser alçat sobre l'antic palau de l'Abat i una part del desaparegut claustre. 
+				 És un gran casal de planta baixa i dos pisos, amb la façana principal porticada.
+				 Les obertures i les cantoneres estan fetes amb carreus de pedra picada. Damunt d'un balcó llueix un vell escut heràldic.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+	 {
+        id: 'pi-015',
+        idZona: 'zona-monestir',
+        estrelles: 2,                                // Recomanat
+        coordenades: { x: 66, y: 36},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Creu de terme',
+            es: 'Creu de terme',
+            en: 'Creu de terme',
+        },
+        any: "S.XIX",
+        estil: {
+            ca: 'Neoromànic',
+            es: 'Neoromanico',
+            en: 'Newcentury',
+        },
+        descripcio: {
+            ca: `Creu de terme.  Plaça del Monestir s/n.
+			
+			     A la plaça del Monestir hi ha una fidel reproducció de la creu de terme que hi havia a l'entrada del poble, venint de Girona.
+				 L'original està dipositada al Museu Diocesà de Girona.
+				 La creu, molt ornamentada, presenta com és habitual el Crist crucificat a una cara i la Mare de Déu a l'altra la Mare de Déu, que ha perdut la part superior.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+	{
+        id: 'pi-016',
+        idZona: 'zona-monestir',
+        estrelles: 2,                                // Recomanat
+        coordenades: { x: 62, y: 22},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Can Terme',
+            es: 'Can Terme',
+            en: 'Can Terme',
+        },
+        any: "S.XIX",
+        estil: {
+            ca: 'Neoromànic',
+            es: 'Neoromanico',
+            en: 'Newcentury',
+        },
+        descripcio: {
+            ca: `Can Terme.  Plaça del Monestir 2.
+			
+			     Edifici adossat al Monestir que antigament havia fet funcions de sagristia. Actualment acull el Museu Etnològic d'Amer. Molt reformat en època moderna (el cos travessat per una volta que dóna accés a la plaça és una construcció recent), 
+				 conserva alguns elements antics, del segle XVII, especialment visibles en l'emmarcament d'algunes de les obertures. En una d'elles llegim clarament la data de 1662 i en una altra la de 1689.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+	{
+        id: 'pi-017',
+        idZona: 'zona-monestir',
+        estrelles: 2,                                // Recomanat
+        coordenades: { x: 40, y: 32},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Monestir',
+            es: 'Monasterio',
+            en: 'Monastery',
+        },
+        any: "S.XIX",
+        estil: {
+            ca: 'Neoromànic',
+            es: 'Neoromanico',
+            en: 'Newcentury',
+        },
+        descripcio: {
+            ca: `Antic Monestir Santa Maria d'Amer.  Plaça del Monestir 2.
+			
+			     Monestir benedictí consagrat l'any 949 i que durant els segles següents,
+				 fins al segle XIV, va gaudir de gran prosperitat. 
+				 Els terratrèmols de 1427 i 1428 el van deixar molt malmès, s'esfondraren 
+				 les voltes i el claustre i moltes dependències monàstiques van quedar destruïdes.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+		{
+        id: 'pi-018',
+        idZona: 'zona-monestir',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x: 10, y: 20},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Ca l-Espígol',
+            es: 'Ca l-Espígol',
+            en: 'Ca l-Espígol',
+        },
+        any: "S.XIX",
+        estil: {
+            ca: 'Neoromànic',
+            es: 'Neoromanico',
+            en: 'Newcentury',
+        },
+        descripcio: {
+            ca: `Ca lEspigol.  Plaça del Monestir 17.
+			
+			     Edifici de tres plantes situat enfront del monestir. Conserva l'emmarcament de pedra de les cantoneres i de les obertures,
+				 que són d'arc carpanell a la planta baixa i de llinda monolítica als pisos. La casa va ser molt reformada a començament del segle XX.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+	{
+        id: 'pi-019',
+        idZona: 'zona-monestir',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x: 75, y: 40},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Can Gasull',
+            es: 'Can Gasull',
+            en: 'Can Gasull',
+        },
+        any: "S.XIX",
+        estil: {
+            ca: 'Neoromànic',
+            es: 'Neoromanico',
+            en: 'Newcentury',
+        },
+        descripcio: {
+            ca: `Can Gasull.  Plaça del Monestir, 3 / Carrer Sant Benet.
+			
+			    Correspon a un dels antics edificis del Monestir d'Amer, concretament era la infermeria, amb façana a la plaça i al carrer de Sant Benet. 
+				Conserva alguna finestra antiga però les façanes estan molt deteriorades. La casa posseïa un dels finestrals renaixentistes més interessants de l'arquitectura civil catalana, 
+				especialment pel seu valor iconogràfic, amb temàtica vinculada a les epidèmies de pesta.
+				Lamentablement, aquesta finestra i una altra de tipus conopial, van ser venudes per l'antic propietari i, segons se'ns ha informat,
+				actualment es troben a la seu de l'Opus Dei a Torreciudad.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
 
+{
+        id: 'pi-020',
+        idZona: 'zona-monestir',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x: 61, y: 40},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Placa Remença',
+            es: 'Placa Remença',
+            en: 'Placa Remença',
+        },
+        any: "S.XX",
+        estil: {
+            ca: 'Neoromànic',
+            es: 'Neoromanico',
+            en: 'Newcentury',
+        },
+        descripcio: {
+            ca: `Placa de l'arbitratge Remença.  Colocada a Can Boles.
+			
+			    Ferran II d'Aragó va firmar el 1486 la sentència arbitral de Guadalupe amb la que es posava fi a la segona guerra remença.
+				Aquí Amer un any abans s'havia pactat la fi de les hostilitats acceptant els remençes que acatarien el dictàment del rei.
+				Creiem que es va poder firmar a Amer per que l'Abat ja havia renunciat als mals usos.
+				Si seguiu el viatge per la Garrotxa podreu seguir totes les localitzacions de les Guerres Remences.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+	    // ============================================================
+    // ZONA: Zona del Pedreguet (zona-pedreguet)
+    // Mapa de zona: imatges/mapes-zones/zona-pedreguet.jpg
+    // Zona historica
+    // ============================================================
+	{
+        id: 'pi-021',
+        idZona: 'zona-pedreguet',
+        estrelles: 3,                                // Recomanat
+        coordenades: { x: 41, y: 10},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Carrer Girona',
+            es: 'Calle Girona',
+            en: 'Girona Street',
+        },
+        any: "S.XVII",
+        estil: {
+            ca: 'Arquitectura popular',
+            es: 'Arquitectura popular',
+            en: 'Arquitectura popular',
+        },
+        descripcio: {
+            ca: `Carrer Girona.  
+			
+			    El carrer Girona és un carrer llarg i estret originat a l'edat mitjana i que articula el barri del
+				Pedreguet fins arribar a la capella de la Mare de Déu de la Pietat. 
+				
+				És un carrer molt interessant 
+				que ha preservat la seva estructura antiga i molts dels seus seus edificis, malgrat les reformes modernes,
+				han conservat els elements antics de més qualitat, com les llindes de les portes i finestres,
+				moltes de les quals ens donen notícia dels seus antics propietaris i de l'any en què es feren les reformes, entre els segles XVII, XVIII i XIX.
+				
+				Són moltes les cases d'Amer que conserven inalterades les portes i finestres originals.
+				A les llindes de moltes d'elles podem llegir-hi el nom del propietari i l'any de construcció o reforma de la casa. 
+ 
+				La fesomia particular del carrer, sense ni un carrer lateral, es deu que es van anar construint les cases 
+				al llarg de la antiga carretera que duia a Girona. Tothom volia estar el més aprop possible de la plaça i el Monestir,
+				i per tant cada nova casa es feia paret amb paret amb la última sense que ningú penses a deixar un carrer enmig.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+
+	{
+        id: 'pi-022',
+        idZona: 'zona-pedreguet',
+        estrelles: 2,                                // Recomanat
+        coordenades: { x: 50, y: 15},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Can La',
+            es: 'Can La',
+            en: 'Can La',
+        },
+        any: "S.XVIII",
+        estil: {
+            ca: 'Arquitectura popular',
+            es: 'Arquitectura popular',
+            en: 'Arquitectura popular',
+        },
+        descripcio: {
+            ca: `Can La. Carrer Girona 2.  
+			
+			    És una de les cases més interessants del carrer Girona però es troba en un estat de conservació deplorable.
+				Hi destaca el seu portal adovellat, de punt rodó, i un finestral del segle XVI d'arc conopial amb la
+				típica traceria gòtica i un guardapols motllurat recte.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+	{
+        id: 'pi-022',
+        idZona: 'zona-pedreguet',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x: 50, y: 20},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Can Plana',
+            es: 'Can Plana',
+            en: 'Can Plana',
+        },
+        any: "S.XVIII",
+        estil: {
+            ca: 'Arquitectura popular',
+            es: 'Arquitectura popular',
+            en: 'Arquitectura popular',
+        },
+        descripcio: {
+            ca: `Can Plana. Carrer Girona 2.  
+			
+			    Edifici reformat modernament però que ha conservat alguns elements antics d'interès, com els muntants amb permòdols del portal o la finestra petita també amb llinda sobre permòdols.
+				Pel que fa a la balconera cal destacar la llinda conopial de tradició gòtica envoltada amb un guardapols motllurat.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+		{
+        id: 'pi-023',
+        idZona: 'zona-pedreguet',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x: 84, y: 55},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Ermita',
+            es: 'Ermita',
+            en: 'Ermita',
+        },
+        any: "S.XVII",
+        estil: {
+            ca: 'Barroc',
+            es: 'Barroco',
+            en: 'Barroc',
+        },
+        descripcio: {
+            ca: `Ermita Mare de Déu de la Pietat. Carrer Girona (al final).  
+			
+			    Capella situada als afores del poble. Va ser construïda al segle XVII, tot i que el seu origen pot ser més antic, i reformada al XIX. 
+				Té planta rectangular coberta amb volta de canó i capçada amb un absis semicircular. Hi té adossat un cos que fa de sagristia. 
+				Davant la porta hi ha un porxo per sota del qual passa el carrer. A la llinda de la porta hi ha la data de la reforma, 1844.
+				
+				Aquí és on es revestien els bisbes i abats en entrar a la vila, d'aquesta manera es mostraven sempre impoluts davant el poble encara que haguessin fet un llarg camí.
+
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
+	
+		{
+        id: 'pi-024',
+        idZona: 'zona-pedreguet',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x: 44, y: 25},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-010.jpg',
+        nom: {
+            ca: 'Can Llepart',
+            es: 'Can Llepart',
+            en: 'Can Llepart',
+        },
+        any: "S.XVIII",
+        estil: {
+            ca: 'Neoromànic',
+            es: 'Neoromanico',
+            en: 'Newcentury',
+        },
+        descripcio: {
+            ca: `Can Llepart. Plaça de la Pietat 1  
+			
+			   Edifici de grans dimensions construït al segle XVIII (1758), restaurat modernament.
+			   La façana que dóna la carrer Abat Vilafreser hi ha una llinda on s'hi llegeix la data i el nom de Joseph Clusehs. 
+			   De la façana de la plaça en destaca el balcó de fusta, protegit per un destacat voladís.
+
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+        },
+    },
 
 
 

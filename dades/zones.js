@@ -88,9 +88,9 @@ const ZONES = [
     {
         id: 'zona-pedreguet',
         nom: {
-            ca: 'Zona del Castell',
-            es: 'Zona del Castillo',
-            en: 'Castle Area',
+            ca: 'Barri del Pedreguet',
+            es: 'Barrio del Pedreguet',
+            en: 'Pedreguet Neigborhood',
         },
         arxiuMapa: 'imatges/mapes-zones/zona-pedreguet.jpg',
         // Polígon de 5 punts per donar-li una forma lleugerament irregular
@@ -108,9 +108,9 @@ const ZONES = [
     {
         id: 'zona-barroca',
         nom: {
-            ca: 'Zona Sant Climent',
-            es: 'Zona de Sant Climent',
-            en: 'Sant Climent Area',
+            ca: 'Zona Carrer Barroca',
+            es: 'Zona Calle Barroca',
+            en: 'Barroca Street',
         },
         arxiuMapa: 'imatges/mapes-zones/zona-barroca.jpg',
         formaArea: 'M85.2,44.6 L86.1,58.2 L98.8,59.1 L98.7,45 Z',
