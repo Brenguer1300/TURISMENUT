@@ -75,6 +75,7 @@ const EMOJIS_SECCIONS = {
     'rutes':                '🥾',
     'arquitectura':         '🏛️',
     'informacio-practica':  '🕯️',
+	'sardana':   			'🎺',
 };
 
 /** @constant {Object} Emoticona per a cada zona del mapa */

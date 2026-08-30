@@ -96,7 +96,8 @@ const NOMS_SECCIONS = {
     'rutes':                { ca: 'Rutes',               es: 'Rutas',                  en: 'Routes'                 },
     'arquitectura':         { ca: 'Arquitectura',        es: 'Arquitectura',           en: 'Architecture'           },
     'informacio-practica':  { ca: 'Informació pràctica', es: 'Info práctica',          en: 'Practical info'         },
-};
+	'sardana':  			{ ca: 'Sardanes', 			 es: 'Sardanas',        	  en: 'Sardanes'      		   },
+};	
 
 
 // ============================================================
