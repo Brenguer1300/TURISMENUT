@@ -1,5 +1,5 @@
 # Guia del Projecte: Web de Punts d'Interès d'un Poble
-> Document de referència per al desenvolupament — Versió 1.1
+> Document de referència per al desenvolupament — Versió 1.2
 
 ---
 
@@ -21,8 +21,12 @@ Visitants i turistes que consulten el mòbil mentre passegen pel poble.
 | Codi | Idioma              |
 |------|---------------------|
 | `ca` | Català (per defecte)|
-| `es` | Castellà            |
 | `en` | Anglès              |
+| `es` | Castellà            |
+| `fr` | Francès             |
+
+> L'ordre alfabètic (ca · en · es · fr) es respecta tant al selector d'idioma
+> com a la constant `IDIOMES_DISPONIBLES` de `funcions.js`.
 
 ---
 
@@ -122,8 +126,8 @@ function carregarPuntsDeZona(idZona, filtrEstrelles = 0) {
 // Responsabilitat: canviar l'idioma actiu i actualitzar la UI
 // ============================================================
 
-// --- Constants d'idioma ---
-const IDIOMES_DISPONIBLES = ['ca', 'es', 'en'];
+// --- Constants d'idioma (ordre alfabètic) ---
+const IDIOMES_DISPONIBLES = ['ca', 'en', 'es', 'fr'];
 const IDIOMA_PER_DEFECTE  = 'ca';
 ```
 
@@ -137,8 +141,8 @@ const IDIOMA_PER_DEFECTE  = 'ca';
 /** @constant {string} Nom del poble mostrat a la capçalera */
 const NOM_POBLE = 'El Poble';
 
-/** @constant {string[]} Idiomes disponibles a l'aplicació */
-const IDIOMES_DISPONIBLES = ['ca', 'es', 'en'];
+/** @constant {string[]} Idiomes disponibles a l'aplicació (ordre alfabètic) */
+const IDIOMES_DISPONIBLES = ['ca', 'en', 'es', 'fr'];
 
 /** @constant {string} Idioma per defecte en carregar */
 const IDIOMA_PER_DEFECTE = 'ca';
@@ -148,9 +152,9 @@ const CLAU_IDIOMA_LOCAL = 'idioma-poble';
 
 /** @constant {Object} Etiquetes de les estrelles de rellevància */
 const ETIQUETES_ESTRELLES = {
-    1: { ca: 'Recomanat',      es: 'Recomendado',    en: 'Recommended' },
-    2: { ca: 'Destacat',       es: 'Destacado',      en: 'Featured'    },
-    3: { ca: 'Imprescindible', es: 'Imprescindible', en: 'Must-see'    },
+    1: { ca: 'Recomanat',      es: 'Recomendado',    en: 'Recommended',   fr: 'Recommandé'     },
+    2: { ca: 'Destacat',       es: 'Destacado',      en: 'Featured',      fr: 'À découvrir'    },
+    3: { ca: 'Imprescindible', es: 'Imprescindible', en: 'Must-see',      fr: 'Incontournable' },
 };
 
 /** @constant {string[]} Seccions del menú lateral (en ordre d'aparició) */
@@ -193,7 +197,7 @@ necessitat de `fetch()` o servidor: el navegador les carrega directament com a s
 /**
  * @typedef {Object} Zona
  * @property {string} id          - Identificador únic
- * @property {Object} nom         - Nom en els 3 idiomes
+ * @property {Object} nom         - Nom en els 4 idiomes (ca, en, es, fr)
  * @property {string} arxiuMapa   - Ruta al SVG del mapa de la zona
  * @property {string} formaArea   - Path SVG de l'àrea clicable al mapa principal
  *                                  (coordenades en % sobre viewBox 0 0 100 100)
@@ -206,7 +210,8 @@ const ZONES = [
         nom: {
             ca: 'Centre Històric',
             es: 'Centro Histórico',
-            en: 'Historic Centre'
+            en: 'Historic Centre',
+            fr: 'Centre Historique'
         },
         arxiuMapa: 'imatges/mapes-zones/zona-centre.svg',
         // Polígon definit en percentatge sobre el viewBox 0 0 100 100
@@ -217,7 +222,8 @@ const ZONES = [
         nom: {
             ca: 'Barri de l\'Est',
             es: 'Barrio del Este',
-            en: 'East Quarter'
+            en: 'East Quarter',
+            fr: 'Quartier Est'
         },
         arxiuMapa: 'imatges/mapes-zones/zona-est.svg',
         formaArea: 'M62,15 L90,15 L90,55 L62,55 Z'
@@ -244,10 +250,10 @@ const ZONES = [
  * @property {number} estrelles - Rellevància: 1 (recomanat), 2 (destacat), 3 (imprescindible)
  * @property {{x: number, y: number}} coordenades - Posició relativa en % sobre el mapa de zona
  * @property {string} imatge   - Ruta a la fotografia del PI
- * @property {Object} nom      - Nom en els 3 idiomes
+ * @property {Object} nom      - Nom en els 4 idiomes (ca, en, es, fr)
  * @property {number} any      - Any de construcció
- * @property {Object} estil    - Estil arquitectònic en els 3 idiomes
- * @property {Object} descripcio - Descripció en els 3 idiomes
+ * @property {Object} estil    - Estil arquitectònic en els 4 idiomes
+ * @property {Object} descripcio - Descripció en els 4 idiomes
  */
 
 /** @type {PuntInteres[]} */
@@ -300,6 +306,36 @@ const PUNTS_INTERES = [
     }
 ];
 ```
+
+#### Format enriquit al camp `descripcio`
+
+Les descripcions **admeten un subconjunt d'HTML** per donar-hi format bàsic.
+El text passa per la funció `sanejarHTMLDescripcio()` de `funcions.js` abans
+d'inserir-se al DOM: només aquestes etiquetes es respecten, i sempre sense
+cap atribut. Qualsevol altra etiqueta (o handler tipus `onclick=`) es descarta
+de manera segura, però el text interior es conserva.
+
+| Etiqueta                | Ús habitual                              |
+|-------------------------|------------------------------------------|
+| `<br>`                  | Salt de línia dins un paràgraf           |
+| `<strong>` · `<b>`      | Èmfasi fort (negreta)                    |
+| `<em>` · `<i>`          | Èmfasi (cursiva)                         |
+| `<p>`                   | Paràgraf                                  |
+| `<ul>` · `<ol>` · `<li>`| Llistes desordenades / ordenades         |
+
+```javascript
+descripcio: {
+    ca: `L'església de Sant Pere és el monument més emblemàtic.<br>
+         La seva construcció va durar <strong>més de dos segles</strong>
+         (1342–1567) i combina elements gòtics amb detalls barrocs.`,
+    // ...
+}
+```
+
+Per afegir noves etiquetes al llistat, editar la constant
+`ETIQUETES_PERMESES_DESCRIPCIO` a `funcions.js`. Tenir present que etiquetes
+com `<img>` o `<a>` no s'hi haurien d'afegir sense revisar-ne els atributs
+(podrien introduir vectors d'atac com `onerror=` o `href="javascript:..."`).
 
 ---
 
@@ -530,8 +566,8 @@ function calcularPosicioMarcador(coordenades, svgElement) {
 /**
  * Obté el text traduït d'un camp multilingüe.
  *
- * @param {Object} camp   - Objecte amb claus 'ca', 'es', 'en'
- * @param {string} idioma - Codi d'idioma actiu ('ca', 'es', 'en')
+ * @param {Object} camp   - Objecte amb claus 'ca', 'en', 'es', 'fr'
+ * @param {string} idioma - Codi d'idioma actiu ('ca', 'en', 'es', 'fr')
  * @returns {string}      - Text en l'idioma sol·licitat, o català si no existeix
  */
 function traduir(camp, idioma) {
@@ -542,7 +578,7 @@ function traduir(camp, idioma) {
  * Canvia l'idioma de tota l'aplicació i actualitza la UI.
  * Desa la preferència a localStorage perquè persisteixi entre pàgines.
  *
- * @param {string} nouIdioma - Codi del nou idioma ('ca', 'es', 'en')
+ * @param {string} nouIdioma - Codi del nou idioma ('ca', 'en', 'es', 'fr')
  */
 function canviarIdioma(nouIdioma) {
     if (!IDIOMES_DISPONIBLES.includes(nouIdioma)) return;
@@ -737,7 +773,7 @@ input, select, textarea {
 - [ ] `<html lang="ca">` (actualitzat per JS en canviar d'idioma)
 - [ ] `<meta name="viewport" content="width=device-width, initial-scale=1">`
 - [ ] `<script>` al final del `<body>` en l'ordre: traduccions → zones → punts → funcions
-- [ ] `<noscript>` amb missatge d'avís en els 3 idiomes
+- [ ] `<noscript>` amb missatge d'avís en els 4 idiomes (ca, en, es, fr)
 - [ ] Tots els `<img>` amb atribut `alt` omplert per JS en l'idioma actiu
 
 ### ✅ `estils.css`
@@ -755,16 +791,16 @@ input, select, textarea {
 
 ### ✅ `dades/zones.js`
 - [ ] Tots els SVG de mapes de zona tenen `viewBox="0 0 100 100"`
-- [ ] Cada zona té `id` únic, `nom` en els 3 idiomes i `formaArea` vàlid
+- [ ] Cada zona té `id` únic, `nom` amb les 4 claus d'idioma (ca, en, es, fr) i `formaArea` vàlid
 
 ### ✅ `dades/punts.js`
 - [ ] Cada PI té `id` únic, `idZona` vàlid i `estrelles` entre 1 i 3
 - [ ] Coordenades `x` i `y` en percentatge (0.0–100.0), verificades sobre el mapa de zona
-- [ ] Tots els camps de text tenen les 3 traduccions (`ca`, `es`, `en`)
+- [ ] Tots els camps de text tenen les 4 claus (`ca`, `en`, `es`, `fr`) — poden ser buides, el fallback les completa amb el català
 
 ### ✅ `dades/traduccions.js`
 - [ ] Totes les claus de `UI` i `NOMS_SECCIONS` existents a l'HTML estan definides
-- [ ] Tot el contingut de `CONTINGUT_SECCIONS` té les 3 traduccions
+- [ ] Tot el contingut de `CONTINGUT_SECCIONS` té les 4 claus (`ca`, `en`, `es`, `fr`) — poden ser buides, el fallback les completa amb el català
 
 ### ✅ Accessibilitat general
 - [ ] Navegació completa per teclat (Tab, Enter, Escape per tancar menú)

@@ -43,7 +43,12 @@
             <li>
                 <button data-seccio="mapa"
                         aria-current="false">
-                    Mapa
+                    Mapa Centre
+                </button>
+            </li>
+            <li>
+                <button data-seccio="mapa-rodalia">
+                    Mapa Rodalia
                 </button>
             </li>
             <li>
@@ -65,6 +70,27 @@
                         aria-controls="seccio-contingut"
                         aria-expanded="false">
                     Arquitectura
+                </button>
+            </li>
+            <li>
+                <button data-seccio="sardana"
+                        aria-controls="seccio-contingut"
+                        aria-expanded="false">
+                    Sardanes
+                </button>
+            </li>
+            <li>
+                <button data-seccio="equipament"
+                        aria-controls="seccio-contingut"
+                        aria-expanded="false">
+                    Equipament
+                </button>
+            </li>
+            <li>
+                <button data-seccio="festes-tradicions"
+                        aria-controls="seccio-contingut"
+                        aria-expanded="false">
+                    Festes i tradicions
                 </button>
             </li>
             <li>
@@ -107,12 +133,15 @@
                 <button data-idioma="ca"
                         aria-pressed="true"
                         aria-label="Català">CA</button>
-                <button data-idioma="es"
-                        aria-pressed="false"
-                        aria-label="Castellà">ES</button>
                 <button data-idioma="en"
                         aria-pressed="false"
                         aria-label="English">EN</button>
+                <button data-idioma="es"
+                        aria-pressed="false"
+                        aria-label="Castellà">ES</button>
+                <button data-idioma="fr"
+                        aria-pressed="false"
+                        aria-label="Français">FR</button>
             </div>
 
         </header><!-- /capçalera-principal -->
@@ -126,6 +155,30 @@
              ======================================================== -->
         <article id="fitxa-punt-interes"
                  aria-labelledby="nom-punt">
+
+            <!-- ====================================================
+                 CAPÇALERA: BOTÓ TORNAR + NOM DEL PUNT
+                 Mateix patró que #capçalera-zona a zona.html:
+                 botó a l'esquerra i títol al costat.
+                 El botó torna al historial anterior (típicament
+                 la pàgina de zona des d'on s'ha entrat).
+                 El text del botó el tradueix el JS via UI['tornar'];
+                 la fletxa '◂' l'afegeix el CSS (.boto-tornar::before).
+                 ==================================================== -->
+            <div id="capçalera-punt">
+
+                <button id="boto-tornar"
+                        class="boto-tornar"
+                        onclick="history.back()"
+                        aria-label="Tornar a la llista de punts d'interès">
+                    <!-- El JS omple el textContent amb "Tornar" traduït -->
+                </button>
+
+                <!-- El JS omple textContent d'aquest h1 -->
+                <h1 id="nom-punt" aria-live="polite"></h1>
+
+            </div><!-- /capçalera-punt -->
+
 
             <!-- ====================================================
                  IMATGE DESTACADA
@@ -150,13 +203,11 @@
 
 
             <!-- ====================================================
-                 DETALLS: NOM, METADADES I ESTRELLES
+                 DETALLS: METADADES I ESTRELLES
+                 (El nom ha passat a #capçalera-punt, a dalt.)
                  ==================================================== -->
             <section id="detalls-punt"
                      aria-label="Informació del punt d'interès">
-
-                <!-- El JS omple textContent d'aquest h1 -->
-                <h1 id="nom-punt" aria-live="polite"></h1>
 
                 <!--
                     Llista de definicions: etiqueta → valor.
@@ -208,19 +259,6 @@
                  ==================================================== -->
             <div class="separador-ornamental" aria-hidden="true"></div>
 
-
-            <!-- ====================================================
-                 BOTÓ TORNAR
-                 Torna a la pàgina anterior del historial.
-                 El text el tradueix el JS via UI['tornar'].
-                 Accessible amb teclat sense JS gràcies a onclick.
-                 ==================================================== -->
-            <button id="boto-tornar"
-                    onclick="history.back()"
-                    aria-label="Tornar a la llista de punts d'interès">
-                <!-- El JS omple el textContent amb "◂ Tornar" traduït -->
-            </button>
-
         </article><!-- /fitxa-punt-interes -->
 
 
@@ -248,6 +286,7 @@
             <p lang="ca">⚠️ Aquesta aplicació requereix JavaScript per funcionar.</p>
             <p lang="es">⚠️ Esta aplicación requiere JavaScript para funcionar.</p>
             <p lang="en">⚠️ This application requires JavaScript to work.</p>
+            <p lang="fr">⚠️ Cette application nécessite JavaScript pour fonctionner.</p>
         </div>
     </noscript>
 

@@ -3,7 +3,7 @@
 // Poble: Montbrull (exemple fictici)
 // ============================================================
 // Estructura de cada entrada:
-//   'clau': { ca: '...', es: '...', en: '...' }
+//   'clau': { ca: '...', es: '...', en: '...', fr: '' }
 //
 // Regla: cap cadena pot ser buida. Si una traducció falta,
 // `traduir()` farà fallback al català (IDIOMA_PER_DEFECTE).
@@ -25,55 +25,55 @@
 const UI = {
 
     // --- Capçalera i navegació general ---
-    'titol-app':            { ca: 'Amer',           es: 'Amer',              en: 'Amer'              },
-    'obrir-menu':           { ca: 'Obrir menú',          es: 'Abrir menú',             en: 'Open menu'              },
-    'tancar-menu':          { ca: 'Tancar menú',         es: 'Cerrar menú',            en: 'Close menu'             },
-    'tornar':               { ca: 'Tornar',              es: 'Volver',                 en: 'Back'                   },
+    'titol-app':            { ca: 'Amer',           es: 'Amer',              en: 'Amer', fr: ''              },
+    'obrir-menu':           { ca: 'Obrir menú',          es: 'Abrir menú',             en: 'Open menu', fr: ''              },
+    'tancar-menu':          { ca: 'Tancar menú',         es: 'Cerrar menú',            en: 'Close menu', fr: ''             },
+    'tornar':               { ca: 'Tornar',              es: 'Volver',                 en: 'Back', fr: ''                   },
 
     // --- Mapa principal ---
     'mapa-poble-label':     { ca: 'Mapa interactiu de Amer',
                               es: 'Mapa interactivo de Amer',
-                              en: 'Interactive map of Amer'                                                     },
+                              en: 'Interactive map of Amer', fr: ''                                                     },
     'instruccio-mapa':      { ca: 'Toca una zona per explorar-la',
                               es: 'Toca una zona para explorarla',
-                              en: 'Tap a zone to explore it'                                                         },
+                              en: 'Tap a zone to explore it', fr: ''                                                         },
 
     // --- Filtre d'estrelles (zona.html) ---
     'filtre-estrelles':     { ca: 'Filtrar per rellevància',
                               es: 'Filtrar por relevancia',
-                              en: 'Filter by relevance'                                                              },
-    'filtre-tots':          { ca: 'Tots',                es: 'Todos',                  en: 'All'                    },
-    'filtre-una-estrella':  { ca: 'Recomanats',          es: 'Recomendados',           en: 'Recommended'            },
-    'filtre-dues-estrelles':{ ca: 'Destacats',           es: 'Destacados',             en: 'Featured'               },
-    'filtre-tres-estrelles':{ ca: 'Imprescindibles',     es: 'Imprescindibles',        en: 'Must-see'               },
+                              en: 'Filter by relevance', fr: ''                                                              },
+    'filtre-tots':          { ca: 'Tots',                es: 'Todos',                  en: 'All', fr: ''                    },
+    'filtre-una-estrella':  { ca: 'Recomanats',          es: 'Recomendados',           en: 'Recommended', fr: ''            },
+    'filtre-dues-estrelles':{ ca: 'Destacats',           es: 'Destacados',             en: 'Featured', fr: ''               },
+    'filtre-tres-estrelles':{ ca: 'Imprescindibles',     es: 'Imprescindibles',        en: 'Must-see', fr: ''               },
 
     // --- Fitxa de punt d'interès (punt-interes.html) ---
-    'any-construccio':      { ca: 'Any:',                es: 'Año:',                   en: 'Year:'                  },
-    'estil-arquitectonic':  { ca: 'Estil:',              es: 'Estilo:',                en: 'Style:'                 },
-    'zona-pertany':         { ca: 'Zona:',               es: 'Zona:',                  en: 'Zone:'                  },
-    'rellevancia':          { ca: 'Rellevància:',        es: 'Relevancia:',            en: 'Relevance:'             },
+    'any-construccio':      { ca: 'Any:',                es: 'Año:',                   en: 'Year:', fr: ''                  },
+    'estil-arquitectonic':  { ca: 'Estil:',              es: 'Estilo:',                en: 'Style:', fr: ''                 },
+    'zona-pertany':         { ca: 'Zona:',               es: 'Zona:',                  en: 'Zone:', fr: ''                  },
+    'rellevancia':          { ca: 'Rellevància:',        es: 'Relevancia:',            en: 'Relevance:', fr: ''             },
 
     // --- Missatges d'estat ---
     'sense-resultats':      { ca: 'Cap punt d\'interès amb aquest filtre',
                               es: 'Ningún punto de interés con este filtro',
-                              en: 'No points of interest match this filter'                                          },
-    'carregant':            { ca: 'Carregant…',          es: 'Cargando…',              en: 'Loading…'               },
+                              en: 'No points of interest match this filter', fr: ''                                          },
+    'carregant':            { ca: 'Carregant…',          es: 'Cargando…',              en: 'Loading…', fr: ''               },
     'error-zona':           { ca: 'No s\'ha trobat la zona sol·licitada',
                               es: 'No se ha encontrado la zona solicitada',
-                              en: 'The requested zone was not found'                                                 },
+                              en: 'The requested zone was not found', fr: ''                                                 },
     'error-punt':           { ca: 'No s\'ha trobat el punt d\'interès',
                               es: 'No se ha encontrado el punto de interés',
-                              en: 'The point of interest was not found'                                              },
+                              en: 'The point of interest was not found', fr: ''                                              },
 
     // --- Accessibilitat: etiquetes ARIA generades per JS ---
-    'aria-estrelles':       { ca: '{n} de 3 estrelles',  es: '{n} de 3 estrellas',     en: '{n} out of 3 stars'     },
-    'aria-zona-boto':       { ca: 'Explorar {nom}',      es: 'Explorar {nom}',         en: 'Explore {nom}'          },
-    'aria-marcador-pi':     { ca: 'Veure {nom}',         es: 'Ver {nom}',              en: 'View {nom}'             },
+    'aria-estrelles':       { ca: '{n} de 3 estrelles',  es: '{n} de 3 estrellas',     en: '{n} out of 3 stars', fr: ''     },
+    'aria-zona-boto':       { ca: 'Explorar {nom}',      es: 'Explorar {nom}',         en: 'Explore {nom}', fr: ''          },
+    'aria-marcador-pi':     { ca: 'Veure {nom}',         es: 'Ver {nom}',              en: 'View {nom}', fr: ''             },
 
     // --- Avís sense JavaScript ---
     'noscript-avis':        { ca: 'Aquesta aplicació requereix JavaScript per funcionar.',
                               es: 'Esta aplicación requiere JavaScript para funcionar.',
-                              en: 'This application requires JavaScript to work.'                                    },
+                              en: 'This application requires JavaScript to work.', fr: ''                                    },
 };
 
 
@@ -90,13 +90,16 @@ const UI = {
  * @type {Object.<string, {ca: string, es: string, en: string}>}
  */
 const NOMS_SECCIONS = {
-    'introduccio':          { ca: 'Presentació',         es: 'Introducción',           en: 'Introduction'           },
-    'mapa':                 { ca: 'Mapa',                es: 'Mapa',                   en: 'Map'                    },
-    'historia':             { ca: 'Història',            es: 'Historia',               en: 'History'                },
-    'rutes':                { ca: 'Rutes',               es: 'Rutas',                  en: 'Routes'                 },
-    'arquitectura':         { ca: 'Arquitectura',        es: 'Arquitectura',           en: 'Architecture'           },
-    'informacio-practica':  { ca: 'Informació pràctica', es: 'Info práctica',          en: 'Practical info'         },
-	'sardana':  			{ ca: 'Sardanes', 			 es: 'Sardanas',        	  en: 'Sardanes'      		   },
+    'introduccio':          { ca: 'Presentació',         es: 'Introducción',           en: 'Introduction', fr: ''           },
+    'mapa':                 { ca: 'Mapa Centre',         es: 'Mapa Centro',            en: 'Central Map',        fr: 'Carte du centre'    },
+    'mapa-rodalia':         { ca: 'Mapa Rodalia',        es: 'Mapa Alrededores',       en: 'Surroundings Map',   fr: 'Carte des environs' },
+    'historia':             { ca: 'Història',            es: 'Historia',               en: 'History', fr: ''                },
+    'rutes':                { ca: 'Rutes',               es: 'Rutas',                  en: 'Routes', fr: ''                 },
+    'arquitectura':         { ca: 'Arquitectura',        es: 'Arquitectura',           en: 'Architecture', fr: ''           },
+    'equipament':           { ca: 'Equipament',          es: 'Equipamiento',           en: 'Facilities', fr: 'Équipements'  },
+    'festes-tradicions':    { ca: 'Festes i tradicions', es: 'Fiestas y tradiciones',  en: 'Festivals & traditions', fr: 'Fêtes et traditions' },
+    'informacio-practica':  { ca: 'Informació pràctica', es: 'Info práctica',          en: 'Practical info', fr: ''         },
+	'sardana':  			{ ca: 'Sardanes', 			 es: 'Sardanas',        	  en: 'Sardanes', fr: ''      		   },
 };	
 
 
@@ -115,7 +118,7 @@ const NOMS_SECCIONS = {
 const CONTINGUT_SECCIONS = {
 
     'introduccio': {
-        ca: `<p>Benvinguts a <strong>Amer</strong>, ón els carrers estrets i empedrats, l'olor de fum de les xemeneies a l'hivern i el silenci dels matins de diumenge t'embriaguen sense voler.
+        ca: `<p>Benvinguts a <strong>Amer</strong>, ón els carrers estrets i empedrats, l'olor de fum de les xemeneies a l'hivern i el silenci dels matins de diumenge t'embriagueràn sense voler.
 			<br> No serà cap sorpresa, no veureu aquí ni estàtues de grans generals ni tampoc cap arc del triomf.
 			Sí queda però el testimoni de mil anys de història,  aquí tenim la història de la gent de a peu.  <br>
 			
@@ -134,6 +137,9 @@ const CONTINGUT_SECCIONS = {
              it preserves intact its medieval core, its wine-making traditions
              and a warmth that brings visitors back time and again.</p>
              <p>Walking its cobbled streets is a journey eight centuries back in time.</p>`,
+
+        fr: `[FR-TODO]
+             <!-- Traducció pendent al francès -->`,
     },
 
     'historia': {
@@ -188,6 +194,9 @@ const CONTINGUT_SECCIONS = {
              prosperity, reflected in the grand manor houses along Carrer Major.</p>
              <p>During the Peninsular War (1808-1814) the village suffered considerable
              damage, taking decades to recover.</p>`,
+
+        fr: `[FR-TODO]
+             <!-- Traducció pendent al francès -->`,
     },
 
     'rutes': {
@@ -226,6 +235,9 @@ const CONTINGUT_SECCIONS = {
              </ul>
              <p>All itineraries feature information panels and QR codes
              with additional content.</p>`,
+
+        fr: `[FR-TODO]
+             <!-- Traducció pendent al francès -->`,
     },
 
     'arquitectura': {
@@ -283,6 +295,9 @@ const CONTINGUT_SECCIONS = {
                    and the façade of the Agricultural Cooperative add a distinctive
                    touch to the old town.</li>
              </ul>`,
+
+        fr: `[FR-TODO]
+             <!-- Traducció pendent al francès -->`,
     },
 
     'informacio-practica': {
@@ -353,11 +368,14 @@ const CONTINGUT_SECCIONS = {
              <p><strong>Accommodation</strong><br>
              The municipality has 2 rural houses and 1 guesthouse.
              Check availability at the Tourist Office.</p>`,
+
+        fr: `[FR-TODO]
+             <!-- Traducció pendent al francès -->`,
     },
 	'sardana': {
         ca: `
 			<p><strong>Tradició sardanística</strong><br>
-             La tradició sardanística d'Amer és i ha estat molt important. Proba d'aixó en són Pere Buixó i Pere Fontàs compositors de sardanes.
+             La tradició sardanística d'Amer és i ha estat molt important. Amb orgull s'explica que tant Pere Buixó com Pere Fontàs, compositors de sardanes, són fills d'Amer.
              </p>
 			 
 			 <p><strong>Sardana de l'alcalde</strong><br>
@@ -399,5 +417,63 @@ const CONTINGUT_SECCIONS = {
              <p><strong>Accommodation</strong><br>
              The municipality has 2 rural houses and 1 guesthouse.
              Check availability at the Tourist Office.</p>`,
+
+        fr: `[FR-TODO]
+             <!-- Traducció pendent al francès -->`,
+    },
+
+    'equipament': {
+        ca: `
+             <p><strong>Piscina municipal</strong><br>
+             La piscina d'Amer és a la zona esportiva del poble, oberta durant els mesos d'estiu (juny-setembre).
+             Disposa de piscina gran, piscina infantil i zona de gespa amb ombres.<br>
+             Horari habitual: de 11h a 20h. Consulteu a l'Ajuntament abans d'anar-hi.
+             </p>
+
+             <p><strong>Museu</strong><br>
+             [Pendent d'ampliar]<br>
+             Ubicació, horaris, entrades i què s'hi pot veure.
+             </p>
+
+             <p><strong>Pistes de pàdel</strong><br>
+             [Pendent d'ampliar]<br>
+             Ubicació, hores de reserva i condicions d'ús.
+             </p>`,
+
+        es: `[ES-TODO]
+             <!-- Traducció pendent al castellà -->`,
+
+        en: `[EN-TODO]
+             <!-- Translation pending -->`,
+
+        fr: `[FR-TODO]
+             <!-- Traducció pendent al francès -->`,
+    },
+
+    'festes-tradicions': {
+        ca: `
+             <p><strong>Festa Major</strong><br>
+             [Pendent d'ampliar]<br>
+             Dates, actes principals, sardanes, gegants, focs i concerts.
+             </p>
+
+             <p><strong>Processó dels Dolors</strong><br>
+             [Pendent d'ampliar]<br>
+             Origen, recorregut i simbolisme d'aquesta tradició de Setmana Santa.
+             </p>
+
+             <p><strong>Festa de l'Albergínia</strong><br>
+             [Pendent d'ampliar]<br>
+             Data, mostra gastronòmica i actes populars al voltant del producte local.
+             </p>`,
+
+        es: `[ES-TODO]
+             <!-- Traducció pendent al castellà -->`,
+
+        en: `[EN-TODO]
+             <!-- Translation pending -->`,
+
+        fr: `[FR-TODO]
+             <!-- Traducció pendent al francès -->`,
     },
 };

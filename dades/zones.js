@@ -54,7 +54,7 @@ const ZONES = [
         nom: {
             ca: 'Plaça de la Vila',
             es: 'Plaza de la Vila',
-            en: 'Vila Town',
+            en: 'Vila Town', fr: '',
         },
         arxiuMapa: 'imatges/mapes-zones/zona-vila.jpg',
         // Polígon rectangular: esquerra-dalt → dreta-dalt → dreta-baix → esquerra-baix
@@ -72,7 +72,7 @@ const ZONES = [
         nom: {
             ca: 'Plaça del Monestir',
             es: 'Plaza del Monasterio',
-            en: 'Abby Square',
+            en: 'Abby Square', fr: '',
         },
         arxiuMapa: 'imatges/mapes-zones/zona-monestir.jpg',
         formaArea: 'M30,35.4 L30.3,38 L34.4,37.8 L34.6,35.2 Z',
@@ -90,7 +90,7 @@ const ZONES = [
         nom: {
             ca: 'Barri del Pedreguet',
             es: 'Barrio del Pedreguet',
-            en: 'Pedreguet Neigborhood',
+            en: 'Pedreguet Neigborhood', fr: '',
         },
         arxiuMapa: 'imatges/mapes-zones/zona-pedreguet.jpg',
         // Polígon de 5 punts per donar-li una forma lleugerament irregular
@@ -110,11 +110,36 @@ const ZONES = [
         nom: {
             ca: 'Zona Carrer Barroca',
             es: 'Zona Calle Barroca',
-            en: 'Barroca Street',
+            en: 'Barroca Street', fr: '',
         },
         arxiuMapa: 'imatges/mapes-zones/zona-barroca.jpg',
         formaArea: 'M85.2,44.6 L86.1,58.2 L98.8,59.1 L98.7,45 Z',
         centreEtiqueta: { x: 61, y: 78 },
+    },
+
+    // ----------------------------------------------------------
+    // Zona 5: RODALIA D'AMER  (accés directe des del menú)
+    // ----------------------------------------------------------
+    // Zona especial: NO apareix al mapa principal del centre.
+    // Només és accessible mitjançant el botó "Mapa Rodalia" del
+    // menú lateral, que navega directament a:
+    //     zona.html?zona=zona-rodalia
+    // Per aquest motiu, `formaArea` és una cadena buida i el flag
+    // `nomesAccesDirecte: true` indica al codi que no s'ha de
+    // renderitzar cap àrea clicable al mapa principal.
+    // ----------------------------------------------------------
+    {
+        id: 'zona-rodalia',
+        nom: {
+            ca: 'Rodalia d\'Amer',
+            es: 'Alrededores de Amer',
+            en: 'Amer Surroundings',
+            fr: 'Environs d\'Amer',
+        },
+        arxiuMapa: 'imatges/mapes-zones/zona-rodalia.jpg',
+        formaArea: '',                       // no és clicable al mapa principal
+        centreEtiqueta: { x: 50, y: 50 },
+        nomesAccesDirecte: true,             // exclosa de la generació d'àrees
     },
 
 ];

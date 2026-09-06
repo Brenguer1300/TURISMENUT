@@ -68,12 +68,14 @@ const PUNTS_INTERES = [
             ca: 'Plaça de la Vila',
             es: 'Plaza de la Vila',
             en: 'Vila Square',
+            fr: '[FR-TODO]',
         },
         any: 1980,
         estil: {
             ca: 'Eclèctic',
             es: 'Eclectico',
             en: 'Eclectic',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Plaça de la Vila o plaça Porxada. 
@@ -111,6 +113,8 @@ const PUNTS_INTERES = [
 
 				To thank each town that responded to the call, an identifying plaque was added.
 			Do you think you’ll find yours?`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 
@@ -124,12 +128,14 @@ const PUNTS_INTERES = [
             ca: 'Can Panosa',
             es: 'Can Panosa',
             en: 'Can Panosa',
+            fr: '[FR-TODO]',
         },
         any: 'S.XVII',
         estil: {
             ca: 'Gòtic tardà',
             es: 'Gótico tardío',
             en: 'Late Gothic',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Can Panosa. Plaça de la Vila 11.
@@ -148,6 +154,8 @@ const PUNTS_INTERES = [
                  1509. On the north side stands the Casa de la Vila, featuring a 17th-century sundial and
                  the town's coat of arms carved above the main lintel. In summer the square fills with café
                  terraces and becomes the venue for the Montbrull Early Music Festival.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 
@@ -161,12 +169,14 @@ const PUNTS_INTERES = [
             ca: 'Can Gultresa',
             es: 'Can Gultresa',
             en: 'Can Gultresa',
+            fr: '[FR-TODO]',
         },
         any: 1883,
         estil: {
             ca: 'Modernisme',
             es: 'Modernismo',
             en: 'Modernisme',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Can Gultresa. Plaça de la Vila 5.
@@ -188,6 +198,8 @@ const PUNTS_INTERES = [
                  to its original defensive function. On the keystone the inscription «VILLA MONTIS BRULLI»
                  can be read, partially worn by weathering. The 2008 restoration consolidated the ashlar
                  masonry and recovered the original cobblestone paving beneath the arch passage.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 
@@ -201,12 +213,14 @@ const PUNTS_INTERES = [
             ca: 'Llinda de Can Mundet',
             es: 'Llinda de Can Mundet',
             en: 'Llinda de Can Mundet',
+            fr: '[FR-TODO]',
         },
         any: 'S. XIV',
         estil: {
             ca: 'Gòtic',
             es: 'Gótico',
             en: 'Gotic',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Llinda de Can Mundet. Plaça de la Vila 26.
@@ -225,6 +239,8 @@ const PUNTS_INTERES = [
                  semicircular arches. The voussoir portal preserves the family's heraldic shield showing three
                  logs and a cross. The building now houses the Montbrull Heritage Interpretation Centre,
                  open to the public Tuesday to Sunday.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 
@@ -238,12 +254,14 @@ const PUNTS_INTERES = [
             ca: 'Ca Espinet',
             es: 'Ca Espinet',
             en: 'Ca Espinet',
+            fr: '[FR-TODO]',
         },
         any: 'S.XIX',
         estil: {
             ca: 'Modernisme',
             es: 'Modernismo',
             en: 'Modernisme',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Ca l'Espinet. Plaça de la Vila 20.
@@ -264,6 +282,8 @@ const PUNTS_INTERES = [
                  its supply channel survive almost intact. In 2015 the wooden wheel was restored and an
                  interpretive trail was installed explaining the traditional milling process. Visitable
                  weekends from May to October.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 
@@ -277,15 +297,17 @@ const PUNTS_INTERES = [
             ca: 'Can Guifre',
             es: 'Can Guifre',
             en: 'Can Guifre',
+            fr: '[FR-TODO]',
         },
         any: 1930,
         estil: {
             ca: 'Eclèctic',
             es: 'Eclectico',
             en: 'Eclectico',
+            fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Guifre. Plaça de la Vila 13.
+            ca: `Can Guifre. Plaça de la Vila 13. <BR>
 			     Construït al segon terç del S.XIX és la única csa de la plaça amb .
 				 La particularitat és que si us acosteu a la porta sota la porchada podreu veure la singularitat
 				 amb que es podia resoldre la absència de porters automàtics. 
@@ -301,6 +323,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
@@ -314,12 +338,14 @@ const PUNTS_INTERES = [
             ca: 'Can Junquera',
             es: 'Can Junquera',
             en: 'Can Junquera',
+            fr: '[FR-TODO]',
         },
         any: 1930,
         estil: {
             ca: 'Eclèctic',
             es: 'Eclectico',
             en: 'Eclectico',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Can Junquera. Carrer Narcís Junquera 1.
@@ -339,6 +365,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
@@ -352,12 +380,14 @@ const PUNTS_INTERES = [
             ca: 'Can Soler',
             es: 'Can Soler',
             en: 'Can Soler',
+            fr: '[FR-TODO]',
         },
         any: 1930,
         estil: {
             ca: 'Eclèctic',
             es: 'Eclectico',
             en: 'Eclectico',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Can Soler. Carrer Narcís Junquera 8.
@@ -376,6 +406,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
@@ -389,12 +421,14 @@ const PUNTS_INTERES = [
             ca: 'Ajuntament',
             es: 'Ayuntamiento',
             en: 'Council City',
+            fr: '[FR-TODO]',
         },
         any: 1930,
         estil: {
             ca: 'Noucentisme',
             es: 'Noucentismo',
             en: 'Newcentury',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Ajuntament. Plaça de la Vila 2.
@@ -411,6 +445,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
     // ============================================================
@@ -428,12 +464,14 @@ const PUNTS_INTERES = [
             ca: 'La Torre',
             es: 'La Torre',
             en: 'La Torre',
+            fr: '[FR-TODO]',
         },
         any: 1925,
         estil: {
             ca: 'Modernisme',
             es: 'Modernismo',
             en: 'Newcentury',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `La Torre. Carrer de la Barroca 1. 
@@ -452,6 +490,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
@@ -465,12 +505,14 @@ const PUNTS_INTERES = [
             ca: 'Can Pujades',
             es: 'Can Pujades',
             en: 'Can Pujades',
+            fr: '[FR-TODO]',
         },
         any: 'Anys 20',
         estil: {
             ca: 'Modernisme',
             es: 'Modernismo',
             en: 'Newcentury',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Can Pujades. Carrer de la Barroca 5. 
@@ -490,6 +532,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
@@ -503,19 +547,21 @@ const PUNTS_INTERES = [
 	 {
         id: 'pi-012',
         idZona: 'zona-monestir',
-        estrelles: 2,                                // Recomanat
+        estrelles: 3,                                // Recomanat
         coordenades: { x: 50, y: 6},          // Centre de la zona: encreuament de carrers
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-012.jpg',
         nom: {
             ca: 'Absis Monestir',
             es: 'Abis del Monasterio',
             en: 'Monastery Absis',
+            fr: '[FR-TODO]',
         },
         any: "S.XII",
         estil: {
             ca: 'Romànic',
             es: 'Romanico',
             en: 'Newcentury',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Absis del Monestir.  Carrer Jacint Verdaguer.
@@ -535,6 +581,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
@@ -544,17 +592,19 @@ const PUNTS_INTERES = [
         idZona: 'zona-monestir',
         estrelles: 2,                                // Recomanat
         coordenades: { x: 45, y: 51},          // Centre de la zona: encreuament de carrers
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-013.jpg',
         nom: {
             ca: 'Can Món',
             es: 'Can Món',
             en: 'Can Món',
+            fr: '[FR-TODO]',
         },
         any: "S.XIV",
         estil: {
             ca: 'Romànic',
             es: 'Romanico',
             en: 'Newcentury',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Can Món.  Carrer Narcís Junquera / Plaça del Monestir.
@@ -575,25 +625,29 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 
  {
         id: 'pi-014',
         idZona: 'zona-monestir',
-        estrelles: 2,                                // Recomanat
+        estrelles: 1,                                // Recomanat
         coordenades: { x: 55, y: 45},          // Centre de la zona: encreuament de carrers
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-014.jpg',
         nom: {
             ca: 'Can Boles',
             es: 'Can Boles',
             en: 'Can Boles',
+            fr: '[FR-TODO]',
         },
         any: "S.XIV",
         estil: {
             ca: 'Romànic',
             es: 'Romanico',
             en: 'Newcentury',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Can Boles.  Plaça del Monestir 5.
@@ -614,25 +668,29 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
 	 {
         id: 'pi-015',
         idZona: 'zona-monestir',
-        estrelles: 2,                                // Recomanat
+        estrelles: 1,                                // Recomanat
         coordenades: { x: 66, y: 36},          // Centre de la zona: encreuament de carrer
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-015.jpg',
         nom: {
             ca: 'Creu de terme',
             es: 'Creu de terme',
             en: 'Creu de terme',
+            fr: '[FR-TODO]',
         },
         any: "S.XIX",
         estil: {
             ca: 'Neoromànic',
             es: 'Neoromanico',
             en: 'Newcentury',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Creu de terme.  Plaça del Monestir s/n.
@@ -652,6 +710,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
@@ -660,17 +720,19 @@ const PUNTS_INTERES = [
         idZona: 'zona-monestir',
         estrelles: 2,                                // Recomanat
         coordenades: { x: 62, y: 22},          // Centre de la zona: encreuament de carrer
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-016.jpg',
         nom: {
             ca: 'Can Terme',
             es: 'Can Terme',
             en: 'Can Terme',
+            fr: '[FR-TODO]',
         },
         any: "S.XIX",
         estil: {
             ca: 'Neoromànic',
             es: 'Neoromanico',
             en: 'Newcentury',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Can Terme.  Plaça del Monestir 2.
@@ -689,25 +751,29 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
 	{
         id: 'pi-017',
         idZona: 'zona-monestir',
-        estrelles: 2,                                // Recomanat
+        estrelles: 3,                                // Recomanat
         coordenades: { x: 40, y: 32},          // Centre de la zona: encreuament de carrer
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-017.jpg',
         nom: {
             ca: 'Monestir',
             es: 'Monasterio',
             en: 'Monastery',
+            fr: '[FR-TODO]',
         },
         any: "S.XIX",
         estil: {
             ca: 'Neoromànic',
             es: 'Neoromanico',
             en: 'Newcentury',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Antic Monestir Santa Maria d'Amer.  Plaça del Monestir 2.
@@ -728,6 +794,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
@@ -736,17 +804,19 @@ const PUNTS_INTERES = [
         idZona: 'zona-monestir',
         estrelles: 1,                                // Recomanat
         coordenades: { x: 10, y: 20},          // Centre de la zona: encreuament de carrer
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-018.jpg',
         nom: {
             ca: 'Ca l-Espígol',
             es: 'Ca l-Espígol',
             en: 'Ca l-Espígol',
+            fr: '[FR-TODO]',
         },
         any: "S.XIX",
         estil: {
             ca: 'Neoromànic',
             es: 'Neoromanico',
             en: 'Newcentury',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Ca lEspigol.  Plaça del Monestir 17.
@@ -765,6 +835,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
@@ -773,17 +845,19 @@ const PUNTS_INTERES = [
         idZona: 'zona-monestir',
         estrelles: 1,                                // Recomanat
         coordenades: { x: 75, y: 40},          // Centre de la zona: encreuament de carrer
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-019.jpg',
         nom: {
             ca: 'Can Gasull',
             es: 'Can Gasull',
             en: 'Can Gasull',
+            fr: '[FR-TODO]',
         },
         any: "S.XIX",
         estil: {
             ca: 'Neoromànic',
             es: 'Neoromanico',
             en: 'Newcentury',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Can Gasull.  Plaça del Monestir, 3 / Carrer Sant Benet.
@@ -805,6 +879,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 
@@ -813,17 +889,19 @@ const PUNTS_INTERES = [
         idZona: 'zona-monestir',
         estrelles: 1,                                // Recomanat
         coordenades: { x: 61, y: 40},          // Centre de la zona: encreuament de carrer
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-020.jpg',
         nom: {
             ca: 'Placa Remença',
             es: 'Placa Remença',
             en: 'Placa Remença',
+            fr: '[FR-TODO]',
         },
         any: "S.XX",
         estil: {
             ca: 'Neoromànic',
             es: 'Neoromanico',
             en: 'Newcentury',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Placa de l'arbitratge Remença.  Colocada a Can Boles.
@@ -844,6 +922,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
@@ -862,12 +942,14 @@ const PUNTS_INTERES = [
             ca: 'Carrer Girona',
             es: 'Calle Girona',
             en: 'Girona Street',
+            fr: '[FR-TODO]',
         },
         any: "S.XVII",
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
             en: 'Arquitectura popular',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Carrer Girona.  
@@ -898,6 +980,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 
@@ -911,12 +995,14 @@ const PUNTS_INTERES = [
             ca: 'Can La',
             es: 'Can La',
             en: 'Can La',
+            fr: '[FR-TODO]',
         },
         any: "S.XVIII",
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
             en: 'Arquitectura popular',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Can La. Carrer Girona 2.  
@@ -936,6 +1022,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
@@ -949,12 +1037,14 @@ const PUNTS_INTERES = [
             ca: 'Can Plana',
             es: 'Can Plana',
             en: 'Can Plana',
+            fr: '[FR-TODO]',
         },
         any: "S.XVIII",
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
             en: 'Arquitectura popular',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Can Plana. Carrer Girona 2.  
@@ -973,6 +1063,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
@@ -986,12 +1078,14 @@ const PUNTS_INTERES = [
             ca: 'Ermita',
             es: 'Ermita',
             en: 'Ermita',
+            fr: '[FR-TODO]',
         },
         any: "S.XVII",
         estil: {
             ca: 'Barroc',
             es: 'Barroco',
             en: 'Barroc',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Ermita Mare de Déu de la Pietat. Carrer Girona (al final).  
@@ -1014,6 +1108,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 	
@@ -1027,12 +1123,14 @@ const PUNTS_INTERES = [
             ca: 'Can Llepart',
             es: 'Can Llepart',
             en: 'Can Llepart',
+            fr: '[FR-TODO]',
         },
         any: "S.XVIII",
         estil: {
             ca: 'Neoromànic',
             es: 'Neoromanico',
             en: 'Newcentury',
+            fr: '[FR-TODO]',
         },
         descripcio: {
             ca: `Can Llepart. Plaça de la Pietat 1  
@@ -1053,6 +1151,8 @@ const PUNTS_INTERES = [
                  and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
                  centuries as the water supply point for the northern part of the village. Local legend holds
                  that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
         },
     },
 

@@ -833,15 +833,20 @@ hr::before {
     user-select:    none;
 }
 
-/* Hover i focus: creix lleugerament i el cercle s'omple d'or */
+/* Hover, focus i estat SELECCIONAT: creix lleugerament i el cercle
+   s'omple d'or. La classe .seleccionat s'aplica per JS quan l'usuari
+   fa el 1r clic al marcador (vegeu seleccionarPunt() a funcions.js);
+   així el ressaltat persisteix encara que el cursor no hi sigui. */
 .marcador-punt:hover,
-.marcador-punt:focus-visible {
+.marcador-punt:focus-visible,
+.marcador-punt.seleccionat {
     transform: scale(1.18) translateY(-0.6px);
     filter:    drop-shadow(0 0.8px 1.6px var(--color-ombra-forta));
 }
 
 .marcador-punt:hover .cercle-marcador,
-.marcador-punt:focus-visible .cercle-marcador {
+.marcador-punt:focus-visible .cercle-marcador,
+.marcador-punt.seleccionat .cercle-marcador {
     fill:    var(--color-accent-or);
     stroke:  var(--color-accent);
     opacity: 1;
@@ -952,11 +957,23 @@ hr::before {
 }
 
 .targeta-punt:hover,
-.targeta-punt:focus-visible {
+.targeta-punt:focus-visible,
+.targeta-punt.seleccionada {
     border-color:     var(--color-accent);
     border-left-color: var(--color-accent);
     box-shadow:       0 3px 12px var(--color-ombra);
     transform:        translateX(2px);
+}
+
+/* Estat SELECCIONADA: quan l'usuari clica un marcador del mapa, la
+   targeta corresponent puja al primer lloc de la llista i queda
+   ressaltada amb l'accent daurat, igual que el marcador. Reforcem
+   la vora esquerra amb el groc-or perquè es distingeixi clarament
+   del hover accidental d'una altra targeta. */
+.targeta-punt.seleccionada {
+    border-left-color: var(--color-accent-or);
+    border-left-width: 5px;
+    background-color:  var(--color-fons-selecio, #fff8e1);
 }
 
 .targeta-punt .miniatura {
@@ -1088,7 +1105,21 @@ hr::before {
     pointer-events: none;
 }
 
-/* Detalls del PI: nom, any, estil, estrelles */
+/* ------------------------------------------------------------
+   Capçalera de la fitxa: botó tornar + nom del PI.
+   Mateix patró visual que #capçalera-zona (zona.html).
+   ------------------------------------------------------------ */
+#capçalera-punt {
+    display:          flex;
+    align-items:      center;
+    gap:              var(--espai-mitja);
+    padding:          var(--espai-mitja);
+    background-color: var(--color-fons-fosc);
+    border-bottom:    1px solid var(--color-vora-forta);
+    min-height:       var(--mida-touch);
+}
+
+/* Detalls del PI: any, estil, estrelles (el nom ja no hi és) */
 #detalls-punt {
     padding:          var(--espai-gran) var(--espai-mitja) var(--espai-mitja);
     background-color: var(--color-superficie);
@@ -1097,10 +1128,12 @@ hr::before {
 }
 
 #nom-punt {
-    font-size:    var(--mida-titol);
-    color:        var(--color-accent);
-    margin-bottom: var(--espai-mitja);
-    line-height:  1.15;
+    font-size:  var(--mida-text-gran);
+    color:      var(--color-accent);
+    flex:       1;
+    font-style: italic;
+    line-height: 1.15;
+    margin:     0;
 }
 
 /* Taula de metadades (any, estil, zona) */
@@ -1183,37 +1216,9 @@ hr::before {
     line-height: var(--alçada-linia);
 }
 
-/* Botó tornar a la fitxa */
-#boto-tornar {
-    composes: boto-tornar;   /* herència semàntica via JS que afegirà classe */
-    display:        flex;
-    align-items:    center;
-    gap:            var(--espai-xs);
-    margin:         var(--espai-gran) var(--espai-mitja);
-    min-height:     var(--mida-touch);
-    padding:        0 var(--espai-gran);
-    font-family:    var(--font-titol);
-    font-size:      var(--mida-text-mitja);
-    font-weight:    600;
-    letter-spacing: 0.05em;
-    color:          var(--color-text-suau);
-    border:         1px solid var(--color-vora-forta);
-    border-radius:  var(--radi-petit);
-    background-color: var(--color-superficie);
-    align-self:     flex-start;
-    transition:     all var(--durada-animacio) ease;
-}
-
-#boto-tornar::before {
-    content: '◂ ';
-}
-
-#boto-tornar:hover,
-#boto-tornar:focus-visible {
-    color:            var(--color-accent);
-    border-color:     var(--color-accent);
-    background-color: rgba(139, 46, 10, 0.06);
-}
+/* Nota: El botó #boto-tornar de la fitxa ara viu dins #capçalera-punt
+   i hereta l'estil compartit de la classe .boto-tornar (secció 11).
+   Cap regla específica addicional és necessària aquí. */
 
 
 /* ============================================================
@@ -1273,7 +1278,8 @@ button,
         position:  sticky;
         top:       0;
         height:    100dvh;
-        transform: none !important;   /* mai amagat en tauleta */
+        transform: none;              /* visible per defecte */
+        transition: transform var(--durada-animacio) ease;
     }
 
     /* La coberta no té sentit en tauleta */
@@ -1308,6 +1314,24 @@ button,
         grid-row:    2;
     }
 
+    /* ─────────────────────────────────────────────────────────
+       Menú amagat manualment (classe .menu-amagat al <body>)
+       En tauleta/escriptori l'usuari pot amagar el menú amb la
+       X i tornar-lo a mostrar amb el botó hamburguesa (☰).
+       ───────────────────────────────────────────────────────── */
+    body.menu-amagat {
+        grid-template-columns: 0 1fr;  /* col·lapsa la columna del menú */
+    }
+
+    body.menu-amagat #menu-lateral {
+        transform: translateX(-100%);
+        pointer-events: none;          /* no interactiu mentre és fora */
+    }
+
+    body.menu-amagat #boto-menu {
+        display: inline-flex;          /* torna a mostrar l'hamburguesa */
+    }
+
     /* Mapa de zona: aspecte fix per aprofitar l'espai */
     /*
        En pantalles grans limitem l'ALÇADA en píxels perquè un mapa
@@ -1324,7 +1348,10 @@ button,
         margin: 0 auto;
     }
 
-    /* Fitxa PI: layout horitzontal */
+    /* Fitxa PI: layout horitzontal
+       Fila superior sencera: capçalera (botó + nom).
+       Columna esquerra: imatge (ocupa les dues files restants).
+       Columna dreta: metadades a dalt, descripció ocupant l'espai. */
     #fitxa-punt-interes {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1332,27 +1359,26 @@ button,
         min-height: calc(100dvh - var(--mida-touch));
     }
 
+    #capçalera-punt {
+        grid-column: 1 / -1;
+        grid-row:    1;
+    }
+
     #contenidor-imatge {
         grid-column:  1;
-        grid-row:     1 / 4;
+        grid-row:     2 / 4;
         aspect-ratio: auto;
         height:       100%;
     }
 
     #detalls-punt {
         grid-column: 2;
-        grid-row:    1;
+        grid-row:    2;
     }
 
     #descripcio-punt {
         grid-column: 2;
-        grid-row:    2;
-    }
-
-    #boto-tornar {
-        grid-column: 2;
         grid-row:    3;
-        align-self:  end;
     }
 }
 

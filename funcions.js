@@ -30,8 +30,8 @@
 /** @constant {string} Nom del poble mostrat a la capçalera */
 const NOM_POBLE = 'Montbrull';
 
-/** @constant {string[]} Codis d'idioma disponibles */
-const IDIOMES_DISPONIBLES = ['ca', 'es', 'en'];
+/** @constant {string[]} Codis d'idioma disponibles (ordre alfabètic) */
+const IDIOMES_DISPONIBLES = ['ca', 'en', 'es', 'fr'];
 
 /** @constant {string} Idioma per defecte si no n'hi ha cap desat */
 const IDIOMA_PER_DEFECTE = 'ca';
@@ -45,9 +45,9 @@ const CLAU_IDIOMA_LOCAL = 'montbrull-idioma';
  * per no dependre de l'ordre de càrrega.
  */
 const ETIQUETES_ESTRELLES = {
-    1: { ca: 'Recomanat',      es: 'Recomendado',    en: 'Recommended' },
-    2: { ca: 'Destacat',       es: 'Destacado',      en: 'Featured'    },
-    3: { ca: 'Imprescindible', es: 'Imprescindible', en: 'Must-see'    },
+    1: { ca: 'Recomanat',      es: 'Recomendado',    en: 'Recommended', fr: 'Recommandé'   },
+    2: { ca: 'Destacat',       es: 'Destacado',      en: 'Featured',    fr: 'À découvrir'  },
+    3: { ca: 'Imprescindible', es: 'Imprescindible', en: 'Must-see',    fr: 'Incontournable' },
 };
 
 /**
@@ -57,25 +57,45 @@ const ETIQUETES_ESTRELLES = {
  */
 const ID_SECCIO_MAPA = 'mapa';
 
+/**
+ * @constant {string} Identificador de la secció especial "Mapa Rodalia".
+ * No mostra text a la pàgina actual: navega directament a `zona.html`
+ * amb la zona especial `zona-rodalia`, que no apareix al mapa principal.
+ */
+const ID_SECCIO_MAPA_RODALIA = 'mapa-rodalia';
+
+/**
+ * @constant {string} Identificador de la zona associada al botó
+ * "Mapa Rodalia" del menú lateral.
+ */
+const ID_ZONA_RODALIA = 'zona-rodalia';
+
 /** @constant {string[]} IDs de les seccions del menú (ordre d'aparició a l'HTML) */
 const SECCIONS_MENU = [
     'introduccio',
     ID_SECCIO_MAPA,
+    ID_SECCIO_MAPA_RODALIA,
     'historia',
     'rutes',
     'arquitectura',
+    'sardana',
+    'equipament',
+    'festes-tradicions',
     'informacio-practica',
 ];
 
 /** @constant {Object} Emoticones associades a cada secció del menú */
 const EMOJIS_SECCIONS = {
     'introduccio':          '📖',
-    'mapa':                 '🗺️',
+    'mapa':                 '🏘️',
+    'mapa-rodalia':         '🗺️',
     'historia':             '⚔️',
     'rutes':                '🥾',
     'arquitectura':         '🏛️',
-    'informacio-practica':  '🕯️',
-	'sardana':   			'🎺',
+    'sardana':   			'🎺',
+    'equipament':           '🏊',
+    'festes-tradicions':    '🎭',
+    'informacio-practica':  '🛞',
 };
 
 /** @constant {Object} Emoticona per a cada zona del mapa */
@@ -86,10 +106,21 @@ const EMOJIS_ZONES = {
     'zona-vinyes':   '🍇',
 };
 
-/** @constant {string} Emoticona per a marcadors normals al mapa de zona */
-const EMOJI_MARCADOR_BASE        = '📍';
+/**
+ * @constant {Object.<number, string>} Emoticones dels marcadors del
+ * mapa de zona segons el nombre d'estrelles del PI. Permet distingir
+ * visualment els tres nivells de rellevància des del mapa.
+ */
+const EMOJIS_MARCADOR_PER_ESTRELLES = {
+    1: '📍',   // Recomanat: marcador clàssic
+    2: '🏵️',  // Destacat: rosette daurada
+    3: '⚜️',  // Imprescindible: flor de llis
+};
 
-/** @constant {string} Emoticona per a PIs imprescindibles (3 estrelles) */
+/** @constant {string} Emoticona per defecte si `estrelles` no és 1, 2 o 3 */
+const EMOJI_MARCADOR_BASE           = '📍';
+
+/** @deprecated Es manté per compatibilitat; usa EMOJIS_MARCADOR_PER_ESTRELLES[3] */
 const EMOJI_MARCADOR_IMPRESCINDIBLE = '⚜️';
 
 
@@ -110,6 +141,36 @@ let menuObert = false;
  * es mostra el mapa, no cap panell de text.
  */
 let seccioActiva = ID_SECCIO_MAPA;
+
+/**
+ * @type {string|null} Identificador del PI actualment seleccionat
+ * al mapa de zona (`null` si no n'hi ha cap).
+ *
+ * Comportament del cicle de selecció (només a `zona.html`):
+ *   · 1r clic a un marcador     → es marca com a seleccionat
+ *                                  (mateix estil groc que el hover)
+ *                                  i la targeta corresponent puja
+ *                                  al primer lloc de la llista i
+ *                                  també es ressalta en groc.
+ *   · 2n clic al mateix marcador → navega a punt-interes.html
+ *   · Clic al fons del mapa     → desselecciona (marcador + targeta,
+ *                                  llista torna a l'ordre original).
+ */
+let idPuntSeleccionat = null;
+
+/**
+ * @type {Array<function(): void>} Llista d'oients (callbacks) que
+ * s'han de cridar cada vegada que l'idioma canvia.
+ *
+ * Cada pàgina hi registra les funcions que re-renderitzen el seu
+ * contingut específic (per exemple, la fitxa d'un PI o la llista
+ * de PIs d'una zona), perquè `actualitzarTextosDinamics()` només
+ * refresca la UI genèrica compartida (menú, capçalera, data-i18n).
+ *
+ * Es buida a cada inicialització de pàgina per evitar acumulació
+ * entre navegacions restaurades del bfcache.
+ */
+let oientsCanviIdioma = [];
 
 
 // ============================================================
@@ -155,6 +216,106 @@ function llegirDeLocalStorage(clau, valorDefecte = '') {
 
 
 // ============================================================
+// SECCIÓ: Sanejament d'HTML per a descripcions
+// Responsabilitat: permetre etiquetes de format bàsic (<br>,
+// <strong>, <em>, <p>, <ul>/<ol>/<li>) dins els textos de
+// descripció dels PIs, però bloquejar qualsevol contingut que
+// pugui executar codi (<script>, on*=, javascript:, etc.).
+//
+// Aquest mòdul és la ÚNICA porta per la qual el text del fitxer
+// de dades entra al DOM com a HTML. Qualsevol futur camp que
+// admeti HTML ha de passar per aquí també.
+// ============================================================
+
+/**
+ * @constant {Set<string>} Etiquetes HTML permeses a les descripcions.
+ * Tot el que no aparegui aquí es descarta (però el text interior
+ * es conserva). Els atributs, TOTS, es descarten sempre.
+ *
+ * Per afegir-ne una de nova: comprovar que no pot contenir handlers
+ * (per exemple <img> podria tenir onerror; no s'afegeix).
+ */
+const ETIQUETES_PERMESES_DESCRIPCIO = new Set([
+    'br', 'strong', 'em', 'b', 'i', 'p', 'ul', 'ol', 'li',
+]);
+
+/**
+ * Escapa els caràcters HTML especials d'un text pla perquè
+ * no siguin interpretats com a marques quan es concatenen a HTML.
+ *
+ * @param {string} text - Text sense marques
+ * @returns {string}    - Text amb `&`, `<` i `>` escapats
+ */
+function escaparHTML(text) {
+    return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
+/**
+ * Recorre recursivament un node del DOM i en construeix la
+ * versió HTML "segura": només les etiquetes de la llista blanca
+ * es conserven, i sempre sense atributs. Les no permeses es
+ * descarten però se'n manté el text interior.
+ *
+ * @param {Node} node - Node arrel a processar (els fills es visiten)
+ * @returns {string}  - HTML sanejat generat a partir del subarbre
+ */
+function construirHTMLPermès(node) {
+    let resultat = '';
+    for (const fill of node.childNodes) {
+        if (fill.nodeType === Node.TEXT_NODE) {
+            // Text pla: reescapar per si conté caràcters especials
+            resultat += escaparHTML(fill.textContent);
+        } else if (fill.nodeType === Node.ELEMENT_NODE) {
+            const tag = fill.tagName.toLowerCase();
+            if (ETIQUETES_PERMESES_DESCRIPCIO.has(tag)) {
+                if (tag === 'br') {
+                    // Element buit: no té fills, no cal etiqueta de tancament
+                    resultat += '<br>';
+                } else {
+                    // Etiqueta permesa: la mantenim SENSE cap atribut
+                    resultat += `<${tag}>${construirHTMLPermès(fill)}</${tag}>`;
+                }
+            } else {
+                // Etiqueta no permesa: descartem l'embolcall però conservem
+                // el text interior perquè no es perdi contingut útil
+                resultat += construirHTMLPermès(fill);
+            }
+        }
+        // Ignora comentaris (nodeType 8) i altres tipus de node
+    }
+    return resultat;
+}
+
+/**
+ * Sanitza HTML provinent de dades per mostrar-lo dins una
+ * descripció de PI. Permet marques bàsiques de format i n'elimina
+ * qualsevol cosa potencialment perillosa.
+ *
+ * S'usa amb `element.innerHTML = sanejarHTMLDescripcio(text)`
+ * quan el text pot contenir `<br>`, `<strong>`, etc.
+ *
+ * @param {string} htmlBrut - Cadena que pot contenir HTML
+ * @returns {string}        - HTML sanejat (segur per a innerHTML)
+ *
+ * @example
+ *   sanejarHTMLDescripcio('Hola<br>món<script>alert(1)</script>');
+ *   // → 'Hola<br>mónalert(1)'  (l'script s'elimina, el seu text es conserva)
+ */
+function sanejarHTMLDescripcio(htmlBrut) {
+    if (typeof htmlBrut !== 'string' || htmlBrut === '') return '';
+
+    // DOMParser NO executa scripts, NO dispara handlers on*=, NO
+    // fa peticions de xarxa. És el parser més segur del navegador
+    // per a HTML no confiable.
+    const doc = new DOMParser().parseFromString(htmlBrut, 'text/html');
+    return construirHTMLPermès(doc.body);
+}
+
+
+// ============================================================
 // SECCIÓ: Sistema d'Internacionalització (i18n)
 // Responsabilitat: traducció de textos, canvi d'idioma,
 // actualització de tots els elements de la UI.
@@ -185,8 +346,75 @@ function traduir(camp, idioma) {
  * @returns {string} - Codi d'idioma vàlid ('ca', 'es' o 'en')
  */
 function obtenirIdiomaDesat() {
+    // 1. Prioritat 1: paràmetre ?idioma= a la URL.
+    //    És el fallback per quan localStorage està deshabilitat o
+    //    aïllat entre pàgines (típic amb obertura via file:// o en
+    //    navegadors mòbils amb polítiques estrictes). Cada navegació
+    //    interna afegeix el paràmetre via `afegirIdiomaAUrl`.
+    const desURL = obtenirParametreUrl('idioma');
+    if (desURL && IDIOMES_DISPONIBLES.includes(desURL)) {
+        return desURL;
+    }
+
+    // 2. Prioritat 2: preferència desada a localStorage.
     const desat = llegirDeLocalStorage(CLAU_IDIOMA_LOCAL, IDIOMA_PER_DEFECTE);
     return IDIOMES_DISPONIBLES.includes(desat) ? desat : IDIOMA_PER_DEFECTE;
+}
+
+/**
+ * Afegeix (o actualitza) el paràmetre `?idioma=` a una URL relativa.
+ * Solució de compatibilitat: `new URL()` pot ser inestable sobre `file://`,
+ * així que fem manipulació manual senzilla i predictible.
+ *
+ * @param {string} url - URL relativa (ex: 'zona.html?zona=xxx')
+ * @returns {string}   - Mateixa URL amb `idioma=<idiomaActual>` afegit
+ */
+function afegirIdiomaAUrl(url) {
+    if (typeof url !== 'string' || url === '' || url.startsWith('#')) return url;
+
+    // Separa el fragment (#…) per preservar-lo al final
+    const iAncora = url.indexOf('#');
+    const ancora  = iAncora >= 0 ? url.slice(iAncora) : '';
+    const base    = iAncora >= 0 ? url.slice(0, iAncora) : url;
+
+    // Substitueix o afegeix el paràmetre idioma=
+    let novaBase;
+    if (/[?&]idioma=[^&]*/.test(base)) {
+        novaBase = base.replace(/([?&])idioma=[^&]*/, `$1idioma=${idiomaActual}`);
+    } else {
+        const separador = base.includes('?') ? '&' : '?';
+        novaBase = `${base}${separador}idioma=${idiomaActual}`;
+    }
+    return novaBase + ancora;
+}
+
+/**
+ * Navega a una URL interna preservant l'idioma actual. Ús obligatori en
+ * comptes de `window.location.href = ...` per a navegacions internes.
+ *
+ * @param {string} url - URL relativa
+ */
+function navegarAmbIdioma(url) {
+    window.location.href = afegirIdiomaAUrl(url);
+}
+
+/**
+ * Actualitza tots els enllaços `<a href>` interns de la pàgina perquè
+ * el seu href inclogui el paràmetre `?idioma=<idiomaActual>`. Es crida
+ * al carregar la pàgina i cada vegada que l'idioma canvia.
+ *
+ * Només afecta enllaços a les 3 pàgines de l'app (index/zona/punt-interes).
+ */
+function actualitzarEnllacosInterns() {
+    const paginesInternes = ['index.html', 'zona.html', 'punt-interes.html'];
+    document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href) return;
+        // Nom del fitxer (abans de ? o #) — l'enllaç ha de començar amb un d'ells
+        const fitxer = href.split('?')[0].split('#')[0];
+        if (!paginesInternes.includes(fitxer)) return;
+        a.setAttribute('href', afegirIdiomaAUrl(href));
+    });
 }
 
 /**
@@ -272,6 +500,7 @@ function actualitzarTextosDinamics() {
         ca: 'Català',
         es: 'Castellà',
         en: 'English',
+        fr: 'Français',
     };
     document.querySelectorAll('#selector-idioma button[data-idioma]').forEach(boto => {
         const codi = boto.dataset.idioma;
@@ -329,6 +558,46 @@ function actualitzarTextosDinamics() {
 
     // --- Atribut lang del document ---
     document.documentElement.lang = idiomaActual;
+
+    // --- Botó "Tornar" (existeix a zona.html i punt-interes.html) ---
+    // Es tradueix aquí, de manera centralitzada, perquè es refresqui
+    // a cada canvi d'idioma. La fletxa "◂" l'afegeix el CSS via
+    // .boto-tornar::before, així que només cal sobreescriure el text.
+    const elBotoTornar = document.getElementById('boto-tornar');
+    if (elBotoTornar && UI && UI['tornar']) {
+        elBotoTornar.textContent = traduir(UI['tornar']);
+    }
+
+    // --- Enllaços interns amb idioma ---
+    // Assegura que tots els <a href="index.html|zona.html|punt-interes.html">
+    // portin ?idioma=<idiomaActual>, com a fallback quan localStorage
+    // no persisteix entre pàgines.
+    actualitzarEnllacosInterns();
+}
+
+/**
+ * Registra un oient que es cridarà cada cop que canviï l'idioma.
+ * L'ha d'usar cada pàgina per re-renderitzar el seu contingut
+ * específic (fitxa de PI, llista de PIs, capçalera de zona…),
+ * ja que `actualitzarTextosDinamics()` només refresca la UI
+ * genèrica compartida.
+ *
+ * @param {function(): void} callback - Funció sense arguments a
+ *                                       cridar quan canviï l'idioma
+ */
+function afegirOientCanviIdioma(callback) {
+    if (typeof callback === 'function') {
+        oientsCanviIdioma.push(callback);
+    }
+}
+
+/**
+ * Buida la llista d'oients de canvi d'idioma. S'ha de cridar al
+ * principi de cada `inicialitzar*()` per evitar que quedin oients
+ * de la navegació anterior (rellevant amb el bfcache del navegador).
+ */
+function reiniciarOientsCanviIdioma() {
+    oientsCanviIdioma = [];
 }
 
 /**
@@ -336,7 +605,14 @@ function actualitzarTextosDinamics() {
  * Desa la preferència a localStorage perquè persisteixi entre pàgines.
  * No fa res si `nouIdioma` no és un codi d'idioma vàlid.
  *
- * @param {string} nouIdioma - Codi del nou idioma ('ca', 'es' o 'en')
+ * Seqüència:
+ *   1. Valida l'idioma
+ *   2. Actualitza `idiomaActual` i persisteix a localStorage
+ *   3. Refresca la UI genèrica (`actualitzarTextosDinamics`)
+ *   4. Notifica tots els oients específics de pàgina, si n'hi ha
+ *      (fitxa de PI, llista de PIs, etc.)
+ *
+ * @param {string} nouIdioma - Codi del nou idioma ('ca', 'en', 'es' o 'fr')
  */
 function canviarIdioma(nouIdioma) {
     if (!IDIOMES_DISPONIBLES.includes(nouIdioma)) {
@@ -345,7 +621,33 @@ function canviarIdioma(nouIdioma) {
     }
     idiomaActual = nouIdioma;
     desarALocalStorage(CLAU_IDIOMA_LOCAL, nouIdioma);
+
+    // Actualitza la URL actual (sense recarregar) amb el nou idioma.
+    // Serveix com a fallback si localStorage no persisteix entre
+    // pàgines (obertura via file://), perquè si l'usuari refresca
+    // la pàgina l'idioma es manté.
+    try {
+        const nova = afegirIdiomaAUrl(window.location.pathname + window.location.search + window.location.hash);
+        history.replaceState(null, '', nova);
+    } catch (error) {
+        console.warn('[Montbrull] No s\'ha pogut actualitzar la URL:', error);
+    }
+
+    // Actualitza els <a href> interns perquè portin ?idioma=<nou>
+    actualitzarEnllacosInterns();
+
     actualitzarTextosDinamics();
+
+    // Notifica als components específics de pàgina (fitxa, llista, etc.).
+    // Encapsulat en try/catch: un error en un oient no ha de bloquejar
+    // la resta ni deixar la UI en un estat inconsistent.
+    for (const oient of oientsCanviIdioma) {
+        try {
+            oient();
+        } catch (error) {
+            console.error('[Montbrull] Error en oient de canvi d\'idioma:', error);
+        }
+    }
 }
 
 
@@ -361,6 +663,16 @@ function canviarIdioma(nouIdioma) {
  * el focus perquè es pugui restaurar en tancar.
  */
 function obrirMenu() {
+    // En tauleta/escriptori (>=768px) el menú és una columna fixa
+    // que es col·lapsa amb la classe .menu-amagat al <body>. Aquí
+    // simplement la traiem i el botó hamburguesa desapareix.
+    if (window.innerWidth >= 768) {
+        document.body.classList.remove('menu-amagat');
+        const elBotoDesktop = document.getElementById('boto-menu');
+        if (elBotoDesktop) elBotoDesktop.setAttribute('aria-expanded', 'true');
+        return;
+    }
+
     if (menuObert) return;
     menuObert = true;
 
@@ -398,6 +710,19 @@ function obrirMenu() {
  * Torna el focus al botó d'hamburguesa si l'usuari usava el teclat.
  */
 function tancarMenu() {
+    // En tauleta/escriptori amaguem el menú afegint .menu-amagat al
+    // <body>: el CSS del media (min-width:768px) el col·lapsa i torna
+    // a mostrar el botó hamburguesa perquè es pugui reobrir.
+    if (window.innerWidth >= 768) {
+        document.body.classList.add('menu-amagat');
+        const elBotoDesktop = document.getElementById('boto-menu');
+        if (elBotoDesktop) {
+            elBotoDesktop.setAttribute('aria-expanded', 'false');
+            elBotoDesktop.focus();
+        }
+        return;
+    }
+
     if (!menuObert) return;
     menuObert = false;
 
@@ -527,8 +852,9 @@ function actualitzarEstatBotonsMenu(idActiu) {
     document.querySelectorAll('#menu-lateral [data-seccio]').forEach(boto => {
         const esAquest = boto.dataset.seccio === idActiu;
         boto.setAttribute('aria-current', esAquest ? 'true' : 'false');
-        // Les seccions de text despleguen un panell; la de mapa no
-        if (boto.dataset.seccio !== ID_SECCIO_MAPA) {
+        // Les seccions de text despleguen un panell; les de mapa no
+        if (boto.dataset.seccio !== ID_SECCIO_MAPA &&
+            boto.dataset.seccio !== ID_SECCIO_MAPA_RODALIA) {
             boto.setAttribute('aria-expanded', esAquest ? 'true' : 'false');
         }
     });
@@ -568,16 +894,25 @@ function mostrarVistaMapa() {
  * @param {string} idSeccio - Identificador de la secció (ex: 'historia')
  */
 function mostrarSeccio(idSeccio) {
-    // --- Cas 1: secció especial "Mapa" ---
+    // --- Cas 0: secció especial "Mapa Rodalia" ---
+    // Navega directament a la zona especial que només és accessible
+    // des d'aquest botó del menú. No mostra cap panell de contingut.
+    if (idSeccio === ID_SECCIO_MAPA_RODALIA) {
+        navegarAmbIdioma(`zona.html?zona=${encodeURIComponent(ID_ZONA_RODALIA)}`);
+        return;
+    }
+
+    // --- Cas 1: secció especial "Mapa Centre" ---
+    // Sempre representa el mapa principal del poble (index.html):
+    //   · a index.html      → restaura la vista de mapa
+    //   · a qualsevol altra → navega a index.html
     if (idSeccio === ID_SECCIO_MAPA) {
-        if (paginaTeVistaMapa()) {
+        if (obtenirPaginaActual() === 'index.html') {
             mostrarVistaMapa();
+            tancarMenuEnMobil();
         } else {
-            // punt-interes.html no té mapa: torna a la pàgina principal
-            window.location.href = 'index.html';
-            return;
+            navegarAmbIdioma('index.html');
         }
-        tancarMenuEnMobil();
         return;
     }
 
@@ -587,7 +922,7 @@ function mostrarSeccio(idSeccio) {
     // actual perquè afegirien text sota el mapa/fitxa. Redirigim a
     // index.html amb un query param i allà s'obrirà la secció.
     if (obtenirPaginaActual() !== 'index.html') {
-        window.location.href = `index.html?seccio=${encodeURIComponent(idSeccio)}`;
+        navegarAmbIdioma(`index.html?seccio=${encodeURIComponent(idSeccio)}`);
         return;
     }
 
@@ -678,17 +1013,34 @@ function assignarEsdevenimentsUI() {
         boto.addEventListener('click', () => mostrarSeccio(boto.dataset.seccio));
     });
 
-    // --- Tecla Escape: tanca el menú ---
+    // --- Tecla Escape: tanca el menú (drawer mòbil o menú desktop) ---
     document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && menuObert) {
+        if (event.key !== 'Escape') return;
+        const menuDesktopVisible =
+            window.innerWidth >= 768 && !document.body.classList.contains('menu-amagat');
+        if (menuObert || menuDesktopVisible) {
             tancarMenu();
         }
     });
 
-    // --- Canvi de mida de finestra: tanca el menú si s'obre en tauleta ---
+    // --- Canvi de mida de finestra ---
+    // Si el drawer mòbil està obert i es passa a tauleta/escriptori,
+    // netegem l'estat del drawer (classe .obert, overflow del body)
+    // però NO cridem tancarMenu(): ho amagaria també en desktop, cosa
+    // que no volem — allà el menú és visible per defecte.
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768 && menuObert) {
-            tancarMenu();
+            menuObert = false;
+            const elMenu    = document.getElementById('menu-lateral');
+            const elCoberta = document.getElementById('coberta-menu');
+            if (elMenu) {
+                elMenu.classList.remove('obert');
+                elMenu.setAttribute('aria-hidden', 'false');
+            }
+            if (elCoberta) {
+                elCoberta.classList.remove('activa', 'visible');
+            }
+            document.body.style.overflow = '';
         }
     });
 }
@@ -752,7 +1104,7 @@ function inicialitzarZonesDelMapa() {
  * @param {string} idZona - Identificador de la zona (ex: 'zona-centre')
  */
 function navegarAZona(idZona) {
-    window.location.href = `zona.html?zona=${encodeURIComponent(idZona)}`;
+    navegarAmbIdioma(`zona.html?zona=${encodeURIComponent(idZona)}`);
 }
 
 /**
@@ -761,7 +1113,7 @@ function navegarAZona(idZona) {
  * @param {string} idPunt - Identificador del PI (ex: 'pi-001')
  */
 function navegarAPuntInteres(idPunt) {
-    window.location.href = `punt-interes.html?pi=${encodeURIComponent(idPunt)}`;
+    navegarAmbIdioma(`punt-interes.html?pi=${encodeURIComponent(idPunt)}`);
 }
 
 /**
@@ -818,7 +1170,9 @@ function obtenirPaginaActual() {
  *   4. Activa les zones del mapa SVG
  */
 function inicialitzarPaginaPrincipal() {
-    // 1. Idioma: llegeix localStorage i corregeix els botons hardcoded de l'HTML
+    // 1. Idioma: llegeix localStorage i corregeix els botons hardcoded de l'HTML.
+    //    Es reinicien els oients per no acumular-ne de la pàgina anterior.
+    reiniciarOientsCanviIdioma();
     idiomaActual = obtenirIdiomaDesat();
     sincronitzarBotonsIdioma();
 
@@ -828,8 +1182,10 @@ function inicialitzarPaginaPrincipal() {
     // 3. Events de la interfície
     assignarEsdevenimentsUI();
 
-    // 4. Zones del mapa
+    // 4. Zones del mapa (aria-labels traduïts)
     inicialitzarZonesDelMapa();
+    // Els aria-labels de les zones han de refrescar-se en canvi d'idioma
+    afegirOientCanviIdioma(() => inicialitzarZonesDelMapa());
 
     // 5. Vista per defecte: el mapa (marca el botó "Mapa" del menú
     //    i s'assegura que el panell de text estigui amagat)
@@ -909,19 +1265,19 @@ function renderitzarBadgeRellevancia(numEstrelles) {
 }
 
 /**
- * Filtra una llista de PIs per nombre mínim d'estrelles.
- * Retorna una còpia ordenada de més a menys rellevants.
- * Si `minEstrelles` és 0, retorna tots sense filtrar ni reordenar.
+ * Filtra una llista de PIs per nombre exacte d'estrelles.
+ * Si `numEstrelles` és 0, retorna tots els PIs sense filtrar.
+ * Altrament, retorna només els PIs que tinguin EXACTAMENT aquest
+ * nombre d'estrelles (no ≥): pressionar "2★" mostra només els
+ * destacats, no els imprescindibles.
  *
  * @param {Array<Object>} punts        - Llista de PIs a filtrar
- * @param {number}        minEstrelles - Mínim d'estrelles (0 = tots)
- * @returns {Array<Object>}            - PIs filtrats, de més a menys estrelles
+ * @param {number}        numEstrelles - Nombre exacte d'estrelles (0 = tots)
+ * @returns {Array<Object>}            - PIs que compleixen el filtre
  */
-function filtrarPerEstrelles(punts, minEstrelles = 0) {
-    if (minEstrelles === 0) return punts;
-    return punts
-        .filter(p => p.estrelles >= minEstrelles)
-        .sort((a, b) => b.estrelles - a.estrelles);
+function filtrarPerEstrelles(punts, numEstrelles = 0) {
+    if (numEstrelles === 0) return punts;
+    return punts.filter(p => p.estrelles === numEstrelles);
 }
 
 
@@ -1022,7 +1378,12 @@ function crearElementMarcador(punt, cx, cy) {
     g.appendChild(titolMarcador);
 
     // --- Cercle de fons (hit area visible) ---
-    const radi = punt.estrelles === 3 ? 4.0 : punt.estrelles === 2 ? 3.2 : 2.6;
+    // Radis reduïts ~25% respecte l'original per fer els marcadors
+    // menys invasius sobre el mapa; es manté la jerarquia visual
+    // entre nivells (imprescindible > destacat > recomanat).
+    const radi = punt.estrelles === 3 ? 3.0
+               : punt.estrelles === 2 ? 2.4
+               :                        2.0;
 
     const cercle = document.createElementNS(espaiNoms, 'circle');
     cercle.setAttribute('cx', cx);
@@ -1032,8 +1393,13 @@ function crearElementMarcador(punt, cx, cy) {
     g.appendChild(cercle);
 
     // --- Text emoji ---
-    const emoji = punt.estrelles === 3 ? EMOJI_MARCADOR_IMPRESCINDIBLE : EMOJI_MARCADOR_BASE;
-    const midaFont = punt.estrelles === 3 ? 5.5 : punt.estrelles === 2 ? 4.5 : 3.8;
+    // Un emoji diferent per a cada nivell de rellevància, definits
+    // a EMOJIS_MARCADOR_PER_ESTRELLES. Si les estrelles no són 1-3,
+    // s'usa el marcador bàsic.
+    const emoji    = EMOJIS_MARCADOR_PER_ESTRELLES[punt.estrelles] || EMOJI_MARCADOR_BASE;
+    const midaFont = punt.estrelles === 3 ? 4.2
+                   : punt.estrelles === 2 ? 3.5
+                   :                        3.0;
 
     const text = document.createElementNS(espaiNoms, 'text');
     text.setAttribute('x', cx);
@@ -1150,15 +1516,32 @@ function renderitzarMapaZona(zona, punts) {
         const { cx, cy } = calcularPosicioMarcador(punt.coordenades, svg);
         const marcador   = crearElementMarcador(punt, cx, cy);
 
-        marcador.addEventListener('click', () => navegarAPuntInteres(punt.id));
+        // Cicle de selecció (vegeu comentari a `idPuntSeleccionat`):
+        //   · 1r clic → selecciona (marcador i targeta en groc)
+        //   · 2n clic al mateix marcador → navega a la fitxa del PI
+        marcador.addEventListener('click', event => {
+            // Evita que el clic pugi al SVG i dispari la desselecció
+            event.stopPropagation();
+            gestionarClicMarcador(punt.id);
+        });
         marcador.addEventListener('keydown', event => {
             if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
-                navegarAPuntInteres(punt.id);
+                event.stopPropagation();
+                gestionarClicMarcador(punt.id);
             }
         });
 
         grupMarcadors.appendChild(marcador);
+    });
+
+    // Clic al fons del mapa (fora de cap marcador) → desselecciona.
+    // Es delega al SVG perquè el listener anterior de cada marcador
+    // ja ha aturat la propagació amb `stopPropagation()`.
+    svg.addEventListener('click', () => {
+        if (idPuntSeleccionat !== null) {
+            deseleccionarPunt();
+        }
     });
 
     elContenidor.appendChild(svg);
@@ -1170,16 +1553,87 @@ function renderitzarMapaZona(zona, punts) {
  * compleixen el filtre s'amaguen amb `visibility:hidden` per
  * no alterar el layout del SVG.
  *
- * @param {number} minEstrelles - Mínim d'estrelles (0 = tots visibles)
+ * Filtre exacte (coherent amb `filtrarPerEstrelles`):
+ *   · 0 → tots els marcadors visibles
+ *   · n → només els marcadors amb EXACTAMENT n estrelles
+ *
+ * @param {number} numEstrelles - Nombre exacte d'estrelles (0 = tots)
  */
-function actualitzarVisibilitatMarcadors(minEstrelles) {
+function actualitzarVisibilitatMarcadors(numEstrelles) {
     document.querySelectorAll('#mapa-zona .marcador-punt').forEach(marcador => {
         const estrelles = parseInt(marcador.dataset.estrelles, 10);
-        const visible   = minEstrelles === 0 || estrelles >= minEstrelles;
+        const visible   = numEstrelles === 0 || estrelles === numEstrelles;
         marcador.style.visibility = visible ? 'visible' : 'hidden';
         // Treu el marcador amagat de l'ordre de tabulació
         marcador.setAttribute('tabindex', visible ? '0' : '-1');
     });
+}
+
+
+// ============================================================
+// SECCIÓ: Pàgina de Zona — Selecció de PI (zona.html)
+// Responsabilitat: gestionar la selecció visual d'un punt
+// d'interès des del mapa. El primer clic al marcador el
+// selecciona (marcador i targeta en groc + targeta al primer
+// lloc de la llista); el segon clic navega a la seva fitxa;
+// un clic al fons del mapa desselecciona.
+// ============================================================
+
+/**
+ * Gestiona el clic (o l'Enter/Espai) sobre un marcador del mapa.
+ *
+ * Si el marcador ja estava seleccionat, navega a la fitxa del PI.
+ * Altrament, el marca com a seleccionat i re-renderitza la llista
+ * perquè la targeta corresponent aparegui al primer lloc i ressaltada.
+ *
+ * @param {string} idPunt - Identificador del PI del marcador clicat
+ */
+function gestionarClicMarcador(idPunt) {
+    if (idPuntSeleccionat === idPunt) {
+        // Segon clic al mateix marcador → obre la fitxa
+        navegarAPuntInteres(idPunt);
+        return;
+    }
+    seleccionarPunt(idPunt);
+}
+
+/**
+ * Marca un PI com a seleccionat: aplica la classe `.seleccionat`
+ * al marcador del mapa i re-renderitza la llista perquè la targeta
+ * corresponent quedi ressaltada i col·locada al primer lloc.
+ *
+ * Respecta el filtre d'estrelles actiu (`filtrEstellesActiu`).
+ *
+ * @param {string} idPunt - Identificador del PI a seleccionar
+ */
+function seleccionarPunt(idPunt) {
+    idPuntSeleccionat = idPunt;
+
+    // --- Marcador del mapa ---
+    document.querySelectorAll('#mapa-zona .marcador-punt').forEach(marcador => {
+        marcador.classList.toggle('seleccionat', marcador.dataset.idPunt === idPunt);
+    });
+
+    // --- Llista de PIs (reordena i ressalta) ---
+    renderitzarLlistaPunts(puntsDeZonaActual, filtrEstellesActiu);
+}
+
+/**
+ * Desfà la selecció actual: treu la classe `.seleccionat` del
+ * marcador i restaura l'ordre original de la llista.
+ * No fa res si no hi ha cap PI seleccionat.
+ */
+function deseleccionarPunt() {
+    if (idPuntSeleccionat === null) return;
+
+    idPuntSeleccionat = null;
+
+    // --- Marcadors del mapa ---
+    document.querySelectorAll('#mapa-zona .marcador-punt.seleccionat')
+        .forEach(marcador => marcador.classList.remove('seleccionat'));
+
+    // --- Llista: torna a l'ordre original ---
+    renderitzarLlistaPunts(puntsDeZonaActual, filtrEstellesActiu);
 }
 
 
@@ -1193,13 +1647,19 @@ function actualitzarVisibilitatMarcadors(minEstrelles) {
  * Genera el HTML d'una targeta de PI per a la llista.
  * El botó rep `data-id-punt` per gestionar el clic al listener.
  *
- * @param {Object} punt - Objecte PuntInteres
- * @returns {string}    - HTML de la targeta
+ * @param {Object}  punt         - Objecte PuntInteres
+ * @param {boolean} [seleccionada=false] - Si `true`, s'afegeix la
+ *                                  classe `.seleccionada` i
+ *                                  `aria-current="true"` perquè
+ *                                  la targeta es mostri ressaltada.
+ * @returns {string}             - HTML de la targeta
  */
-function generarHTMLTargetaPunt(punt) {
+function generarHTMLTargetaPunt(punt, seleccionada = false) {
     const nom      = traduir(punt.nom);
     const estil    = traduir(punt.estil);
     const emojiZona = EMOJIS_ZONES[punt.idZona] || '📍';
+    const classes  = seleccionada ? 'targeta-punt seleccionada' : 'targeta-punt';
+    const ariaCurrent = seleccionada ? ' aria-current="true"' : '';
 
     // El <li> és obligatori: #llista-punts és un <ul role="list">
     // i només pot tenir <li> com a fills directes.
@@ -1208,9 +1668,9 @@ function generarHTMLTargetaPunt(punt) {
     // (vegeu renderitzarLlistaPunts).
     return `
         <li>
-            <button class="targeta-punt"
+            <button class="${classes}"
                     data-id-punt="${punt.id}"
-                    aria-label="${nom}">
+                    aria-label="${nom}"${ariaCurrent}>
                 <img class="miniatura"
                      src="${punt.imatge}"
                      alt=""
@@ -1253,8 +1713,24 @@ function renderitzarLlistaPunts(punts, filtrEstrelles = 0) {
         return;
     }
 
-    elLlista.innerHTML = puntsFiltrats
-        .map(punt => generarHTMLTargetaPunt(punt))
+    // Si hi ha un PI seleccionat i és dins la llista filtrada, el
+    // movem al primer lloc perquè l'usuari el vegi immediatament.
+    // L'ordre original de la resta es conserva.
+    let puntsOrdenats = puntsFiltrats;
+    if (idPuntSeleccionat) {
+        const idxSel = puntsFiltrats.findIndex(p => p.id === idPuntSeleccionat);
+        if (idxSel > 0) {
+            const [puntSel] = puntsFiltrats.slice(idxSel, idxSel + 1);
+            puntsOrdenats = [
+                puntSel,
+                ...puntsFiltrats.slice(0, idxSel),
+                ...puntsFiltrats.slice(idxSel + 1),
+            ];
+        }
+    }
+
+    elLlista.innerHTML = puntsOrdenats
+        .map(punt => generarHTMLTargetaPunt(punt, punt.id === idPuntSeleccionat))
         .join('');
 
     // Assigna events de clic a cada targeta
@@ -1306,6 +1782,14 @@ let puntsDeZonaActual = [];
  */
 function aplicarFiltrEstrelles(minEstrelles) {
     filtrEstellesActiu = minEstrelles;
+
+    // En canviar el filtre, el PI seleccionat pot quedar amagat
+    // (o simplement deixa de tenir sentit mantenir-lo). El
+    // desseleccionem silenciosament: només netegem l'estat, ja
+    // que la llista i els marcadors es re-renderitzaran tot seguit.
+    if (idPuntSeleccionat !== null) {
+        idPuntSeleccionat = null;
+    }
 
     // --- Actualitza l'estat dels botons de filtre ---
     document.querySelectorAll('#filtre-estrelles button[data-estrelles]').forEach(boto => {
@@ -1360,7 +1844,9 @@ function assignarEsdevenimentsFiltre() {
  *   7. Assigna events (filtre, tornar, idiomes, menú)
  */
 function inicialitzarPaginaZona() {
-    // 1. Idioma: llegeix localStorage i corregeix els botons hardcoded de l'HTML
+    // 1. Idioma: llegeix localStorage i corregeix els botons hardcoded de l'HTML.
+    //    Es reinicien els oients per no acumular-ne de la pàgina anterior.
+    reiniciarOientsCanviIdioma();
     idiomaActual = obtenirIdiomaDesat();
     sincronitzarBotonsIdioma();
     actualitzarTextosDinamics();
@@ -1382,12 +1868,16 @@ function inicialitzarPaginaZona() {
     }
     puntsDeZonaActual = obtenirPuntsDeZona(idZona);
 
-    // 4. Capçalera de zona
-    const elNomZona = document.getElementById('nom-zona');
-    if (elNomZona) {
-        elNomZona.textContent = `${EMOJIS_ZONES[idZona] || ''} ${traduir(zona.nom)}`.trim();
-    }
-    document.title = `${traduir(zona.nom)} — ${NOM_POBLE}`;
+    // 4. Capçalera de zona + títol del document (aïllat en una closure
+    //    perquè es pugui tornar a cridar en canviar l'idioma)
+    const refrescarCapçaleraZona = () => {
+        const elNomZona = document.getElementById('nom-zona');
+        if (elNomZona) {
+            elNomZona.textContent = `${EMOJIS_ZONES[idZona] || ''} ${traduir(zona.nom)}`.trim();
+        }
+        document.title = `${traduir(zona.nom)} — ${NOM_POBLE}`;
+    };
+    refrescarCapçaleraZona();
 
     // 5. Mapa SVG amb marcadors
     renderitzarMapaZona(zona, puntsDeZonaActual);
@@ -1395,12 +1885,30 @@ function inicialitzarPaginaZona() {
     // 6. Llista inicial (sense filtre: tots els PIs)
     renderitzarLlistaPunts(puntsDeZonaActual, 0);
 
-    // 7. Events
+    // 7. Registra oient de canvi d'idioma: cal re-renderitzar la
+    //    capçalera de zona, el mapa (aria-labels dels marcadors) i la
+    //    llista de PIs preservant el filtre actiu, ja que
+    //    actualitzarTextosDinamics() no coneix aquest contingut.
+    afegirOientCanviIdioma(() => {
+        refrescarCapçaleraZona();
+        renderitzarMapaZona(zona, puntsDeZonaActual);
+        renderitzarLlistaPunts(puntsDeZonaActual, filtrEstellesActiu);
+    });
+
+    // 8. Events
     assignarEsdevenimentsFiltre();
     assignarEsdevenimentsUI();
 
-    // 8. Vista per defecte: mapa de zona + filtre + llista
+    // 9. Vista per defecte: mapa de zona + filtre + llista
     mostrarVistaMapa();
+
+    // 9b. Si estem visualitzant la zona especial de rodalia, cal marcar
+    //     el botó "Mapa Rodalia" com actiu al menú (mostrarVistaMapa
+    //     sempre marca "Mapa Centre" per defecte, perquè és el cas normal).
+    if (idZona === ID_ZONA_RODALIA) {
+        seccioActiva = ID_SECCIO_MAPA_RODALIA;
+        actualitzarEstatBotonsMenu(ID_SECCIO_MAPA_RODALIA);
+    }
 
     console.info(`[Montbrull] Zona "${idZona}" inicialitzada. PIs: ${puntsDeZonaActual.length}`);
 }
@@ -1511,14 +2019,18 @@ function renderitzarFitxaPunt(punt) {
     // --- Descripció ---
     const elDescripcio = document.getElementById('text-descripcio');
     if (elDescripcio) {
-        // Usa textContent (no innerHTML) per seguretat: el text ve de dades
-        elDescripcio.textContent = traduir(punt.descripcio);
+        // El text ve de dades i pot contenir marques bàsiques de format
+        // (<br>, <strong>, <em>, <p>, <ul>/<ol>/<li>). El sanejament
+        // permet aquestes marques però bloqueja qualsevol contingut
+        // potencialment perillós (scripts, handlers on*, etc.).
+        // Vegeu sanejarHTMLDescripcio() a dalt.
+        elDescripcio.innerHTML = sanejarHTMLDescripcio(traduir(punt.descripcio));
     }
 
-    // --- Botó tornar: text traduït ---
+    // --- Botó tornar: text traduït (la fletxa '◂' l'afegeix .boto-tornar::before) ---
     const elBotoTornar = document.getElementById('boto-tornar');
     if (elBotoTornar && UI && UI['tornar']) {
-        elBotoTornar.textContent = `◂ ${traduir(UI['tornar'])}`;
+        elBotoTornar.textContent = traduir(UI['tornar']);
     }
 
     // --- Labels estàtics [data-i18n] (Any:, Estil:, Zona:) ---
@@ -1581,7 +2093,10 @@ function mostrarErrorPagina(missatge) {
  *   5. Assigna events (idiomes, menú si existeix)
  */
 function inicialitzarPaginaPuntInteres() {
-    // 1. Idioma: llegeix localStorage i corregeix els botons hardcoded de l'HTML
+    // 1. Idioma: llegeix localStorage i corregeix els botons hardcoded de l'HTML.
+    //    Es reinicien els oients perquè no en quedin de la pàgina anterior
+    //    si el navegador ha restaurat estat via bfcache.
+    reiniciarOientsCanviIdioma();
     idiomaActual = obtenirIdiomaDesat();
     sincronitzarBotonsIdioma();
     actualitzarTextosDinamics();
@@ -1605,7 +2120,13 @@ function inicialitzarPaginaPuntInteres() {
     // 4. Renderitza
     renderitzarFitxaPunt(punt);
 
-    // 5. Events (capçalera i menú, si existeixen a l'HTML)
+    // 5. Registra oient de canvi d'idioma: cal re-renderitzar la fitxa
+    //    perquè conté text que ve de dades (nom, estil, zona, descripció,
+    //    alt de la imatge, aria-label de les estrelles, title del document)
+    //    i que actualitzarTextosDinamics() no coneix.
+    afegirOientCanviIdioma(() => renderitzarFitxaPunt(punt));
+
+    // 6. Events (capçalera i menú, si existeixen a l'HTML)
     assignarEsdevenimentsUI();
 
     console.info(`[Montbrull] PI "${idPunt}" carregat: ${punt.nom.ca}`);
@@ -1653,9 +2174,33 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('pageshow', (event) => {
     if (!event.persisted) return;   // càrrega normal → ja ho ha fet DOMContentLoaded
 
-    // La pàgina ve del bfcache: resincronitza l'idioma i els botons
+    // ────────────────────────────────────────────────────────────
+    // La pàgina ve del bfcache: el DOM restaurat encara reflecteix
+    // l'estat de l'idioma que hi havia en marxar. Cal ressincronitzar:
+    //
+    //   1. Idioma actiu (llegit de localStorage — pot haver canviat
+    //      en una altra pàgina abans de tornar aquí).
+    //   2. Botons d'idioma (aria-pressed).
+    //   3. UI genèrica compartida (noms del menú, aria-labels,
+    //      botó "Tornar", etc.).
+    //   4. Contingut específic de la pàgina (fitxa d'un PI, capçalera
+    //      i llista de zona, aria-labels del mapa principal…),
+    //      cridant els oients registrats per la pàgina.
+    //
+    // Sense el pas 4 la meitat superior de la pàgina es traduïa i
+    // la meitat inferior quedava en l'idioma anterior.
+    // ────────────────────────────────────────────────────────────
     idiomaActual = obtenirIdiomaDesat();
     sincronitzarBotonsIdioma();
     actualitzarTextosDinamics();
+
+    for (const oient of oientsCanviIdioma) {
+        try {
+            oient();
+        } catch (error) {
+            console.error('[Montbrull] Error en oient de canvi d\'idioma (pageshow):', error);
+        }
+    }
+
     console.info(`[Montbrull] Restaurat del bfcache. Idioma: ${idiomaActual}`);
 });
