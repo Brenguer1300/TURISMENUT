@@ -120,11 +120,18 @@ const CONTINGUT_SECCIONS = {
     'introduccio': {
         ca: `<p>Benvinguts a <strong>Amer</strong>, ón els carrers estrets i empedrats, l'olor de fum de les xemeneies a l'hivern i el silenci dels matins de diumenge t'embriagueràn sense voler.
 			<br> No serà cap sorpresa, no veureu aquí ni estàtues de grans generals ni tampoc cap arc del triomf.
-			Sí queda però el testimoni de mil anys de història,  aquí tenim la història de la gent de a peu.  <br>
+			Sí queda però el testimoni de mil anys de història,  aquí tenim la història de la gent de a peu.  <br> 
 			
 			
 		</p>
-             <p>És la història de la gent menuda, que no tenía un escrivà que li guardés registre, acompanyeu-nos a trobar-la.</p>`,
+             <p>És la història de la gent menuda, que no tenía un escrivà que li guardés registre, acompanyeu-nos a trobar-la.</p>
+			 <br><br>
+			 <p> Nota bibliogràfica: <br>
+			 La informació que trobareu s'ha extret de invarquit (Cercador de Patrimoni de la Generalitat), la web de catalunya medieval, la fantàstica guia de pobles de catalunya i una mica de wikipedia.
+			Tot sacsejat i barrejat al nostre gust de forma que cap acadèmic ho validaria. <br>
+			No us prengueu res al peu de la lletra: quedeu-vos amb la "història" i gaudiu de la visita.</p>
+			 `,
+			 
 
         es: `<p>Bienvenidos a <strong>Montbrull</strong>, un pequeño municipio de la Cataluña
              central enclavado entre viñedos y bosques de roble. Con poco más de 800 habitantes,
@@ -200,17 +207,21 @@ const CONTINGUT_SECCIONS = {
     },
 
     'rutes': {
-        ca: `<p>Amer ofereix tres rutes senyalitzades adaptades a tots els nivells:</p>
+        ca: `<p>Des d'Amer es poden fer moltes excursions, us n'oferim les nostres preferides:</p>
              <ul>
-               <li><strong>Ruta de SantaBrígida</strong> — 1,2 km · 45 min · fàcil.
-                   Recorre els principals monuments del centre històric.
-				   https://es.wikiloc.com/rutas-senderismo/amer-santa-brigida-23507062</li>
-               <li><strong>Ruta de voramera i el Carrilet</strong> — 4,5 km · 2 h · moderat.
-                   Circular pel poble  https://www.wikiloc.com/nordic-walking-trails/amer-voramera-75666065.</li>
+               <li><strong>Ruta de Santa Brígida</strong> — 8 km .<br>
+                   Pujada a l'ermita, excursió curta on es fan cames.  <br>
+				  <a href="https://es.wikiloc.com/rutas-senderismo/amer-santa-brigida-23507062"> https://es.wikiloc.com/rutas-senderismo/amer-santa-brigida-23507062</a></li>
+               <li><strong>Ruta de voramera i el Carrilet</strong> — 7 km · . <br>
+                   Circular pel poble, ideal amb bicicleta <br>
+				   <a href="https://www.wikiloc.com/nordic-walking-trails/amer-voramera-75666065"> https://www.wikiloc.com/nordic-walking-trails/amer-voramera-75666065</a>.</li>
+			<li><strong>Ruta de les Ermites</strong> — 15 km · . <br>
+                   Excursió llarga amb bones vistes en que es visiten 3 ermites romàniques. <br>
+				   <a href="https://es.wikiloc.com/rutas-senderismo/ruta-de-les-ermites-d-amer-3502965"> https://es.wikiloc.com/rutas-senderismo/ruta-de-les-ermites-d-amer-3502965</a>.</li>
+		    
               
              </ul>
-             <p>Tots els itineraris disposen de panells informatius i codis QR
-             amb contingut addicional.</p>`,
+             <p></p>`,
 
         es: `<p>Montbrull ofrece tres rutas señalizadas adaptadas a todos los niveles:</p>
              <ul>
@@ -303,37 +314,42 @@ const CONTINGUT_SECCIONS = {
     'informacio-practica': {
         ca: `
 			<p><strong>Telèfons interés</strong><br>
+			Emergències: 112 <br>
              Ajuntament: 972 431 112 / informaciot@amer.cat <br>
-			 Mossos Santa Coloma Farners: 972 181 675 / Carrer Francesc Moragas 65-67, Santa Coloma de Farners <br>
-			 Cap d'Anglés:  972 421 498 / Jardins de Can Cendra, Anglés <br>
+			 Policia - Mossos d'Escuadra: 972 181 675 / Carrer Francesc Moragas 65-67, Santa Coloma de Farners <br>
+			 Atenció Primària:  972 421 498 / Jardins de Can Cendra, Anglés <br>
 			 Farmàcia d'Amer: 972 430 316 / Av. de la Selva 63, Amer
              </p>
              <p><strong>Aparcament</strong><br>
-             Amb excepció dels migdies laborables no acostuma a haver problemes d'aparcament.
-			Amb tot trobareu sempre espai a l'aparcament municipal, a la dreta de la carretera en direcció Olot:	Carrer del Riu Rogent, s/n
+             Amb excepció dels migdies laborables no haurieu de trobar problemes d'aparcament.
+			Amb tot trobareu sempre espai a l'aparcament municipal, a la dreta de la carretera en direcció Olot entrada per:	Carrer del Riu Rogent, s/n
              <br>
-			 a 5 minuts caminant del nucli antic.</p>
+			 a 5 minuts caminant de la plaça de la vila.</p>
              <p><strong>Gasolineres</strong><br>
              A la sortida del poble en direcció Olot trobareu una gasolinera Repsol que disposa també de botiga de 6 a 21h<br>
 			 Amb tot, a l'entrada d'Anglés trobareu a la primera rotonda dues gasolineres low cost que es fan competència.
 			 
 			 </p> 
 			 <p><strong>Alimentació</strong><br>
-			 Excepte a la farmàcia i l'estanc, podeu fer la compra a quasi qualsevol botiga.
-			 Els forns de pa tenen brics de llet i pasta seca, a la pastisseria pots trobat tabac i revistes...
-             Amb tot, entrant la vila hi ha un supermercat Charter i un Suma a la plaça. <br>
+			 A la plaça del poble cada dimecres es fa el mercat al matí. <br>
+			 També a la plaça de dilluns a dissabte trobareu el Suma obert. <br>
+			 I al carrer Junquera, tocant a la plaça, està Can Batet. Carnisseria que recomanem. <br>
+			 En general, les botigues són aquí multiopció: als forns de pa tenen brics de llet i pasta seca, l'estanc fa de llibreria...
+              <br>
 			 
-			 Aquí el pa és bo, hi ha més de 6 forns de pa. Cada família té el seu i no ens mullarem però compreu-ne!.
+			 Aquí el pa és bo, hi ha més de 6 forns de pa. Cada família té el seu de referència... aquí no ens mullarem però sortiu al matí a buscar un croassant recent fet i compreu-hi pa també!.
 			 
 			 </p>
 			 <p><strong>Especialitat d'Amer</strong><br>
-             Típic d'Amer són els Capricis, els trobareu a la Pastisseria Puigdemont a Sant Miquel 6  <br>
-			 Destaquem també els Rocs de la Pastisseria Martoni (Plaça de la Vila 31)						 			 
+             Posats a portar un detall típic d'Amer recomanem els Capricis, els trobareu a la <i>Pastisseria Puigdemont</i> a Sant Miquel 6.  <br>
+			 Destaquem també els Rocs de la <i>Pastisseria Martoni</i>, Plaça de la Vila 31.						 			 
 			 </p>
 			 
 			 <p><strong>Ón menjar</strong><br>
-			 A l'Snack Bar (tocant a la farmàcia) podreu esmorzar, dinar, sopar i pendre una cervesa a la fresca a bon preu <br>
-			 A tots els bars de la plaça trobareu menú diari i si voleu seure amb calma recomanem Can Co-Absis, darrere l'absis del Monestir.
+			 A l'<i>Snack Bar</i> (tocant a la farmàcia), tenen un ampli horari, hi podreu esmorzar, dinar, sopar i pendre una cervesa a la fresca a bon preu. <br>
+			 A <i>Can Co-Absis</i>, darrere l'absis del Monestir, hi trobareu una cuina tradicional catalana feta a foc lent. <br>
+			 A <i>Can Franc1</i>, plaça Pompeu Fabra, trobareu tapes modernes, pizzes i un ambient desenfadat.
+		
 			 
 					 
 			 </p>
@@ -426,18 +442,23 @@ const CONTINGUT_SECCIONS = {
         ca: `
              <p><strong>Piscina municipal</strong><br>
              La piscina d'Amer és a la zona esportiva del poble, oberta durant els mesos d'estiu (juny-setembre).
-             Disposa de piscina gran, piscina infantil i zona de gespa amb ombres.<br>
-             Horari habitual: de 11h a 20h. Consulteu a l'Ajuntament abans d'anar-hi.
+             Els menors de 3 anys no pagen entrada.<br>
+             Horari habitual: de 10h a 18h. <br>Consulteu els detalls a l'agenda de l'ajuntament <br>
+			<a href="https://amer.cat/equipaments/esportius/"> https://amer.cat/equipaments/esportius/</a>
              </p>
 
-             <p><strong>Museu</strong><br>
-             [Pendent d'ampliar]<br>
-             Ubicació, horaris, entrades i què s'hi pot veure.
+             <p><strong>Museu Etnológic Lluís Sidera</strong><br>
+             En Lluís Sidera va estar tota la vida arreplegant totes les eines del camp que la modernització havia tornat obsoletes.<br>
+			 Les tenía exposades a casa seva i eren visitables sempre que hi fos.<br>
+			 Va fer donació de totes a l'ajuntament, tingueu en compte que el 100% de l'exposició que hi veureu és seva.<br>
+             Contactar per horaris: meda@amer.cat /  972 431 956.<br>
+			 <a href="https://www.catalunya.com/ca/continguts/patrimoni-cultural/museu-etnologic-lluis-sidera-17-16001-580172"> https://www.catalunya.com/ca/continguts/patrimoni-cultural/museu-etnologic-lluis-sidera-17-16001-580172 </a>
              </p>
 
              <p><strong>Pistes de pàdel</strong><br>
-             [Pendent d'ampliar]<br>
-             Ubicació, hores de reserva i condicions d'ús.
+			 A la zona esportiva, junt amb el camp de futbol a l'altra banda del riu. <br>
+             972 431 112 (de 9 a 14 h.)<br>
+             <a href="https://amer.cat/equipaments/esportius/">https://amer.cat/equipaments/esportius/</a>
              </p>`,
 
         es: `[ES-TODO]
@@ -453,19 +474,49 @@ const CONTINGUT_SECCIONS = {
     'festes-tradicions': {
         ca: `
              <p><strong>Festa Major</strong><br>
-             [Pendent d'ampliar]<br>
-             Dates, actes principals, sardanes, gegants, focs i concerts.
+             Del 8 al 15 d'agost<br>
+             Es fan activitats esportives, es celebra l'aplec nocturn de Sardanes, proclamació de l'hereu i la pubilla.
+			El 15 d'agost es celebra el cercavila amb la colla gegantera i concerts. <br>
+			La informació actualitzada de cada any la trobareu a l'agenda de l'ajuntament: 	
+			<a href="https://amer.cat/category/agenda-2/">https://amer.cat/category/agenda-2/</a>
              </p>
 
              <p><strong>Processó dels Dolors</strong><br>
-             [Pendent d'ampliar]<br>
-             Origen, recorregut i simbolisme d'aquesta tradició de Setmana Santa.
+             Es celebra per Setmana Santa, és una festivitat provinent d'una tradició del Segle XIV. <br>
+			 La tradició vol acostar-nos als dolors de la Mare de Dèu i preparar per la crucifixió de Crist.<br>
+			 A Amer el 2010 van celebrar els seus 300 anys d'existència amb la presència del Bisbe de Girona. <br>
+			 Més informació a: 		<a href="https://www.elsdolorsamer.cat/"> https://www.elsdolorsamer.cat/</a>
              </p>
 
              <p><strong>Festa de l'Albergínia</strong><br>
-             [Pendent d'ampliar]<br>
-             Data, mostra gastronòmica i actes populars al voltant del producte local.
-             </p>`,
+             Es celebra cada any a principis de setembre al barri del Pedreguet. <br>
+			 És una festa molt arrelada, el punt neuràlgic és la plantada del vern a la Plaça de la Pietat. <br>
+             Té una gastronomía propia que val la pena tastar. Només direm que no són esbergínies! <br>
+			 Per més informació: <a href="https://www.festes.org/ca/calendari/festes-d-estiu/1940/article/1142/festa-de-l-alberginia"> Festa Esberguínia</a>
+             </p>
+			 
+			   <p><strong>Marxa de les Ermites</strong><br>
+             Cada Maig des de les Esquelles organitzen una ruta fantàstica per camins i corriols que et porten a visitar les ermites de Santa Brígida, Santa Lena i Sant Roc. <br>
+			 Habitualment s'organitzen dos recorreguts de 8  i 15 km. <br>
+			 <a href ="https://esquelles.cat/"> https://esquelles.cat/</a>
+             </p>
+			 
+			   <p><strong>Aplec de Santa Brígida</strong><br>
+             El primer cap de setmana de Febrer es fa el tradicional aplec de Santa Brígida. <br>
+			 Amb activitats de foc i focs artificials al vespre i botifarrades al migdia.
+			 S'organitza la pujada amb itineraris diferents per ciclistes i caminadors. <br>
+			 La cloenda es fa amb el Cant dels Goigs a l'ermita. <br>
+			 <a href ="https://esquelles.cat/"> https://esquelles.cat/</a>
+             </p>
+			 
+			  <p><strong>Sona Amer</strong><br>
+             Des de fa 10 anys s'organitza cada Gener un festival de música en viu.<br>
+			 L'organitza https://www.ideagc.com/  a el Teatre el Casal d'Amer<br>
+			 <a href="https://amer.cat/sonaamer2026/">https://amer.cat/sonaamer2026/</a>
+             </p>
+			 `,
+			 
+			 
 
         es: `[ES-TODO]
              <!-- Traducció pendent al castellà -->`,

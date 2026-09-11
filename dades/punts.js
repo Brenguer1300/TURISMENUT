@@ -78,16 +78,20 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Plaça de la Vila o plaça Porxada. 
+            ca: `Plaça de la Vila o plaça Porxada. <br><br>
 			
-			És l'espai emblemàtic d'Amer i una de les places porticades més grans de Catalunya. 
-			Era l'espai on, des d'època medieval, s'hi celebrava el mercat, els porxos servien per protegir les parades de les inclemències del temps. 
+			És l'espai emblemàtic d'Amer i la segona de les places porticades més grans de Catalunya. <br>
+			Les places porticades són molt tìpiques dels llocs on es feia mercat, aquesta no és excepció i s'en té constància des d'època medieval.
+			Heu d'imaginar, la autoritat marca la mida que ha de tenir la plaça. Com més gran més parades i més ingressos. Cara a construïr una casa que dongui a la plaça
+			no pots ocupar l'espai reservat al mercat, igual que tampoc pots ocupar un carrer. Les arcades permeten guanyar uns metres
+			molt preciats als pisos superiors, mentre que compleixes amb la norma d'urbanisme perque la porta de la casa està on toca.<br>
+			I els paradistes? Contents, més apretats sí, però contents que ara els dies de pluja no impedeixen el mercat. <br><br>
 			
 			La plaça va ser reurbanitzada l'any 1980, quan la dinàmica de tots els pobles era retirar les llambordes dels carrers per colocar asfalt.
 			Amer va voler treure pit dels seus carrers amb llambordes i així la reforma de la plaça va fer-se incorporant llambordes al punt central del poble.
 			Com ja no se'n fabricaven es fer una crida a ajuntaments de tot Catalunya per aconseguir-ne.
 			Així la plaça actual és composta de la retirada de les mateixes dels carrers de molts pobles i 
-			ciutats catalanes. 
+			ciutats catalanes. <br><br>
 			
 			En agraïment a cada poble que va respondre a la crida es va incloure una placa identificativa,
 			creieu que trobareu el vostre?`,
@@ -138,12 +142,12 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Panosa. Plaça de la Vila 11.
-				Tot i la reforma moderna de l'edifici, conserva el seu interès per la finestra re-aprofitada d'època gòtica. 
-			És un finestral conopial bigeminat, amb llindes trilobulades sostingudes per una fina columna amb capitell de tipus vegetal, amb flors a les impostes.
-			Podria ser del segle XV. 
-			També és interessant el conjunt d'arcades de mig punt i ogivals. 
-			Hi destaca el pilar de suport, motllurat i amb relleus al capitell.`,
+            ca: `Can Panosa. Plaça de la Vila 11.<br><br>
+				Edifici reformat modernament, principalment el seu interès prové de la finestra d'època gòtica del segon pis. 
+			És un finestral conopial bigeminat, amb llindes sostingudes per una fina columna amb capitell de tipus vegetal, amb flors a les impostes. <br>
+			
+			Si us fixeu en les arcades de sota (aquesta casa i les contigues), veureu que n'hi ha de mig punt i ogivals i algunes amb capitell i relleus com si d'un claustre de monestir es tractés.
+			`,
             es: `La Plaza Mayor es el corazón social y comercial de Montbrull desde el siglo XV. Rodeada
                  de arcadas góticas tardías de piedra caliza, acoge el mercado semanal cada sábado desde
                  el año 1509. En el lado norte destaca la Casa de la Vila, con su reloj de sol del siglo XVII
@@ -179,13 +183,13 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Gultresa. Plaça de la Vila 5.
-			Edifici de l'any 1883 situat en un extrem de la plaça de la Vila i que té molts elements que el singularitzen. 
-			D'entrada, les arcades del porxo són més altes que les de la resta de cases.
-			La façana, que imita un encoixinat, presenta unes amples motllures al voltant de les obertures amb medallons a les llindes. 
-			És destacable la barana dels balcons, decorades amb fulles de vinya, plataner i figuera. 
-			A una llinda hi podem llegir el nom de Pelegrín Altarriba.
-			Quan s'acosta festa major podreu trobar els gegants de la vila esperant a sortir sota les seves arcades.`,
+            ca: `Can Gultresa. Plaça de la Vila 5.<br><br>
+			Edifici de l'any 1883 notareu d'entrada que les arcades del porxo són més altes que les de la resta de cases.
+			Quan s'acosta festa major podreu trobar els gegants de la vila esperant a sortir des d'aquí. <br>
+			La façana té una base que imita un encoixinat de maons falsos. Totes les finestres tenen amples motllures al voltant i medallons a les llindes. <br>
+			I la barana dels balcons? Una mà de pintura si.. però la decoració amb fulles de vinya, plataner i figuera la havieu vist?.  <br>
+			A la llinda de la porta hi podem llegir el nom de Pelegrín Altarriba, l'esquerda que la travessa dona fe de les dificultats de fer una bona llinda.
+			`,
             es: `Único de los tres portales originales que se conserva en pie, el Portal de la Muralla data
                  de 1318 y formaba parte del recinto amurallado encargado por el rey Jaime II. El arco de
                  medio punto con dovelas, las aspilleras laterales y los restos de la barbacana exterior
@@ -223,10 +227,13 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Llinda de Can Mundet. Plaça de la Vila 26.
-				La trobareu a la segona finestra del carrer de Can Ventura. 
-				L'interès d'aquesta llinda, de l'any 1775, rau en la seva originalitat, una decoració poc freqüent a base d'ovals i una figura central simètrica de caire vegetal. 
-			Cal remarcar la particularitat de que la inscripció que flanqueja aquesta figura està feta amb lletres hebrees.`,
+            ca: `Llinda de Can Mundet. Plaça de la Vila 26.<br><br>
+				
+			Aquesta llinda de l'any 1775, té una decoració poc freqüent a base d'ovals i una figura central de caire vegetal. 
+			Cal remarcar que la inscripció que flanqueja aquesta figura està feta amb lletres hebrees. <br>
+			La trobareu a la finestra dels baixos del carrer de Can Ventura (mirant l'edifici a la dreta). 
+			`,
+		
             es: `La Casa Torrentó es la mejor muestra del renacimiento civil en Montbrull. Construida en 1561
                  por la familia Torrentó, enriquecida en el comercio del vino y la lana, presenta una fachada
                  de tres crujías con ventanas geminadas de arco rebajado y una galería superior de seis arcos
@@ -264,11 +271,12 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Ca l'Espinet. Plaça de la Vila 20.
-			Edifici estret, d'una sola crugia, que s'aboca a la plaça de la Vila amb una façana d'estil romàntic, 
-			emmarcada amb dues falses pilastres d'ordre gegant i coronada amb una cornisa decorada damunt la qual hi ha una barana d'obra entre dos gerros.
-			Les llindes dels dos primers pisos estan ornamentades amb relleus vegetals i figures femenines.
-			El parament cec està acabat amb un fals encoixinat.
+            ca: `Ca l'Espinet. Plaça de la Vila 20.<br><br>
+			Edifici estret amb una façana d'estil romàntic, 
+			decorada amb dues falses pilastres i coronada amb una cornisa decorada, damunt la qual hi ha una barana d'obra entre dos gerros.
+			Les llindes dels dos primers pisos estan ornamentades amb relleus vegetals i figures femenines. <br>
+			Casa estreta no és motiu per no engalanar-la!
+			
 `,
             es: `El Molino Harinero de Can Puig es uno de los molinos hidráulicos medievales mejor conservados
                  de la comarca. Documentado desde 1408, aprovechaba el caudal del Rec de Montbrull para
@@ -308,10 +316,11 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Guifre. Plaça de la Vila 13. <BR>
-			     Construït al segon terç del S.XIX és la única csa de la plaça amb .
-				 La particularitat és que si us acosteu a la porta sota la porchada podreu veure la singularitat
-				 amb que es podia resoldre la absència de porters automàtics. 
-				 Nota, mireu al sostre!`,
+			     Construït al segon terç del S.XIX és la única casa de la plaça amb tribuna. Els vitralls de colors amb la seva sanefa i la barana del balcó tímidament decorada
+				 ens deixen entreveure un propietari enamorat de casa seva.
+				 <br>La singularitat de la casa la veureu si us poseu sota la seva porchada, us heu plantejat mai 
+				 com era viure sense porters automàtics? <br>
+				 <strong> Mireu al sostre!</strong>`,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
                  y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
@@ -331,7 +340,7 @@ const PUNTS_INTERES = [
 	    {
         id: 'pi-007',
         idZona: 'zona-vila',
-        estrelles: 1,                                // Recomanat
+        estrelles: 3,                                // Recomanat
         coordenades: { x:    20 ,  y:  38},          // Centre de la zona: encreuament de carrers
         imatge: 'imatges/punts-interes/pi-007.jpg',
         nom: {
@@ -343,15 +352,15 @@ const PUNTS_INTERES = [
         any: 1930,
         estil: {
             ca: 'Eclèctic',
-            es: 'Eclectico',
+            es: 'Eclèctic',
             en: 'Eclectico',
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Junquera. Carrer Narcís Junquera 1.
-			     Edifici entre mitgeres de l'any 1895, d'estil eclèctic. Consta de planta baixa i dos pisos. 
-				 El pis principal amb balcó corregut i el pis superior amb tres balcons individuals. 
-				 L'ornamentació destaca pels frisos esgrafiats de color vermell i els guardapols del pis principal. 
+            ca: `Can Junquera. Carrer Narcís Junquera 1.<br><br>
+			     Edifici de l'any 1895, d'estil eclèctic. 
+				 Una simetria i unes proporcions molt treballades, l'ornamentació destaca pels frisos esgrafiats de color vermell i els guardapols del pis principal. 
+				La porta destaca per l'escut amb les inicials. <br>				 
 				 Va ser la casa de la família Junquera, de la que era l'alcalde perpetu durant el Franquisme.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
@@ -390,10 +399,11 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Soler. Carrer Narcís Junquera 8.
-			     Edifici entre mitgeres de planta baixa i dos pisos. El pis principal té un balcó corregut mentre que el superior té tres balcons individuals, 
-				 tots ells amb la barana bombada. L'ornamentació dels dos pisos està basada en uns plafons i un fals encoixinat que juguen amb els colors blanc i vermell, 
-				 invertits en un pis i en l'altre.
+            ca: `Can Soler. Carrer Narcís Junquera 8. <br><br>
+			     Edifici molt ben conservat, tots els balcons amb la barana bombada, tant típica de la època.
+				 L'ornamentació està basada en uns plafons i un fals encoixinat que juguen amb els colors blanc i vermell, 
+				 invertits en entre el primer i el segon pis. <br>
+				 Molt típic de la època també és la falça teulada que sobresurt a dalt de tot, una petita joia que a més protegeix la façana de la pluja.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -423,16 +433,19 @@ const PUNTS_INTERES = [
             en: 'Council City',
             fr: '[FR-TODO]',
         },
-        any: 1930,
+        any: 'XIX',
         estil: {
-            ca: 'Noucentisme',
+            ca: 'Obra Popular',
             es: 'Noucentismo',
             en: 'Newcentury',
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Ajuntament. Plaça de la Vila 2.
-			     Edifici Noucentista molt simplista. Destaca l'esgrafiat central amb l'escut del poble
+            ca: `Ajuntament. Plaça de la Vila 2. <br> <br>
+			     Edifici sense pretensions, destaca l'esgrafiat central amb l'escut del poble. Molt senzill inclou el nom del poble i la senyera catalana representada aquí amb tres barres.<br>
+				 Amer és un dels pocs pobles que no disposa d'escut oficial, creiem que haver estat una propietat eclesiàstica hi té a veure. <br>
+				 Així com les finestres tenen llindes planes, tant a la porta com la finestra del primer pis,
+				 disposen de marcs d'inspiració arabesca.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -449,6 +462,45 @@ const PUNTS_INTERES = [
                  <!-- Traducció pendent al francès -->`,
         },
     },
+	{
+        id: 'pi-025',
+        idZona: 'zona-vila',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x:    14 ,  y:  30},          // Centre de la zona: encreuament de carrers
+        imatge: 'imatges/punts-interes/pi-025.jpg',
+        nom: {
+            ca: 'Can Canesteve',
+            es: 'Can Canesteve',
+            en: 'Can Canesteve',
+            fr: 'Can Canesteve',
+        },
+        any: 1885,
+        estil: {
+            ca: 'Obra Popular',
+            es: 'Noucentismo',
+            en: 'Newcentury',
+            fr: '[FR-TODO]',
+        },
+        descripcio: {
+            ca: `Can Canesteve. Carrer Narcís Jonquera 5. <br><br>
+			     Edifici de tres pisos sense pretensions. <br>Fixeu-vos com al 1885 encara cuejava l'ús de "llindes" amb el nom del propietari i l'any incrits.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
+        },
+    },
+	
     // ============================================================
     // ZONA: CARRER DE LA BARROCA zona-barroca
     // Mapa de zona: imatges/mapes-zones/zona-vila.svg
@@ -474,7 +526,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `La Torre. Carrer de la Barroca 1. 
+            ca: `La Torre. Carrer de la Barroca 1.  <br>
 			
 			     Casa d'estiueig formada per diferents cossos i terrasses, dels quals el més destacat, i que ha donat nom a la casa, 
 				 és una torratxa mirador, de planta quadrada, circumdada per un balcó i amb coronament piramidal.
@@ -500,7 +552,7 @@ const PUNTS_INTERES = [
         idZona: 'zona-barroca',
         estrelles: 1,                                // Recomanat
         coordenades: { x:    36 ,  y:  26},          // Centre de la zona: encreuament de carrers
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-011.jpg',
         nom: {
             ca: 'Can Pujades',
             es: 'Can Pujades',
@@ -515,7 +567,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Pujades. Carrer de la Barroca 5. 
+            ca: `Can Pujades. Carrer de la Barroca 5. <br>
 			
 			     Edifici construït cap a la darreria dels anys vint del segle passat, d'una sola planta, amb pati al davant. La façana, coronada amb una balustrada de tres trams,
 				 presenta una destacada ornamentació al voltant de les tres obertures, on les llindes mostren uns relleus de caire vegetal de gust modernista.
@@ -564,11 +616,11 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Absis del Monestir.  Carrer Jacint Verdaguer.
+            ca: `Absis del Monestir.  Carrer Jacint Verdaguer.  <br>
 			
-			     La capçalera de Santa Maria, restaurada modernament, és la part que conserva de forma més íntegra l'aspecte original del temple romànic. 
-				 Inicialment tenia un absis central flanquejat per dues absidioles. 
-				 Posteriorment s'hi va afegir un altre absis, amb un tipus de carreuat més gran i regular. Tots quatre presenten arcuacions i lesenes de tipus llombard.
+			     És la part que conserva de forma més íntegra l'aspecte original del temple romànic. <br>
+				 Fixeu-vos en les petites finestres quasi sense decoració, 	únicament disposen just a sota la teulada d'aquestes petits arcs de pedres, en l'anomenada decoració llombarda, molt típica del romànic català primerenc. <br>
+				 A la construcció inicial es van fer tres absis, essent el cuart un afegit posterior. <br> Sabrieu diferenciar pel tipus i color de la pedra quin és?
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -599,20 +651,25 @@ const PUNTS_INTERES = [
             en: 'Can Món',
             fr: '[FR-TODO]',
         },
-        any: "S.XIV",
+        any: "S.XVI-XIX",
         estil: {
-            ca: 'Romànic',
+            ca: 'Renaixentista',
             es: 'Romanico',
             en: 'Newcentury',
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Món.  Carrer Narcís Junquera / Plaça del Monestir.
-			
-			     Interessant edifici format per dos cossos en L, un dels quals travessa el carrer Narcís Junquera deixant obert un pas inferior que clou la plaça del Monestir.
-				 La casa ocupa una part de l'antiga casa de l'Abat. La façana que dóna a la plaça, del segle XVI, mostra un balcó que conserva el guardapols motllurat 
-				 ornamentat amb garlandes i detalls florals. És remarcable la façana de l'antiga capella, amb pilastres estriades i frontó triangular, d'estil renaixentista. 
-				 La façana que dóna al carrer Junquera és molt posterior, de la fi del segle XIX, d'estil historicista.
+            ca: `Can Món.  Carrer Narcís Junquera / Plaça del Monestir. <br>
+				
+				 Qualsevol guia us parlaria d'edific eclèctic, diguem que és la definició exacta d'urbanisme d'aprofitament. <br>
+				 És un edifici format per dos cossos en L, el que fa de pont per entrar a la plaça i el que té aquesta portalada digna d'una esglèsia amb dues finestres obliques a sobre.<br>
+				 Aquesta última és el que queda de l'antic palau de l'Abat, la portalada és d'estil renaixentista i un frontó triangular purament ornamental. <br>
+				 Les ordres monàstiques podien fer vot de pobresa, però l'abat estava sempre per sobre i tenia el seu palau, servents, etc. Encaixa més pensar-hi més com un senyor feudal que com un monjo. <br>
+				 De l'edifici que fa de pont té a la banda del Monestir un balcó amb un guardapols fantàstic. <br> 
+				 <br> Potser fins ara no impresiona, pero creueu la casa per sota i a l'altra banda 
+				 veureu una façana que manté un únic estil que vol simular les antigues cases del gòtic (és de finals del SXIX), imagineu-vos com seria aquest casalot per dins! 
+				 
+			     
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -642,20 +699,19 @@ const PUNTS_INTERES = [
             en: 'Can Boles',
             fr: '[FR-TODO]',
         },
-        any: "S.XIV",
+        any: "S.XVI",
         estil: {
-            ca: 'Romànic',
+            ca: 'Arquitectura popular',
             es: 'Romanico',
             en: 'Newcentury',
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Boles.  Plaça del Monestir 5.
+            ca: `Can Boles.  Plaça del Monestir 5. <br>
 			
-			     Edifici del segle XVI, amb modificacions posteriors (hi ha llindes amb dates del segle XVIII),
-				 va ser alçat sobre l'antic palau de l'Abat i una part del desaparegut claustre. 
-				 És un gran casal de planta baixa i dos pisos, amb la façana principal porticada.
-				 Les obertures i les cantoneres estan fetes amb carreus de pedra picada. Damunt d'un balcó llueix un vell escut heràldic.
+			     Edifici del segle XVI, amb modificacions posteriors (hi ha llindes amb dates del segle XVIII), 
+				 podriem dir que entre aquest edifici i l'esglèsia hauriem trobat el claustre del monestir. <br>
+				 És un gran casal sense gaires pretencions arquitectóniques però si destaca el vell escut heràldic i les pedres tant treballades que envolten les finestres.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -693,11 +749,11 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Creu de terme.  Plaça del Monestir s/n.
+            ca: `Creu de terme.  Plaça del Monestir s/n. <br><br>
 			
-			     A la plaça del Monestir hi ha una fidel reproducció de la creu de terme que hi havia a l'entrada del poble, venint de Girona.
-				 L'original està dipositada al Museu Diocesà de Girona.
-				 La creu, molt ornamentada, presenta com és habitual el Crist crucificat a una cara i la Mare de Déu a l'altra la Mare de Déu, que ha perdut la part superior.
+			     Antigament a l'entrada del poble hauriem trobar la creu que indicava l'inici del terme municipal.<br>
+				 L'original està dipositada al Museu Diocesà de Girona, aquí en podeu observar una reproducció ja malmesa per les inclemencies del temps. 
+				 La creu, molt ornamentada, presenta el Crist crucificat a una cara i la Mare de Déu a l'altra la Mare de Déu.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -718,7 +774,7 @@ const PUNTS_INTERES = [
 	{
         id: 'pi-016',
         idZona: 'zona-monestir',
-        estrelles: 2,                                // Recomanat
+        estrelles: 1,                                // Recomanat
         coordenades: { x: 62, y: 22},          // Centre de la zona: encreuament de carrer
         imatge: 'imatges/punts-interes/pi-016.jpg',
         nom: {
@@ -727,7 +783,7 @@ const PUNTS_INTERES = [
             en: 'Can Terme',
             fr: '[FR-TODO]',
         },
-        any: "S.XIX",
+        any: "S.XVII",
         estil: {
             ca: 'Neoromànic',
             es: 'Neoromanico',
@@ -735,10 +791,11 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Terme.  Plaça del Monestir 2.
+            ca: `Can Terme.  Plaça del Monestir 2. <br>
 			
-			     Edifici adossat al Monestir que antigament havia fet funcions de sagristia. Actualment acull el Museu Etnològic d'Amer. Molt reformat en època moderna (el cos travessat per una volta que dóna accés a la plaça és una construcció recent), 
-				 conserva alguns elements antics, del segle XVII, especialment visibles en l'emmarcament d'algunes de les obertures. En una d'elles llegim clarament la data de 1662 i en una altra la de 1689.
+			    Actualment acull el Museu Etnològic d'Amer. <br>
+				Era la antiga sacristia, un edifici molt reformat que conserva alguns elements antics del segle XVII. <br>
+				Si us hi acosteu i l'examineu haurieu de trobar un escut, una figura geomètrica de pedra i una llinda amb la data de 1662.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -768,20 +825,22 @@ const PUNTS_INTERES = [
             en: 'Monastery',
             fr: '[FR-TODO]',
         },
-        any: "S.XIX",
+        any: "S.IX",
         estil: {
-            ca: 'Neoromànic',
+            ca: 'Romànic',
             es: 'Neoromanico',
             en: 'Newcentury',
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Antic Monestir Santa Maria d'Amer.  Plaça del Monestir 2.
+            ca: `Antic Monestir Santa Maria d'Amer.  Plaça del Monestir. <br>
 			
-			     Monestir benedictí consagrat l'any 949 i que durant els segles següents,
-				 fins al segle XIV, va gaudir de gran prosperitat. 
-				 Els terratrèmols de 1427 i 1428 el van deixar molt malmès, s'esfondraren 
-				 les voltes i el claustre i moltes dependències monàstiques van quedar destruïdes.
+			     De l'antic monestir benedictí consagrat l'any 949 queda principalment la actual esglèsia de Santa Maria, ha patit moltes reformes. 
+				 Destaquem la forma imponent, les motllures de les portes i finestres i també el treball de ferro de les finestres.
+				 Si teniu ocasió entreu-hi dins (horari de missa).<br> Amb el creixement de població es va pendre desició de modificar els pilars interiors romànic (amples i robustos) 
+				 per permetre que des del laterals es poguès seguir missa per cuatre columnetes ornamentades que costa creure aguantin el mateix pes.  És realment una desició insòlita que val la pena observar.
+				 
+				 
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -811,18 +870,20 @@ const PUNTS_INTERES = [
             en: 'Ca l-Espígol',
             fr: '[FR-TODO]',
         },
-        any: "S.XIX",
+        any: "S.XVIII",
         estil: {
-            ca: 'Neoromànic',
+            ca: 'Arquitectura popular',
             es: 'Neoromanico',
             en: 'Newcentury',
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Ca lEspigol.  Plaça del Monestir 17.
+            ca: `Ca Espigol.  Plaça del Monestir 17. <br>
 			
-			     Edifici de tres plantes situat enfront del monestir. Conserva l'emmarcament de pedra de les cantoneres i de les obertures,
-				 que són d'arc carpanell a la planta baixa i de llinda monolítica als pisos. La casa va ser molt reformada a començament del segle XX.
+			     La considerariem una masia si no estigués en nucli urbà. Destaca l'emmarcament de pedra de la porta i de totes les finestres.
+				 De pedra treballada, llindes a totes les finestres i mantenint una coherencia del conjunt.<br>
+				 La porta ens agrada especialment per la seva forma rodona.<br>
+				 Amb tot, no consta cap inscripció!
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -852,21 +913,22 @@ const PUNTS_INTERES = [
             en: 'Can Gasull',
             fr: '[FR-TODO]',
         },
-        any: "S.XIX",
+        any: "S.XVII",
         estil: {
-            ca: 'Neoromànic',
-            es: 'Neoromanico',
-            en: 'Newcentury',
+            ca: 'Gótic',
+            es: 'Gotico',
+            en: 'Gothic',
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Gasull.  Plaça del Monestir, 3 / Carrer Sant Benet.
+            ca: `Can Gasull.  Plaça del Monestir, 3 / Carrer Sant Benet. <br>
 			
-			    Correspon a un dels antics edificis del Monestir d'Amer, concretament era la infermeria, amb façana a la plaça i al carrer de Sant Benet. 
-				Conserva alguna finestra antiga però les façanes estan molt deteriorades. La casa posseïa un dels finestrals renaixentistes més interessants de l'arquitectura civil catalana, 
-				especialment pel seu valor iconogràfic, amb temàtica vinculada a les epidèmies de pesta.
-				Lamentablement, aquesta finestra i una altra de tipus conopial, van ser venudes per l'antic propietari i, segons se'ns ha informat,
-				actualment es troben a la seu de l'Opus Dei a Torreciudad.
+			    Correspon a un dels antics edificis del Monestir d'Amer, concretament era la infermeria, amb façana a la plaça i al carrer de Sant Benet, si feu la volta veureu una placa de l'ajuntament que indica que als baixos s'usaven com a caballerisses. 
+				Ara és un casalot que conserva alguna finestra antiga, però hem vist fotografies de qui hi va viure i aquesta casa posseïa un dels finestrals renaixentistes més interessants de l'arquitectura civil catalana, 
+				, amb temàtica vinculada a les epidèmies de pesta.<br>
+				Lamentablement, aquesta finestra i una altra de tipus conopial, van ser venudes per l'antic propietari. <br>
+				Us podeu fer una idea de les mateixes si busqueu les que queden desdel carrer Sant Benet!.
+				
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -904,12 +966,13 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Placa de l'arbitratge Remença.  Colocada a Can Boles.
+            ca: `Placa de l'arbitratge Remença.  Colocada a un lateral de Can Boles. <br><br>
 			
 			    Ferran II d'Aragó va firmar el 1486 la sentència arbitral de Guadalupe amb la que es posava fi a la segona guerra remença.
 				Aquí Amer un any abans s'havia pactat la fi de les hostilitats acceptant els remençes que acatarien el dictàment del rei.
-				Creiem que es va poder firmar a Amer per que l'Abat ja havia renunciat als mals usos.
-				Si seguiu el viatge per la Garrotxa podreu seguir totes les localitzacions de les Guerres Remences.
+				Creiem que es va poder firmar a Amer per que l'Abat ja havia renunciat als mals usos. <br>
+				Si continueu el viatge per la Garrotxa podreu resseguir totes les localitzacions de les Guerres Remences. <br>
+				No oblideu buscar qui va ser Verntallat!
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -937,7 +1000,7 @@ const PUNTS_INTERES = [
         idZona: 'zona-pedreguet',
         estrelles: 3,                                // Recomanat
         coordenades: { x: 41, y: 10},          // Centre de la zona: encreuament de carrer
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-021.jpg',
         nom: {
             ca: 'Carrer Girona',
             es: 'Calle Girona',
@@ -952,22 +1015,25 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Carrer Girona.  
+            ca: `Carrer Girona.  <br><br>
 			
 			    El carrer Girona és un carrer llarg i estret originat a l'edat mitjana i que articula el barri del
-				Pedreguet fins arribar a la capella de la Mare de Déu de la Pietat. 
+				Pedreguet fins arribar a la capella de la Mare de Déu de la Pietat. <br>
 				
 				És un carrer molt interessant 
-				que ha preservat la seva estructura antiga i molts dels seus seus edificis, malgrat les reformes modernes,
-				han conservat els elements antics de més qualitat, com les llindes de les portes i finestres,
-				moltes de les quals ens donen notícia dels seus antics propietaris i de l'any en què es feren les reformes, entre els segles XVII, XVIII i XIX.
+				que ha preservat la seva estructura antiga i molts dels seus seus edificis conserven elements destacables com les llindes de les portes i finestres.<br>
+				En aquestes poden trobar el nom dels seus antics propietaris i de l'any en què es feren, en ocasions la casa i en d'altres la reforma, principalment entre els segles XVII-XIX.<br><br>
 				
-				Són moltes les cases d'Amer que conserven inalterades les portes i finestres originals.
-				A les llindes de moltes d'elles podem llegir-hi el nom del propietari i l'any de construcció o reforma de la casa. 
- 
-				La fesomia particular del carrer, sense ni un carrer lateral, es deu que es van anar construint les cases 
+				 
+				La fesomia particular del carrer, quasi sense sortida lateral, es deu que es van anar construint les cases 
 				al llarg de la antiga carretera que duia a Girona. Tothom volia estar el més aprop possible de la plaça i el Monestir,
-				i per tant cada nova casa es feia paret amb paret amb la última sense que ningú penses a deixar un carrer enmig.
+				i per tant cada nova casa es feia paret amb paret amb la última sense que ningú penses a deixar un carrer enmig. <br><br>
+				
+				Us recomanem un passeig tranquil tant per aquest com pel superior carrer de l'Abad Vilafreser. <br>
+				La juguesca consisteix a ser el primer a trobar i llegir la següent inscripció. <br>
+				Penseu que per petita i estreta que fos una casa, l'orgull de fer-la o reformar-la portava a pagar un picapedrer per deixar-ne constància.<br>
+				<strong>Alerta:</strong> no només trobareu inscripcions a les portes!		<br><br>
+				<strong>No descuideu la canalla</strong>, per tranquil que sembli és un carrer amb trànsit rodat.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -990,14 +1056,14 @@ const PUNTS_INTERES = [
         idZona: 'zona-pedreguet',
         estrelles: 2,                                // Recomanat
         coordenades: { x: 50, y: 15},          // Centre de la zona: encreuament de carrer
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-022.jpg',
         nom: {
             ca: 'Can La',
             es: 'Can La',
             en: 'Can La',
             fr: '[FR-TODO]',
         },
-        any: "S.XVIII",
+        any: "S.XVII",
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
@@ -1005,11 +1071,12 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can La. Carrer Girona 2.  
+            ca: `Can La. Carrer Girona 8.   <br><br>
 			
-			    És una de les cases més interessants del carrer Girona però es troba en un estat de conservació deplorable.
-				Hi destaca el seu portal adovellat, de punt rodó, i un finestral del segle XVI d'arc conopial amb la
-				típica traceria gòtica i un guardapols motllurat recte.
+			    És una de les cases més interessants del carrer Girona, una masia en un entorn urbà. <br>
+				No hi consta cap llinda amb el nom del propietari, però destaca el seu portal adovellat i un finestral digne d'una palau del segle XVI amb la
+				típica traceria gòtica i un guardapols motllurat recte. <br>
+				Aquí hi movien diners!
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -1028,11 +1095,11 @@ const PUNTS_INTERES = [
     },
 	
 	{
-        id: 'pi-022',
+        id: 'pi-023',
         idZona: 'zona-pedreguet',
         estrelles: 1,                                // Recomanat
-        coordenades: { x: 50, y: 20},          // Centre de la zona: encreuament de carrer
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        coordenades: { x: 52, y: 18},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-023.jpg',
         nom: {
             ca: 'Can Plana',
             es: 'Can Plana',
@@ -1047,7 +1114,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Plana. Carrer Girona 2.  
+            ca: `Can Plana. Carrer Girona 14.  <br><br>
 			
 			    Edifici reformat modernament però que ha conservat alguns elements antics d'interès, com els muntants amb permòdols del portal o la finestra petita també amb llinda sobre permòdols.
 				Pel que fa a la balconera cal destacar la llinda conopial de tradició gòtica envoltada amb un guardapols motllurat.
@@ -1069,11 +1136,11 @@ const PUNTS_INTERES = [
     },
 	
 		{
-        id: 'pi-023',
+        id: 'pi-024',
         idZona: 'zona-pedreguet',
         estrelles: 1,                                // Recomanat
         coordenades: { x: 84, y: 55},          // Centre de la zona: encreuament de carrer
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-024.jpg',
         nom: {
             ca: 'Ermita',
             es: 'Ermita',
@@ -1114,11 +1181,11 @@ const PUNTS_INTERES = [
     },
 	
 		{
-        id: 'pi-024',
+        id: 'pi-026',
         idZona: 'zona-pedreguet',
         estrelles: 1,                                // Recomanat
         coordenades: { x: 44, y: 25},          // Centre de la zona: encreuament de carrer
-        imatge: 'imatges/punts-interes/pi-010.jpg',
+        imatge: 'imatges/punts-interes/pi-026.jpg',
         nom: {
             ca: 'Can Llepart',
             es: 'Can Llepart',
@@ -1127,7 +1194,7 @@ const PUNTS_INTERES = [
         },
         any: "S.XVIII",
         estil: {
-            ca: 'Neoromànic',
+            ca: 'Arquitectura popular',
             es: 'Neoromanico',
             en: 'Newcentury',
             fr: '[FR-TODO]',
@@ -1140,6 +1207,411 @@ const PUNTS_INTERES = [
 			   De la façana de la plaça en destaca el balcó de fusta, protegit per un destacat voladís.
 
 `,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
+        },
+    },
+	
+	{
+        id: 'pi-027',
+        idZona: 'zona-pedreguet',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x: 66, y: 24},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-027.jpg',
+        nom: {
+            ca: 'Llinda 31',
+            es: 'Llinda 31',
+            en: 'Llinda 31',
+            fr: 'Llinda 31',
+        },
+        any: "1743",
+        estil: {
+            ca: 'Arquitectura popular',
+            es: 'Neoromanico',
+            en: 'Newcentury',
+            fr: '[FR-TODO]',
+        },
+        descripcio: {
+            ca: `Carrer Girona 31. 
+			
+			   Exemple de llinda amb la inscripció més senzilla: 1743.<br>
+			   Podria ser l'any de construcció o probablement de reforma de la casa.
+			   Aviat farà 200 anys que es va fer aquesta pedra treballada i polida per aguantar el pes de la casa i permetre una porta més que decent. <br>
+			   Compareu-la amb la de la finestra superior molt més estreta.
+
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
+        },
+    },
+	
+	{
+        id: 'pi-028',
+        idZona: 'zona-pedreguet',
+        estrelles: 2,                                // Recomanat
+        coordenades: { x: 68, y: 36},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-028.jpg',
+        nom: {
+            ca: 'Llinda 46',
+            es: 'Llinda 46',
+            en: 'Llinda 46',
+            fr: 'Llinda 46',
+        },
+        any: "1755",
+        estil: {
+            ca: 'Arquitectura popular',
+            es: 'Neoromanico',
+            en: 'Newcentury',
+            fr: '[FR-TODO]',
+        },
+        descripcio: {
+            ca: `Carrer Girona 46. 
+			
+			   La llinda més decorada que veureu avui, fixeu-vos que les pedres que enmarquen la casa estàn treballades per fer simular un marc. <br>
+			   La serra, que envolta l'any i el nom del constructor, el martell i l'escaira ens indiquen que qui la va fer era mestre de cases. <br>
+			   No s'ens acut millor reclam pels proper clients!
+
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
+        },
+    },
+	
+	{
+        id: 'pi-029',
+        idZona: 'zona-pedreguet',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x: 74, y: 44},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-029.jpg',
+        nom: {
+            ca: 'Llinda 64',
+            es: 'Llinda 64',
+            en: 'Llinda 64',
+            fr: 'Llinda 64',
+        },
+        any: "1752",
+        estil: {
+            ca: 'Arquitectura popular',
+            es: 'Neoromanico',
+            en: 'Newcentury',
+            fr: '[FR-TODO]',
+        },
+        descripcio: {
+            ca: `Carrer Girona 64. <br><br>
+			
+			   Recordeu com de mala idea és fer una llinda de fusta? <br> Doncs aquesta de fusta ens porta la contrària des de mil setcents.. cincuanta dos? <br>
+			   Les de les finestres immediatament superiors també ho són i malgrat estar a la intempèrie ni es veuen bufades ni han començat a doblegar-se.<br>
+			   Ens gradaria saber de quina fusta es tracta i us seguim recomenant que per casa vostra en poseu una de pedra (les de les altres dues finestres si les han hagut de canviar).
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
+        },
+    },
+	
+	{
+        id: 'pi-030',
+        idZona: 'zona-pedreguet',
+        estrelles: 3,                                // Recomanat
+        coordenades: { x: 62, y: 28},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-030.jpg',
+        nom: {
+            ca: 'Llinda 38',
+            es: 'Llinda 38',
+            en: 'Llinda 38',
+            fr: 'Llinda 38',
+        },
+        any: "1737",
+        estil: {
+            ca: 'Arquitectura popular',
+            es: 'Neoromanico',
+            en: 'Newcentury',
+            fr: '[FR-TODO]',
+        },
+        descripcio: {
+            ca: `Carrer Girona 38. <br><br>
+			
+			   <strong>MIQUEL CUDINA ME FECIT. ANY 1737.</strong><br>
+			   No tenim paraules per descriure com ens fa sentir aquesta inscripció. <br>
+			   No només consta l'any, també està de forma totalment innecessària la paraula any abans de la data. <br>
+			   Però el fet que sigui la casa qui es dirigeix a tu ens fascina. <br>
+			   Si les cases poguessin acudir al registre a inscriure's elles mateixes, farien totes una inscripció així.
+`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
+        },
+    },
+	
+	   // ============================================================
+    // ZONA: Zona Rodalies Amer (zona-rodalia)
+    // Mapa de zona: imatges/mapes-zones/zona-rodalia.jpg
+    // Zona historica
+    // ============================================================
+	{
+        id: 'pi-100',
+        idZona: 'zona-rodalia',
+        estrelles: 2,                                // Recomanat
+        coordenades: { x: 4, y: 2},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-100.jpg',
+        nom: {
+            ca: 'Font Picant',
+            es: 'Font Picant',
+            en: 'Font Picant',
+            fr: 'Font Picant',
+        },
+        any: "S.XVIII",
+        estil: {
+            ca: 'Arquitectura popular',
+            es: 'Arquitectura popular',
+            en: 'Arquitectura popular',
+            fr: '[FR-TODO]',
+        },
+        descripcio: {
+            ca: `Font Picant.  Sortint del poble en direcció Olot veureu un trencall a l'esquerra amb un petit cartell groc: Fonter. <br> <br>
+			
+			    Al fons del petit polígon industrial de Fonter hi ha una àrea de lleure amb la Font Picant com a punt central. <br>
+				Fa temps que hi convindria una inversió en manteniment. Trobareu que no és exactament el mateix sabor que la comercialitzada però a casa 
+				sempre hem trobat més bona aquesta. Recomanem dur ampolla/garrafa d'aigua per omplir.<br>
+				Tingueu en compte que des de la sequera no sempre raja aigua, si ho fa	podeu trobar cua!
+ 
+				`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
+        },
+    },
+		{
+        id: 'pi-101',
+        idZona: 'zona-rodalia',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x: 2, y: 24},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-101.jpg',
+        nom: {
+            ca: 'Font de la Teula',
+            es: 'Font de la Teula',
+            en: 'Font de la Teula',
+            fr: 'Font de la Teula',
+        },
+        any: "S.XX",
+        estil: {
+            ca: 'Arquitectura popular',
+            es: 'Arquitectura popular',
+            en: 'Arquitectura popular',
+            fr: '[FR-TODO]',
+        },
+        descripcio: {
+            ca: `Font de la Teula.  En una corba a meitat del camí a Sant Martí Sacalm  <br> <br>
+			
+			    Gairebé tothom s'atura en aquest lloc tant bonic, <br>
+				a beure i reposar un xic. <br>
+				Si ningú no hi deixés merda, <br>
+				l'aigua seria més pura  <br>
+				i l'herba força més verda. <br>
+				L'ajuntament no és fa responsable de la potabilitat de la mateixa, però la trobem molt bona. <br>
+				Si heu arribat fins aquí acabeu el camí fins a Sant Martí Sacalm, just sota el Far. <br>
+				La composició de masies de pedra soltes fa rememorar el passat medieval.
+ 
+				`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
+        },
+    },
+	
+		{
+        id: 'pi-102',
+        idZona: 'zona-rodalia',
+        estrelles: 3,                                // Recomanat
+        coordenades: { x: 40, y: 10},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-102.jpg',
+        nom: {
+            ca: 'Santa Brígida',
+            es: 'Santa Brígida',
+            en: 'Santa Brígida',
+            fr: 'Santa Brígida',
+        },
+        any: "S.XVII",
+        estil: {
+            ca: 'Arquitectura popular',
+            es: 'Arquitectura popular',
+            en: 'Arquitectura popular',
+            fr: '[FR-TODO]',
+        },
+        descripcio: {
+            ca: `Ermita de Santa Brígida. Camí de Santa Brígida: fins dalt de tot!  <br> <br>
+			
+			    Depenent del Monestir de Santa María d'Amer va ser reformada el SXVII i restaurada el 2001 pel grup excursionista d'Amer. <br>
+				Edifici senzill d'una sola nau amb volta de canó. És molt reverenciada pels amerencs i les vistes a la vall molt bones. <br>
+				Arribar-hi és una mitja excursió on fareu cames! <br>
+				Als nens els podeu entretenir a fer-los buscar petxines fosilitzades pel camí.
+ 
+				`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
+        },
+    },
+	
+	{
+        id: 'pi-104',
+        idZona: 'zona-rodalia',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x: 95, y: 50},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-104.jpg',
+        nom: {
+            ca: 'Sant Climent',
+            es: 'Sant Climent',
+            en: 'Sant Climent',
+            fr: 'Sant Climent',
+        },
+        any: "S.XVIII",
+        estil: {
+            ca: 'Arquitectura popular',
+            es: 'Arquitectura popular',
+            en: 'Arquitectura popular',
+            fr: '[FR-TODO]',
+        },
+        descripcio: {
+            ca: `Ermita de Sant Climent d'Amer.  Camí de Sant Climent s/n <br> <br>
+			
+			    Antigament dedicada a Sant Climent i Sant Julià, documentada del 1066 va ser completament reformada al 1877.<br>
+				Era el punt neuràlgic de totes les masies d'aquesta zona. <br>
+				Ara us pot semblar desert, però hi havia prou veïns a la zona com per aixecar-se la seva propia ermita i evitar anar i tornar d'Amer per anar a missa. <br>
+				Penseu que les masies eren habitades per la família (pares, fills i nets) en ocasions també la família extensa (germans i tiets) i sobretot tots els treballadors (bracers i jornalers) 
+				que treballaven la terra i teníen cura del bestiar i s'hi estaven amb la familía. <br>
+				Fins al 1941 tots els batejos, casaments i defuncions es realitzaven aquí.
+				
+				Arquitectònicament és destacable la porta d'estil neoclàssic amb les dues columnes impostes a banda i banda.<br>
+				Recomanem acostar-s'hi, principalment, per l'entorn agrari.
+ 
+				`,
+            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
+                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
+                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
+                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
+                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
+                 buena salud.`,
+            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
+                 1723 through public subscription, it features a triangular pediment with the date inscribed
+                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
+                 centuries as the water supply point for the northern part of the village. Local legend holds
+                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
+            fr: `[FR-TODO]
+                 <!-- Traducció pendent al francès -->`,
+        },
+    },
+	
+{
+        id: 'pi-105',
+        idZona: 'zona-rodalia',
+        estrelles: 1,                                // Recomanat
+        coordenades: { x: 24, y: 35},          // Centre de la zona: encreuament de carrer
+        imatge: 'imatges/punts-interes/pi-105.jpg',
+        nom: {
+            ca: 'Estació del Carrilet',
+            es: 'Estación del Carrilet',
+            en: 'Carrilet Station',
+            fr: 'Stattion du Carrilet',
+        },
+        any: "1895",
+        estil: {
+            ca: 'Arquitectura popular',
+            es: 'Arquitectura popular',
+            en: 'Arquitectura popular',
+            fr: '[FR-TODO]',
+        },
+        descripcio: {
+            ca: `Estació d'Amer del Carrilet.  Pujada de l'estació 15 <br> <br>
+			
+			    Molt ben restaurat era la parada del tren que unia Olot i Sant Feliu de Guíxols, petit tren d'una única vía: popularment el Carrilet. <br>
+				El Carrilet va funcionar del 1895 fins 1966, avui vía verda molt usada pels ciclistes.
+				L'Edifici és actualment dependències municipals.
+ 
+				`,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
                  y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
