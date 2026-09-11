@@ -81,16 +81,16 @@ const PUNTS_INTERES = [
             ca: `Plaça de la Vila o plaça Porxada. <br><br>
 			
 			És l'espai emblemàtic d'Amer i la segona de les places porticades més grans de Catalunya. <br>
-			Les places porticades són molt tìpiques dels llocs on es feia mercat, aquesta no és excepció i s'en té constància des d'època medieval.
-			Heu d'imaginar, la autoritat marca la mida que ha de tenir la plaça. Com més gran més parades i més ingressos. Cara a construïr una casa que dongui a la plaça
+			Les places porticades són molt típiques dels llocs on es feia mercat, aquesta no és excepció i se'n té constància des d'època medieval.
+			Heu d'imaginar, l'autoritat marca la mida que ha de tenir la plaça. Com més gran més parades i més ingressos. A l'hora de construir una casa que doni a la plaça
 			no pots ocupar l'espai reservat al mercat, igual que tampoc pots ocupar un carrer. Les arcades permeten guanyar uns metres
-			molt preciats als pisos superiors, mentre que compleixes amb la norma d'urbanisme perque la porta de la casa està on toca.<br>
-			I els paradistes? Contents, més apretats sí, però contents que ara els dies de pluja no impedeixen el mercat. <br><br>
+			molt preciats als pisos superiors, mentre que compleixes amb la norma d'urbanisme perquè la porta de la casa està on toca.<br>
+			I els paradistes? Contents, més atapeïts sí, però contents que ara els dies de pluja no impedeixen el mercat. <br><br>
 			
-			La plaça va ser reurbanitzada l'any 1980, quan la dinàmica de tots els pobles era retirar les llambordes dels carrers per colocar asfalt.
+			La plaça va ser reurbanitzada l'any 1980, quan la dinàmica de tots els pobles era retirar les llambordes dels carrers per col·locar asfalt.
 			Amer va voler treure pit dels seus carrers amb llambordes i així la reforma de la plaça va fer-se incorporant llambordes al punt central del poble.
-			Com ja no se'n fabricaven es fer una crida a ajuntaments de tot Catalunya per aconseguir-ne.
-			Així la plaça actual és composta de la retirada de les mateixes dels carrers de molts pobles i 
+			Com ja no se'n fabricaven es va fer una crida a ajuntaments de tot Catalunya per aconseguir-ne.
+			Així la plaça actual està composta per les llambordes retirades dels carrers de molts pobles i 
 			ciutats catalanes. <br><br>
 			
 			En agraïment a cada poble que va respondre a la crida es va incloure una placa identificativa,
@@ -143,10 +143,10 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Panosa. Plaça de la Vila 11.<br><br>
-				Edifici reformat modernament, principalment el seu interès prové de la finestra d'època gòtica del segon pis. 
-			És un finestral conopial bigeminat, amb llindes sostingudes per una fina columna amb capitell de tipus vegetal, amb flors a les impostes. <br>
+				Té estructura d'edifici modern on destaca una finestra gòtica al segon pis. El més probable és que la compressin i no acaba d'encaixar al conjunt. <br>
+			Però el finestral no en té cap culpa. La divisió en dos amb una columna ben fina els capitell de tipus vegetal.. bé nosaltres ens alegrem s'hagi conservat. <br>
 			
-			Si us fixeu en les arcades de sota (aquesta casa i les contigues), veureu que n'hi ha de mig punt i ogivals i algunes amb capitell i relleus com si d'un claustre de monestir es tractés.
+			Si us fixeu en les arcades de sota (aquesta casa i les contigües), veureu que n'hi ha de mig punt i ogivals i algunes amb capitell i relleus com si d'un claustre de monestir es tractés.
 			`,
             es: `La Plaza Mayor es el corazón social y comercial de Montbrull desde el siglo XV. Rodeada
                  de arcadas góticas tardías de piedra caliza, acoge el mercado semanal cada sábado desde
@@ -166,7 +166,7 @@ const PUNTS_INTERES = [
     {
         id: 'pi-003',
         idZona: 'zona-vila',
-        estrelles: 1,                                // Destacat
+        estrelles: 2,                                // Destacat
         coordenades: {  x: 52.4 , y: 12.2},          // Àrea est: límit de la muralla
         imatge: 'imatges/punts-interes/pi-003.jpg',
         nom: {
@@ -187,7 +187,7 @@ const PUNTS_INTERES = [
 			Edifici de l'any 1883 notareu d'entrada que les arcades del porxo són més altes que les de la resta de cases.
 			Quan s'acosta festa major podreu trobar els gegants de la vila esperant a sortir des d'aquí. <br>
 			La façana té una base que imita un encoixinat de maons falsos. Totes les finestres tenen amples motllures al voltant i medallons a les llindes. <br>
-			I la barana dels balcons? Una mà de pintura si.. però la decoració amb fulles de vinya, plataner i figuera la havieu vist?.  <br>
+			I la barana dels balcons? Una mà de pintura si.. però la decoració amb fulles de vinya, plataner i figuera l'havíeu vista?.  <br>
 			A la llinda de la porta hi podem llegir el nom de Pelegrín Altarriba, l'esquerda que la travessa dona fe de les dificultats de fer una bona llinda.
 			`,
             es: `Único de los tres portales originales que se conserva en pie, el Portal de la Muralla data
@@ -230,8 +230,9 @@ const PUNTS_INTERES = [
             ca: `Llinda de Can Mundet. Plaça de la Vila 26.<br><br>
 				
 			Aquesta llinda de l'any 1775, té una decoració poc freqüent a base d'ovals i una figura central de caire vegetal. 
-			Cal remarcar que la inscripció que flanqueja aquesta figura està feta amb lletres hebrees. <br>
-			La trobareu a la finestra dels baixos del carrer de Can Ventura (mirant l'edifici a la dreta). 
+			La inscripció de la mateixa està feta amb lletres hebrees. <br>
+			La trobareu a la finestra dels baixos del carrer de Can Ventura (mirant l'edifici a la dreta).  <br>
+			Quan hagueu visitat la resta de llindes del poble torneu a revisar aquesta!
 			`,
 		
             es: `La Casa Torrentó es la mejor muestra del renacimiento civil en Montbrull. Construida en 1561
@@ -315,10 +316,10 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Guifre. Plaça de la Vila 13. <BR>
-			     Construït al segon terç del S.XIX és la única casa de la plaça amb tribuna. Els vitralls de colors amb la seva sanefa i la barana del balcó tímidament decorada
+            ca: `Can Guifre. Plaça de la Vila 13. <br>
+			     Construït al segon terç del S.XIX és l'única casa de la plaça amb tribuna. Els vitralls de colors amb la seva sanefa i la barana del balcó tímidament decorada
 				 ens deixen entreveure un propietari enamorat de casa seva.
-				 <br>La singularitat de la casa la veureu si us poseu sota la seva porchada, us heu plantejat mai 
+				 <br>La singularitat de la casa la veureu si us poseu sota la seva porxada, us heu plantejat mai 
 				 com era viure sense porters automàtics? <br>
 				 <strong> Mireu al sostre!</strong>`,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
@@ -358,10 +359,10 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Junquera. Carrer Narcís Junquera 1.<br><br>
-			     Edifici de l'any 1895, d'estil eclèctic. 
+			     Edifici de l'any 1895 d'estil eclèctic (que barreja estils i no ens mullem vaja).  <br>
 				 Una simetria i unes proporcions molt treballades, l'ornamentació destaca pels frisos esgrafiats de color vermell i els guardapols del pis principal. 
-				La porta destaca per l'escut amb les inicials. <br>				 
-				 Va ser la casa de la família Junquera, de la que era l'alcalde perpetu durant el Franquisme.
+				A la porta veureu un escut amb les inicials del propietari, una evolució moderna de les llindes dels segles anteriors. <br>				 
+				 Va ser la casa de la família Junquera, d'on era l'alcalde perpetu durant el Franquisme.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -400,10 +401,10 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Soler. Carrer Narcís Junquera 8. <br><br>
-			     Edifici molt ben conservat, tots els balcons amb la barana bombada, tant típica de la època.
+			     Edifici molt ben conservat, tots els balcons amb la barana bombada, tan típica de l'època.
 				 L'ornamentació està basada en uns plafons i un fals encoixinat que juguen amb els colors blanc i vermell, 
-				 invertits en entre el primer i el segon pis. <br>
-				 Molt típic de la època també és la falça teulada que sobresurt a dalt de tot, una petita joia que a més protegeix la façana de la pluja.
+				 invertits entre el primer i el segon pis. <br>
+				 Molt típic de l'època també és la falsa teulada que sobresurt a dalt de tot, una petita joia que a més protegeix la façana de la pluja.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -444,7 +445,7 @@ const PUNTS_INTERES = [
             ca: `Ajuntament. Plaça de la Vila 2. <br> <br>
 			     Edifici sense pretensions, destaca l'esgrafiat central amb l'escut del poble. Molt senzill inclou el nom del poble i la senyera catalana representada aquí amb tres barres.<br>
 				 Amer és un dels pocs pobles que no disposa d'escut oficial, creiem que haver estat una propietat eclesiàstica hi té a veure. <br>
-				 Així com les finestres tenen llindes planes, tant a la porta com la finestra del primer pis,
+				 Així com les finestres tenen llindes planes, tant a la porta com a la finestra del primer pis,
 				 disposen de marcs d'inspiració arabesca.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
@@ -482,8 +483,8 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Canesteve. Carrer Narcís Jonquera 5. <br><br>
-			     Edifici de tres pisos sense pretensions. <br>Fixeu-vos com al 1885 encara cuejava l'ús de "llindes" amb el nom del propietari i l'any incrits.
+            ca: `Can Canesteve. Carrer Narcís Junquera 5. <br><br>
+			     Edifici de tres pisos sense pretensions. <br>Fixeu-vos com al 1885 encara cuejava l'ús de "llindes" amb el nom del propietari i l'any inscrits.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -620,7 +621,7 @@ const PUNTS_INTERES = [
 			
 			     És la part que conserva de forma més íntegra l'aspecte original del temple romànic. <br>
 				 Fixeu-vos en les petites finestres quasi sense decoració, 	únicament disposen just a sota la teulada d'aquestes petits arcs de pedres, en l'anomenada decoració llombarda, molt típica del romànic català primerenc. <br>
-				 A la construcció inicial es van fer tres absis, essent el cuart un afegit posterior. <br> Sabrieu diferenciar pel tipus i color de la pedra quin és?
+				 A la construcció inicial es van fer tres absis, essent el quart un afegit posterior. <br> Sabríeu diferenciar pel tipus i color de la pedra quin és?
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -661,13 +662,13 @@ const PUNTS_INTERES = [
         descripcio: {
             ca: `Can Món.  Carrer Narcís Junquera / Plaça del Monestir. <br>
 				
-				 Qualsevol guia us parlaria d'edific eclèctic, diguem que és la definició exacta d'urbanisme d'aprofitament. <br>
-				 És un edifici format per dos cossos en L, el que fa de pont per entrar a la plaça i el que té aquesta portalada digna d'una esglèsia amb dues finestres obliques a sobre.<br>
+				 Qualsevol guia us parlaria d'edifici eclèctic, diguem que és la definició exacta d'urbanisme d'aprofitament. <br>
+				 És un edifici format per dos cossos en L, el que fa de pont per entrar a la plaça i el que té aquesta portalada digna d'una església amb dues finestres obliques a sobre.<br>
 				 Aquesta última és el que queda de l'antic palau de l'Abat, la portalada és d'estil renaixentista i un frontó triangular purament ornamental. <br>
-				 Les ordres monàstiques podien fer vot de pobresa, però l'abat estava sempre per sobre i tenia el seu palau, servents, etc. Encaixa més pensar-hi més com un senyor feudal que com un monjo. <br>
+				 Les ordres monàstiques podien fer vot de pobresa, però l'abat estava sempre per sobre i tenia el seu palau, servents, etc. Encaixa més pensar-hi com un senyor feudal que com un monjo. <br>
 				 De l'edifici que fa de pont té a la banda del Monestir un balcó amb un guardapols fantàstic. <br> 
-				 <br> Potser fins ara no impresiona, pero creueu la casa per sota i a l'altra banda 
-				 veureu una façana que manté un únic estil que vol simular les antigues cases del gòtic (és de finals del SXIX), imagineu-vos com seria aquest casalot per dins! 
+				 <br> Potser fins ara no impressiona, però creueu la casa per sota i a l'altra banda 
+				 veureu una façana que manté un únic estil que vol simular les antigues cases del gòtic (és de finals del s. XIX), imagineu-vos com seria aquest casalot per dins! 
 				 
 			     
 `,
@@ -710,8 +711,8 @@ const PUNTS_INTERES = [
             ca: `Can Boles.  Plaça del Monestir 5. <br>
 			
 			     Edifici del segle XVI, amb modificacions posteriors (hi ha llindes amb dates del segle XVIII), 
-				 podriem dir que entre aquest edifici i l'esglèsia hauriem trobat el claustre del monestir. <br>
-				 És un gran casal sense gaires pretencions arquitectóniques però si destaca el vell escut heràldic i les pedres tant treballades que envolten les finestres.
+				 podríem dir que entre aquest edifici i l'església hauríem trobat el claustre del monestir. <br>
+				 És un gran casal sense gaires pretensions arquitectòniques però sí que destaca el vell escut heràldic i les pedres tan treballades que envolten les finestres.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -751,9 +752,9 @@ const PUNTS_INTERES = [
         descripcio: {
             ca: `Creu de terme.  Plaça del Monestir s/n. <br><br>
 			
-			     Antigament a l'entrada del poble hauriem trobar la creu que indicava l'inici del terme municipal.<br>
-				 L'original està dipositada al Museu Diocesà de Girona, aquí en podeu observar una reproducció ja malmesa per les inclemencies del temps. 
-				 La creu, molt ornamentada, presenta el Crist crucificat a una cara i la Mare de Déu a l'altra la Mare de Déu.
+			     Antigament l'hauríem trobada a l'entrada del terme municipal donant la benvinguda.<br>
+				 L'original està dipositada al Museu Diocesà de Girona, aquí en podeu observar una reproducció força malmesa per les inclemències del temps. 
+				 La creu, si hi poseu imaginació encara ho podreu veure, presenta el Crist crucificat a una cara i la Mare de Déu a l'altra.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -794,8 +795,8 @@ const PUNTS_INTERES = [
             ca: `Can Terme.  Plaça del Monestir 2. <br>
 			
 			    Actualment acull el Museu Etnològic d'Amer. <br>
-				Era la antiga sacristia, un edifici molt reformat que conserva alguns elements antics del segle XVII. <br>
-				Si us hi acosteu i l'examineu haurieu de trobar un escut, una figura geomètrica de pedra i una llinda amb la data de 1662.
+				Era l'antiga sacristia, un edifici molt reformat que conserva alguns elements antics del segle XVII. <br>
+				Si us hi acosteu i l'examineu hauríeu de trobar un escut, una figura geomètrica de pedra i una llinda amb la data de 1662.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -835,10 +836,10 @@ const PUNTS_INTERES = [
         descripcio: {
             ca: `Antic Monestir Santa Maria d'Amer.  Plaça del Monestir. <br>
 			
-			     De l'antic monestir benedictí consagrat l'any 949 queda principalment la actual esglèsia de Santa Maria, ha patit moltes reformes. 
+			     De l'antic monestir benedictí consagrat l'any 949 queda principalment l'actual església de Santa Maria, ha patit moltes reformes. 
 				 Destaquem la forma imponent, les motllures de les portes i finestres i també el treball de ferro de les finestres.
-				 Si teniu ocasió entreu-hi dins (horari de missa).<br> Amb el creixement de població es va pendre desició de modificar els pilars interiors romànic (amples i robustos) 
-				 per permetre que des del laterals es poguès seguir missa per cuatre columnetes ornamentades que costa creure aguantin el mateix pes.  És realment una desició insòlita que val la pena observar.
+				 Si teniu ocasió entreu-hi dins (horari de missa).<br> Amb el creixement de població es va prendre la decisió de modificar els pilars interiors romànics (amples i robustos) 
+				 per permetre que des dels laterals es pogués seguir missa per quatre columnetes ornamentades que costa creure aguantin el mateix pes.  És realment una decisió insòlita que val la pena observar.
 				 
 				 
 `,
@@ -865,9 +866,9 @@ const PUNTS_INTERES = [
         coordenades: { x: 10, y: 20},          // Centre de la zona: encreuament de carrer
         imatge: 'imatges/punts-interes/pi-018.jpg',
         nom: {
-            ca: 'Ca l-Espígol',
-            es: 'Ca l-Espígol',
-            en: 'Ca l-Espígol',
+            ca: 'Ca l\'Espígol',
+            es: 'Ca l\'Espígol',
+            en: 'Ca l\'Espígol',
             fr: '[FR-TODO]',
         },
         any: "S.XVIII",
@@ -878,10 +879,10 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Ca Espigol.  Plaça del Monestir 17. <br>
+            ca: `Ca l'Espígol.  Plaça del Monestir 17. <br>
 			
-			     La considerariem una masia si no estigués en nucli urbà. Destaca l'emmarcament de pedra de la porta i de totes les finestres.
-				 De pedra treballada, llindes a totes les finestres i mantenint una coherencia del conjunt.<br>
+			     La consideraríem una masia si no estigués en nucli urbà. Destaca l'emmarcament de pedra de la porta i de totes les finestres.
+				 De pedra treballada, llindes a totes les finestres i mantenint una coherència del conjunt.<br>
 				 La porta ens agrada especialment per la seva forma rodona.<br>
 				 Amb tot, no consta cap inscripció!
 `,
@@ -915,7 +916,7 @@ const PUNTS_INTERES = [
         },
         any: "S.XVII",
         estil: {
-            ca: 'Gótic',
+            ca: 'Gòtic',
             es: 'Gotico',
             en: 'Gothic',
             fr: '[FR-TODO]',
@@ -923,11 +924,11 @@ const PUNTS_INTERES = [
         descripcio: {
             ca: `Can Gasull.  Plaça del Monestir, 3 / Carrer Sant Benet. <br>
 			
-			    Correspon a un dels antics edificis del Monestir d'Amer, concretament era la infermeria, amb façana a la plaça i al carrer de Sant Benet, si feu la volta veureu una placa de l'ajuntament que indica que als baixos s'usaven com a caballerisses. 
+			    Correspon a un dels antics edificis del Monestir d'Amer, concretament era la infermeria, amb façana a la plaça i al carrer de Sant Benet, si feu la volta veureu una placa de l'ajuntament que indica que als baixos s'usaven com a cavallerisses. 
 				Ara és un casalot que conserva alguna finestra antiga, però hem vist fotografies de qui hi va viure i aquesta casa posseïa un dels finestrals renaixentistes més interessants de l'arquitectura civil catalana, 
-				, amb temàtica vinculada a les epidèmies de pesta.<br>
+				amb temàtica vinculada a les epidèmies de pesta.<br>
 				Lamentablement, aquesta finestra i una altra de tipus conopial, van ser venudes per l'antic propietari. <br>
-				Us podeu fer una idea de les mateixes si busqueu les que queden desdel carrer Sant Benet!.
+				Des del carrer Sant Benet veureu l'altra cara de la casa i encara conserva un finestral ben bonic (costa de trobar un punt amb visió!).
 				
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
@@ -966,11 +967,13 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Placa de l'arbitratge Remença.  Colocada a un lateral de Can Boles. <br><br>
-			
+            ca: `Placa de l'arbitratge Remença.  Col·locada a un lateral de Can Boles. <br><br>
+				
+				Preparats per una parrafada històrica? Amer no va ser el centre de grans esdeveniments, i tampoc aquest ho és!, però ens fa il·lusió que fos escenari 
+				de quan el poble menut va dir prou i va obligar els senyors feudals a negociar a la baixa els seus drets:<br>
 			    Ferran II d'Aragó va firmar el 1486 la sentència arbitral de Guadalupe amb la que es posava fi a la segona guerra remença.
-				Aquí Amer un any abans s'havia pactat la fi de les hostilitats acceptant els remençes que acatarien el dictàment del rei.
-				Creiem que es va poder firmar a Amer per que l'Abat ja havia renunciat als mals usos. <br>
+				Aquí Amer un any abans s'havia pactat la fi de les hostilitats acceptant els remences que acatarien el dictamen del rei.
+				Creiem que es va poder firmar a Amer perquè l'Abat ja havia renunciat als mals usos. <br>
 				Si continueu el viatge per la Garrotxa podreu resseguir totes les localitzacions de les Guerres Remences. <br>
 				No oblideu buscar qui va ser Verntallat!
 `,
@@ -1021,15 +1024,16 @@ const PUNTS_INTERES = [
 				Pedreguet fins arribar a la capella de la Mare de Déu de la Pietat. <br>
 				
 				És un carrer molt interessant 
-				que ha preservat la seva estructura antiga i molts dels seus seus edificis conserven elements destacables com les llindes de les portes i finestres.<br>
+				que ha preservat la seva estructura antiga i molts dels seus edificis conserven elements destacables com les llindes de les portes i finestres.<br>
+				La majoria de les cases originàriament eren d'una planta baixa dedicada al bestiar i paller i un primer pis d'habitacions. <br>
 				En aquestes poden trobar el nom dels seus antics propietaris i de l'any en què es feren, en ocasions la casa i en d'altres la reforma, principalment entre els segles XVII-XIX.<br><br>
 				
 				 
 				La fesomia particular del carrer, quasi sense sortida lateral, es deu que es van anar construint les cases 
-				al llarg de la antiga carretera que duia a Girona. Tothom volia estar el més aprop possible de la plaça i el Monestir,
-				i per tant cada nova casa es feia paret amb paret amb la última sense que ningú penses a deixar un carrer enmig. <br><br>
+				al llarg de l'antiga carretera que duia a Girona. Tothom volia estar el més a prop possible de la plaça i el Monestir,
+				i per tant cada nova casa es feia paret amb paret amb l'última sense que ningú pensés a deixar un carrer enmig. <br><br>
 				
-				Us recomanem un passeig tranquil tant per aquest com pel superior carrer de l'Abad Vilafreser. <br>
+				Us recomanem un passeig tranquil tant per aquest com pel superior carrer de l'Abat Vilafreser. <br>
 				La juguesca consisteix a ser el primer a trobar i llegir la següent inscripció. <br>
 				Penseu que per petita i estreta que fos una casa, l'orgull de fer-la o reformar-la portava a pagar un picapedrer per deixar-ne constància.<br>
 				<strong>Alerta:</strong> no només trobareu inscripcions a les portes!		<br><br>
@@ -1074,7 +1078,7 @@ const PUNTS_INTERES = [
             ca: `Can La. Carrer Girona 8.   <br><br>
 			
 			    És una de les cases més interessants del carrer Girona, una masia en un entorn urbà. <br>
-				No hi consta cap llinda amb el nom del propietari, però destaca el seu portal adovellat i un finestral digne d'una palau del segle XVI amb la
+				No hi consta cap llinda amb el nom del propietari, però destaca el seu portal adovellat i un finestral digne d'un palau del segle XVI amb la
 				típica traceria gòtica i un guardapols motllurat recte. <br>
 				Aquí hi movien diners!
 `,
@@ -1142,9 +1146,9 @@ const PUNTS_INTERES = [
         coordenades: { x: 84, y: 55},          // Centre de la zona: encreuament de carrer
         imatge: 'imatges/punts-interes/pi-024.jpg',
         nom: {
-            ca: 'Ermita',
-            es: 'Ermita',
-            en: 'Ermita',
+            ca: 'Ermita de la Pietat',
+            es: 'Ermita de la Pietat',
+            en: 'Ermita dela Pietat',
             fr: '[FR-TODO]',
         },
         any: "S.XVII",
@@ -1161,7 +1165,7 @@ const PUNTS_INTERES = [
 				Té planta rectangular coberta amb volta de canó i capçada amb un absis semicircular. Hi té adossat un cos que fa de sagristia. 
 				Davant la porta hi ha un porxo per sota del qual passa el carrer. A la llinda de la porta hi ha la data de la reforma, 1844.
 				
-				Aquí és on es revestien els bisbes i abats en entrar a la vila, d'aquesta manera es mostraven sempre impoluts davant el poble encara que haguessin fet un llarg camí.
+				Aquí és on es revestien els bisbes i abats en entrar a la vila, d'aquesta manera es mostraven sempre impol·luts davant el poble encara que haguessin fet un llarg camí.
 
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
@@ -1203,7 +1207,7 @@ const PUNTS_INTERES = [
             ca: `Can Llepart. Plaça de la Pietat 1  
 			
 			   Edifici de grans dimensions construït al segle XVIII (1758), restaurat modernament.
-			   La façana que dóna la carrer Abat Vilafreser hi ha una llinda on s'hi llegeix la data i el nom de Joseph Clusehs. 
+			   La façana que dóna al carrer Abat Vilafreser hi ha una llinda on s'hi llegeix la data i el nom de Joseph Clusehs. 
 			   De la façana de la plaça en destaca el balcó de fusta, protegit per un destacat voladís.
 
 `,
@@ -1230,10 +1234,10 @@ const PUNTS_INTERES = [
         coordenades: { x: 66, y: 24},          // Centre de la zona: encreuament de carrer
         imatge: 'imatges/punts-interes/pi-027.jpg',
         nom: {
-            ca: 'Llinda 31',
-            es: 'Llinda 31',
-            en: 'Llinda 31',
-            fr: 'Llinda 31',
+            ca: 'Can Cantí',
+            es: 'Can Cantí',
+            en: 'Can Cantí',
+            fr: 'Can Cantí',
         },
         any: "1743",
         estil: {
@@ -1243,7 +1247,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Carrer Girona 31. 
+            ca: `Can Cantí. Carrer Girona 31. 
 			
 			   Exemple de llinda amb la inscripció més senzilla: 1743.<br>
 			   Podria ser l'any de construcció o probablement de reforma de la casa.
@@ -1274,10 +1278,10 @@ const PUNTS_INTERES = [
         coordenades: { x: 68, y: 36},          // Centre de la zona: encreuament de carrer
         imatge: 'imatges/punts-interes/pi-028.jpg',
         nom: {
-            ca: 'Llinda 46',
-            es: 'Llinda 46',
-            en: 'Llinda 46',
-            fr: 'Llinda 46',
+            ca: 'Can Joanet Zai',
+            es: 'Can Joanet Zai',
+            en: 'Can Joanet Zai',
+            fr: 'Can Joanet Zai',
         },
         any: "1755",
         estil: {
@@ -1287,11 +1291,11 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Carrer Girona 46. 
+            ca: `Can Joanet Zai. Carrer Girona 46. 
 			
-			   La llinda més decorada que veureu avui, fixeu-vos que les pedres que enmarquen la casa estàn treballades per fer simular un marc. <br>
-			   La serra, que envolta l'any i el nom del constructor, el martell i l'escaira ens indiquen que qui la va fer era mestre de cases. <br>
-			   No s'ens acut millor reclam pels proper clients!
+			   La llinda més decorada que veureu avui, fixeu-vos que les pedres que emmarquen la casa estan treballades per fer simular un marc. <br>
+			   La serra, que envolta l'any i el nom del constructor, el martell i l'escaire ens indiquen que qui la va fer era mestre de cases. <br>
+			   No se'ns acut millor reclam per als propers clients!
 
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
@@ -1317,10 +1321,10 @@ const PUNTS_INTERES = [
         coordenades: { x: 74, y: 44},          // Centre de la zona: encreuament de carrer
         imatge: 'imatges/punts-interes/pi-029.jpg',
         nom: {
-            ca: 'Llinda 64',
-            es: 'Llinda 64',
-            en: 'Llinda 64',
-            fr: 'Llinda 64',
+            ca: 'Girona 64',
+            es: 'Girona 64',
+            en: 'Girona 64',
+            fr: 'Girona 64',
         },
         any: "1752",
         estil: {
@@ -1332,9 +1336,9 @@ const PUNTS_INTERES = [
         descripcio: {
             ca: `Carrer Girona 64. <br><br>
 			
-			   Recordeu com de mala idea és fer una llinda de fusta? <br> Doncs aquesta de fusta ens porta la contrària des de mil setcents.. cincuanta dos? <br>
+			   Recordeu com de mala idea és fer una llinda de fusta? <br> Doncs aquesta de fusta ens porta la contrària des de mil set-cents… cinquanta-dos? <br>
 			   Les de les finestres immediatament superiors també ho són i malgrat estar a la intempèrie ni es veuen bufades ni han començat a doblegar-se.<br>
-			   Ens gradaria saber de quina fusta es tracta i us seguim recomenant que per casa vostra en poseu una de pedra (les de les altres dues finestres si les han hagut de canviar).
+			   Ens agradaria saber de quina fusta es tracta i us seguim recomanant que per casa vostra en poseu una de pedra (les de les altres dues finestres sí que les han hagut de canviar).
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -1359,10 +1363,10 @@ const PUNTS_INTERES = [
         coordenades: { x: 62, y: 28},          // Centre de la zona: encreuament de carrer
         imatge: 'imatges/punts-interes/pi-030.jpg',
         nom: {
-            ca: 'Llinda 38',
-            es: 'Llinda 38',
-            en: 'Llinda 38',
-            fr: 'Llinda 38',
+            ca: 'Can Cisteller de Dalt',
+            es: 'Can Cisteller de Dalt',
+            en: 'Can Cisteller de Dalt',
+            fr: 'Can Cisteller de Dalt',
         },
         any: "1737",
         estil: {
@@ -1372,7 +1376,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Carrer Girona 38. <br><br>
+            ca: `Can Cisteller de Dalt. Carrer Girona 38. <br><br>
 			
 			   <strong>MIQUEL CUDINA ME FECIT. ANY 1737.</strong><br>
 			   No tenim paraules per descriure com ens fa sentir aquesta inscripció. <br>
@@ -1466,12 +1470,12 @@ const PUNTS_INTERES = [
         descripcio: {
             ca: `Font de la Teula.  En una corba a meitat del camí a Sant Martí Sacalm  <br> <br>
 			
-			    Gairebé tothom s'atura en aquest lloc tant bonic, <br>
+			    Gairebé tothom s'atura en aquest lloc tan bonic, <br>
 				a beure i reposar un xic. <br>
 				Si ningú no hi deixés merda, <br>
 				l'aigua seria més pura  <br>
 				i l'herba força més verda. <br>
-				L'ajuntament no és fa responsable de la potabilitat de la mateixa, però la trobem molt bona. <br>
+				L'ajuntament no es fa responsable de la potabilitat de la mateixa, però la trobem molt bona. <br>
 				Si heu arribat fins aquí acabeu el camí fins a Sant Martí Sacalm, just sota el Far. <br>
 				La composició de masies de pedra soltes fa rememorar el passat medieval.
  
@@ -1514,10 +1518,10 @@ const PUNTS_INTERES = [
         descripcio: {
             ca: `Ermita de Santa Brígida. Camí de Santa Brígida: fins dalt de tot!  <br> <br>
 			
-			    Depenent del Monestir de Santa María d'Amer va ser reformada el SXVII i restaurada el 2001 pel grup excursionista d'Amer. <br>
+			    Depenent del Monestir de Santa Maria d'Amer va ser reformada al s. XVII i restaurada el 2001 pel grup excursionista d'Amer. <br>
 				Edifici senzill d'una sola nau amb volta de canó. És molt reverenciada pels amerencs i les vistes a la vall molt bones. <br>
 				Arribar-hi és una mitja excursió on fareu cames! <br>
-				Als nens els podeu entretenir a fer-los buscar petxines fosilitzades pel camí.
+				Als nens els podeu entretenir a fer-los buscar petxines fossilitzades pel camí.
  
 				`,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
@@ -1560,9 +1564,9 @@ const PUNTS_INTERES = [
 			
 			    Antigament dedicada a Sant Climent i Sant Julià, documentada del 1066 va ser completament reformada al 1877.<br>
 				Era el punt neuràlgic de totes les masies d'aquesta zona. <br>
-				Ara us pot semblar desert, però hi havia prou veïns a la zona com per aixecar-se la seva propia ermita i evitar anar i tornar d'Amer per anar a missa. <br>
+				Ara us pot semblar desert, però hi havia prou veïns a la zona com per aixecar-se la seva pròpia ermita i evitar anar i tornar d'Amer per anar a missa. <br>
 				Penseu que les masies eren habitades per la família (pares, fills i nets) en ocasions també la família extensa (germans i tiets) i sobretot tots els treballadors (bracers i jornalers) 
-				que treballaven la terra i teníen cura del bestiar i s'hi estaven amb la familía. <br>
+				que treballaven la terra i tenien cura del bestiar i s'hi estaven amb la família. <br>
 				Fins al 1941 tots els batejos, casaments i defuncions es realitzaven aquí.
 				
 				Arquitectònicament és destacable la porta d'estil neoclàssic amb les dues columnes impostes a banda i banda.<br>
@@ -1607,9 +1611,11 @@ const PUNTS_INTERES = [
         descripcio: {
             ca: `Estació d'Amer del Carrilet.  Pujada de l'estació 15 <br> <br>
 			
-			    Molt ben restaurat era la parada del tren que unia Olot i Sant Feliu de Guíxols, petit tren d'una única vía: popularment el Carrilet. <br>
-				El Carrilet va funcionar del 1895 fins 1966, avui vía verda molt usada pels ciclistes.
-				L'Edifici és actualment dependències municipals.
+			    Molt ben restaurat, era la parada del tren que unia Olot i Sant Feliu de Guíxols, petit tren d'una única via: popularment el Carrilet. <br>
+				Us imagineu una locumotora a vapor anunciant la seva arribada al poble?<br>
+				Va ser una revolució en les comunicacions a la comarca, el seu tancament encara és lamentat pels que ho van viure. <br>
+				El Carrilet va funcionar del 1895 fins 1966, avui via verda molt usada pels ciclistes.
+				L'edifici és actualment dependències municipals.
  
 				`,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.

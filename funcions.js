@@ -28,7 +28,7 @@
 // ============================================================
 
 /** @constant {string} Nom del poble mostrat a la capçalera */
-const NOM_POBLE = 'Montbrull';
+const NOM_POBLE = 'Amer';
 
 /** @constant {string[]} Codis d'idioma disponibles (ordre alfabètic) */
 const IDIOMES_DISPONIBLES = ['ca', 'en', 'es', 'fr'];
