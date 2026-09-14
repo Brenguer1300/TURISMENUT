@@ -95,7 +95,7 @@ const EMOJIS_SECCIONS = {
     'sardana':   			'🎺',
     'equipament':           '🏊',
     'festes-tradicions':    '🎭',
-    'informacio-practica':  '🛞',
+    'informacio-practica':  '🧭',
 };
 
 /**
