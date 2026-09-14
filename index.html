@@ -132,21 +132,35 @@
             <!-- El JS omple aquest text des de UI['titol-app'] -->
             <h1 id="titol-poble">Amer</h1>
 
-            <div id="selector-idioma"
-                 role="group"
-                 aria-label="Selecció d'idioma">
-                <button data-idioma="ca"
-                        aria-pressed="true"
-                        aria-label="Català">CA</button>
-                <button data-idioma="en"
-                        aria-pressed="false"
-                        aria-label="English">EN</button>
-                <button data-idioma="es"
-                        aria-pressed="false"
-                        aria-label="Castellà">ES</button>
-                <button data-idioma="fr"
-                        aria-pressed="false"
-                        aria-label="Français">FR</button>
+            <!--
+                Desplegable d'idioma personalitzat.
+                · Botó disparador (mostra el codi de l'idioma actiu, ex: "CA ▾").
+                · Llista <ul role="listbox"> amb els 4 idiomes; s'obre en clicar
+                  el botó o amb la tecla Enter/Espai/Fletxa avall.
+                L'estat el gestiona sincronitzarBotonsIdioma() a funcions.js.
+                Els textos de les opcions els tradueix actualitzarTextosDinamics().
+            -->
+            <div id="selector-idioma" class="desplegable-idioma">
+                <button type="button"
+                        id="selector-idioma-disparador"
+                        class="desplegable-idioma__disparador"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-controls="selector-idioma-llista"
+                        aria-label="Selecció d'idioma">
+                    <span class="desplegable-idioma__codi">CA</span>
+                    <span class="desplegable-idioma__fletxa" aria-hidden="true">▾</span>
+                </button>
+                <ul id="selector-idioma-llista"
+                    class="desplegable-idioma__llista"
+                    role="listbox"
+                    aria-label="Idiomes disponibles"
+                    hidden>
+                    <li role="option" data-idioma="ca" aria-selected="true"  tabindex="-1">Català</li>
+                    <li role="option" data-idioma="en" aria-selected="false" tabindex="-1">English</li>
+                    <li role="option" data-idioma="es" aria-selected="false" tabindex="-1">Castellano</li>
+                    <li role="option" data-idioma="fr" aria-selected="false" tabindex="-1">Français</li>
+                </ul>
             </div>
 
         </header><!-- /capçalera-principal -->

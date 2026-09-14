@@ -98,14 +98,6 @@ const EMOJIS_SECCIONS = {
     'informacio-practica':  '🛞',
 };
 
-/** @constant {Object} Emoticona per a cada zona del mapa */
-const EMOJIS_ZONES = {
-    'zona-centre':   '⛪',
-    'zona-moli':     '🏚️',
-    'zona-castell':  '🏰',
-    'zona-vinyes':   '🍇',
-};
-
 /**
  * @constant {Object.<number, string>} Emoticones dels marcadors del
  * mapa de zona segons el nombre d'estrelles del PI. Permet distingir
@@ -120,8 +112,9 @@ const EMOJIS_MARCADOR_PER_ESTRELLES = {
 /** @constant {string} Emoticona per defecte si `estrelles` no és 1, 2 o 3 */
 const EMOJI_MARCADOR_BASE           = '📍';
 
-/** @deprecated Es manté per compatibilitat; usa EMOJIS_MARCADOR_PER_ESTRELLES[3] */
-const EMOJI_MARCADOR_IMPRESCINDIBLE = '⚜️';
+/** @constant {string} Emoticona per defecte per a fotos de PI no disponibles */
+const EMOJI_PLACEHOLDER_PUNT        = '🏛️';
+
 
 
 // ============================================================
@@ -417,16 +410,179 @@ function actualitzarEnllacosInterns() {
     });
 }
 
+/* ============================================================
+   SELECTOR D'IDIOMA (desplegable personalitzat)
+   ============================================================ */
+
 /**
- * ÚNICA font de veritat per a l'estat visual dels botons d'idioma.
+ * Retorna les referències als elements del desplegable d'idioma,
+ * o `null` si no existeixen en la pàgina actual.
  *
- * Sincronitza `aria-pressed` amb `idiomaActual`. El CSS ressalta el botó
- * actiu amb el selector `#selector-idioma button[aria-pressed="true"]`,
- * de manera que aquest únic atribut controla alhora l'estat semàntic
- * (lectors de pantalla) i el visual.
+ * @returns {{disparador: HTMLElement, llista: HTMLElement, opcions: NodeListOf<HTMLElement>}|null}
+ */
+function obtenirElementsSelectorIdioma() {
+    const disparador = document.getElementById('selector-idioma-disparador');
+    const llista     = document.getElementById('selector-idioma-llista');
+    if (!disparador || !llista) return null;
+    return {
+        disparador,
+        llista,
+        opcions: llista.querySelectorAll('[role="option"]'),
+    };
+}
+
+/**
+ * Indica si el desplegable d'idioma està obert.
+ * @returns {boolean}
+ */
+function desplegableIdiomaEstaObert() {
+    const els = obtenirElementsSelectorIdioma();
+    return !!els && !els.llista.hidden;
+}
+
+/**
+ * Obre el desplegable d'idioma i, opcionalment, mou el focus a
+ * l'opció seleccionada (o a la primera si no n'hi ha cap seleccionada).
  *
- * Cap altra funció ha de tocar `aria-pressed` d'aquests botons: mantenir
- * una sola via evita que l'estat visual i el semàntic se separin.
+ * @param {boolean} [focalitzarOpcio=false]  Si cal moure el focus a la llista.
+ * @returns {void}
+ */
+function obrirDesplegableIdioma(focalitzarOpcio = false) {
+    const els = obtenirElementsSelectorIdioma();
+    if (!els) return;
+
+    els.llista.hidden = false;
+    els.disparador.setAttribute('aria-expanded', 'true');
+
+    if (focalitzarOpcio) {
+        const seleccionada = els.llista.querySelector('[aria-selected="true"]');
+        (seleccionada || els.opcions[0]).focus();
+    }
+}
+
+/**
+ * Tanca el desplegable d'idioma.
+ *
+ * @param {boolean} [retornarFocus=false]  Si cal tornar el focus al botó disparador.
+ * @returns {void}
+ */
+function tancarDesplegableIdioma(retornarFocus = false) {
+    const els = obtenirElementsSelectorIdioma();
+    if (!els) return;
+
+    els.llista.hidden = true;
+    els.disparador.setAttribute('aria-expanded', 'false');
+
+    if (retornarFocus) {
+        els.disparador.focus();
+    }
+}
+
+/**
+ * Assigna tots els esdeveniments necessaris al desplegable d'idioma:
+ * clic al botó, clic a les opcions, clic fora, tecla Escape,
+ * i navegació per teclat (fletxes, Home, End, Enter, Espai).
+ *
+ * Es crida des d'assignarEsdevenimentsUI(). Si el desplegable no existeix
+ * en la pàgina, la funció retorna sense fer res.
+ *
+ * @returns {void}
+ */
+function assignarEsdevenimentsSelectorIdioma() {
+    const els = obtenirElementsSelectorIdioma();
+    if (!els) return;
+
+    // --- Clic al botó disparador: alterna obert/tancat ---
+    els.disparador.addEventListener('click', () => {
+        if (desplegableIdiomaEstaObert()) {
+            tancarDesplegableIdioma();
+        } else {
+            obrirDesplegableIdioma();
+        }
+    });
+
+    // --- Teclat sobre el botó disparador ---
+    // ArrowDown / ArrowUp: obren la llista i hi mouen el focus.
+    els.disparador.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+            event.preventDefault();
+            obrirDesplegableIdioma(true);
+        }
+    });
+
+    // --- Clic sobre una opció: canvia d'idioma i tanca ---
+    els.opcions.forEach(opcio => {
+        opcio.addEventListener('click', () => {
+            canviarIdioma(opcio.dataset.idioma);
+            tancarDesplegableIdioma(true);
+        });
+    });
+
+    // --- Teclat sobre les opcions ---
+    // ↑/↓ : mou el focus entre opcions (cíclic).
+    // Home/End : primera/última opció.
+    // Enter/Espai : selecciona l'opció actual.
+    // Escape : tanca i torna el focus al botó.
+    els.llista.addEventListener('keydown', (event) => {
+        const opcions = Array.from(els.opcions);
+        const indexActiu = opcions.indexOf(document.activeElement);
+
+        switch (event.key) {
+            case 'ArrowDown':
+                event.preventDefault();
+                opcions[(indexActiu + 1) % opcions.length].focus();
+                break;
+            case 'ArrowUp':
+                event.preventDefault();
+                opcions[(indexActiu - 1 + opcions.length) % opcions.length].focus();
+                break;
+            case 'Home':
+                event.preventDefault();
+                opcions[0].focus();
+                break;
+            case 'End':
+                event.preventDefault();
+                opcions[opcions.length - 1].focus();
+                break;
+            case 'Enter':
+            case ' ':
+                event.preventDefault();
+                if (indexActiu >= 0) {
+                    canviarIdioma(opcions[indexActiu].dataset.idioma);
+                    tancarDesplegableIdioma(true);
+                }
+                break;
+            case 'Escape':
+                event.preventDefault();
+                tancarDesplegableIdioma(true);
+                break;
+        }
+    });
+
+    // --- Clic fora del desplegable: tanca ---
+    // Registrat al document per capturar tots els clics; només actua
+    // si el clic no és dins del contenidor del selector.
+    document.addEventListener('click', (event) => {
+        if (!desplegableIdiomaEstaObert()) return;
+        const contenidor = document.getElementById('selector-idioma');
+        if (contenidor && !contenidor.contains(event.target)) {
+            tancarDesplegableIdioma();
+        }
+    });
+}
+
+
+
+/**
+ * ÚNICA font de veritat per a l'estat visual del selector d'idioma.
+ *
+ * Actualitza el desplegable personalitzat perquè reflecteixi
+ * `idiomaActual`:
+ *   · Text del botó disparador (codi en majúscules: CA / EN / ES / FR).
+ *   · Atribut `aria-selected` de cada opció de la llista.
+ *
+ * Cap altra funció ha de tocar aquests atributs: mantenir una sola
+ * via evita que l'estat visual, el semàntic i l'intern se separin.
  *
  * Es crida des de:
  *   · inicialitzar*()             → en carregar cada pàgina
@@ -436,9 +592,16 @@ function actualitzarEnllacosInterns() {
  * @returns {void}
  */
 function sincronitzarBotonsIdioma() {
-    document.querySelectorAll('#selector-idioma button[data-idioma]').forEach(boto => {
-        const esActiu = boto.dataset.idioma === idiomaActual;
-        boto.setAttribute('aria-pressed', esActiu ? 'true' : 'false');
+    // --- Codi al botó disparador (CA / EN / ES / FR) ---
+    const elCodi = document.querySelector('#selector-idioma-disparador .desplegable-idioma__codi');
+    if (elCodi) {
+        elCodi.textContent = idiomaActual.toUpperCase();
+    }
+
+    // --- aria-selected a cada opció ---
+    document.querySelectorAll('#selector-idioma-llista [role="option"]').forEach(opcio => {
+        const esActiva = opcio.dataset.idioma === idiomaActual;
+        opcio.setAttribute('aria-selected', esActiva ? 'true' : 'false');
     });
 }
 
@@ -493,18 +656,20 @@ function actualitzarTextosDinamics() {
         elTitol.textContent = traduir(UI['titol-app']);
     }
 
-    // --- Botons d'idioma: aria-label traduït + estat actiu ---
-    // L'estat `aria-pressed` el gestiona exclusivament
-    // sincronitzarBotonsIdioma(); aquí només traduïm les etiquetes.
+    // --- Selector d'idioma: text de cada opció de la llista ---
+    // Els noms es mantenen en la seva llengua nativa (endònims) perquè
+    // un usuari que no entengui l'idioma actual pugui igualment
+    // identificar el seu. L'estat seleccionat el gestiona
+    // exclusivament sincronitzarBotonsIdioma().
     const etiquetesIdioma = {
         ca: 'Català',
-        es: 'Castellà',
+        es: 'Castellano',
         en: 'English',
         fr: 'Français',
     };
-    document.querySelectorAll('#selector-idioma button[data-idioma]').forEach(boto => {
-        const codi = boto.dataset.idioma;
-        boto.setAttribute('aria-label', etiquetesIdioma[codi] || codi);
+    document.querySelectorAll('#selector-idioma-llista [role="option"]').forEach(opcio => {
+        const codi = opcio.dataset.idioma;
+        opcio.textContent = etiquetesIdioma[codi] || codi;
     });
     sincronitzarBotonsIdioma();
 
@@ -1003,10 +1168,8 @@ function assignarEsdevenimentsUI() {
         elCoberta.addEventListener('click', tancarMenu);
     }
 
-    // --- Botons d'idioma ---
-    document.querySelectorAll('#selector-idioma button[data-idioma]').forEach(boto => {
-        boto.addEventListener('click', () => canviarIdioma(boto.dataset.idioma));
-    });
+    // --- Selector d'idioma (desplegable personalitzat) ---
+    assignarEsdevenimentsSelectorIdioma();
 
     // --- Botons de seccions del menú ---
     document.querySelectorAll('#menu-lateral [data-seccio]').forEach(boto => {
@@ -1657,14 +1820,13 @@ function deseleccionarPunt() {
 function generarHTMLTargetaPunt(punt, seleccionada = false) {
     const nom      = traduir(punt.nom);
     const estil    = traduir(punt.estil);
-    const emojiZona = EMOJIS_ZONES[punt.idZona] || '📍';
     const classes  = seleccionada ? 'targeta-punt seleccionada' : 'targeta-punt';
     const ariaCurrent = seleccionada ? ' aria-current="true"' : '';
 
     // El <li> és obligatori: #llista-punts és un <ul role="list">
     // i només pot tenir <li> com a fills directes.
     // La miniatura intenta carregar la foto real; si no existeix,
-    // el listener d'error la substitueix per l'emoji de la zona
+    // el listener d'error la substitueix per un emoji neutre
     // (vegeu renderitzarLlistaPunts).
     return `
         <li>
@@ -1676,7 +1838,7 @@ function generarHTMLTargetaPunt(punt, seleccionada = false) {
                      alt=""
                      loading="lazy"
                      decoding="async"
-                     data-emoji-alternatiu="${emojiZona}">
+                     data-emoji-alternatiu="${EMOJI_MARCADOR_BASE}">
                 <div class="info-punt">
                     <div class="nom-punt-targeta">${nom}</div>
                     <div class="estil-punt">${estil}</div>
@@ -1873,7 +2035,7 @@ function inicialitzarPaginaZona() {
     const refrescarCapçaleraZona = () => {
         const elNomZona = document.getElementById('nom-zona');
         if (elNomZona) {
-            elNomZona.textContent = `${EMOJIS_ZONES[idZona] || ''} ${traduir(zona.nom)}`.trim();
+            elNomZona.textContent = traduir(zona.nom);
         }
         document.title = `${traduir(zona.nom)} — ${NOM_POBLE}`;
     };
@@ -1961,9 +2123,8 @@ function renderitzarFitxaPunt(punt) {
         elImatge.addEventListener('error', () => {
             const contenidor = document.getElementById('contenidor-imatge');
             if (contenidor) {
-                const emoji = EMOJIS_ZONES[punt.idZona] || '🏛️';
                 contenidor.innerHTML =
-                    `<div class="imatge-placeholder" aria-hidden="true">${emoji}</div>`;
+                    `<div class="imatge-placeholder" aria-hidden="true">${EMOJI_PLACEHOLDER_PUNT}</div>`;
             }
         }, { once: true });
     }
@@ -2003,7 +2164,7 @@ function renderitzarFitxaPunt(punt) {
             ? ZONES.find(z => z.id === punt.idZona)
             : null;
         elZonaPertany.textContent = zonaObj
-            ? `${EMOJIS_ZONES[punt.idZona] || ''} ${traduir(zonaObj.nom)}`.trim()
+            ? traduir(zonaObj.nom)
             : punt.idZona;
     }
 
@@ -2180,7 +2341,7 @@ window.addEventListener('pageshow', (event) => {
     //
     //   1. Idioma actiu (llegit de localStorage — pot haver canviat
     //      en una altra pàgina abans de tornar aquí).
-    //   2. Botons d'idioma (aria-pressed).
+    //   2. Selector d'idioma (valor del <select>).
     //   3. UI genèrica compartida (noms del menú, aria-labels,
     //      botó "Tornar", etc.).
     //   4. Contingut específic de la pàgina (fitxa d'un PI, capçalera

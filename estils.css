@@ -323,42 +323,132 @@ hr::before {
 
 
 /* ============================================================
-   6. COMPONENT: SELECTOR D'IDIOMA
+   6. COMPONENT: SELECTOR D'IDIOMA (desplegable personalitzat)
+   ------------------------------------------------------------
+   Estructura BEM:
+     .desplegable-idioma              → contenidor (relatiu per a la llista)
+     .desplegable-idioma__disparador  → botó que mostra el codi actiu (CA ▾)
+     .desplegable-idioma__codi        → text del codi (CA / EN / ES / FR)
+     .desplegable-idioma__fletxa      → chevron ▾ que gira quan s'obre
+     .desplegable-idioma__llista      → <ul role="listbox">, amagada per defecte
+
+   L'obertura/tancament s'anima via l'atribut `[hidden]` i les
+   classes `.esta-obert` que gestiona el JS.
    ============================================================ */
 
-#selector-idioma {
-    display:   flex;
-    gap:       var(--espai-xs);
+.desplegable-idioma {
+    position:    relative;
     flex-shrink: 0;
 }
 
-#selector-idioma button {
-    min-width:      var(--mida-touch);
-    min-height:     calc(var(--mida-touch) - 8px);
-    padding:        0 var(--espai-petit);
+/* --- Botó disparador --- */
+.desplegable-idioma__disparador {
+    display:     inline-flex;
+    align-items: center;
+    gap:         var(--espai-xs);
+
+    min-height:  var(--mida-touch);
+    padding:     0 var(--espai-petit);
+
     font-family:    var(--font-titol);
     font-size:      var(--mida-text-petit);
     font-weight:    600;
     letter-spacing: 0.06em;
-    color:          var(--color-text-invertit);
-    border:         1px solid rgba(255, 255, 255, 0.15);
-    border-radius:  var(--radi-petit);
-    opacity:        0.55;
-    transition:     opacity var(--durada-animacio) ease,
-                    border-color var(--durada-animacio) ease,
-                    color var(--durada-animacio) ease;
+
+    color:            var(--color-text-invertit);
+    background-color: rgba(255, 255, 255, 0.06);
+    border:           1px solid var(--color-accent-or);
+    border-radius:    var(--radi-petit);
+
+    cursor:     pointer;
+    transition: background-color var(--durada-animacio) ease,
+                border-color     var(--durada-animacio) ease;
 }
 
-#selector-idioma button:hover {
-    opacity: 0.85;
-    border-color: rgba(255, 255, 255, 0.35);
+.desplegable-idioma__disparador:hover {
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
-#selector-idioma button[aria-pressed="true"] {
-    opacity:         1;
-    color:           var(--color-accent-or);
-    border-color:    var(--color-accent-or);
-    background-color: rgba(184, 134, 11, 0.12);
+.desplegable-idioma__disparador:focus-visible {
+    outline:        2px solid var(--color-accent-or);
+    outline-offset: 2px;
+}
+
+/* Chevron: gira 180° quan el desplegable està obert */
+.desplegable-idioma__fletxa {
+    display:     inline-block;
+    font-size:   0.7em;
+    line-height: 1;
+    color:       var(--color-accent-or);
+    transition:  transform var(--durada-animacio) ease;
+}
+
+.desplegable-idioma__disparador[aria-expanded="true"] .desplegable-idioma__fletxa {
+    transform: rotate(180deg);
+}
+
+/* --- Llista d'opcions --- */
+.desplegable-idioma__llista {
+    position: absolute;
+    top:      calc(100% + var(--espai-xs));
+    right:    0;                       /* Alineat a la dreta perquè no surti en mòbil */
+    z-index:  var(--z-menu);
+
+    min-width: 8.5rem;
+    margin:  0;
+    padding: var(--espai-xs) 0;
+    list-style: none;
+
+    background-color: var(--color-fons);
+    border:           1px solid var(--color-vora);
+    border-radius:    var(--radi-petit);
+    box-shadow:       0 6px 18px var(--color-ombra-forta);
+
+    /* Animació d'entrada: es dispara quan s'elimina l'atribut [hidden] */
+    animation: desplegable-idioma-entrada var(--durada-animacio) ease-out;
+}
+
+.desplegable-idioma__llista[hidden] {
+    display: none;
+}
+
+@keyframes desplegable-idioma-entrada {
+    from {
+        opacity:   0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity:   1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Opcions --- */
+.desplegable-idioma__llista [role="option"] {
+    padding:        var(--espai-petit) var(--espai-mitja);
+    min-height:     var(--mida-touch);
+    display:        flex;
+    align-items:    center;
+
+    font-family:    var(--font-cos);
+    font-size:      var(--mida-text-petit);
+    color:          var(--color-text);
+
+    cursor:     pointer;
+    transition: background-color var(--durada-animacio) ease,
+                color            var(--durada-animacio) ease;
+}
+
+.desplegable-idioma__llista [role="option"]:hover,
+.desplegable-idioma__llista [role="option"]:focus-visible {
+    background-color: var(--color-accent-or-clar);
+    outline:          none;
+}
+
+/* Opció actualment seleccionada: marcada amb color daurat i pes fort */
+.desplegable-idioma__llista [role="option"][aria-selected="true"] {
+    color:       var(--color-accent-or);
+    font-weight: 700;
 }
 
 
