@@ -50,7 +50,7 @@ const UI = {
     // --- Fitxa de punt d'interès (punt-interes.html) ---
     'any-construccio':      { ca: 'Any:',                es: 'Año:',                   en: 'Year:', fr: ''                  },
     'estil-arquitectonic':  { ca: 'Estil:',              es: 'Estilo:',                en: 'Style:', fr: ''                 },
-    'zona-pertany':         { ca: 'Zona:',               es: 'Zona:',                  en: 'Zone:', fr: ''                  },
+    'direccio-punt':        { ca: 'Adreça:',             es: 'Dirección:',             en: 'Address:', fr: 'Adresse :'      },
     'rellevancia':          { ca: 'Rellevància:',        es: 'Relevancia:',            en: 'Relevance:', fr: ''             },
 
     // --- Missatges d'estat ---
@@ -124,12 +124,12 @@ const CONTINGUT_SECCIONS = {
 			
 			
 		</p>
-             <p>És la història de la gent menuda, que no tenia un escrivà que li guardés registre. <strong> Ens acompanyeu a trobar-la?</strong></p>
+             <p>És la història de la gent menuda, que no tenia un escrivà que li guardés registre, acompanyeu-nos a trobar-la.</p>
 			 <br><br>
 			 <p> Nota bibliogràfica: <br>
 			 La informació que trobareu s'ha extret d'invarquit (Cercador de Patrimoni de la Generalitat), la web de Catalunya Medieval, la fantàstica guia de pobles de Catalunya i una mica de la Viquipèdia.
-			Tot sacsejat i barrejat al nostre gust de forma que cap acadèmic ho validaria. <br> <br>
-			No us prengueu res al peu de la lletra: <br> quedeu-vos amb la "història" i gaudiu de la visita.</p>
+			Tot sacsejat i barrejat al nostre gust de forma que cap acadèmic ho validaria. <br>
+			No us prengueu res al peu de la lletra: quedeu-vos amb la "història" i gaudiu de la visita.</p>
 			 `,
 			 
 

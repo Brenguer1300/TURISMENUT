@@ -44,6 +44,10 @@
  *                                       o període en text lliure (p. ex. 'S. XIX',
  *                                       'segle XII', 'c. 1400'). Si s'omet, la
  *                                       fila "Any" no es mostra a la fitxa.
+ * @property {string} [direccio]      - Opcional. Adreça postal en text únic
+ *                                       (p. ex. 'Plaça de la Vila, 11'). No es
+ *                                       tradueix. Si és cadena buida o s'omet,
+ *                                       la fila "Adreça" no es mostra a la fitxa.
  * @property {{ca:string, es:string, en:string}} estil      - Estil arquitectònic en els 3 idiomes
  * @property {{ca:string, es:string, en:string}} descripcio - Descripció en els 3 idiomes
  */
@@ -71,6 +75,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: 1980,
+        direccio: 'Plaça de la Vila',
         estil: {
             ca: 'Eclèctic',
             es: 'Eclectico',
@@ -135,6 +140,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: 'S.XVII',
+        direccio: 'Plaça de la Vila 11',
         estil: {
             ca: 'Gòtic tardà',
             es: 'Gótico tardío',
@@ -142,7 +148,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Panosa. Plaça de la Vila 11.<br><br>
+            ca: `Can Panosa<br><br>
 				Té estructura d'edifici modern on destaca una finestra gòtica al segon pis. El més probable és que la compressin i no acaba d'encaixar al conjunt. <br>
 			Però el finestral no en té cap culpa. La divisió en dos amb una columna ben fina els capitell de tipus vegetal.. bé nosaltres ens alegrem s'hagi conservat. <br>
 			
@@ -176,6 +182,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: 1883,
+        direccio: 'Plaça de la Vila 5',
         estil: {
             ca: 'Modernisme',
             es: 'Modernismo',
@@ -183,7 +190,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Gultresa. Plaça de la Vila 5.<br><br>
+            ca: `Can Gultresa<br><br>
 			Edifici de l'any 1883 notareu d'entrada que les arcades del porxo són més altes que les de la resta de cases.
 			Quan s'acosta festa major podreu trobar els gegants de la vila esperant a sortir des d'aquí. <br>
 			La façana té una base que imita un encoixinat de maons falsos. Totes les finestres tenen amples motllures al voltant i medallons a les llindes. <br>
@@ -220,6 +227,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: 'S. XIV',
+        direccio: 'Plaça de la Vila 26',
         estil: {
             ca: 'Gòtic',
             es: 'Gótico',
@@ -227,7 +235,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Llinda de Can Mundet. Plaça de la Vila 26.<br><br>
+            ca: `Llinda de Can Mundet<br><br>
 				
 			Aquesta llinda de l'any 1775, té una decoració poc freqüent a base d'ovals i una figura central de caire vegetal. 
 			La inscripció de la mateixa està feta amb lletres hebrees. <br>
@@ -265,6 +273,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: 'S.XIX',
+        direccio: 'Plaça de la Vila 20',
         estil: {
             ca: 'Modernisme',
             es: 'Modernismo',
@@ -272,7 +281,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Ca l'Espinet. Plaça de la Vila 20.<br><br>
+            ca: `Ca l'Espinet<br><br>
 			Edifici estret amb una façana d'estil romàntic, 
 			decorada amb dues falses pilastres i coronada amb una cornisa decorada, damunt la qual hi ha una barana d'obra entre dos gerros.
 			Les llindes dels dos primers pisos estan ornamentades amb relleus vegetals i figures femenines. <br>
@@ -309,6 +318,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: 1930,
+        direccio: 'Plaça de la Vila 13',
         estil: {
             ca: 'Eclèctic',
             es: 'Eclectico',
@@ -316,7 +326,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Guifre. Plaça de la Vila 13. <br><br>
+            ca: `Can Guifre <br>
 			     Construït al segon terç del S.XIX és l'única casa de la plaça amb tribuna. Els vitralls de colors amb la seva sanefa i la barana del balcó tímidament decorada
 				 ens deixen entreveure un propietari enamorat de casa seva.
 				 <br>La singularitat de la casa la veureu si us poseu sota la seva porxada, us heu plantejat mai 
@@ -351,6 +361,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: 1930,
+        direccio: 'Carrer Narcís Junquera 1',
         estil: {
             ca: 'Eclèctic',
             es: 'Eclèctic',
@@ -358,7 +369,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Junquera. Carrer Narcís Junquera 1.<br><br>
+            ca: `Can Junquera<br><br>
 			     Edifici de l'any 1895 d'estil eclèctic (que barreja estils i no ens mullem vaja).  <br>
 				 Una simetria i unes proporcions molt treballades, l'ornamentació destaca pels frisos esgrafiats de color vermell i els guardapols del pis principal. 
 				A la porta veureu un escut amb les inicials del propietari, una evolució moderna de les llindes dels segles anteriors. <br>				 
@@ -393,6 +404,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: 1930,
+        direccio: 'Carrer Narcís Junquera 8',
         estil: {
             ca: 'Modernisme',
             es: 'Eclectico',
@@ -400,7 +412,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Soler. Carrer Narcís Junquera 8. <br><br>
+            ca: `Can Soler <br><br>
 			     Edifici molt ben conservat, tots els balcons amb la barana bombada, tan típica de l'època.
 				 L'ornamentació està basada en uns plafons i un fals encoixinat que juguen amb els colors blanc i vermell, 
 				 invertits entre el primer i el segon pis. <br>
@@ -435,6 +447,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: 'XIX',
+        direccio: 'Plaça de la Vila 2',
         estil: {
             ca: 'Arquitectura Popular',
             es: 'Noucentismo',
@@ -442,7 +455,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Ajuntament. Plaça de la Vila 2. <br> <br>
+            ca: `Ajuntament <br> <br>
 			     Edifici sense pretensions, destaca l'esgrafiat central amb l'escut del poble. Molt senzill inclou el nom del poble i la senyera catalana representada aquí amb tres barres.<br>
 				 Amer és un dels pocs pobles que no disposa d'escut oficial, creiem que haver estat una propietat eclesiàstica hi té a veure. <br>
 				 Així com les finestres tenen llindes planes, tant a la porta com a la finestra del primer pis,
@@ -476,6 +489,7 @@ const PUNTS_INTERES = [
             fr: 'Can Canesteve',
         },
         any: 1885,
+        direccio: 'Carrer Narcís Junquera 5',
         estil: {
             ca: 'Arquitectura Popular',
             es: 'Noucentismo',
@@ -483,7 +497,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Canesteve. Carrer Narcís Junquera 5. <br><br>
+            ca: `Can Canesteve <br><br>
 			     Edifici de tres pisos sense pretensions. <br>Fixeu-vos com al 1885 encara cuejava l'ús de "llindes" amb el nom del propietari i l'any inscrits.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
@@ -520,6 +534,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: 1925,
+        direccio: 'Carrer de la Barroca 1',
         estil: {
             ca: 'Modernisme',
             es: 'Modernismo',
@@ -527,7 +542,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `La Torre. Carrer de la Barroca 1.  <br><br>
+            ca: `La Torre  <br>
 			
 			     Ni Amer vam escapar de la primeríssima moda de les cases d'estiueig! Aquesta formada per diferents cossos i terrasses, dels quals el més destacat, i que ha donat nom a la casa, 
 				 és una torratxa mirador, de planta quadrada, circumdada per un balcó i amb coronament piramidal.
@@ -561,6 +576,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: 'Anys 20',
+        direccio: 'Carrer de la Barroca 5',
         estil: {
             ca: 'Modernisme',
             es: 'Modernismo',
@@ -568,7 +584,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Pujades. Carrer de la Barroca 5. <br><br>
+            ca: `Can Pujades <br>
 			
 			     Casa d'estiugeig petita amb tots els detalls possibles: façana coronada amb una barana de tres trams,
 				 les finestres estan decorades com si d'un castell es tractés, a les llindes de cada una relleus de caire vegetal. <br>
@@ -610,6 +626,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.XII",
+        direccio: 'Carrer Jacint Verdaguer',
         estil: {
             ca: 'Romànic',
             es: 'Romanico',
@@ -617,11 +634,10 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Absis del Monestir.  Carrer Jacint Verdaguer.  <br><br>
+            ca: `Absis del Monestir  <br>
 			
 			     És la part que conserva de forma més íntegra l'aspecte original del temple romànic. <br>
 				 Fixeu-vos en les petites finestres quasi sense decoració, 	únicament disposen just a sota la teulada d'aquestes petits arcs de pedres, en l'anomenada decoració llombarda, molt típica del romànic català primerenc. <br>
-				 Avui dia estem acostumats a la pedra nua de les esglèsies i ermites, aixó ens indica que són antigues! Però al seu moment heu de pensar que estaven totes les pedres enguixades i pintades per destacar! <br>
 				 A la construcció inicial es van fer tres absis, essent el quart un afegit posterior. <br> Sabríeu diferenciar pel tipus i color de la pedra quin és?
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
@@ -654,6 +670,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.XVI-XIX",
+        direccio: 'Carrer Narcís Junquera / Plaça del Monestir',
         estil: {
             ca: 'Renaixentista',
             es: 'Romanico',
@@ -661,7 +678,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Món.  Carrer Narcís Junquera / Plaça del Monestir. <br><br>
+            ca: `Can Món <br>
 				
 				 Qualsevol guia us parlaria d'edifici eclèctic, diguem que és la definició exacta d'urbanisme d'aprofitament. <br>
 				 És un edifici format per dos cossos en L, el que fa de pont per entrar a la plaça i el que té aquesta portalada digna d'una església amb dues finestres obliques a sobre.<br>
@@ -702,6 +719,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.XVI",
+        direccio: 'Plaça del Monestir 5',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Romanico',
@@ -709,7 +727,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Boles.  Plaça del Monestir 5. <br><br>
+            ca: `Can Boles <br>
 			
 			     Edifici del segle XVI, amb modificacions posteriors (hi ha llindes amb dates del segle XVIII), 
 				 podríem dir que entre aquest edifici i l'església hauríem trobat el claustre del monestir. <br>
@@ -744,6 +762,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.XIX",
+        direccio: 'Plaça del Monestir s/n',
         estil: {
             ca: 'Neoromànic',
             es: 'Neoromanico',
@@ -751,7 +770,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Creu de terme.  Plaça del Monestir s/n. <br><br>
+            ca: `Creu de terme <br><br>
 			
 			     Antigament l'hauríem trobada a l'entrada del terme municipal donant la benvinguda.<br>
 				 L'original està dipositada al Museu Diocesà de Girona, aquí en podeu observar una reproducció força malmesa per les inclemències del temps. 
@@ -786,6 +805,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.XVII",
+        direccio: 'Plaça del Monestir 2',
         estil: {
             ca: 'Arquitectura Popular',
             es: 'Neoromanico',
@@ -793,7 +813,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Terme.  Plaça del Monestir 2. <br><br>
+            ca: `Can Terme <br>
 			
 			    Actualment acull el Museu Etnològic d'Amer. <br>
 				Era l'antiga sacristia, un edifici molt reformat que conserva alguns elements antics del segle XVII. <br>
@@ -828,6 +848,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.IX",
+        direccio: 'Plaça del Monestir',
         estil: {
             ca: 'Romànic',
             es: 'Neoromanico',
@@ -835,10 +856,9 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Antic Monestir Santa Maria d'Amer.  Plaça del Monestir. <br><br>
+            ca: `Antic Monestir Santa Maria d'Amer <br>
 			
-			     De l'antic monestir benedictí consagrat l'any 949 queda principalment l'actual església de Santa Maria, ha patit moltes reformes i algun terratrèmol també. 
-				 Ara és fàcil mirar enrere i criticar reformes anteriors que van malmetre l'original, però cal tenir en compte que en cada moment s'han fet sempre les millors reformes en funció de les capacitats i també de l'estil i moda del moment.
+			     De l'antic monestir benedictí consagrat l'any 949 queda principalment l'actual església de Santa Maria, ha patit moltes reformes. 
 				 Destaquem la forma imponent, les motllures de les portes i finestres i també el treball de ferro de les finestres.
 				 Si teniu ocasió entreu-hi dins (horari de missa).<br> Amb el creixement de població es va prendre la decisió de modificar els pilars interiors romànics (amples i robustos) 
 				 per permetre que des dels laterals es pogués seguir missa per quatre columnetes ornamentades que costa creure aguantin el mateix pes.  És realment una decisió insòlita que val la pena observar.
@@ -874,6 +894,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.XVIII",
+        direccio: 'Plaça del Monestir 17',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Neoromanico',
@@ -881,7 +902,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Ca l'Espígol.  Plaça del Monestir 17. <br><br>
+            ca: `Ca l'Espígol <br>
 			
 			     La consideraríem una masia si no estigués en nucli urbà. Destaca l'emmarcament de pedra de la porta i de totes les finestres.
 				 De pedra treballada, llindes a totes les finestres i mantenint una coherència del conjunt.<br>
@@ -917,6 +938,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.XVII",
+        direccio: 'Plaça del Monestir, 3 / Carrer Sant Benet',
         estil: {
             ca: 'Gòtic',
             es: 'Gotico',
@@ -924,7 +946,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Gasull.  Plaça del Monestir, 3 / Carrer Sant Benet. <br><br>
+            ca: `Can Gasull <br>
 			
 			    Correspon a un dels antics edificis del Monestir d'Amer, concretament era la infermeria, amb façana a la plaça i al carrer de Sant Benet, si feu la volta veureu una placa de l'ajuntament que indica que als baixos s'usaven com a cavallerisses. 
 				Ara és un casalot que conserva alguna finestra antiga, però hem vist fotografies de qui hi va viure i aquesta casa posseïa un dels finestrals renaixentistes més interessants de l'arquitectura civil catalana, 
@@ -962,6 +984,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.XX",
+        direccio: 'Plaça del Monestir s/n',
         estil: {
             ca: 'Neoromànic',
             es: 'Neoromanico',
@@ -969,8 +992,8 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Placa de l'arbitratge Remença.  Col·locada a un lateral de Can Boles. <br><br>
-				
+            ca: `Placa de l'arbitratge Remença <br><br>
+				La trobareu col·locada a un lateral de Can Boles.<br>
 				Preparats per una parrafada històrica? Amer no va ser el centre de grans esdeveniments, i tampoc aquest ho és!, però ens fa il·lusió que fos escenari 
 				de quan el poble menut va dir prou i va obligar els senyors feudals a negociar a la baixa els seus drets:<br>
 			    Ferran II d'Aragó va firmar el 1486 la sentència arbitral de Guadalupe amb la que es posava fi a la segona guerra remença.
@@ -1013,6 +1036,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.XVII",
+        direccio: 'Carrer Girona',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
@@ -1020,7 +1044,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Carrer Girona.  <br><br>
+            ca: `Carrer Girona  <br><br>
 			
 			    El carrer Girona és un carrer llarg i estret originat a l'edat mitjana i que articula el barri del
 				Pedreguet fins arribar a la capella de la Mare de Déu de la Pietat. <br>
@@ -1070,6 +1094,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.XVII",
+        direccio: 'Carrer Girona 8',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
@@ -1077,7 +1102,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can La. Carrer Girona 8.   <br><br>
+            ca: `Can La  <br><br>
 			
 			    És una de les cases més interessants del carrer Girona, una masia en un entorn urbà. <br>
 				No hi consta cap llinda amb el nom del propietari, però destaca el seu portal adovellat i un finestral digne d'un palau del segle XVI amb la
@@ -1113,6 +1138,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.XVIII",
+        direccio: 'Carrer Girona 14',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
@@ -1120,7 +1146,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Plana. Carrer Girona 14.  <br><br>
+            ca: `Can Plana  <br><br>
 			
 			    Edifici reformat modernament però que ha conservat alguns elements antics d'interès, com els muntants amb permòdols del portal o la finestra petita també amb llinda sobre permòdols.
 				Pel que fa a la balconera cal destacar la llinda conopial de tradició gòtica envoltada amb un guardapols motllurat.
@@ -1154,6 +1180,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.XVII",
+        direccio: 'Carrer Girona s/n (al final)',
         estil: {
             ca: 'Barroc',
             es: 'Barroco',
@@ -1161,7 +1188,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Ermita Mare de Déu de la Pietat. Carrer Girona (al final).  <br><br>
+            ca: `Ermita Mare de Déu de la Pietat  
 			
 			    Capella situada als afores del poble. Va ser construïda al segle XVII, tot i que el seu origen pot ser més antic, i reformada al XIX. 
 				Té planta rectangular coberta amb volta de canó i capçada amb un absis semicircular. Hi té adossat un cos que fa de sagristia. 
@@ -1199,6 +1226,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         any: "S.XVIII",
+        direccio: 'Plaça de la Pietat 1',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Neoromanico',
@@ -1206,7 +1234,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Llepart. Plaça de la Pietat 1  <br><br>
+            ca: `Can Llepart  <br><br>
 			
 			   Edifici de grans dimensions construït al segle XVIII (1758), restaurat modernament.
 			   La façana que dóna al carrer Abat Vilafreser hi ha una llinda on s'hi llegeix la data i el nom de Joseph Clusehs. 
@@ -1242,6 +1270,7 @@ const PUNTS_INTERES = [
             fr: 'Can Cantí',
         },
         any: "1743",
+        direccio: 'Carrer Girona 31',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Neoromanico',
@@ -1249,7 +1278,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Cantí. Carrer Girona 31. <br><br>
+            ca: `Can Cantí <br><br>
 			
 			   Exemple de llinda amb la inscripció més senzilla: 1743.<br>
 			   Podria ser l'any de construcció o probablement de reforma de la casa.
@@ -1286,6 +1315,7 @@ const PUNTS_INTERES = [
             fr: 'Can Joanet Zai',
         },
         any: "1755",
+        direccio: 'Carrer Girona 46',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Neoromanico',
@@ -1293,7 +1323,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Joanet Zai. Carrer Girona 46. <br><br>
+            ca: `Can Joanet Zai <br><br>
 			
 			   La llinda més decorada que veureu avui, fixeu-vos que les pedres que emmarquen la casa estan treballades per fer simular un marc. <br>
 			   La serra, que envolta l'any i el nom del constructor, el martell i l'escaire ens indiquen que qui la va fer era mestre de cases. <br>
@@ -1329,6 +1359,7 @@ const PUNTS_INTERES = [
             fr: 'Girona 64',
         },
         any: "1752",
+        direccio: 'Carrer Girona 64',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Neoromanico',
@@ -1336,7 +1367,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Carrer Girona 64. <br><br>
+            ca: `Carrer Girona 64 <br><br>
 			
 			   Recordeu com de mala idea és fer una llinda de fusta? <br> Doncs aquesta de fusta ens porta la contrària des de mil set-cents… cinquanta-dos? <br>
 			   Les de les finestres immediatament superiors també ho són i malgrat estar a la intempèrie ni es veuen bufades ni han començat a doblegar-se.<br>
@@ -1371,6 +1402,7 @@ const PUNTS_INTERES = [
             fr: 'Can Cisteller de Dalt',
         },
         any: "1737",
+        direccio: 'Carrer Girona 38',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Neoromanico',
@@ -1378,7 +1410,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Cisteller de Dalt. Carrer Girona 38. <br><br>
+            ca: `Can Cisteller de Dalt <br><br>
 			
 			   <strong>MIQUEL CUDINA ME FECIT. ANY 1737.</strong><br>
 			   No tenim paraules per descriure com ens fa sentir aquesta inscripció. <br>
@@ -1420,6 +1452,7 @@ const PUNTS_INTERES = [
             fr: 'Font Picant',
         },
         any: "S.XVIII",
+        direccio: '',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
@@ -1427,7 +1460,8 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Font Picant.  Sortint del poble en direcció Olot veureu un trencall a l'esquerra amb un petit cartell groc: Fonter. <br> <br>
+            ca: `Font Picant   <br> <br>
+				La trobareu sortint del poble en direcció Olot veureu un trencall a l'esquerra amb un petit cartell groc: Fonter <br>
 			
 			    Al fons del petit polígon industrial de Fonter hi ha una àrea de lleure amb la Font Picant com a punt central. <br>
 				Fa temps que hi convindria una inversió en manteniment. Trobareu que no és exactament el mateix sabor que la comercialitzada però a casa 
@@ -1463,6 +1497,7 @@ const PUNTS_INTERES = [
             fr: 'Font de la Teula',
         },
         any: "S.XX",
+        direccio: 'Camí de Sant Martí',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
@@ -1470,8 +1505,8 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Font de la Teula.  En una corba a meitat del camí a Sant Martí Sacalm  <br> <br>
-			
+            ca: `Font de la Teula.    <br> <br>
+			    La trobareu en una corba a meitat del camí a Sant Martí Sacalm <br>
 			    Gairebé tothom s'atura en aquest lloc tan bonic, <br>
 				a beure i reposar un xic. <br>
 				Si ningú no hi deixés merda, <br>
@@ -1511,6 +1546,7 @@ const PUNTS_INTERES = [
             fr: 'Santa Brígida',
         },
         any: "S.XVII",
+        direccio: 'Camí de Santa Brígida: fins dalt de tot!',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
@@ -1518,7 +1554,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Ermita de Santa Brígida. Camí de Santa Brígida: fins dalt de tot!  <br> <br>
+            ca: `Ermita de Santa Brígida  <br> <br>
 			
 			    Depenent del Monestir de Santa Maria d'Amer va ser reformada al s. XVII i restaurada el 2001 pel grup excursionista d'Amer. <br>
 				Edifici senzill d'una sola nau amb volta de canó. És molt reverenciada pels amerencs i les vistes a la vall molt bones. <br>
@@ -1555,6 +1591,7 @@ const PUNTS_INTERES = [
             fr: 'Sant Climent',
         },
         any: "S.XVIII",
+        direccio: 'Camí de Sant Climent s/n',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
@@ -1562,7 +1599,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Ermita de Sant Climent d'Amer.  Camí de Sant Climent s/n <br> <br>
+            ca: `Ermita de Sant Climent d'Amer <br> <br>
 			
 			    Antigament dedicada a Sant Climent i Sant Julià, documentada del 1066 va ser completament reformada al 1877.<br>
 				Era el punt neuràlgic de totes les masies d'aquesta zona. <br>
@@ -1604,6 +1641,7 @@ const PUNTS_INTERES = [
             fr: 'Stattion du Carrilet',
         },
         any: "1895",
+        direccio: ' Pujada de estació 15',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
@@ -1611,7 +1649,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Estació d'Amer del Carrilet.  Pujada de l'estació 15 <br> <br>
+            ca: `Estació d'Amer del Carrilet <br> <br>
 			
 			    Molt ben restaurat, era la parada del tren que unia Olot i Sant Feliu de Guíxols, petit tren d'una única via: popularment el Carrilet. <br>
 				Us imagineu una locumotora a vapor anunciant la seva arribada al poble?<br>

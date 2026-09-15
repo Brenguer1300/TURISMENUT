@@ -2157,15 +2157,20 @@ function renderitzarFitxaPunt(punt) {
         elEstil.textContent = traduir(punt.estil);
     }
 
-    // --- Zona a la qual pertany ---
-    const elZonaPertany = document.getElementById('zona-pertany');
-    if (elZonaPertany) {
-        const zonaObj = (typeof ZONES !== 'undefined')
-            ? ZONES.find(z => z.id === punt.idZona)
-            : null;
-        elZonaPertany.textContent = zonaObj
-            ? traduir(zonaObj.nom)
-            : punt.idZona;
+    // --- Adreça (opcional: text únic no traduïble; si és buida, s'amaga tota la fila) ---
+    const elDireccio = document.getElementById('direccio-punt');
+    if (elDireccio) {
+        // El <dt> germà és l'etiqueta "Adreça:" que cal amagar alhora
+        const elDireccioLabel = document.querySelector('dt[data-i18n="direccio-punt"]');
+        if (punt.direccio !== undefined && punt.direccio !== null && punt.direccio !== '') {
+            elDireccio.textContent = punt.direccio;
+            elDireccio.hidden = false;
+            if (elDireccioLabel) elDireccioLabel.hidden = false;
+        } else {
+            elDireccio.textContent = '';
+            elDireccio.hidden = true;
+            if (elDireccioLabel) elDireccioLabel.hidden = true;
+        }
     }
 
     // --- Estrelles de rellevància ---
