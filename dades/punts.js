@@ -316,7 +316,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Guifre. Plaça de la Vila 13. <br>
+            ca: `Can Guifre. Plaça de la Vila 13. <br><br>
 			     Construït al segon terç del S.XIX és l'única casa de la plaça amb tribuna. Els vitralls de colors amb la seva sanefa i la barana del balcó tímidament decorada
 				 ens deixen entreveure un propietari enamorat de casa seva.
 				 <br>La singularitat de la casa la veureu si us poseu sota la seva porxada, us heu plantejat mai 
@@ -394,7 +394,7 @@ const PUNTS_INTERES = [
         },
         any: 1930,
         estil: {
-            ca: 'Eclèctic',
+            ca: 'Modernisme',
             es: 'Eclectico',
             en: 'Eclectico',
             fr: '[FR-TODO]',
@@ -436,7 +436,7 @@ const PUNTS_INTERES = [
         },
         any: 'XIX',
         estil: {
-            ca: 'Obra Popular',
+            ca: 'Arquitectura Popular',
             es: 'Noucentismo',
             en: 'Newcentury',
             fr: '[FR-TODO]',
@@ -477,7 +477,7 @@ const PUNTS_INTERES = [
         },
         any: 1885,
         estil: {
-            ca: 'Obra Popular',
+            ca: 'Arquitectura Popular',
             es: 'Noucentismo',
             en: 'Newcentury',
             fr: '[FR-TODO]',
@@ -527,9 +527,9 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `La Torre. Carrer de la Barroca 1.  <br>
+            ca: `La Torre. Carrer de la Barroca 1.  <br><br>
 			
-			     Casa d'estiueig formada per diferents cossos i terrasses, dels quals el més destacat, i que ha donat nom a la casa, 
+			     Ni Amer vam escapar de la primeríssima moda de les cases d'estiueig! Aquesta formada per diferents cossos i terrasses, dels quals el més destacat, i que ha donat nom a la casa, 
 				 és una torratxa mirador, de planta quadrada, circumdada per un balcó i amb coronament piramidal.
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
@@ -568,11 +568,11 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Pujades. Carrer de la Barroca 5. <br>
+            ca: `Can Pujades. Carrer de la Barroca 5. <br><br>
 			
-			     Edifici construït cap a la darreria dels anys vint del segle passat, d'una sola planta, amb pati al davant. La façana, coronada amb una balustrada de tres trams,
-				 presenta una destacada ornamentació al voltant de les tres obertures, on les llindes mostren uns relleus de caire vegetal de gust modernista.
-				 També estan decorades les mènsules que sostenen la cornisa.
+			     Casa d'estiugeig petita amb tots els detalls possibles: façana coronada amb una barana de tres trams,
+				 les finestres estan decorades com si d'un castell es tractés, a les llindes de cada una relleus de caire vegetal. <br>
+				 Fins i tot estan decorades les mènsules que sostenen la cornisa de la barana del balco!
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
                  Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
@@ -617,10 +617,11 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Absis del Monestir.  Carrer Jacint Verdaguer.  <br>
+            ca: `Absis del Monestir.  Carrer Jacint Verdaguer.  <br><br>
 			
 			     És la part que conserva de forma més íntegra l'aspecte original del temple romànic. <br>
 				 Fixeu-vos en les petites finestres quasi sense decoració, 	únicament disposen just a sota la teulada d'aquestes petits arcs de pedres, en l'anomenada decoració llombarda, molt típica del romànic català primerenc. <br>
+				 Avui dia estem acostumats a la pedra nua de les esglèsies i ermites, aixó ens indica que són antigues! Però al seu moment heu de pensar que estaven totes les pedres enguixades i pintades per destacar! <br>
 				 A la construcció inicial es van fer tres absis, essent el quart un afegit posterior. <br> Sabríeu diferenciar pel tipus i color de la pedra quin és?
 `,
             es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
@@ -660,7 +661,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Món.  Carrer Narcís Junquera / Plaça del Monestir. <br>
+            ca: `Can Món.  Carrer Narcís Junquera / Plaça del Monestir. <br><br>
 				
 				 Qualsevol guia us parlaria d'edifici eclèctic, diguem que és la definició exacta d'urbanisme d'aprofitament. <br>
 				 És un edifici format per dos cossos en L, el que fa de pont per entrar a la plaça i el que té aquesta portalada digna d'una església amb dues finestres obliques a sobre.<br>
@@ -708,7 +709,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Boles.  Plaça del Monestir 5. <br>
+            ca: `Can Boles.  Plaça del Monestir 5. <br><br>
 			
 			     Edifici del segle XVI, amb modificacions posteriors (hi ha llindes amb dates del segle XVIII), 
 				 podríem dir que entre aquest edifici i l'església hauríem trobat el claustre del monestir. <br>
@@ -786,13 +787,13 @@ const PUNTS_INTERES = [
         },
         any: "S.XVII",
         estil: {
-            ca: 'Neoromànic',
+            ca: 'Arquitectura Popular',
             es: 'Neoromanico',
             en: 'Newcentury',
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Terme.  Plaça del Monestir 2. <br>
+            ca: `Can Terme.  Plaça del Monestir 2. <br><br>
 			
 			    Actualment acull el Museu Etnològic d'Amer. <br>
 				Era l'antiga sacristia, un edifici molt reformat que conserva alguns elements antics del segle XVII. <br>
@@ -834,9 +835,10 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Antic Monestir Santa Maria d'Amer.  Plaça del Monestir. <br>
+            ca: `Antic Monestir Santa Maria d'Amer.  Plaça del Monestir. <br><br>
 			
-			     De l'antic monestir benedictí consagrat l'any 949 queda principalment l'actual església de Santa Maria, ha patit moltes reformes. 
+			     De l'antic monestir benedictí consagrat l'any 949 queda principalment l'actual església de Santa Maria, ha patit moltes reformes i algun terratrèmol també. 
+				 Ara és fàcil mirar enrere i criticar reformes anteriors que van malmetre l'original, però cal tenir en compte que en cada moment s'han fet sempre les millors reformes en funció de les capacitats i també de l'estil i moda del moment.
 				 Destaquem la forma imponent, les motllures de les portes i finestres i també el treball de ferro de les finestres.
 				 Si teniu ocasió entreu-hi dins (horari de missa).<br> Amb el creixement de població es va prendre la decisió de modificar els pilars interiors romànics (amples i robustos) 
 				 per permetre que des dels laterals es pogués seguir missa per quatre columnetes ornamentades que costa creure aguantin el mateix pes.  És realment una decisió insòlita que val la pena observar.
@@ -879,7 +881,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Ca l'Espígol.  Plaça del Monestir 17. <br>
+            ca: `Ca l'Espígol.  Plaça del Monestir 17. <br><br>
 			
 			     La consideraríem una masia si no estigués en nucli urbà. Destaca l'emmarcament de pedra de la porta i de totes les finestres.
 				 De pedra treballada, llindes a totes les finestres i mantenint una coherència del conjunt.<br>
@@ -922,7 +924,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Gasull.  Plaça del Monestir, 3 / Carrer Sant Benet. <br>
+            ca: `Can Gasull.  Plaça del Monestir, 3 / Carrer Sant Benet. <br><br>
 			
 			    Correspon a un dels antics edificis del Monestir d'Amer, concretament era la infermeria, amb façana a la plaça i al carrer de Sant Benet, si feu la volta veureu una placa de l'ajuntament que indica que als baixos s'usaven com a cavallerisses. 
 				Ara és un casalot que conserva alguna finestra antiga, però hem vist fotografies de qui hi va viure i aquesta casa posseïa un dels finestrals renaixentistes més interessants de l'arquitectura civil catalana, 
@@ -1159,7 +1161,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Ermita Mare de Déu de la Pietat. Carrer Girona (al final).  
+            ca: `Ermita Mare de Déu de la Pietat. Carrer Girona (al final).  <br><br>
 			
 			    Capella situada als afores del poble. Va ser construïda al segle XVII, tot i que el seu origen pot ser més antic, i reformada al XIX. 
 				Té planta rectangular coberta amb volta de canó i capçada amb un absis semicircular. Hi té adossat un cos que fa de sagristia. 
@@ -1204,7 +1206,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Llepart. Plaça de la Pietat 1  
+            ca: `Can Llepart. Plaça de la Pietat 1  <br><br>
 			
 			   Edifici de grans dimensions construït al segle XVIII (1758), restaurat modernament.
 			   La façana que dóna al carrer Abat Vilafreser hi ha una llinda on s'hi llegeix la data i el nom de Joseph Clusehs. 
@@ -1247,7 +1249,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Cantí. Carrer Girona 31. 
+            ca: `Can Cantí. Carrer Girona 31. <br><br>
 			
 			   Exemple de llinda amb la inscripció més senzilla: 1743.<br>
 			   Podria ser l'any de construcció o probablement de reforma de la casa.
@@ -1291,7 +1293,7 @@ const PUNTS_INTERES = [
             fr: '[FR-TODO]',
         },
         descripcio: {
-            ca: `Can Joanet Zai. Carrer Girona 46. 
+            ca: `Can Joanet Zai. Carrer Girona 46. <br><br>
 			
 			   La llinda més decorada que veureu avui, fixeu-vos que les pedres que emmarquen la casa estan treballades per fer simular un marc. <br>
 			   La serra, que envolta l'any i el nom del constructor, el martell i l'escaire ens indiquen que qui la va fer era mestre de cases. <br>
