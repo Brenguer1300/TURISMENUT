@@ -115,6 +115,18 @@ const EMOJI_MARCADOR_BASE           = '📍';
 /** @constant {string} Emoticona per defecte per a fotos de PI no disponibles */
 const EMOJI_PLACEHOLDER_PUNT        = '🏛️';
 
+/**
+ * @constant {string} Origen d'una selecció de PI feta des d'un
+ * marcador del mapa de zona. Vegeu `gestionarSeleccioPunt()`.
+ */
+const ORIGEN_SELECCIO_MAPA   = 'mapa';
+
+/**
+ * @constant {string} Origen d'una selecció de PI feta des d'una
+ * targeta de la llista de zona. Vegeu `gestionarSeleccioPunt()`.
+ */
+const ORIGEN_SELECCIO_LLISTA = 'llista';
+
 
 
 // ============================================================
@@ -137,17 +149,22 @@ let seccioActiva = ID_SECCIO_MAPA;
 
 /**
  * @type {string|null} Identificador del PI actualment seleccionat
- * al mapa de zona (`null` si no n'hi ha cap).
+ * a la pàgina de zona (`null` si no n'hi ha cap).
  *
- * Comportament del cicle de selecció (només a `zona.html`):
- *   · 1r clic a un marcador     → es marca com a seleccionat
- *                                  (mateix estil groc que el hover)
- *                                  i la targeta corresponent puja
- *                                  al primer lloc de la llista i
- *                                  també es ressalta en groc.
- *   · 2n clic al mateix marcador → navega a punt-interes.html
- *   · Clic al fons del mapa     → desselecciona (marcador + targeta,
- *                                  llista torna a l'ordre original).
+ * Cicle de selecció (només a `zona.html`). És el MATEIX tant si
+ * l'usuari clica un marcador del mapa com una targeta de la llista:
+ *   · 1r clic (marcador o targeta) → el PI queda seleccionat:
+ *                                    el marcador es ressalta en groc
+ *                                    i passa per sobre dels altres,
+ *                                    i la targeta puja al primer lloc
+ *                                    de la llista, també ressaltada.
+ *                                    Si el clic ve de la llista, la
+ *                                    pàgina es desplaça fins al mapa.
+ *   · 2n clic al mateix PI         → navega a punt-interes.html
+ *                                    (des del marcador o la targeta).
+ *   · Clic a un altre PI           → la selecció passa a aquest PI.
+ *   · Clic al fons del mapa        → desselecciona (marcador + targeta,
+ *                                    la llista torna a l'ordre original).
  */
 let idPuntSeleccionat = null;
 
@@ -1604,12 +1621,20 @@ const ALCADA_VIEWBOX_PER_DEFECTE = 63.14;
  * l'HTML directament des del disc), mostra un fons neutre amb el nom
  * de la zona, de manera que els marcadors segueixin sent utilitzables.
  *
+ * Es pot cridar més d'una vegada (per exemple, en canviar l'idioma):
+ * buida el contenidor abans de pintar i, en acabar, torna a aplicar
+ * el filtre d'estrelles actiu i el PI seleccionat, perquè el mapa
+ * nou quedi en el mateix estat visual que l'anterior.
+ *
  * @param {Object}         zona  - Objecte Zona (de zones.js)
  * @param {Array<Object>}  punts - PIs que pertanyen a la zona
  */
 function renderitzarMapaZona(zona, punts) {
     const elContenidor = document.getElementById('contenidor-mapa-zona');
     if (!elContenidor) return;
+
+    // Evita mapes duplicats si es torna a renderitzar (canvi d'idioma)
+    elContenidor.innerHTML = '';
 
     const espaiNoms = 'http://www.w3.org/2000/svg';
 
@@ -1685,13 +1710,13 @@ function renderitzarMapaZona(zona, punts) {
         marcador.addEventListener('click', event => {
             // Evita que el clic pugi al SVG i dispari la desselecció
             event.stopPropagation();
-            gestionarClicMarcador(punt.id);
+            gestionarSeleccioPunt(punt.id, ORIGEN_SELECCIO_MAPA);
         });
         marcador.addEventListener('keydown', event => {
             if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
                 event.stopPropagation();
-                gestionarClicMarcador(punt.id);
+                gestionarSeleccioPunt(punt.id, ORIGEN_SELECCIO_MAPA);
             }
         });
 
@@ -1708,6 +1733,11 @@ function renderitzarMapaZona(zona, punts) {
     });
 
     elContenidor.appendChild(svg);
+
+    // Restaura l'estat visual (filtre + selecció) si el mapa es
+    // torna a pintar amb una selecció o un filtre ja actius.
+    actualitzarVisibilitatMarcadors(filtrEstellesActiu);
+    ressaltarMarcadorSeleccionat();
 }
 
 /**
@@ -1735,35 +1765,49 @@ function actualitzarVisibilitatMarcadors(numEstrelles) {
 
 // ============================================================
 // SECCIÓ: Pàgina de Zona — Selecció de PI (zona.html)
-// Responsabilitat: gestionar la selecció visual d'un punt
-// d'interès des del mapa. El primer clic al marcador el
-// selecciona (marcador i targeta en groc + targeta al primer
-// lloc de la llista); el segon clic navega a la seva fitxa;
-// un clic al fons del mapa desselecciona.
+// Responsabilitat: gestionar la selecció d'un punt d'interès,
+// tant des del mapa com des de la llista. El primer clic (a un
+// marcador o a una targeta) el selecciona: marcador ressaltat i
+// per sobre dels altres + targeta al primer lloc i ressaltada.
+// El segon clic al mateix PI navega a la seva fitxa. Un clic al
+// fons del mapa desselecciona.
 // ============================================================
 
 /**
- * Gestiona el clic (o l'Enter/Espai) sobre un marcador del mapa.
+ * Gestiona el clic (o l'Enter/Espai) sobre un PI, vingui d'un
+ * marcador del mapa o d'una targeta de la llista.
  *
- * Si el marcador ja estava seleccionat, navega a la fitxa del PI.
- * Altrament, el marca com a seleccionat i re-renderitza la llista
- * perquè la targeta corresponent aparegui al primer lloc i ressaltada.
+ * Si el PI ja estava seleccionat, navega a la seva fitxa.
+ * Altrament, el selecciona. Si la selecció ve de la llista:
+ *   · la pàgina es desplaça fins al mapa perquè es vegi el
+ *     marcador ressaltat (important en mòbil, on el mapa queda
+ *     fora de la pantalla quan es baixa per la llista);
+ *   · el focus torna a la targeta (que ara és la primera), de
+ *     manera que amb teclat n'hi ha prou de tornar a prémer
+ *     Enter per entrar a la fitxa.
  *
- * @param {string} idPunt - Identificador del PI del marcador clicat
+ * @param {string} idPunt - Identificador del PI clicat
+ * @param {string} origen - `ORIGEN_SELECCIO_MAPA` o `ORIGEN_SELECCIO_LLISTA`
  */
-function gestionarClicMarcador(idPunt) {
+function gestionarSeleccioPunt(idPunt, origen) {
     if (idPuntSeleccionat === idPunt) {
-        // Segon clic al mateix marcador → obre la fitxa
+        // Segon clic al mateix PI → obre la fitxa
         navegarAPuntInteres(idPunt);
         return;
     }
+
     seleccionarPunt(idPunt);
+
+    if (origen === ORIGEN_SELECCIO_LLISTA) {
+        enfocarTargetaSeleccionada();
+        desplacarFinsAlMapaZona();
+    }
 }
 
 /**
- * Marca un PI com a seleccionat: aplica la classe `.seleccionat`
- * al marcador del mapa i re-renderitza la llista perquè la targeta
- * corresponent quedi ressaltada i col·locada al primer lloc.
+ * Marca un PI com a seleccionat: ressalta el seu marcador al mapa
+ * i re-renderitza la llista perquè la targeta corresponent quedi
+ * ressaltada i col·locada al primer lloc.
  *
  * Respecta el filtre d'estrelles actiu (`filtrEstellesActiu`).
  *
@@ -1773,12 +1817,80 @@ function seleccionarPunt(idPunt) {
     idPuntSeleccionat = idPunt;
 
     // --- Marcador del mapa ---
-    document.querySelectorAll('#mapa-zona .marcador-punt').forEach(marcador => {
-        marcador.classList.toggle('seleccionat', marcador.dataset.idPunt === idPunt);
-    });
+    ressaltarMarcadorSeleccionat();
 
     // --- Llista de PIs (reordena i ressalta) ---
     renderitzarLlistaPunts(puntsDeZonaActual, filtrEstellesActiu);
+}
+
+/**
+ * Aplica la classe `.seleccionat` al marcador de `idPuntSeleccionat`
+ * (i la treu de la resta) i el mou al final del grup de marcadors.
+ *
+ * En SVG no hi ha `z-index`: l'ordre de pintat és l'ordre al DOM.
+ * Moure el marcador al final fa que es dibuixi per sobre dels veïns
+ * i que cap altre marcador el tapi mentre està ressaltat.
+ *
+ * Si el marcador tenia el focus (selecció amb teclat des del mapa),
+ * se li retorna després de moure'l, ja que alguns navegadors el
+ * perden en reinserir l'element.
+ */
+function ressaltarMarcadorSeleccionat() {
+    let marcadorSeleccionat = null;
+
+    document.querySelectorAll('#mapa-zona .marcador-punt').forEach(marcador => {
+        const esSeleccionat = marcador.dataset.idPunt === idPuntSeleccionat;
+        marcador.classList.toggle('seleccionat', esSeleccionat);
+        if (esSeleccionat) marcadorSeleccionat = marcador;
+    });
+
+    if (!marcadorSeleccionat || !marcadorSeleccionat.parentNode) return;
+
+    const grup        = marcadorSeleccionat.parentNode;
+    const teniaFocus  = document.activeElement === marcadorSeleccionat;
+
+    if (grup.lastElementChild !== marcadorSeleccionat) {
+        grup.appendChild(marcadorSeleccionat);
+        if (teniaFocus) {
+            marcadorSeleccionat.focus({ preventScroll: true });
+        }
+    }
+}
+
+/**
+ * Posa el focus a la targeta seleccionada de la llista, sense
+ * provocar cap desplaçament (el desplaçament el fa
+ * `desplacarFinsAlMapaZona()`). Cal perquè en re-renderitzar la
+ * llista el botó que tenia el focus desapareix del DOM.
+ */
+function enfocarTargetaSeleccionada() {
+    const targeta = document.querySelector('#llista-punts .targeta-punt.seleccionada');
+    if (targeta) {
+        targeta.focus({ preventScroll: true });
+    }
+}
+
+/**
+ * Desplaça la pàgina suaument fins al mapa de zona, tenint en compte
+ * l'alçada de la capçalera sticky perquè no tapi la part de dalt del
+ * mapa. Si l'usuari té activada la preferència de reduir moviment,
+ * el salt és immediat.
+ */
+function desplacarFinsAlMapaZona() {
+    const elMapa = document.getElementById('seccio-mapa-zona');
+    if (!elMapa) return;
+
+    const elCapcalera   = document.getElementById('capçalera-principal');
+    const alcadaCapcal  = elCapcalera ? elCapcalera.offsetHeight : 0;
+    const posicio       = elMapa.getBoundingClientRect().top + window.scrollY - alcadaCapcal;
+
+    const reduirMoviment = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    window.scrollTo({
+        top:      Math.max(0, posicio),
+        behavior: reduirMoviment ? 'auto' : 'smooth',
+    });
 }
 
 /**
@@ -1858,6 +1970,10 @@ function generarHTMLTargetaPunt(punt, seleccionada = false) {
  * `#llista-punts`. Si no hi ha PIs, mostra el missatge de
  * "cap resultat" de traduccions.js.
  *
+ * Cada targeta segueix el mateix cicle de selecció que els
+ * marcadors del mapa (vegeu `gestionarSeleccioPunt`): el 1r clic
+ * la selecciona i el 2n entra a la fitxa del PI.
+ *
  * @param {Array<Object>} punts        - Llista de PIs a mostrar
  * @param {number}        filtrEstrelles - Filtre actiu (per indicar-lo a l'ARIA)
  */
@@ -1895,10 +2011,12 @@ function renderitzarLlistaPunts(punts, filtrEstrelles = 0) {
         .map(punt => generarHTMLTargetaPunt(punt, punt.id === idPuntSeleccionat))
         .join('');
 
-    // Assigna events de clic a cada targeta
+    // Assigna events de clic a cada targeta: mateix cicle que el mapa
+    // (1r clic selecciona, 2n clic entra). Com que són <button>, el
+    // clic també es dispara amb Enter/Espai des del teclat.
     elLlista.querySelectorAll('.targeta-punt[data-id-punt]').forEach(targeta => {
         targeta.addEventListener('click', () => {
-            navegarAPuntInteres(targeta.dataset.idPunt);
+            gestionarSeleccioPunt(targeta.dataset.idPunt, ORIGEN_SELECCIO_LLISTA);
         });
     });
 
@@ -1947,10 +2065,12 @@ function aplicarFiltrEstrelles(minEstrelles) {
 
     // En canviar el filtre, el PI seleccionat pot quedar amagat
     // (o simplement deixa de tenir sentit mantenir-lo). El
-    // desseleccionem silenciosament: només netegem l'estat, ja
-    // que la llista i els marcadors es re-renderitzaran tot seguit.
+    // desseleccionem: netegem l'estat i traiem el ressaltat del
+    // marcador; la llista es re-renderitza tot seguit.
     if (idPuntSeleccionat !== null) {
         idPuntSeleccionat = null;
+        document.querySelectorAll('#mapa-zona .marcador-punt.seleccionat')
+            .forEach(marcador => marcador.classList.remove('seleccionat'));
     }
 
     // --- Actualitza l'estat dels botons de filtre ---
