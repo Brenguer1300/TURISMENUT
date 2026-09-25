@@ -124,7 +124,10 @@ const CONTINGUT_SECCIONS = {
 			
 			
 		</p>
-             <p>És la història de la gent menuda, que no tenia un escrivà que li guardés registre, acompanyeu-nos a trobar-la.</p>
+			<p>Si passejant pel poble passeu per la plaça de Sant Miquel, fixeu-vos en el Monument als Músics. 
+			El que porta el músic esculpit és un flabiol, l'instrument musical de fusta més senzill i popular, ho considerem una declaració de intencions.</p>
+             <br>EN RESUM:<br>
+			 <p>Aquí trobareu la història de la gent menuda, que no tenia un escrivà que li guardés registre, acompanyeu-nos a trobar-la.</p>
 			 <br><br>
 			 <p> Nota bibliogràfica: <br>
 			 La informació que trobareu s'ha extret d'invarquit (Cercador de Patrimoni de la Generalitat), la web de Catalunya Medieval, la fantàstica guia de pobles de Catalunya i una mica de la Viquipèdia.
