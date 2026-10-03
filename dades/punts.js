@@ -1,5 +1,5 @@
 // ============================================================
-// DADES: Punts d'interès de Montbrull
+// DADES: Punts d'interès d'Amer
 // ============================================================
 // SISTEMA DE COORDENADES
 //
@@ -18,10 +18,11 @@
 // imatge de la zona, clica sobre el monument i copia el resultat.
 //
 // Distribució per zones:
-//   zona-centre  → pi-001, pi-002, pi-003, pi-004  (4 PIs)
-//   zona-moli    → pi-005, pi-006                  (2 PIs)
-//   zona-castell → pi-007, pi-008                  (2 PIs)
-//   zona-vinyes  → pi-009, pi-010                  (2 PIs)
+//   zona-vila      → pi-001 … pi-009, pi-025                 (10 PIs)
+//   zona-barroca   → pi-010, pi-011                          (2 PIs)
+//   zona-monestir  → pi-012 … pi-020                         (9 PIs)
+//   zona-pedreguet → pi-021 … pi-024, pi-026 … pi-030        (9 PIs)
+//   zona-rodalia   → pi-100, pi-101, pi-102, pi-104, pi-105  (5 PIs)
 //
 // Estrelles de rellevància:
 //   3 ★★★  Imprescindible  (1–2 per poble)
@@ -39,7 +40,7 @@
  *                                 - Posició del marcador en percentatge (0.0–100.0)
  *                                   sobre el mapa SVG de la zona corresponent
  * @property {string}  imatge      - Ruta a la fotografia del PI
- * @property {{ca:string, es:string, en:string}} nom        - Nom en els 3 idiomes
+ * @property {{ca:string, es:string, en:string, fr:string}} nom        - Nom en els 4 idiomes
  * @property {(number|string)} [any]  - Opcional. Any de construcció (p. ex. 1342)
  *                                       o període en text lliure (p. ex. 'S. XIX',
  *                                       'segle XII', 'c. 1400'). Si s'omet, la
@@ -48,8 +49,8 @@
  *                                       (p. ex. 'Plaça de la Vila, 11'). No es
  *                                       tradueix. Si és cadena buida o s'omet,
  *                                       la fila "Adreça" no es mostra a la fitxa.
- * @property {{ca:string, es:string, en:string}} estil      - Estil arquitectònic en els 3 idiomes
- * @property {{ca:string, es:string, en:string}} descripcio - Descripció en els 3 idiomes
+ * @property {{ca:string, es:string, en:string, fr:string}} estil      - Estil arquitectònic en els 4 idiomes
+ * @property {{ca:string, es:string, en:string, fr:string}} descripcio - Descripció en els 4 idiomes
  */
 
 /** @type {PuntInteres[]} */
@@ -72,15 +73,15 @@ const PUNTS_INTERES = [
             ca: 'Plaça de la Vila',
             es: 'Plaza de la Vila',
             en: 'Vila Square',
-            fr: '[FR-TODO]',
+            fr: 'Place de la Vila',
         },
         any: 1980,
         direccio: 'Plaça de la Vila',
         estil: {
             ca: 'Eclèctic',
-            es: 'Eclectico',
+            es: 'Ecléctico',
             en: 'Eclectic',
-            fr: '[FR-TODO]',
+            fr: 'Éclectique',
         },
         descripcio: {
             ca: `Plaça de la Vila o plaça Porxada. <br><br>
@@ -100,30 +101,57 @@ const PUNTS_INTERES = [
 			
 			En agraïment a cada poble que va respondre a la crida es va incloure una placa identificativa,
 			creieu que trobareu el vostre?`,
-            es: `La plaza de la Vila o plaza Porxada es el espacio emblemático de Amer.
+            es: `Plaza de la Vila o plaza Porxada. <br><br>
 
-						Es una de las plazas porticadas más grandes de Cataluña. Era el lugar donde, desde época medieval, se celebraba el mercado,
-						y los porches servían para proteger los puestos de las inclemencias del tiempo.
+			Es el espacio emblemático de Amer y la segunda plaza porticada más grande de Cataluña. <br>
+			Las plazas porticadas son muy típicas de los lugares donde se celebraba mercado; esta no es una excepción y hay constancia de ello desde época medieval.
+			Imaginad: la autoridad marca el tamaño que debe tener la plaza. Cuanto más grande, más puestos y más ingresos. A la hora de construir una casa que dé a la plaza
+			no puedes ocupar el espacio reservado al mercado, igual que tampoco puedes ocupar una calle. Los porches permiten ganar unos metros
+			muy preciados en los pisos superiores, mientras cumples con la normativa urbanística porque la puerta de la casa está donde toca.<br>
+			¿Y los vendedores? Contentos: más apretados, sí, pero contentos de que ahora los días de lluvia no impidan el mercado. <br><br>
 
-					La plaza fue reurbanizada en 1980, cuando la tendencia en todos los pueblos era retirar los adoquines de las calles para colocar asfalto. 
-					Amer quiso presumir de sus calles adoquinadas y, por eso, la reforma de la plaza se hizo incorporando adoquines en el punto central del pueblo. Como ya no se fabricaban, se hizo una llamada a ayuntamientos de toda Cataluña para conseguirlos.
+			La plaza fue reurbanizada en 1980, cuando la dinámica de todos los pueblos era retirar los adoquines de las calles para poner asfalto.
+			Amer quiso presumir de sus calles adoquinadas y así la reforma de la plaza se hizo incorporando adoquines en el punto central del pueblo.
+			Como ya no se fabricaban, se hizo un llamamiento a ayuntamientos de toda Cataluña para conseguirlos.
+			Así, la plaza actual está compuesta por los adoquines retirados de las calles de muchos pueblos y
+			ciudades catalanas. <br><br>
 
-					Así, la plaza actual está compuesta por la retirada de adoquines de las calles de muchos pueblos y ciudades catalanas.
+			En agradecimiento a cada pueblo que respondió al llamamiento se incluyó una placa identificativa.
+			¿Creéis que encontraréis el vuestro?`,
+            en: `Plaça de la Vila, also known as Plaça Porxada. <br><br>
+			
+			It is Amer's emblematic space and the second-largest arcaded square in Catalonia. <br>
+			Arcaded squares are very typical of places where markets were held; this one is no exception, and there are records of it going back to medieval times.
+			Just imagine: the authorities decided how big the square had to be. The bigger it was, the more stalls and the more income. When building a house facing the square
+			you could not take over the space reserved for the market, just as you could not build on a street. The arcades let owners gain a few
+			very precious metres on the upper floors, while still complying with the planning rules, because the front door stayed exactly where it should be.<br>
+			And the stallholders? Happy: more crowded, yes, but happy that rainy days no longer stopped the market. <br><br>
+			
+			The square was redeveloped in 1980, at a time when every town was removing the cobblestones from its streets to lay asphalt.
+			Amer wanted to show off its cobbled streets, so the square's renovation brought cobblestones into the very heart of the town.
+			Since they were no longer being made, an appeal was sent to town councils all over Catalonia to get hold of some.
+			So today's square is made of cobblestones taken up from the streets of many Catalan towns and 
+			cities. <br><br>
+			
+			To thank every town that answered the appeal, an identifying plaque was added.
+			Do you think you'll find yours?`,
+            fr: `Place de la Vila, ou place Porxada. <br><br>
 
-				En agradecimiento a cada municipio que respondió a la llamada, se incluyó una placa identificativa.
-			¿Creéis que encontraréis la de vuestro pueblo?`,
-            en: `The Plaça de la Vila, also known as Plaça Porxada, is the emblematic square of Amer.
+			C'est le lieu emblématique d'Amer et la deuxième plus grande place à arcades de Catalogne. <br>
+			Les places à arcades sont très typiques des lieux où se tenait un marché ; celle-ci ne fait pas exception, et on en trouve la trace dès l'époque médiévale.
+			Imaginez : c'est l'autorité qui fixe la taille de la place. Plus elle est grande, plus il y a d'étals et plus il y a de recettes. Quand on construit une maison donnant sur la place,
+			on ne peut pas empiéter sur l'espace réservé au marché, pas plus qu'on ne peut empiéter sur une rue. Les arcades permettent de gagner quelques mètres
+			très précieux aux étages supérieurs, tout en respectant la règle d'urbanisme, puisque la porte de la maison est exactement là où elle doit être.<br>
+			Et les marchands ? Contents : plus serrés, certes, mais contents que les jours de pluie n'empêchent plus le marché. <br><br>
 
-				It is one of the largest porticoed squares in Catalonia. Since medieval times, it was the place where the market was held, and the porticoes protected the stalls from bad weather.
+			La place a été réaménagée en 1980, à une époque où tous les villages retiraient les pavés de leurs rues pour poser de l'asphalte.
+			Amer a voulu être fier de ses rues pavées, et la rénovation de la place a donc intégré des pavés au cœur même du village.
+			Comme on n'en fabriquait plus, un appel a été lancé aux mairies de toute la Catalogne pour en obtenir.
+			Ainsi, la place actuelle est faite des pavés retirés des rues de nombreux villages et
+			villes de Catalogne. <br><br>
 
-			The square was redeveloped in 1980, at a time when most towns were removing cobblestones from their streets to lay asphalt. Amer wanted to take pride in its cobbled streets, so the renovation of the square incorporated cobblestones into the town’s central space. Since they were no longer being manufactured, a call was made to town councils across Catalonia to obtain them.
-
-				As a result, the current square is made up of cobblestones removed from the streets of many Catalan towns and cities.
-
-				To thank each town that responded to the call, an identifying plaque was added.
-			Do you think you’ll find yours?`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+			Pour remercier chaque village ayant répondu à l'appel, une plaque d'identification a été posée.
+			Pensez-vous trouver la vôtre ?`,
         },
     },
 
@@ -137,7 +165,7 @@ const PUNTS_INTERES = [
             ca: 'Can Panosa',
             es: 'Can Panosa',
             en: 'Can Panosa',
-            fr: '[FR-TODO]',
+            fr: 'Can Panosa',
         },
         any: 'S.XVII',
         direccio: 'Plaça de la Vila 11',
@@ -145,7 +173,7 @@ const PUNTS_INTERES = [
             ca: 'Gòtic tardà',
             es: 'Gótico tardío',
             en: 'Late Gothic',
-            fr: '[FR-TODO]',
+            fr: 'Gothique tardif',
         },
         descripcio: {
             ca: `Can Panosa<br><br>
@@ -154,18 +182,24 @@ const PUNTS_INTERES = [
 			
 			Si us fixeu en les arcades de sota (aquesta casa i les contigües), veureu que n'hi ha de mig punt i ogivals i algunes amb capitell i relleus com si d'un claustre de monestir es tractés.
 			`,
-            es: `La Plaza Mayor es el corazón social y comercial de Montbrull desde el siglo XV. Rodeada
-                 de arcadas góticas tardías de piedra caliza, acoge el mercado semanal cada sábado desde
-                 el año 1509. En el lado norte destaca la Casa de la Vila, con su reloj de sol del siglo XVII
-                 y el escudo de la villa esculpido sobre el dintel principal. Durante el verano la plaza
-                 se llena de terrazas y es escenario del Festival de Música Antigua de Montbrull.`,
-            en: `The Main Square has been the social and commercial heart of Montbrull since the 15th century.
-                 Surrounded by late Gothic limestone arcades, it has hosted the weekly Saturday market since
-                 1509. On the north side stands the Casa de la Vila, featuring a 17th-century sundial and
-                 the town's coat of arms carved above the main lintel. In summer the square fills with café
-                 terraces and becomes the venue for the Montbrull Early Music Festival.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Panosa<br><br>
+			Tiene estructura de edificio moderno, donde destaca una ventana gótica en el segundo piso. Lo más probable es que la compraran y no acaba de encajar en el conjunto. <br>
+			Pero el ventanal no tiene ninguna culpa. La división en dos con una columna muy fina, los capiteles de tipo vegetal... bueno, nosotros nos alegramos de que se haya conservado. <br>
+
+			Si os fijáis en los porches de abajo (de esta casa y de las contiguas), veréis que los hay de medio punto y ojivales, y algunos con capitel y relieves, como si se tratara de un claustro de monasterio.
+			`,
+            en: `Can Panosa<br><br>
+				It has the structure of a modern building, where a Gothic window on the second floor stands out. Most likely it was bought elsewhere, and it doesn't quite fit in with the rest. <br>
+			But the window is not to blame. Split in two by a very slender column, with plant-motif capitals... well, we're glad it has survived. <br>
+			
+			If you look at the arcades below (on this house and the neighbouring ones), you'll see round arches and pointed ones, some with capitals and reliefs, as if they belonged to a monastery cloister.
+			`,
+            fr: `Can Panosa<br><br>
+			Le bâtiment a une structure moderne, où se distingue une fenêtre gothique au deuxième étage. Elle a très probablement été achetée ailleurs, et elle ne s'intègre pas vraiment à l'ensemble. <br>
+			Mais la fenêtre n'y est pour rien. Divisée en deux par une colonne très fine, avec des chapiteaux à motifs végétaux… bref, nous sommes ravis qu'elle ait été conservée. <br>
+
+			Si vous observez les arcades en dessous (de cette maison et des maisons voisines), vous verrez des arcs en plein cintre et des arcs brisés, certains avec chapiteaux et reliefs, comme s'il s'agissait du cloître d'un monastère.
+			`,
         },
     },
 
@@ -179,15 +213,15 @@ const PUNTS_INTERES = [
             ca: 'Can Gultresa',
             es: 'Can Gultresa',
             en: 'Can Gultresa',
-            fr: '[FR-TODO]',
+            fr: 'Can Gultresa',
         },
         any: 1883,
         direccio: 'Plaça de la Vila 5',
         estil: {
             ca: 'Modernisme',
             es: 'Modernismo',
-            en: 'Modernisme',
-            fr: '[FR-TODO]',
+            en: 'Catalan Modernisme',
+            fr: 'Modernisme catalan',
         },
         descripcio: {
             ca: `Can Gultresa<br><br>
@@ -197,20 +231,27 @@ const PUNTS_INTERES = [
 			I la barana dels balcons? Una mà de pintura si.. però la decoració amb fulles de vinya, plataner i figuera l'havíeu vista?.  <br>
 			A la llinda de la porta hi podem llegir el nom de Pelegrín Altarriba, l'esquerda que la travessa dona fe de les dificultats de fer una bona llinda.
 			`,
-            es: `Único de los tres portales originales que se conserva en pie, el Portal de la Muralla data
-                 de 1318 y formaba parte del recinto amurallado encargado por el rey Jaime II. El arco de
-                 medio punto con dovelas, las aspilleras laterales y los restos de la barbacana exterior
-                 atestiguan la función defensiva original. En la clave del arco puede leerse la inscripción
-                 «VILLA MONTIS BRULLI» parcialmente erosionada. La restauración de 2008 consolidó los
-                 sillares y recuperó el pavimento de guijarros originales bajo el paso del arco.`,
-            en: `The only one of the three original gates still standing, the Town Wall Gate dates from 1318
-                 and formed part of the fortified enclosure commissioned by King Jaume II. The semicircular
-                 voussoir arch, the lateral arrow slits, and the remains of the outer barbican bear witness
-                 to its original defensive function. On the keystone the inscription «VILLA MONTIS BRULLI»
-                 can be read, partially worn by weathering. The 2008 restoration consolidated the ashlar
-                 masonry and recovered the original cobblestone paving beneath the arch passage.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Gultresa<br><br>
+			Edificio del año 1883: notaréis de entrada que los arcos del porche son más altos que los del resto de casas.
+			Cuando se acerca la fiesta mayor podréis encontrar aquí a los gigantes de la villa esperando para salir. <br>
+			La fachada tiene una base que imita un almohadillado de ladrillos falsos. Todas las ventanas tienen anchas molduras alrededor y medallones en los dinteles. <br>
+			¿Y la barandilla de los balcones? Una mano de pintura sí... pero ¿habíais visto la decoración con hojas de vid, plátano e higuera?  <br>
+			En el dintel de la puerta podemos leer el nombre de Pelegrín Altarriba; la grieta que lo atraviesa da fe de lo difícil que es hacer un buen dintel.
+			`,
+            en: `Can Gultresa<br><br>
+			A building from 1883: you'll notice straight away that the arches of its portico are taller than those of the other houses.
+			As the Festa Major (the town's main festival) approaches, you may find the town's giants here, waiting to come out. <br>
+			The façade has a base that imitates rusticated masonry made of fake bricks. All the windows have wide mouldings around them and medallions on the lintels. <br>
+			And the balcony railings? They could do with a lick of paint, yes... but had you noticed the decoration of vine, plane-tree and fig leaves?  <br>
+			On the door lintel we can read the name Pelegrín Altarriba; the crack running across it bears witness to how hard it is to make a good lintel.
+			`,
+            fr: `Can Gultresa<br><br>
+			Bâtiment de 1883 : vous remarquerez d'emblée que les arcs de son porche sont plus hauts que ceux des autres maisons.
+			À l'approche de la fête patronale, vous pourrez y trouver les géants de la ville attendant de sortir. <br>
+			La façade repose sur une base imitant un bossage de fausses briques. Toutes les fenêtres sont entourées de larges moulures et ornées de médaillons sur les linteaux. <br>
+			Et la rambarde des balcons ? Un coup de peinture, oui… mais aviez-vous remarqué le décor de feuilles de vigne, de platane et de figuier ?  <br>
+			Sur le linteau de la porte, on peut lire le nom de Pelegrín Altarriba ; la fissure qui le traverse témoigne de la difficulté de réaliser un bon linteau.
+			`,
         },
     },
 
@@ -222,17 +263,17 @@ const PUNTS_INTERES = [
         imatge: 'imatges/punts-interes/pi-004.jpg',
         nom: {
             ca: 'Llinda de Can Mundet',
-            es: 'Llinda de Can Mundet',
-            en: 'Llinda de Can Mundet',
-            fr: '[FR-TODO]',
+            es: 'Dintel de Can Mundet',
+            en: 'Can Mundet Lintel',
+            fr: 'Linteau de Can Mundet',
         },
         any: 'S. XIV',
         direccio: 'Plaça de la Vila 26',
         estil: {
             ca: 'Gòtic',
             es: 'Gótico',
-            en: 'Gotic',
-            fr: '[FR-TODO]',
+            en: 'Gothic',
+            fr: 'Gothique',
         },
         descripcio: {
             ca: `Llinda de Can Mundet<br><br>
@@ -243,20 +284,27 @@ const PUNTS_INTERES = [
 			Quan hagueu visitat la resta de llindes del poble torneu a revisar aquesta!
 			`,
 		
-            es: `La Casa Torrentó es la mejor muestra del renacimiento civil en Montbrull. Construida en 1561
-                 por la familia Torrentó, enriquecida en el comercio del vino y la lana, presenta una fachada
-                 de tres crujías con ventanas geminadas de arco rebajado y una galería superior de seis arcos
-                 de medio punto. El portal con dovelas conserva el escudo heráldico de la familia con tres
-                 troncos y una cruz. Actualmente alberga el Centre d'Interpretació del Patrimoni de Montbrull,
-                 abierto al público de martes a domingo.`,
-            en: `Torrentó House is the finest example of civic Renaissance architecture in Montbrull. Built in
-                 1561 by the Torrentó family, who had grown wealthy through wine and wool trading, it features
-                 a three-bay façade with paired windows under segmental arches and an upper gallery of six
-                 semicircular arches. The voussoir portal preserves the family's heraldic shield showing three
-                 logs and a cross. The building now houses the Montbrull Heritage Interpretation Centre,
-                 open to the public Tuesday to Sunday.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Dintel de Can Mundet<br><br>
+
+			Este dintel del año 1775 tiene una decoración poco frecuente a base de óvalos y una figura central de tipo vegetal.
+			Su inscripción está hecha con letras hebreas. <br>
+			Lo encontraréis en la ventana de la planta baja de la calle de Can Ventura (mirando el edificio, a la derecha).  <br>
+			¡Cuando hayáis visitado el resto de dinteles del pueblo, volved a mirar este!
+			`,
+            en: `Lintel of Can Mundet<br><br>
+				
+			This lintel from 1775 has an unusual decoration of ovals and a central plant-like figure. 
+			Its inscription is written in Hebrew letters. <br>
+			You'll find it on the ground-floor window on Carrer de Can Ventura (to the right as you face the building).  <br>
+			Once you've seen the rest of the town's lintels, come back and take another look at this one!
+			`,
+            fr: `Linteau de Can Mundet<br><br>
+
+			Ce linteau de 1775 présente un décor peu courant, fait d'ovales et d'une figure centrale de type végétal.
+			Son inscription est gravée en lettres hébraïques. <br>
+			Vous le trouverez sur la fenêtre du rez-de-chaussée, rue de Can Ventura (à droite quand on regarde le bâtiment).  <br>
+			Quand vous aurez vu les autres linteaux du village, revenez regarder celui-ci !
+			`,
         },
     },
 
@@ -270,15 +318,15 @@ const PUNTS_INTERES = [
             ca: 'Ca Espinet',
             es: 'Ca Espinet',
             en: 'Ca Espinet',
-            fr: '[FR-TODO]',
+            fr: 'Ca Espinet',
         },
         any: 'S.XIX',
         direccio: 'Plaça de la Vila 20',
         estil: {
             ca: 'Modernisme',
             es: 'Modernismo',
-            en: 'Modernisme',
-            fr: '[FR-TODO]',
+            en: 'Catalan Modernisme',
+            fr: 'Modernisme catalan',
         },
         descripcio: {
             ca: `Ca l'Espinet<br><br>
@@ -288,20 +336,27 @@ const PUNTS_INTERES = [
 			Casa estreta no és motiu per no engalanar-la!
 			
 `,
-            es: `El Molino Harinero de Can Puig es uno de los molinos hidráulicos medievales mejor conservados
-                 de la comarca. Documentado desde 1408, aprovechaba el caudal del Rec de Montbrull para
-                 accionar dos muelas de piedra caliza. El edificio de planta rectangular con cubierta de
-                 losas y la balsa exterior con el canal de alimentación se conservan casi intactos. En 2015
-                 se restauró la rueda de madera y se instaló un circuito interpretativo que explica el
-                 proceso de molienda tradicional. Visitable los fines de semana de mayo a octubre.`,
-            en: `Can Puig Flour Mill is one of the best-preserved medieval water mills in the region.
-                 Documented since 1408, it harnessed the flow of the Rec de Montbrull to drive two limestone
-                 millstones. The rectangular building with its stone slab roof and the external millpond with
-                 its supply channel survive almost intact. In 2015 the wooden wheel was restored and an
-                 interpretive trail was installed explaining the traditional milling process. Visitable
-                 weekends from May to October.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Ca l'Espinet<br><br>
+			Edificio estrecho con una fachada de estilo romántico,
+			decorada con dos falsas pilastras y coronada con una cornisa decorada, sobre la cual hay una barandilla de obra entre dos jarrones.
+			Los dinteles de los dos primeros pisos están ornamentados con relieves vegetales y figuras femeninas. <br>
+			¡Que una casa sea estrecha no es motivo para no engalanarla!
+
+`,
+            en: `Ca l'Espinet<br><br>
+			A narrow building with a Romantic-style façade, 
+			decorated with two false pilasters and crowned by an ornate cornice, topped by a masonry balustrade between two urns.
+			The lintels of the first two floors are adorned with plant reliefs and female figures. <br>
+			Being a narrow house is no reason not to dress it up!
+			
+`,
+            fr: `Ca l'Espinet<br><br>
+			Bâtiment étroit à la façade de style romantique,
+			décorée de deux fausses pilastres et couronnée d'une corniche ornée, surmontée d'une balustrade maçonnée entre deux vases.
+			Les linteaux des deux premiers étages sont ornés de reliefs végétaux et de figures féminines. <br>
+			Une maison étroite, ce n'est pas une raison pour ne pas la parer !
+
+`,
         },
     },
 
@@ -315,15 +370,15 @@ const PUNTS_INTERES = [
             ca: 'Can Guifre',
             es: 'Can Guifre',
             en: 'Can Guifre',
-            fr: '[FR-TODO]',
+            fr: 'Can Guifre',
         },
         any: 1930,
         direccio: 'Plaça de la Vila 13',
         estil: {
             ca: 'Eclèctic',
-            es: 'Eclectico',
-            en: 'Eclectico',
-            fr: '[FR-TODO]',
+            es: 'Ecléctico',
+            en: 'Eclectic',
+            fr: 'Éclectique',
         },
         descripcio: {
             ca: `Can Guifre <br>
@@ -332,19 +387,24 @@ const PUNTS_INTERES = [
 				 <br>La singularitat de la casa la veureu si us poseu sota la seva porxada, us heu plantejat mai 
 				 com era viure sense porters automàtics? <br>
 				 <strong> Mireu al sostre!</strong>`,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Guifre <br>
+			     Construida en el segundo tercio del s. XIX, es la única casa de la plaza con tribuna. Las vidrieras de colores con su cenefa y la barandilla del balcón tímidamente decorada
+				 nos dejan entrever a un propietario enamorado de su casa.
+				 <br>La singularidad de la casa la veréis si os ponéis bajo su porche: ¿os habéis planteado alguna vez
+				 cómo era vivir sin porteros automáticos? <br>
+				 <strong> ¡Mirad al techo!</strong>`,
+            en: `Can Guifre <br>
+			     Built in the second third of the 19th century, it is the only house on the square with a tribune (an enclosed bay window). The coloured stained glass with its decorative border and the timidly decorated balcony railing
+				 hint at an owner who was in love with his home.
+				 <br>You'll discover what makes this house unique if you stand under its portico: have you ever wondered 
+				 what life was like without door-entry intercoms? <br>
+				 <strong> Look up at the ceiling!</strong>`,
+            fr: `Can Guifre <br>
+			     Construite au cours du deuxième tiers du XIXe siècle, c'est la seule maison de la place dotée d'une tribune (un oriel vitré). Les vitraux colorés avec leur frise et la rambarde du balcon timidement décorée
+				 laissent deviner un propriétaire amoureux de sa maison.
+				 <br>Vous découvrirez ce qui rend cette maison unique en vous plaçant sous son porche : vous êtes-vous déjà demandé
+				 comment on vivait sans interphone ? <br>
+				 <strong> Regardez le plafond !</strong>`,
         },
     },
 	
@@ -358,15 +418,15 @@ const PUNTS_INTERES = [
             ca: 'Can Junquera',
             es: 'Can Junquera',
             en: 'Can Junquera',
-            fr: '[FR-TODO]',
+            fr: 'Can Junquera',
         },
         any: 1930,
         direccio: 'Carrer Narcís Junquera 1',
         estil: {
             ca: 'Eclèctic',
-            es: 'Eclèctic',
-            en: 'Eclectico',
-            fr: '[FR-TODO]',
+            es: 'Ecléctico',
+            en: 'Eclectic',
+            fr: 'Éclectique',
         },
         descripcio: {
             ca: `Can Junquera<br><br>
@@ -375,19 +435,24 @@ const PUNTS_INTERES = [
 				A la porta veureu un escut amb les inicials del propietari, una evolució moderna de les llindes dels segles anteriors. <br>				 
 				 Va ser la casa de la família Junquera, d'on era l'alcalde perpetu durant el Franquisme.
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Junquera<br><br>
+			     Edificio del año 1895 de estilo ecléctico (que mezcla estilos y no se moja, vaya).  <br>
+				 Una simetría y unas proporciones muy trabajadas; la ornamentación destaca por los frisos esgrafiados de color rojo y los guardapolvos del piso principal.
+				En la puerta veréis un escudo con las iniciales del propietario, una evolución moderna de los dinteles de los siglos anteriores. <br>
+				 Fue la casa de la familia Junquera, a la que pertenecía el alcalde perpetuo durante el franquismo.
+`,
+            en: `Can Junquera<br><br>
+			     A building from 1895 in the eclectic style (one that mixes styles without committing to any, let's say).  <br>
+				 Its symmetry and proportions are very carefully worked; the ornamentation stands out for its red sgraffito friezes and the hood mouldings on the main floor. 
+				On the door you'll see a shield with the owner's initials, a modern evolution of the carved lintels of earlier centuries. <br>				 
+				 It was the home of the Junquera family, to which the town's "perpetual mayor" during the Franco regime belonged.
+`,
+            fr: `Can Junquera<br><br>
+			     Bâtiment de 1895 de style éclectique (qui mélange les styles sans trop se mouiller, disons).  <br>
+				 Une symétrie et des proportions très soignées ; l'ornementation se distingue par ses frises en sgraffite rouge et les larmiers de l'étage noble.
+				Sur la porte, vous verrez un écusson aux initiales du propriétaire, une évolution moderne des linteaux gravés des siècles précédents. <br>
+				 C'était la maison de la famille Junquera, à laquelle appartenait le « maire perpétuel » sous le franquisme.
+`,
         },
     },
 	
@@ -401,15 +466,15 @@ const PUNTS_INTERES = [
             ca: 'Can Soler',
             es: 'Can Soler',
             en: 'Can Soler',
-            fr: '[FR-TODO]',
+            fr: 'Can Soler',
         },
         any: 1930,
         direccio: 'Carrer Narcís Junquera 8',
         estil: {
             ca: 'Modernisme',
-            es: 'Eclectico',
-            en: 'Eclectico',
-            fr: '[FR-TODO]',
+            es: 'Modernismo',
+            en: 'Catalan Modernisme',
+            fr: 'Modernisme catalan',
         },
         descripcio: {
             ca: `Can Soler <br><br>
@@ -418,19 +483,24 @@ const PUNTS_INTERES = [
 				 invertits entre el primer i el segon pis. <br>
 				 Molt típic de l'època també és la falsa teulada que sobresurt a dalt de tot, una petita joia que a més protegeix la façana de la pluja.
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Soler <br><br>
+			     Edificio muy bien conservado, con todos los balcones con la barandilla abombada, tan típica de la época.
+				 La ornamentación se basa en unos plafones y un falso almohadillado que juegan con los colores blanco y rojo,
+				 invertidos entre el primer y el segundo piso. <br>
+				 Muy típico de la época es también el falso tejado que sobresale en lo más alto, una pequeña joya que además protege la fachada de la lluvia.
+`,
+            en: `Can Soler <br><br>
+			     A very well-preserved building, with bulging railings on every balcony, so typical of the period.
+				 The ornamentation is based on panels and false rustication that play with white and red, 
+				 reversed between the first and second floors. <br>
+				 Also very typical of the period is the false roof jutting out at the very top, a little gem that also protects the façade from the rain.
+`,
+            fr: `Can Soler <br><br>
+			     Bâtiment très bien conservé, dont tous les balcons ont une rambarde bombée, si typique de l'époque.
+				 L'ornementation repose sur des panneaux et un faux bossage qui jouent avec le blanc et le rouge,
+				 inversés entre le premier et le deuxième étage. <br>
+				 Très typique de l'époque aussi : le faux toit qui dépasse tout en haut, un petit bijou qui protège en plus la façade de la pluie.
+`,
         },
     },
 	
@@ -443,16 +513,16 @@ const PUNTS_INTERES = [
         nom: {
             ca: 'Ajuntament',
             es: 'Ayuntamiento',
-            en: 'Council City',
-            fr: '[FR-TODO]',
+            en: 'Town Hall',
+            fr: 'Mairie',
         },
         any: 'XIX',
         direccio: 'Plaça de la Vila 2',
         estil: {
             ca: 'Arquitectura Popular',
-            es: 'Noucentismo',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Arquitectura popular',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Ajuntament <br> <br>
@@ -461,19 +531,24 @@ const PUNTS_INTERES = [
 				 Així com les finestres tenen llindes planes, tant a la porta com a la finestra del primer pis,
 				 disposen de marcs d'inspiració arabesca.
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Ayuntamiento <br> <br>
+			     Edificio sin pretensiones; destaca el esgrafiado central con el escudo del pueblo. Muy sencillo, incluye el nombre del pueblo y la senyera catalana, representada aquí con tres barras.<br>
+				 Amer es uno de los pocos pueblos que no tiene escudo oficial; creemos que haber sido una propiedad eclesiástica tiene algo que ver. <br>
+				 Mientras que las ventanas tienen dinteles planos, tanto la puerta como la ventana del primer piso
+				 tienen marcos de inspiración arabesca.
+`,
+            en: `Town Hall <br> <br>
+			     An unpretentious building; what stands out is the central sgraffito with the town's coat of arms. Very simple, it includes the town's name and the Catalan flag, shown here with three stripes.<br>
+				 Amer is one of the few towns without an official coat of arms; we believe its past as church property has something to do with it. <br>
+				 While the windows have flat lintels, both the door and the first-floor window
+				 have Arabesque-inspired frames.
+`,
+            fr: `Mairie <br> <br>
+			     Bâtiment sans prétention ; ce qui ressort, c'est le sgraffite central avec l'écusson du village. Très simple, il comporte le nom du village et le drapeau catalan, représenté ici avec trois bandes.<br>
+				 Amer est l'un des rares villages à ne pas avoir d'armoiries officielles ; nous pensons que son passé de propriété ecclésiastique y est pour quelque chose. <br>
+				 Si les fenêtres ont des linteaux droits, la porte comme la fenêtre du premier étage
+				 ont des encadrements d'inspiration arabesque.
+`,
         },
     },
 	{
@@ -492,27 +567,23 @@ const PUNTS_INTERES = [
         direccio: 'Carrer Narcís Junquera 5',
         estil: {
             ca: 'Arquitectura Popular',
-            es: 'Noucentismo',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Arquitectura popular',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Can Canesteve <br><br>
 			     Edifici de tres pisos sense pretensions. <br>Fixeu-vos com al 1885 encara cuejava l'ús de "llindes" amb el nom del propietari i l'any inscrits.
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Canesteve <br><br>
+			     Edificio de tres pisos sin pretensiones. <br>Fijaos en cómo en 1885 todavía coleaba la costumbre de los "dinteles" con el nombre del propietario y el año inscritos.
+`,
+            en: `Can Canesteve <br><br>
+			     An unpretentious three-storey building. <br>Notice how, as late as 1885, the custom of carved "lintels" bearing the owner's name and the year was still hanging on.
+`,
+            fr: `Can Canesteve <br><br>
+			     Bâtiment de trois étages sans prétention. <br>Remarquez comme, en 1885, la coutume des « linteaux » portant le nom du propriétaire et l'année gravés perdurait encore.
+`,
         },
     },
 	
@@ -531,15 +602,15 @@ const PUNTS_INTERES = [
             ca: 'La Torre',
             es: 'La Torre',
             en: 'La Torre',
-            fr: '[FR-TODO]',
+            fr: 'La Torre',
         },
         any: 1925,
         direccio: 'Carrer de la Barroca 1',
         estil: {
             ca: 'Modernisme',
             es: 'Modernismo',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            en: 'Catalan Modernisme',
+            fr: 'Modernisme catalan',
         },
         descripcio: {
             ca: `La Torre  <br>
@@ -547,19 +618,21 @@ const PUNTS_INTERES = [
 			     Ni Amer vam escapar de la primeríssima moda de les cases d'estiueig! Aquesta formada per diferents cossos i terrasses, dels quals el més destacat, i que ha donat nom a la casa, 
 				 és una torratxa mirador, de planta quadrada, circumdada per un balcó i amb coronament piramidal.
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `La Torre  <br>
+
+			     ¡Ni en Amer nos escapamos de la primerísima moda de las casas de veraneo! Esta está formada por distintos cuerpos y terrazas, de los cuales el más destacado, y el que ha dado nombre a la casa,
+				 es una torrecilla mirador de planta cuadrada, rodeada por un balcón y con remate piramidal.
+`,
+            en: `La Torre (The Tower)  <br>
+			
+			     Not even Amer escaped the very first fashion for summer houses! This one is made up of several volumes and terraces, the most striking of which, and the one that gave the house its name, 
+				 is a small lookout tower, square in plan, surrounded by a balcony and topped with a pyramid-shaped roof.
+`,
+            fr: `La Torre (La Tour)  <br>
+
+			     Même Amer n'a pas échappé à la toute première mode des maisons de villégiature ! Celle-ci est composée de plusieurs volumes et terrasses, dont le plus remarquable, qui a donné son nom à la maison,
+				 est une petite tour belvédère de plan carré, entourée d'un balcon et coiffée d'un toit pyramidal.
+`,
         },
     },
 	
@@ -573,15 +646,15 @@ const PUNTS_INTERES = [
             ca: 'Can Pujades',
             es: 'Can Pujades',
             en: 'Can Pujades',
-            fr: '[FR-TODO]',
+            fr: 'Can Pujades',
         },
         any: 'Anys 20',
         direccio: 'Carrer de la Barroca 5',
         estil: {
             ca: 'Modernisme',
             es: 'Modernismo',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            en: 'Catalan Modernisme',
+            fr: 'Modernisme catalan',
         },
         descripcio: {
             ca: `Can Pujades <br>
@@ -590,19 +663,24 @@ const PUNTS_INTERES = [
 				 les finestres estan decorades com si d'un castell es tractés, a les llindes de cada una relleus de caire vegetal. <br>
 				 Fins i tot estan decorades les mènsules que sostenen la cornisa de la barana del balco!
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Pujades <br>
+
+			     Pequeña casa de veraneo con todos los detalles posibles: fachada coronada con una barandilla de tres tramos,
+				 ventanas decoradas como si se tratara de un castillo y, en los dinteles de cada una, relieves de tipo vegetal. <br>
+				 ¡Incluso están decoradas las ménsulas que sostienen la cornisa de la barandilla del balcón!
+`,
+            en: `Can Pujades <br>
+			
+			     A small summer house with every possible detail: a façade crowned by a three-section balustrade,
+				 windows decorated as if it were a castle, and plant-motif reliefs on each of their lintels. <br>
+				 Even the corbels supporting the cornice of the balcony railing are decorated!
+`,
+            fr: `Can Pujades <br>
+
+			     Petite maison de villégiature avec tous les détails possibles : une façade couronnée d'une balustrade en trois sections,
+				 des fenêtres décorées comme s'il s'agissait d'un château et, sur chacun de leurs linteaux, des reliefs végétaux. <br>
+				 Même les consoles qui soutiennent la corniche de la rambarde du balcon sont décorées !
+`,
         },
     },
 	
@@ -621,17 +699,17 @@ const PUNTS_INTERES = [
         imatge: 'imatges/punts-interes/pi-012.jpg',
         nom: {
             ca: 'Absis Monestir',
-            es: 'Abis del Monasterio',
-            en: 'Monastery Absis',
-            fr: '[FR-TODO]',
+            es: 'Ábside del Monasterio',
+            en: 'Monastery Apse',
+            fr: 'Abside du monastère',
         },
         any: "S.XII",
         direccio: 'Carrer Jacint Verdaguer',
         estil: {
             ca: 'Romànic',
-            es: 'Romanico',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Románico',
+            en: 'Romanesque',
+            fr: 'Roman',
         },
         descripcio: {
             ca: `Absis del Monestir  <br>
@@ -640,19 +718,24 @@ const PUNTS_INTERES = [
 				 Fixeu-vos en les petites finestres quasi sense decoració, 	únicament disposen just a sota la teulada d'aquestes petits arcs de pedres, en l'anomenada decoració llombarda, molt típica del romànic català primerenc. <br>
 				 A la construcció inicial es van fer tres absis, essent el quart un afegit posterior. <br> Sabríeu diferenciar pel tipus i color de la pedra quin és?
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Ábside del Monasterio  <br>
+
+			     Es la parte que conserva de forma más íntegra el aspecto original del templo románico. <br>
+				 Fijaos en las pequeñas ventanas casi sin decoración; únicamente tienen, justo debajo del tejado, estos pequeños arcos de piedra, la llamada decoración lombarda, muy típica del románico catalán temprano. <br>
+				 En la construcción inicial se hicieron tres ábsides; el cuarto es un añadido posterior. <br> ¿Sabríais distinguir cuál es por el tipo y el color de la piedra?
+`,
+            en: `Apse of the Monastery  <br>
+			
+			     This is the part that most fully preserves the original appearance of the Romanesque church. <br>
+				 Notice the small, almost undecorated windows; the only ornament is the row of small stone arches just below the roof, the so-called Lombard band decoration, very typical of early Catalan Romanesque. <br>
+				 The original building had three apses, the fourth being a later addition. <br> Could you tell which one it is from the type and colour of the stone?
+`,
+            fr: `Abside du monastère  <br>
+
+			     C'est la partie qui conserve le plus fidèlement l'aspect d'origine de l'église romane. <br>
+				 Observez les petites fenêtres presque sans décor ; seule une rangée de petits arcs de pierre court juste sous le toit : c'est le décor dit « lombard », très typique du premier art roman catalan. <br>
+				 La construction initiale comptait trois absides, la quatrième étant un ajout postérieur. <br> Sauriez-vous dire laquelle, d'après le type et la couleur de la pierre ?
+`,
         },
     },
 	
@@ -667,15 +750,15 @@ const PUNTS_INTERES = [
             ca: 'Can Món',
             es: 'Can Món',
             en: 'Can Món',
-            fr: '[FR-TODO]',
+            fr: 'Can Món',
         },
         any: "S.XVI-XIX",
         direccio: 'Carrer Narcís Junquera / Plaça del Monestir',
         estil: {
             ca: 'Renaixentista',
-            es: 'Romanico',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Renacentista',
+            en: 'Renaissance',
+            fr: 'Renaissance',
         },
         descripcio: {
             ca: `Can Món <br>
@@ -690,19 +773,40 @@ const PUNTS_INTERES = [
 				 
 			     
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Món <br>
+
+				 Cualquier guía os hablaría de un edificio ecléctico; digamos que es la definición exacta de urbanismo de aprovechamiento. <br>
+				 Es un edificio formado por dos cuerpos en L: el que hace de puente para entrar en la plaza y el que tiene esa portada digna de una iglesia con dos ventanas oblicuas encima.<br>
+				 Este último es lo que queda del antiguo palacio del Abad; la portada es de estilo renacentista, con un frontón triangular puramente ornamental. <br>
+				 Las órdenes monásticas podían hacer voto de pobreza, pero el abad siempre estaba por encima y tenía su palacio, sirvientes, etc. Encaja más pensar en él como un señor feudal que como un monje. <br>
+				 El edificio que hace de puente tiene, por el lado del Monasterio, un balcón con un guardapolvo fantástico. <br>
+				 <br> Quizá hasta ahora no impresiona, pero cruzad la casa por debajo y al otro lado
+				 veréis una fachada de un único estilo que quiere imitar las antiguas casas góticas (es de finales del s. XIX). ¡Imaginaos cómo debe de ser este caserón por dentro!
+
+`,
+            en: `Can Món <br>
+				
+				 Any guide would call it an eclectic building; let's say it is the very definition of making the most of whatever was already there. <br>
+				 It is made up of two wings in an L shape: the one that forms a bridge into the square, and the one with a doorway worthy of a church and two oblique windows above it.<br>
+				 The latter is what remains of the old Abbot's palace: the doorway is Renaissance in style, with a purely ornamental triangular pediment. <br>
+				 Monastic orders could take a vow of poverty, but the abbot was always above all that and had his own palace, servants and so on. It makes more sense to think of him as a feudal lord than as a monk. <br>
+				 On the Monastery side, the bridge building has a balcony with a fantastic hood moulding. <br> 
+				 <br> Maybe it isn't impressive so far, but walk through under the house and on the other side 
+				 you'll see a façade in a single style that sets out to imitate old Gothic houses (it dates from the late 19th century). Just imagine what this great mansion must be like inside! 
+				 
+			     
+`,
+            fr: `Can Món <br>
+
+				 N'importe quel guide vous parlerait d'un bâtiment éclectique ; disons que c'est la définition même de l'urbanisme de récupération. <br>
+				 C'est un bâtiment formé de deux corps en L : celui qui forme un pont pour entrer sur la place, et celui qui présente ce portail digne d'une église, surmonté de deux fenêtres obliques.<br>
+				 Ce dernier est ce qui reste de l'ancien palais de l'Abbé : le portail est de style Renaissance, avec un fronton triangulaire purement décoratif. <br>
+				 Les ordres monastiques pouvaient faire vœu de pauvreté, mais l'abbé était toujours au-dessus de tout cela et avait son palais, ses serviteurs, etc. Il est plus juste de le voir comme un seigneur féodal que comme un moine. <br>
+				 Côté monastère, le bâtiment-pont possède un balcon avec un larmier magnifique. <br>
+				 <br> Ce n'est peut-être pas encore impressionnant, mais passez sous la maison et, de l'autre côté,
+				 vous verrez une façade d'un style unique qui cherche à imiter les anciennes maisons gothiques (elle date de la fin du XIXe siècle). Imaginez à quoi doit ressembler cette grande demeure à l'intérieur !
+
+`,
         },
     },
 
@@ -716,15 +820,15 @@ const PUNTS_INTERES = [
             ca: 'Can Boles',
             es: 'Can Boles',
             en: 'Can Boles',
-            fr: '[FR-TODO]',
+            fr: 'Can Boles',
         },
         any: "S.XVI",
         direccio: 'Plaça del Monestir 5',
         estil: {
             ca: 'Arquitectura popular',
-            es: 'Romanico',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Arquitectura popular',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Can Boles <br>
@@ -733,19 +837,24 @@ const PUNTS_INTERES = [
 				 podríem dir que entre aquest edifici i l'església hauríem trobat el claustre del monestir. <br>
 				 És un gran casal sense gaires pretensions arquitectòniques però sí que destaca el vell escut heràldic i les pedres tan treballades que envolten les finestres.
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Boles <br>
+
+			     Edificio del siglo XVI, con modificaciones posteriores (hay dinteles con fechas del siglo XVIII);
+				 podríamos decir que entre este edificio y la iglesia habríamos encontrado el claustro del monasterio. <br>
+				 Es un gran caserón sin muchas pretensiones arquitectónicas, pero sí destacan el viejo escudo heráldico y las piedras tan trabajadas que enmarcan las ventanas.
+`,
+            en: `Can Boles <br>
+			
+			     A 16th-century building with later alterations (some lintels bear 18th-century dates); 
+				 the monastery cloister would probably have stood between this building and the church. <br>
+				 It is a large manor house without much architectural pretension, but the old heraldic shield and the finely worked stones framing the windows do stand out.
+`,
+            fr: `Can Boles <br>
+
+			     Bâtiment du XVIe siècle, modifié par la suite (certains linteaux portent des dates du XVIIIe siècle) ;
+				 le cloître du monastère se trouvait sans doute entre ce bâtiment et l'église. <br>
+				 C'est une grande demeure sans grandes prétentions architecturales, mais le vieil écusson héraldique et les pierres finement travaillées qui encadrent les fenêtres se remarquent.
+`,
         },
     },
 	
@@ -757,17 +866,17 @@ const PUNTS_INTERES = [
         imatge: 'imatges/punts-interes/pi-015.jpg',
         nom: {
             ca: 'Creu de terme',
-            es: 'Creu de terme',
-            en: 'Creu de terme',
-            fr: '[FR-TODO]',
+            es: 'Cruz de término',
+            en: 'Boundary Cross',
+            fr: 'Croix de terme',
         },
         any: "S.XIX",
         direccio: 'Plaça del Monestir s/n',
         estil: {
             ca: 'Neoromànic',
-            es: 'Neoromanico',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Neorrománico',
+            en: 'Neo-Romanesque',
+            fr: 'Néo-roman',
         },
         descripcio: {
             ca: `Creu de terme <br><br>
@@ -776,19 +885,24 @@ const PUNTS_INTERES = [
 				 L'original està dipositada al Museu Diocesà de Girona, aquí en podeu observar una reproducció força malmesa per les inclemències del temps. 
 				 La creu, si hi poseu imaginació encara ho podreu veure, presenta el Crist crucificat a una cara i la Mare de Déu a l'altra.
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Cruz de término <br><br>
+
+			     Antiguamente la habríamos encontrado a la entrada del término municipal, dando la bienvenida.<br>
+				 El original está depositado en el Museo Diocesano de Girona; aquí podéis ver una reproducción bastante estropeada por las inclemencias del tiempo.
+				 La cruz (si le ponéis imaginación, todavía lo podréis ver) presenta a Cristo crucificado en una cara y a la Virgen en la otra.
+`,
+            en: `Boundary Cross <br><br>
+			
+			     In the past we would have found it at the entrance to the municipality, welcoming travellers.<br>
+				 The original is kept at the Girona Diocesan Museum; here you can see a replica, quite worn by the weather. 
+				 If you use your imagination you can still make it out: the cross shows the crucified Christ on one side and the Virgin Mary on the other.
+`,
+            fr: `Croix de terme <br><br>
+
+			     Autrefois, on l'aurait trouvée à l'entrée de la commune, pour souhaiter la bienvenue aux voyageurs.<br>
+				 L'original est conservé au Musée diocésain de Gérone ; vous pouvez voir ici une reproduction assez abîmée par les intempéries.
+				 La croix (avec un peu d'imagination, vous le verrez encore) représente le Christ crucifié sur une face et la Vierge sur l'autre.
+`,
         },
     },
 	
@@ -802,15 +916,15 @@ const PUNTS_INTERES = [
             ca: 'Can Terme',
             es: 'Can Terme',
             en: 'Can Terme',
-            fr: '[FR-TODO]',
+            fr: 'Can Terme',
         },
         any: "S.XVII",
         direccio: 'Plaça del Monestir 2',
         estil: {
             ca: 'Arquitectura Popular',
-            es: 'Neoromanico',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Arquitectura popular',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Can Terme <br>
@@ -819,19 +933,24 @@ const PUNTS_INTERES = [
 				Era l'antiga sacristia, un edifici molt reformat que conserva alguns elements antics del segle XVII. <br>
 				Si us hi acosteu i l'examineu hauríeu de trobar un escut, una figura geomètrica de pedra i una llinda amb la data de 1662.
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Terme <br>
+
+			    Actualmente acoge el Museo Etnológico de Amer. <br>
+				Era la antigua sacristía, un edificio muy reformado que conserva algunos elementos antiguos del siglo XVII. <br>
+				Si os acercáis y lo examináis, deberíais encontrar un escudo, una figura geométrica de piedra y un dintel con la fecha de 1662.
+`,
+            en: `Can Terme <br>
+			
+			    It currently houses the Amer Ethnological Museum. <br>
+				It was the old sacristy, a heavily renovated building that still keeps some old 17th-century features. <br>
+				If you get close and take a good look, you should find a coat of arms, a geometric stone figure and a lintel dated 1662.
+`,
+            fr: `Can Terme <br>
+
+			    Elle abrite aujourd'hui le Musée ethnologique d'Amer. <br>
+				C'était l'ancienne sacristie, un bâtiment très remanié qui conserve quelques éléments anciens du XVIIe siècle. <br>
+				Si vous vous approchez et l'examinez, vous devriez trouver un écusson, une figure géométrique en pierre et un linteau daté de 1662.
+`,
         },
     },
 	
@@ -845,15 +964,15 @@ const PUNTS_INTERES = [
             ca: 'Monestir',
             es: 'Monasterio',
             en: 'Monastery',
-            fr: '[FR-TODO]',
+            fr: 'Monastère',
         },
         any: "S.IX",
         direccio: 'Plaça del Monestir',
         estil: {
             ca: 'Romànic',
-            es: 'Neoromanico',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Románico',
+            en: 'Romanesque',
+            fr: 'Roman',
         },
         descripcio: {
             ca: `Antic Monestir Santa Maria d'Amer <br>
@@ -865,19 +984,31 @@ const PUNTS_INTERES = [
 				 
 				 
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Antiguo Monasterio de Santa Maria d'Amer <br>
+
+			     Del antiguo monasterio benedictino consagrado en el año 949 queda principalmente la actual iglesia de Santa Maria, que ha sufrido muchas reformas.
+				 Destacamos su forma imponente, las molduras de puertas y ventanas y también el trabajo de hierro de las ventanas.
+				 Si tenéis ocasión, entrad (en horario de misa).<br> Con el crecimiento de la población se tomó la decisión de sustituir los pilares interiores románicos (anchos y robustos)
+				 por cuatro columnitas ornamentadas, para que desde los laterales se pudiera seguir la misa; cuesta creer que aguanten el mismo peso.  Es realmente una decisión insólita que vale la pena observar.
+
+`,
+            en: `Former Monastery of Santa Maria d'Amer <br>
+			
+			     Of the old Benedictine monastery consecrated in 949, what mainly remains is today's church of Santa Maria, which has undergone many alterations. 
+				 We would highlight its imposing shape, the mouldings of the doors and windows, and the ironwork on the windows.
+				 If you get the chance, go inside (during Mass times).<br> As the population grew, the decision was taken to replace the wide, sturdy Romanesque interior pillars 
+				 with four slender ornamented columns, so that Mass could be followed from the side aisles; it's hard to believe they bear the same weight.  It is a truly unusual decision and well worth seeing.
+				 
+				 
+`,
+            fr: `Ancien monastère de Santa Maria d'Amer <br>
+
+			     De l'ancien monastère bénédictin consacré en 949, il reste principalement l'actuelle église de Santa Maria, qui a subi de nombreuses transformations.
+				 Nous soulignons sa forme imposante, les moulures des portes et fenêtres, ainsi que la ferronnerie des fenêtres.
+				 Si vous en avez l'occasion, entrez (aux heures de messe).<br> Avec la croissance de la population, on a décidé de remplacer les piliers romans intérieurs (larges et robustes)
+				 par quatre fines colonnettes ornées, afin que l'on puisse suivre la messe depuis les bas-côtés ; on a du mal à croire qu'elles supportent le même poids.  C'est une décision vraiment insolite qui mérite d'être vue.
+
+`,
         },
     },
 	
@@ -891,15 +1022,15 @@ const PUNTS_INTERES = [
             ca: 'Ca l\'Espígol',
             es: 'Ca l\'Espígol',
             en: 'Ca l\'Espígol',
-            fr: '[FR-TODO]',
+            fr: 'Ca l\'Espígol',
         },
         any: "S.XVIII",
         direccio: 'Plaça del Monestir 17',
         estil: {
             ca: 'Arquitectura popular',
-            es: 'Neoromanico',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Arquitectura popular',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Ca l'Espígol <br>
@@ -909,19 +1040,27 @@ const PUNTS_INTERES = [
 				 La porta ens agrada especialment per la seva forma rodona.<br>
 				 Amb tot, no consta cap inscripció!
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Ca l'Espígol <br>
+
+			     La consideraríamos una masía si no estuviera en el casco urbano. Destaca el enmarcado de piedra de la puerta y de todas las ventanas.
+				 Piedra trabajada, dinteles en todas las ventanas y una coherencia en todo el conjunto.<br>
+				 La puerta nos gusta especialmente por su forma redondeada.<br>
+				 ¡Con todo, no consta ninguna inscripción!
+`,
+            en: `Ca l'Espígol <br>
+			
+			     We would call it a masia (a traditional farmhouse) if it weren't in the town centre. The stone framing of the door and of every window stands out.
+				 Worked stone, lintels on every window, and a consistent look throughout.<br>
+				 We especially like the door for its rounded shape.<br>
+				 Even so, there is no inscription anywhere!
+`,
+            fr: `Ca l'Espígol <br>
+
+			     On la qualifierait de mas (ferme traditionnelle catalane) si elle ne se trouvait pas en plein village. L'encadrement en pierre de la porte et de toutes les fenêtres est remarquable.
+				 De la pierre taillée, des linteaux à toutes les fenêtres et une belle cohérence d'ensemble.<br>
+				 Nous aimons particulièrement la porte pour sa forme arrondie.<br>
+				 Et pourtant, aucune inscription !
+`,
         },
     },
 	
@@ -935,15 +1074,15 @@ const PUNTS_INTERES = [
             ca: 'Can Gasull',
             es: 'Can Gasull',
             en: 'Can Gasull',
-            fr: '[FR-TODO]',
+            fr: 'Can Gasull',
         },
         any: "S.XVII",
         direccio: 'Plaça del Monestir, 3 / Carrer Sant Benet',
         estil: {
             ca: 'Gòtic',
-            es: 'Gotico',
+            es: 'Gótico',
             en: 'Gothic',
-            fr: '[FR-TODO]',
+            fr: 'Gothique',
         },
         descripcio: {
             ca: `Can Gasull <br>
@@ -955,19 +1094,33 @@ const PUNTS_INTERES = [
 				Des del carrer Sant Benet veureu l'altra cara de la casa i encara conserva un finestral ben bonic (costa de trobar un punt amb visió!).
 				
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Gasull <br>
+
+			    Corresponde a uno de los antiguos edificios del Monasterio de Amer, concretamente la enfermería, con fachada a la plaza y a la calle de Sant Benet. Si dais la vuelta veréis una placa del ayuntamiento que indica que los bajos se usaban como caballerizas.
+				Ahora es un caserón que conserva alguna ventana antigua, pero hemos visto fotografías de quien vivió allí y esta casa tenía uno de los ventanales renacentistas más interesantes de la arquitectura civil catalana,
+				con temática vinculada a las epidemias de peste.<br>
+				Lamentablemente, esta ventana y otra de tipo conopial fueron vendidas por el antiguo propietario. <br>
+				Desde la calle de Sant Benet veréis la otra cara de la casa, que todavía conserva un ventanal muy bonito (¡cuesta encontrar un punto con buena vista!).
+
+`,
+            en: `Can Gasull <br>
+			
+			    This was one of the old buildings of the Monastery of Amer, specifically the infirmary, with façades on the square and on Carrer de Sant Benet. If you walk round, you'll see a plaque from the town council indicating that the ground floor was used as stables. 
+				Today it is a large house that keeps a few old windows, but we have seen photographs from people who lived there, and this house had one of the most interesting Renaissance windows in Catalan civil architecture, 
+				with themes linked to plague epidemics.<br>
+				Sadly, this window and another ogee-arched one were sold by the former owner. <br>
+				From Carrer de Sant Benet you'll see the other side of the house, which still keeps a lovely window (it's hard to find a spot with a good view!).
+				
+`,
+            fr: `Can Gasull <br>
+
+			    Il s'agit de l'un des anciens bâtiments du monastère d'Amer, plus précisément de l'infirmerie, avec une façade sur la place et une autre sur la rue de Sant Benet. Si vous en faites le tour, vous verrez une plaque de la mairie indiquant que le rez-de-chaussée servait d'écurie.
+				C'est aujourd'hui une grande maison qui conserve quelques fenêtres anciennes, mais nous avons vu des photographies de ceux qui y ont vécu : cette maison possédait l'une des fenêtres Renaissance les plus intéressantes de l'architecture civile catalane,
+				sur le thème des épidémies de peste.<br>
+				Malheureusement, cette fenêtre et une autre en accolade ont été vendues par l'ancien propriétaire. <br>
+				Depuis la rue de Sant Benet, vous verrez l'autre face de la maison, qui conserve encore une très jolie fenêtre (difficile de trouver un point de vue !).
+
+`,
         },
     },
 
@@ -979,17 +1132,17 @@ const PUNTS_INTERES = [
         imatge: 'imatges/punts-interes/pi-020.jpg',
         nom: {
             ca: 'Placa Remença',
-            es: 'Placa Remença',
-            en: 'Placa Remença',
-            fr: '[FR-TODO]',
+            es: 'Placa de los Remensas',
+            en: 'Remença Plaque',
+            fr: 'Plaque des Remences',
         },
         any: "S.XX",
         direccio: 'Plaça del Monestir s/n',
         estil: {
             ca: 'Neoromànic',
-            es: 'Neoromanico',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Neorrománico',
+            en: 'Neo-Romanesque',
+            fr: 'Néo-roman',
         },
         descripcio: {
             ca: `Placa de l'arbitratge Remença <br><br>
@@ -1002,19 +1155,36 @@ const PUNTS_INTERES = [
 				Si continueu el viatge per la Garrotxa podreu resseguir totes les localitzacions de les Guerres Remences. <br>
 				No oblideu buscar qui va ser Verntallat!
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Placa del arbitraje remensa <br><br>
+				La encontraréis colocada en un lateral de Can Boles.<br>
+				¿Preparados para una parrafada histórica? Amer no fue el centro de grandes acontecimientos, ¡y este tampoco lo es!, pero nos hace ilusión que fuera escenario
+				del momento en que el pueblo llano dijo basta y obligó a los señores feudales a negociar a la baja sus derechos:<br>
+			    Fernando II de Aragón firmó en 1486 la Sentencia Arbitral de Guadalupe, con la que se ponía fin a la segunda guerra remensa.
+				Aquí en Amer, un año antes, se había pactado el fin de las hostilidades: los remensas aceptaban acatar el dictamen del rey.
+				Creemos que se pudo firmar en Amer porque el Abad ya había renunciado a los malos usos. <br>
+				Si continuáis el viaje por la Garrotxa podréis seguir todas las localizaciones de las guerras remensas. <br>
+				¡No olvidéis buscar quién fue Verntallat!
+`,
+            en: `Plaque of the Remença Arbitration <br><br>
+				You'll find it on one side of Can Boles.<br>
+				Ready for a bit of history? Amer was never the centre of great events, and this one isn't either!, but we love that it was the setting 
+				for the moment when ordinary people said enough and forced the feudal lords to negotiate their rights downwards:<br>
+			    In 1486 Ferdinand II of Aragon signed the Sentence of Guadalupe, an arbitration ruling that ended the second Remença War (the Catalan peasants' uprising).
+				Here in Amer, a year earlier, an end to hostilities had been agreed, with the remença peasants accepting that they would abide by the king's ruling.
+				We believe it could be signed in Amer because the Abbot had already given up the "mals usos" (the abusive feudal customs). <br>
+				If you continue your trip through the Garrotxa, you can follow all the locations of the Remença Wars. <br>
+				Don't forget to find out who Verntallat was!
+`,
+            fr: `Plaque de l'arbitrage des Remences <br><br>
+				Vous la trouverez sur un côté de Can Boles.<br>
+				Prêts pour un petit cours d'histoire ? Amer n'a jamais été le centre de grands événements, et celui-ci ne l'est pas non plus !, mais nous sommes ravis qu'il ait servi de décor
+				au moment où les petites gens ont dit « assez » et ont obligé les seigneurs féodaux à revoir leurs droits à la baisse :<br>
+			    En 1486, Ferdinand II d'Aragon signa la Sentence arbitrale de Guadalupe, qui mit fin à la deuxième guerre des Remences (le soulèvement des paysans catalans).
+				Ici même, à Amer, un an plus tôt, on avait convenu de la fin des hostilités, les paysans remences acceptant de se soumettre à la décision du roi.
+				Nous pensons que l'accord a pu être signé à Amer parce que l'Abbé avait déjà renoncé aux « mauvais usages » (les coutumes féodales abusives). <br>
+				Si vous poursuivez votre voyage dans la Garrotxa, vous pourrez suivre tous les lieux des guerres des Remences. <br>
+				N'oubliez pas de chercher qui était Verntallat !
+`,
         },
     },
 	
@@ -1033,15 +1203,15 @@ const PUNTS_INTERES = [
             ca: 'Carrer Girona',
             es: 'Calle Girona',
             en: 'Girona Street',
-            fr: '[FR-TODO]',
+            fr: 'Rue de Girona',
         },
         any: "S.XVII",
         direccio: 'Carrer Girona',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
-            en: 'Arquitectura popular',
-            fr: '[FR-TODO]',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Carrer Girona  <br><br>
@@ -1065,19 +1235,67 @@ const PUNTS_INTERES = [
 				<strong>Alerta:</strong> no només trobareu inscripcions a les portes!		<br><br>
 				<strong>No descuideu la canalla</strong>, per tranquil que sembli és un carrer amb trànsit rodat.
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Calle Girona  <br><br>
+
+			    La calle Girona es una calle larga y estrecha originada en la Edad Media que articula el barrio del
+				Pedreguet hasta llegar a la capilla de la Mare de Déu de la Pietat. <br>
+
+				Es una calle muy interesante
+				que ha conservado su estructura antigua, y muchos de sus edificios mantienen elementos destacables como los dinteles de puertas y ventanas.<br>
+				La mayoría de las casas tenían originalmente una planta baja dedicada al ganado y al pajar, y un primer piso de habitaciones. <br>
+				En los dinteles podemos encontrar el nombre de sus antiguos propietarios y el año en que se hicieron (unas veces la casa y otras la reforma), principalmente entre los siglos XVII y XIX.<br><br>
+
+				La fisonomía particular de la calle, casi sin salidas laterales, se debe a que las casas se fueron construyendo
+				a lo largo de la antigua carretera que llevaba a Girona. Todo el mundo quería estar lo más cerca posible de la plaza y del Monasterio,
+				así que cada casa nueva se hacía pared con pared con la anterior, sin que nadie pensara en dejar una calle en medio. <br><br>
+
+				Os recomendamos un paseo tranquilo tanto por esta calle como por la de l'Abat Vilafreser, justo encima. <br>
+				El juego consiste en ser el primero en encontrar y leer la siguiente inscripción. <br>
+				Pensad que, por pequeña y estrecha que fuera una casa, el orgullo de construirla o reformarla llevaba a pagar a un cantero para dejar constancia.<br>
+				<strong>Atención:</strong> ¡no solo encontraréis inscripciones en las puertas!		<br><br>
+				<strong>No perdáis de vista a los niños</strong>: por tranquila que parezca, es una calle con tráfico rodado.
+`,
+            en: `Carrer Girona  <br><br>
+			
+			    Carrer Girona is a long, narrow street dating back to the Middle Ages that runs through the
+				Pedreguet neighbourhood up to the chapel of Mare de Déu de la Pietat. <br>
+				
+				It is a very interesting street 
+				that has kept its old layout, and many of its buildings preserve notable features such as the lintels of their doors and windows.<br>
+				Most of the houses originally had a ground floor for livestock and hay, and a first floor with the bedrooms. <br>
+				On the lintels you can find the names of their former owners and the year they were made (sometimes of the house itself, sometimes of a renovation), mainly between the 17th and 19th centuries.<br><br>
+				
+				 
+				The street's particular character, with almost no side exits, is because the houses were built one after another 
+				along the old road to Girona. Everyone wanted to be as close as possible to the square and the Monastery,
+				so each new house was built wall-to-wall with the previous one, and nobody thought of leaving a street in between. <br><br>
+				
+				We recommend a leisurely stroll along this street and along Carrer de l'Abat Vilafreser just above it. <br>
+				The game is to be the first to find and read the next inscription. <br>
+				Bear in mind that, however small and narrow a house was, the pride of building or renovating it led people to pay a stonemason to leave a record of it.<br>
+				<strong>Watch out:</strong> you won't only find inscriptions on doors!		<br><br>
+				<strong>Keep an eye on the kids</strong>: however quiet it may seem, cars do use this street.
+`,
+            fr: `Rue de Girona  <br><br>
+
+			    La rue de Girona est une rue longue et étroite, née au Moyen Âge, qui structure le quartier du
+				Pedreguet jusqu'à la chapelle de la Mare de Déu de la Pietat. <br>
+
+				C'est une rue très intéressante
+				qui a conservé son tracé ancien, et nombre de ses bâtiments gardent des éléments remarquables, comme les linteaux des portes et des fenêtres.<br>
+				À l'origine, la plupart des maisons avaient un rez-de-chaussée réservé au bétail et au foin, et un premier étage avec les chambres. <br>
+				Sur les linteaux, on peut lire le nom des anciens propriétaires et l'année de réalisation (parfois de la maison, parfois de sa rénovation), principalement entre le XVIIe et le XIXe siècle.<br><br>
+
+				La physionomie particulière de la rue, presque sans issue latérale, s'explique par le fait que les maisons ont été construites les unes après les autres
+				le long de l'ancienne route de Gérone. Tout le monde voulait être le plus près possible de la place et du monastère,
+				si bien que chaque nouvelle maison était bâtie mur contre mur avec la précédente, sans que personne ne pense à laisser une rue entre les deux. <br><br>
+
+				Nous vous recommandons une promenade tranquille dans cette rue et dans la rue de l'Abat Vilafreser, juste au-dessus. <br>
+				Le jeu consiste à être le premier à trouver et à lire l'inscription suivante. <br>
+				Songez que, aussi petite et étroite que soit une maison, la fierté de l'avoir construite ou rénovée poussait à payer un tailleur de pierre pour en laisser la trace.<br>
+				<strong>Attention :</strong> vous ne trouverez pas d'inscriptions que sur les portes !		<br><br>
+				<strong>Surveillez les enfants</strong> : aussi calme qu'elle paraisse, cette rue est ouverte à la circulation.
+`,
         },
     },
 
@@ -1091,15 +1309,15 @@ const PUNTS_INTERES = [
             ca: 'Can La',
             es: 'Can La',
             en: 'Can La',
-            fr: '[FR-TODO]',
+            fr: 'Can La',
         },
         any: "S.XVII",
         direccio: 'Carrer Girona 8',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
-            en: 'Arquitectura popular',
-            fr: '[FR-TODO]',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Can La  <br><br>
@@ -1109,19 +1327,27 @@ const PUNTS_INTERES = [
 				típica traceria gòtica i un guardapols motllurat recte. <br>
 				Aquí hi movien diners!
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can La  <br><br>
+
+			    Es una de las casas más interesantes de la calle Girona: una masía en un entorno urbano. <br>
+				No hay ningún dintel con el nombre del propietario, pero destaca su portal adovelado y un ventanal digno de un palacio del siglo XVI, con la
+				típica tracería gótica y un guardapolvo moldurado recto. <br>
+				¡Aquí se movía dinero!
+`,
+            en: `Can La  <br><br>
+			
+			    It is one of the most interesting houses on Carrer Girona: a farmhouse in an urban setting. <br>
+				There is no lintel with the owner's name, but its voussoired doorway stands out, as does a window worthy of a 16th-century palace, with the
+				typical Gothic tracery and a straight moulded hood. <br>
+				There was money here!
+`,
+            fr: `Can La  <br><br>
+
+			    C'est l'une des maisons les plus intéressantes de la rue de Girona : un mas en milieu urbain. <br>
+				Aucun linteau ne porte le nom du propriétaire, mais on remarque son portail à claveaux et une fenêtre digne d'un palais du XVIe siècle, avec le
+				réseau gothique typique et un larmier mouluré droit. <br>
+				Ici, il y avait de l'argent !
+`,
         },
     },
 	
@@ -1135,15 +1361,15 @@ const PUNTS_INTERES = [
             ca: 'Can Plana',
             es: 'Can Plana',
             en: 'Can Plana',
-            fr: '[FR-TODO]',
+            fr: 'Can Plana',
         },
         any: "S.XVIII",
         direccio: 'Carrer Girona 14',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
-            en: 'Arquitectura popular',
-            fr: '[FR-TODO]',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Can Plana  <br><br>
@@ -1151,19 +1377,21 @@ const PUNTS_INTERES = [
 			    Edifici reformat modernament però que ha conservat alguns elements antics d'interès, com els muntants amb permòdols del portal o la finestra petita també amb llinda sobre permòdols.
 				Pel que fa a la balconera cal destacar la llinda conopial de tradició gòtica envoltada amb un guardapols motllurat.
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Plana  <br><br>
+
+			    Edificio reformado modernamente pero que ha conservado algunos elementos antiguos de interés, como las jambas con ménsulas del portal o la ventana pequeña, también con dintel sobre ménsulas.
+				En cuanto a la puerta balconera, hay que destacar el dintel conopial de tradición gótica rodeado por un guardapolvo moldurado.
+`,
+            en: `Can Plana  <br><br>
+			
+			    A building renovated in modern times that has kept some interesting old features, such as the doorway jambs with corbels, or the small window whose lintel also rests on corbels.
+				As for the balcony door, the ogee lintel in the Gothic tradition, framed by a moulded hood, is worth a look.
+`,
+            fr: `Can Plana  <br><br>
+
+			    Bâtiment rénové à l'époque moderne mais qui a conservé quelques éléments anciens intéressants, comme les montants du portail sur corbeaux ou la petite fenêtre, dont le linteau repose lui aussi sur des corbeaux.
+				Quant à la porte-fenêtre du balcon, son linteau en accolade de tradition gothique, entouré d'un larmier mouluré, mérite le coup d'œil.
+`,
         },
     },
 	
@@ -1176,16 +1404,16 @@ const PUNTS_INTERES = [
         nom: {
             ca: 'Ermita de la Pietat',
             es: 'Ermita de la Pietat',
-            en: 'Ermita dela Pietat',
-            fr: '[FR-TODO]',
+            en: 'Pietat Hermitage',
+            fr: 'Ermitage de la Pietat',
         },
         any: "S.XVII",
         direccio: 'Carrer Girona s/n (al final)',
         estil: {
             ca: 'Barroc',
             es: 'Barroco',
-            en: 'Barroc',
-            fr: '[FR-TODO]',
+            en: 'Baroque',
+            fr: 'Baroque',
         },
         descripcio: {
             ca: `Ermita Mare de Déu de la Pietat  
@@ -1197,19 +1425,33 @@ const PUNTS_INTERES = [
 				Aquí és on es revestien els bisbes i abats en entrar a la vila, d'aquesta manera es mostraven sempre impol·luts davant el poble encara que haguessin fet un llarg camí.
 
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Ermita de la Mare de Déu de la Pietat
+
+			    Capilla situada en las afueras del pueblo. Fue construida en el siglo XVII, aunque su origen puede ser más antiguo, y reformada en el XIX.
+				Tiene planta rectangular cubierta con bóveda de cañón y rematada con un ábside semicircular. Tiene adosado un cuerpo que hace de sacristía.
+				Delante de la puerta hay un porche por debajo del cual pasa la calle. En el dintel de la puerta figura la fecha de la reforma, 1844.
+
+				Aquí es donde se revestían los obispos y abades al entrar en la villa; de este modo se mostraban siempre impolutos ante el pueblo, aunque hubieran hecho un largo camino.
+
+`,
+            en: `Hermitage of Mare de Déu de la Pietat  
+			
+			    A chapel on the outskirts of the town. It was built in the 17th century, although its origins may be older, and renovated in the 19th. 
+				It has a rectangular floor plan covered by a barrel vault and ends in a semicircular apse. A small building serving as the sacristy is attached to it. 
+				In front of the door there is a porch under which the street passes. The door lintel bears the date of the renovation, 1844.
+				
+				This is where bishops and abbots put on their vestments before entering the town, so that they always appeared spotless before the people, even after a long journey.
+
+`,
+            fr: `Ermitage de la Mare de Déu de la Pietat
+
+			    Chapelle située à la sortie du village. Elle a été construite au XVIIe siècle, même si son origine est peut-être plus ancienne, et remaniée au XIXe.
+				Elle a un plan rectangulaire couvert d'une voûte en berceau et se termine par une abside semi-circulaire. Un petit bâtiment servant de sacristie lui est accolé.
+				Devant la porte se trouve un porche sous lequel passe la rue. Le linteau de la porte porte la date de la rénovation, 1844.
+
+				C'est ici que les évêques et les abbés revêtaient leurs habits en entrant dans la ville : ils apparaissaient ainsi toujours impeccables devant le peuple, même après un long voyage.
+
+`,
         },
     },
 	
@@ -1223,15 +1465,15 @@ const PUNTS_INTERES = [
             ca: 'Can Llepart',
             es: 'Can Llepart',
             en: 'Can Llepart',
-            fr: '[FR-TODO]',
+            fr: 'Can Llepart',
         },
         any: "S.XVIII",
         direccio: 'Plaça de la Pietat 1',
         estil: {
             ca: 'Arquitectura popular',
-            es: 'Neoromanico',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Arquitectura popular',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Can Llepart  <br><br>
@@ -1241,19 +1483,27 @@ const PUNTS_INTERES = [
 			   De la façana de la plaça en destaca el balcó de fusta, protegit per un destacat voladís.
 
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Llepart  <br><br>
+
+			   Edificio de grandes dimensiones construido en el siglo XVIII (1758) y restaurado modernamente.
+			   En la fachada que da a la calle Abat Vilafreser hay un dintel donde se lee la fecha y el nombre de Joseph Clusehs.
+			   De la fachada de la plaza destaca el balcón de madera, protegido por un marcado voladizo.
+
+`,
+            en: `Can Llepart  <br><br>
+			
+			   A large building constructed in the 18th century (1758) and restored in modern times.
+			   On the façade facing Carrer Abat Vilafreser there is a lintel bearing the date and the name Joseph Clusehs. 
+			   On the façade facing the square, the wooden balcony stands out, sheltered by a prominent overhang.
+
+`,
+            fr: `Can Llepart  <br><br>
+
+			   Grand bâtiment construit au XVIIIe siècle (1758) et restauré à l'époque moderne.
+			   Sur la façade donnant sur la rue Abat Vilafreser, un linteau porte la date et le nom de Joseph Clusehs.
+			   Sur la façade de la place, on remarque le balcon en bois, protégé par un large avant-toit.
+
+`,
         },
     },
 	
@@ -1273,9 +1523,9 @@ const PUNTS_INTERES = [
         direccio: 'Carrer Girona 31',
         estil: {
             ca: 'Arquitectura popular',
-            es: 'Neoromanico',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Arquitectura popular',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Can Cantí <br><br>
@@ -1286,19 +1536,30 @@ const PUNTS_INTERES = [
 			   Compareu-la amb la de la finestra superior molt més estreta.
 
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Cantí <br><br>
+
+			   Ejemplo de dintel con la inscripción más sencilla: 1743.<br>
+			   Podría ser el año de construcción o, probablemente, de reforma de la casa.
+			   Pronto hará 200 años que se hizo esta piedra trabajada y pulida para aguantar el peso de la casa y permitir una puerta más que decente. <br>
+			   Comparadla con la de la ventana superior, mucho más estrecha.
+
+`,
+            en: `Can Cantí <br><br>
+			
+			   An example of a lintel with the simplest possible inscription: 1743.<br>
+			   It could be the year the house was built or, more likely, renovated.
+			   It will soon be 200 years since this stone was carved and polished to bear the weight of the house and allow for a more than decent door. <br>
+			   Compare it with the much narrower one on the window above.
+
+`,
+            fr: `Can Cantí <br><br>
+
+			   Exemple de linteau avec l'inscription la plus simple qui soit : 1743.<br>
+			   Il pourrait s'agir de l'année de construction ou, plus probablement, de rénovation de la maison.
+			   Cela fera bientôt 200 ans que cette pierre a été taillée et polie pour supporter le poids de la maison et permettre une porte plus que convenable. <br>
+			   Comparez-la avec celle de la fenêtre au-dessus, beaucoup plus étroite.
+
+`,
         },
     },
 	
@@ -1318,9 +1579,9 @@ const PUNTS_INTERES = [
         direccio: 'Carrer Girona 46',
         estil: {
             ca: 'Arquitectura popular',
-            es: 'Neoromanico',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Arquitectura popular',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Can Joanet Zai <br><br>
@@ -1330,19 +1591,27 @@ const PUNTS_INTERES = [
 			   No se'ns acut millor reclam per als propers clients!
 
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Joanet Zai <br><br>
+
+			   El dintel más decorado que veréis hoy; fijaos en que las piedras que enmarcan la puerta están trabajadas para simular un marco. <br>
+			   La sierra que rodea el año y el nombre del constructor, el martillo y la escuadra nos indican que quien lo hizo era maestro de obras. <br>
+			   ¡No se nos ocurre mejor reclamo para los próximos clientes!
+
+`,
+            en: `Can Joanet Zai <br><br>
+			
+			   The most decorated lintel you'll see today; notice how the stones around the doorway are carved to look like a frame. <br>
+			   The saw surrounding the year and the builder's name, together with the hammer and the set square, tell us that whoever made it was a master builder. <br>
+			   We can't think of a better advert for future clients!
+
+`,
+            fr: `Can Joanet Zai <br><br>
+
+			   Le linteau le plus décoré que vous verrez aujourd'hui ; remarquez que les pierres qui encadrent la porte sont taillées pour imiter un cadre. <br>
+			   La scie qui entoure l'année et le nom du constructeur, le marteau et l'équerre nous indiquent que son auteur était maître maçon. <br>
+			   Nous ne voyons pas de meilleure publicité pour ses futurs clients !
+
+`,
         },
     },
 	
@@ -1362,9 +1631,9 @@ const PUNTS_INTERES = [
         direccio: 'Carrer Girona 64',
         estil: {
             ca: 'Arquitectura popular',
-            es: 'Neoromanico',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Arquitectura popular',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Carrer Girona 64 <br><br>
@@ -1373,19 +1642,24 @@ const PUNTS_INTERES = [
 			   Les de les finestres immediatament superiors també ho són i malgrat estar a la intempèrie ni es veuen bufades ni han començat a doblegar-se.<br>
 			   Ens agradaria saber de quina fusta es tracta i us seguim recomanant que per casa vostra en poseu una de pedra (les de les altres dues finestres sí que les han hagut de canviar).
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Calle Girona 64 <br><br>
+
+			   ¿Recordáis lo mala idea que es hacer un dintel de madera? <br> Pues este de madera nos lleva la contraria desde mil setecientos... ¿cincuenta y dos? <br>
+			   Los de las ventanas inmediatamente superiores también lo son y, a pesar de estar a la intemperie, ni se ven hinchados ni han empezado a doblarse.<br>
+			   Nos gustaría saber de qué madera se trata, y os seguimos recomendando que en vuestra casa pongáis uno de piedra (los de las otras dos ventanas sí que los han tenido que cambiar).
+`,
+            en: `Carrer Girona 64 <br><br>
+			
+			   Remember what a bad idea it is to make a wooden lintel? <br> Well, this wooden one has been proving us wrong since seventeen… fifty-two? <br>
+			   The ones on the windows just above are wooden too, and despite being exposed to the elements they are neither swollen nor starting to bend.<br>
+			   We'd love to know what wood it is, but we still recommend you use stone in your own home (the lintels on the other two windows did have to be replaced).
+`,
+            fr: `Rue de Girona 64 <br><br>
+
+			   Vous vous souvenez à quel point c'est une mauvaise idée de faire un linteau en bois ? <br> Eh bien, celui-ci nous donne tort depuis mille sept cent… cinquante-deux ? <br>
+			   Ceux des fenêtres juste au-dessus sont aussi en bois et, bien qu'exposés aux intempéries, ils ne sont ni gonflés ni en train de se déformer.<br>
+			   Nous aimerions savoir de quel bois il s'agit, mais nous vous conseillons toujours d'en mettre un en pierre chez vous (ceux des deux autres fenêtres, eux, ont bien dû être remplacés).
+`,
         },
     },
 	
@@ -1405,9 +1679,9 @@ const PUNTS_INTERES = [
         direccio: 'Carrer Girona 38',
         estil: {
             ca: 'Arquitectura popular',
-            es: 'Neoromanico',
-            en: 'Newcentury',
-            fr: '[FR-TODO]',
+            es: 'Arquitectura popular',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Can Cisteller de Dalt <br><br>
@@ -1418,19 +1692,30 @@ const PUNTS_INTERES = [
 			   Però el fet que sigui la casa qui es dirigeix a tu ens fascina. <br>
 			   Si les cases poguessin acudir al registre a inscriure's elles mateixes, farien totes una inscripció així.
 `,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Can Cisteller de Dalt <br><br>
+
+			   <strong>MIQUEL CUDINA ME FECIT. ANY 1737.</strong> («Miquel Cudina me hizo. Año 1737.»)<br>
+			   No tenemos palabras para describir cómo nos hace sentir esta inscripción. <br>
+			   No solo consta el año: además aparece, de forma totalmente innecesaria, la palabra «any» (año) antes de la fecha. <br>
+			   Pero que sea la casa quien se dirige a ti nos fascina. <br>
+			   Si las casas pudieran acudir al registro a inscribirse ellas mismas, todas harían una inscripción así.
+`,
+            en: `Can Cisteller de Dalt <br><br>
+			
+			   <strong>MIQUEL CUDINA ME FECIT. ANY 1737.</strong> ("Miquel Cudina made me. Year 1737.")<br>
+			   We have no words to describe how this inscription makes us feel. <br>
+			   Not only is the year recorded, but the word "ANY" (year) is also carved, quite unnecessarily, before the date. <br>
+			   But what fascinates us is that it is the house itself speaking to you. <br>
+			   If houses could go to the registry office and register themselves, they would all carve an inscription like this.
+`,
+            fr: `Can Cisteller de Dalt <br><br>
+
+			   <strong>MIQUEL CUDINA ME FECIT. ANY 1737.</strong> (« Miquel Cudina m'a faite. Année 1737. »)<br>
+			   Nous n'avons pas de mots pour décrire ce que cette inscription nous fait ressentir. <br>
+			   Non seulement l'année y figure, mais le mot « ANY » (année) est gravé, de façon tout à fait superflue, devant la date. <br>
+			   Mais ce qui nous fascine, c'est que ce soit la maison elle-même qui s'adresse à vous. <br>
+			   Si les maisons pouvaient se rendre elles-mêmes au registre pour s'inscrire, elles feraient toutes une inscription comme celle-ci.
+`,
         },
     },
 	
@@ -1456,8 +1741,8 @@ const PUNTS_INTERES = [
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
-            en: 'Arquitectura popular',
-            fr: '[FR-TODO]',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Font Picant   <br> <br>
@@ -1469,19 +1754,33 @@ const PUNTS_INTERES = [
 				Tingueu en compte que des de la sequera no sempre raja aigua, si ho fa	podeu trobar cua!
  
 				`,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Font Picant   <br> <br>
+				La encontraréis saliendo del pueblo en dirección a Olot: veréis un desvío a la izquierda con un pequeño cartel amarillo: Fonter <br>
+
+			    Al fondo del pequeño polígono industrial de Fonter hay un área recreativa con la Font Picant (un manantial de agua con gas natural) como punto central. <br>
+				Hace tiempo que le convendría una inversión en mantenimiento. Veréis que no tiene exactamente el mismo sabor que la comercializada, pero en casa
+				siempre nos ha gustado más esta. Recomendamos llevar botella o garrafa de agua para llenar.<br>
+				Tened en cuenta que desde la sequía no siempre mana agua; ¡si lo hace, podéis encontrar cola!
+
+				`,
+            en: `Font Picant   <br> <br>
+				To find it, leave the town heading towards Olot and look for a turn-off on the left with a small yellow sign: Fonter <br>
+			
+			    At the far end of the small Fonter industrial estate there is a picnic area with the Font Picant (a naturally sparkling spring) as its centrepiece. <br>
+				It has needed some investment in maintenance for a while. You'll find it doesn't taste exactly like the bottled version, but at home 
+				we've always preferred this one. We recommend bringing a bottle to fill up.<br>
+				Bear in mind that since the drought the water doesn't always flow, and when it does	you may find a queue!
+ 
+				`,
+            fr: `Font Picant   <br> <br>
+				Pour la trouver, sortez du village en direction d'Olot : vous verrez un embranchement à gauche avec un petit panneau jaune : Fonter <br>
+
+			    Au fond de la petite zone industrielle de Fonter se trouve une aire de loisirs dont la Font Picant (une source d'eau naturellement gazeuse) est le point central. <br>
+				Un investissement dans l'entretien serait bienvenu depuis un moment. Vous trouverez que son goût n'est pas exactement celui de l'eau commercialisée, mais chez nous
+				nous avons toujours préféré celle-ci. Nous vous conseillons d'apporter une bouteille ou un bidon à remplir.<br>
+				Sachez que depuis la sécheresse l'eau ne coule pas toujours ; et quand elle coule, il peut y avoir la queue !
+
+				`,
         },
     },
 		{
@@ -1501,35 +1800,58 @@ const PUNTS_INTERES = [
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
-            en: 'Arquitectura popular',
-            fr: '[FR-TODO]',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Font de la Teula.    <br> <br>
-			    La trobareu en una corba a meitat del camí a Sant Martí Sacalm <br>
+			    La trobareu en una corba a meitat del camí a Sant Martí Sacalm <br><br>
 			    Gairebé tothom s'atura en aquest lloc tan bonic, <br>
 				a beure i reposar un xic. <br>
 				Si ningú no hi deixés merda, <br>
 				l'aigua seria més pura  <br>
 				i l'herba força més verda. <br>
 				L'ajuntament no es fa responsable de la potabilitat de la mateixa, però la trobem molt bona. <br>
-				Si heu arribat fins aquí acabeu el camí fins a Sant Martí Sacalm, just sota el Far. <br>
+				<br>Si heu arribat fins aquí acabeu el camí fins a Sant Martí Sacalm, just sota el Far. <br>
 				La composició de masies de pedra soltes fa rememorar el passat medieval.
  
 				`,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Font de la Teula.    <br> <br>
+			    Encontraréis la fuente en una curva a mitad del camino a Sant Martí Sacalm <br><br>
+			    Gairebé tothom s'atura en aquest lloc tan bonic, (Casi todo el mundo se para en este lugar tan bonito) <br>
+				a beure i reposar un xic. (a beber y descansar un poquito) <br>
+				Si ningú no hi deixés merda, (Si nadie dejara mierda) <br>
+				l'aigua seria més pura  (el agua sería más pura) <br>
+				i l'herba força més verda. (y la hierba bastante más verde) <br>
+				El ayuntamiento no se hace responsable de la potabilidad del agua, pero a nosotros nos parece muy buena. <br>
+				<br>Si habéis llegado hasta aquí, acabad el camino hasta Sant Martí Sacalm, justo debajo de El Far. <br>
+				El conjunto de masías de piedra dispersas hace rememorar el pasado medieval.
+
+				`,
+            en: `Font de la Teula.    <br> <br>
+			    You'll the fountain on a bend halfway along the road to Sant Martí Sacalm <br>
+			    Gairebé tothom s'atura en aquest lloc tan bonic, (Almost everyone stops at this lovely spot) <br><br>
+				a beure i reposar un xic. (to drink and rest a little bit) <br>
+				Si ningú no hi deixés merda, (If nobody left behind their muck) <br>
+				l'aigua seria més pura  (the water would be purer) <br>
+				i l'herba força més verda. (and the grass a lot more greener) <br>
+				The town council takes no responsibility for whether the water is drinkable, but we find it very good. <br>
+				<br>If you've made it this far, carry on to Sant Martí Sacalm, just below El Far. <br>
+				Its cluster of scattered stone farmhouses brings the medieval past to mind.
+ 
+				`,
+            fr: `Font de la Teula.    <br> <br>
+			    Vous la trouverez dans un virage, à mi-chemin sur la route de Sant Martí Sacalm <br>
+			    Gairebé tothom s'atura en aquest lloc tan bonic, (Presque tout le monde s'arrête en ce si joli lieu) <br><br>
+				a beure i reposar un xic. (pour boire et se reposer un peu) <br>
+				Si ningú no hi deixés merda, (Si personne n'y laissait de saletés) <br>
+				l'aigua seria més pura  (l'eau serait plus pure) <br>
+				i l'herba força més verda. (et l'herbe bien plus verte) <br>
+				La mairie décline toute responsabilité quant à la potabilité de l'eau, mais nous la trouvons très bonne. <br>
+				<br>Si vous êtes arrivés jusqu'ici, poussez jusqu'à Sant Martí Sacalm, juste sous El Far. <br>
+				Son ensemble de mas en pierre dispersés évoque le passé médiéval.
+
+				`,
         },
     },
 	
@@ -1550,8 +1872,8 @@ const PUNTS_INTERES = [
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
-            en: 'Arquitectura popular',
-            fr: '[FR-TODO]',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Ermita de Santa Brígida  <br> <br>
@@ -1562,19 +1884,30 @@ const PUNTS_INTERES = [
 				Als nens els podeu entretenir a fer-los buscar petxines fossilitzades pel camí.
  
 				`,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Ermita de Santa Brígida  <br> <br>
+
+			    Dependiente del Monasterio de Santa Maria d'Amer, fue reformada en el s. XVII y restaurada en 2001 por el grupo excursionista de Amer. <br>
+				Edificio sencillo de una sola nave con bóveda de cañón. La gente de Amer la venera mucho y las vistas al valle son muy buenas. <br>
+				¡Llegar hasta allí es media excursión en la que haréis piernas! <br>
+				A los niños los podéis entretener haciéndoles buscar conchas fosilizadas por el camino.
+
+				`,
+            en: `Hermitage of Santa Brígida  <br> <br>
+			
+			    Once dependent on the Monastery of Santa Maria d'Amer, it was renovated in the 17th century and restored in 2001 by Amer's hiking club. <br>
+				A simple single-nave building with a barrel vault. It is much loved by the people of Amer, and the views over the valley are superb. <br>
+				Getting there is a proper little hike that will work your legs! <br>
+				You can keep the kids entertained by getting them to look for fossilised shells along the path.
+ 
+				`,
+            fr: `Ermitage de Santa Brígida  <br> <br>
+
+			    Dépendant du monastère de Santa Maria d'Amer, il a été remanié au XVIIe siècle et restauré en 2001 par le club de randonnée d'Amer. <br>
+				Édifice simple à nef unique voûtée en berceau. Les habitants d'Amer y sont très attachés, et la vue sur la vallée est superbe. <br>
+				Y monter est une vraie petite randonnée qui vous fera travailler les jambes ! <br>
+				Vous pouvez occuper les enfants en leur faisant chercher des coquillages fossilisés le long du chemin.
+
+				`,
         },
     },
 	
@@ -1595,8 +1928,8 @@ const PUNTS_INTERES = [
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
-            en: 'Arquitectura popular',
-            fr: '[FR-TODO]',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Ermita de Sant Climent d'Amer <br> <br>
@@ -1612,19 +1945,45 @@ const PUNTS_INTERES = [
 				Recomanem acostar-s'hi, principalment, per l'entorn agrari.
  
 				`,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Ermita de Sant Climent d'Amer <br> <br>
+
+			    Antiguamente dedicada a San Clemente y San Julián, documentada desde 1066, fue completamente reformada en 1877.<br>
+				Era el punto neurálgico de todas las masías de esta zona. <br>
+				Ahora os puede parecer desierto, pero había suficientes vecinos en la zona como para levantar su propia ermita y evitar ir y volver de Amer para ir a misa. <br>
+				Pensad que las masías estaban habitadas por la familia (padres, hijos y nietos), en ocasiones también por la familia extensa (hermanos y tíos) y, sobre todo, por todos los trabajadores (braceros y jornaleros)
+				que trabajaban la tierra, cuidaban del ganado y vivían allí con la familia. <br>
+				Hasta 1941 todos los bautizos, bodas y defunciones se celebraban aquí.
+
+				Arquitectónicamente destaca la puerta de estilo neoclásico con las dos columnas adosadas a ambos lados.<br>
+				Recomendamos acercarse, principalmente, por el entorno agrario.
+
+				`,
+            en: `Hermitage of Sant Climent d'Amer <br> <br>
+			
+			    Formerly dedicated to Saint Clement and Saint Julian, it is documented from 1066 and was completely rebuilt in 1877.<br>
+				It was the focal point for all the farmhouses in this area. <br>
+				It may look deserted now, but there were once enough neighbours around here to build their own hermitage and avoid travelling to and from Amer to go to Mass. <br>
+				Bear in mind that the farmhouses were home to the family (parents, children and grandchildren), sometimes the extended family too (siblings, aunts and uncles), and above all the workers (farmhands and day labourers) 
+				who worked the land, looked after the livestock and lived there with the family. <br>
+				Until 1941, all baptisms, weddings and funerals were held here.
+				
+				Architecturally, the neoclassical-style doorway with a column set on either side is noteworthy.<br>
+				We recommend going there mainly for the farming landscape.
+ 
+				`,
+            fr: `Ermitage de Sant Climent d'Amer <br> <br>
+
+			    Autrefois dédié à saint Clément et saint Julien, attesté dès 1066, il a été entièrement reconstruit en 1877.<br>
+				C'était le point névralgique de tous les mas de cette zone. <br>
+				L'endroit peut vous sembler désert aujourd'hui, mais il y avait autrefois assez de voisins pour construire leur propre ermitage et éviter l'aller-retour à Amer pour aller à la messe. <br>
+				Songez que les mas étaient habités par la famille (parents, enfants et petits-enfants), parfois aussi par la famille élargie (frères, sœurs, oncles et tantes) et surtout par tous les travailleurs (valets de ferme et journaliers)
+				qui travaillaient la terre, s'occupaient du bétail et vivaient là avec la famille. <br>
+				Jusqu'en 1941, tous les baptêmes, mariages et funérailles avaient lieu ici.
+
+				Sur le plan architectural, on remarque la porte de style néoclassique encadrée de deux colonnes engagées.<br>
+				Nous vous conseillons d'y aller surtout pour le paysage agricole.
+
+				`,
         },
     },
 	
@@ -1638,15 +1997,15 @@ const PUNTS_INTERES = [
             ca: 'Estació del Carrilet',
             es: 'Estación del Carrilet',
             en: 'Carrilet Station',
-            fr: 'Stattion du Carrilet',
+            fr: 'Gare du Carrilet',
         },
         any: "1895",
         direccio: ' Pujada de estació 15',
         estil: {
             ca: 'Arquitectura popular',
             es: 'Arquitectura popular',
-            en: 'Arquitectura popular',
-            fr: '[FR-TODO]',
+            en: 'Vernacular architecture',
+            fr: 'Architecture vernaculaire',
         },
         descripcio: {
             ca: `Estació d'Amer del Carrilet <br> <br>
@@ -1658,19 +2017,33 @@ const PUNTS_INTERES = [
 				L'edifici és actualment dependències municipals.
  
 				`,
-            es: `La Fuente del Rec es una de las fuentes públicas más antiguas de Montbrull en uso continuo.
-                 Construida en 1723 por sufragio popular, presenta un frontón triangular con la fecha grabada
-                 y cuatro surtidores de hierro forjado en forma de cabeza de león. En el corazón del Barrio
-                 del Molino, durante siglos fue el punto de abastecimiento de agua de la zona norte del
-                 pueblo. La leyenda local dice que beber su agua el día de Sant Joan garantiza un año de
-                 buena salud.`,
-            en: `The Rec Fountain is one of Montbrull's oldest public fountains in continuous use. Built in
-                 1723 through public subscription, it features a triangular pediment with the date inscribed
-                 and four wrought-iron lion's-head spouts. At the heart of the Mill Quarter, it served for
-                 centuries as the water supply point for the northern part of the village. Local legend holds
-                 that drinking its water on St John's Day (24 June) guarantees a healthy year ahead.`,
-            fr: `[FR-TODO]
-                 <!-- Traducció pendent al francès -->`,
+            es: `Estación del Carrilet de Amer <br> <br>
+
+			    Muy bien restaurada, era la parada del tren que unía Olot y Sant Feliu de Guíxols, un pequeño tren de vía única conocido popularmente como el Carrilet. <br>
+				¿Os imagináis una locomotora de vapor anunciando su llegada al pueblo?<br>
+				Fue una revolución en las comunicaciones de la comarca; su cierre todavía lo lamentan quienes lo vivieron. <br>
+				El Carrilet funcionó de 1895 a 1966; hoy es una vía verde muy utilizada por los ciclistas.
+				El edificio alberga actualmente dependencias municipales.
+
+				`,
+            en: `Amer Carrilet Station <br> <br>
+			
+			    Beautifully restored, this was the stop on the railway linking Olot and Sant Feliu de Guíxols, a small single-track train popularly known as the Carrilet. <br>
+				Can you imagine a steam locomotive announcing its arrival in town?<br>
+				It was a revolution in transport for the region, and its closure is still mourned by those who lived through it. <br>
+				The Carrilet ran from 1895 to 1966; today its route is a greenway very popular with cyclists.
+				The building currently houses municipal offices.
+ 
+				`,
+            fr: `Gare du Carrilet d'Amer <br> <br>
+
+			    Très bien restaurée, c'était l'arrêt du train qui reliait Olot à Sant Feliu de Guíxols, un petit train à voie unique connu sous le nom populaire de Carrilet. <br>
+				Imaginez-vous une locomotive à vapeur annonçant son arrivée au village ?<br>
+				Ce fut une révolution pour les transports de la région, et sa fermeture est encore regrettée par ceux qui l'ont connue. <br>
+				Le Carrilet a circulé de 1895 à 1966 ; son tracé est aujourd'hui une voie verte très fréquentée par les cyclistes.
+				Le bâtiment abrite actuellement des services municipaux.
+
+				`,
         },
     },
 
