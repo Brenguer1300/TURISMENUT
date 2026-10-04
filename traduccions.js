@@ -130,7 +130,7 @@ const CONTINGUT_SECCIONS = {
 			 <p>Aquí trobareu la història de la gent menuda, que no tenia un escrivà que li guardés registre, acompanyeu-nos a trobar-la.</p>
 			 <br><br>
 			 <p> Nota bibliogràfica: <br>
-			 La informació que trobareu s'ha extret d'invarquit (Cercador de Patrimoni de la Generalitat), la web de Catalunya Medieval, la fantàstica guia de pobles de Catalunya i una mica de la Viquipèdia.
+			 La informació que trobareu s'ha extret d'invarquit (Cercador de Patrimoni de la Generalitat), la web de Catalunya Medieval, la fantàstica guia de Pobles de Catalunya i una mica de la Viquipèdia.
 			Tot sacsejat i barrejat al nostre gust de forma que cap acadèmic ho validaria. <br>
 			No us prengueu res al peu de la lletra: quedeu-vos amb la "història" i gaudiu de la visita.</p>
 			 `,
@@ -146,7 +146,7 @@ const CONTINGUT_SECCIONS = {
 			 <p>Aquí encontraréis la historia de la gente humilde, que no tenía un escribano que dejara constancia de ella. Acompañadnos a descubrirla.</p>
 			 <br><br>
 			 <p> Nota bibliográfica: <br>
-			 La información que encontraréis se ha extraído de invarquit (Buscador de Patrimonio de la Generalitat), la web de Catalunya Medieval, la fantástica guía de pueblos de Cataluña y un poco de la Wikipedia.
+			 La información que encontraréis se ha extraído de invarquit (Buscador de Patrimonio de la Generalitat), la web de Catalunya Medieval, la fantástica guía de "Pobles de Catalunya" y un poco de la Wikipedia.
 			Todo agitado y mezclado a nuestro gusto, de forma que ningún académico lo validaría. <br>
 			No os toméis nada al pie de la letra: quedaos con la "historia" y disfrutad de la visita.</p>
 			 `,
@@ -161,7 +161,7 @@ const CONTINGUT_SECCIONS = {
 			 <p>Here you will find the history of humble folk, who had no scribe to keep a record of them. Join us as we go looking for it.</p>
 			 <br><br>
 			 <p> Bibliographical note: <br>
-			 The information you will find here comes from invarquit (the Generalitat's Heritage Search Engine), the Catalunya Medieval website, the fantastic guide to the villages of Catalonia and a little Wikipedia.
+			 The information you will find here comes from invarquit (the Generalitat's Heritage Search Engine), the Catalunya Medieval website, the fantastic guide to the "Pobles de Catalunya" (villages of Catalonia) and a little Wikipedia.
 			All shaken and stirred to our own taste, in a way no academic would ever approve. <br>
 			Don't take anything too literally: hold on to the "story" and enjoy your visit.</p>
 			 `,
@@ -176,7 +176,7 @@ const CONTINGUT_SECCIONS = {
 			 <p>Vous trouverez ici l'histoire des petites gens, qui n'avaient pas de scribe pour en garder la trace. Accompagnez-nous à sa découverte.</p>
 			 <br><br>
 			 <p> Note bibliographique : <br>
-			 Les informations que vous trouverez ici proviennent d'invarquit (le moteur de recherche du patrimoine de la Generalitat), du site Catalunya Medieval, de l'excellent guide des villages de Catalogne et d'un peu de Wikipédia.
+			 Les informations que vous trouverez ici proviennent d'invarquit (le moteur de recherche du patrimoine de la Generalitat), du site Catalunya Medieval, de l'excellent guide des "Pobles de Catalunya" (villages de Catalogne) et d'un peu de Wikipédia.
 			Le tout secoué et mélangé à notre goût, d'une manière qu'aucun universitaire ne validerait. <br>
 			Ne prenez rien au pied de la lettre : retenez l'« histoire » et profitez de la visite.</p>
 			 `,
@@ -522,7 +522,7 @@ const CONTINGUT_SECCIONS = {
 			 
 			 </p> 
 			 <p><strong>Alimentació</strong><br>
-			 A la plaça del poble cada dimecres es fa el mercat al matí. <br>
+			 A la plaça de la Vila cada dimecres es fa el mercat al matí. <br>
 			 També a la plaça de dilluns a dissabte trobareu el Suma obert. <br>
 			 I al carrer Junquera, tocant a la plaça, està Can Batet. Carnisseria que recomanem. <br>
 			 En general, les botigues són aquí multiopció: als forns de pa tenen brics de llet i pasta seca, l'estanc fa de llibreria...
@@ -566,7 +566,7 @@ const CONTINGUT_SECCIONS = {
 			 Aun así, a la entrada de Anglès, en la primera rotonda, encontraréis dos gasolineras low cost que compiten entre ellas.
 			 </p> 
 			 <p><strong>Alimentación</strong><br>
-			 En la plaza del pueblo, cada miércoles por la mañana se hace el mercado. <br>
+			 En la plaza de la Vila, cada miércoles por la mañana se hace el mercado. <br>
 			 También en la plaza, de lunes a sábado, encontraréis abierto el Suma. <br>
 			 Y en la calle Junquera, junto a la plaza, está Can Batet, una carnicería que recomendamos. <br>
 			 En general, aquí las tiendas son multiopción: en las panaderías tienen bricks de leche y pasta seca, el estanco hace de librería...
@@ -644,7 +644,7 @@ const CONTINGUT_SECCIONS = {
 			 Sinon, à l'entrée d'Anglès, au premier rond-point, vous trouverez deux stations low cost qui se font concurrence.
 			 </p> 
 			 <p><strong>Alimentation</strong><br>
-			 Le marché se tient sur la place du village tous les mercredis matin. <br>
+			 Le marché se tient sur la place du Vila tous les mercredis matin. <br>
 			 Sur la place également, le supermarché Suma est ouvert du lundi au samedi. <br>
 			 Et Carrer Junquera, tout près de la place, se trouve Can Batet, une boucherie que nous recommandons. <br>
 			 En général, ici les commerces vendent un peu de tout : les boulangeries ont des briques de lait et des pâtes sèches, le bureau de tabac fait aussi librairie...
