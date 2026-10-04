@@ -27,10 +27,11 @@
 /**
  * @typedef {Object} Zona
  * @property {string} id        - Identificador únic, en kebab-case
- * @property {Object} nom       - Nom de la zona en els 3 idiomes
+ * @property {Object} nom       - Nom de la zona en els 4 idiomes
  * @property {string} nom.ca    - Nom en català
  * @property {string} nom.es    - Nom en castellà
  * @property {string} nom.en    - Nom en anglès
+ * @property {string} nom.fr    - Nom en francès
  * @property {string} arxiuMapa - Ruta al SVG del mapa detallat de la zona
  *                                (viewBox ha de ser "0 0 100 100")
  * @property {string} formaArea - Path SVG de l'àrea clicable al mapa principal.
@@ -53,8 +54,8 @@ const ZONES = [
         id: 'zona-vila',
         nom: {
             ca: 'Plaça de la Vila',
-            es: 'Plaza de la Vila',
-            en: 'Vila Town', fr: '',
+            es: 'Plaza de la Villa',
+            en: 'Town Square', fr: 'Place de la Ville',
         },
         arxiuMapa: 'imatges/mapes-zones/zona-vila.jpg',
         // Polígon rectangular: esquerra-dalt → dreta-dalt → dreta-baix → esquerra-baix
@@ -72,7 +73,7 @@ const ZONES = [
         nom: {
             ca: 'Plaça del Monestir',
             es: 'Plaza del Monasterio',
-            en: 'Abby Square', fr: '',
+            en: 'Monastery Square', fr: 'Place du Monastère',
         },
         arxiuMapa: 'imatges/mapes-zones/zona-monestir.jpg',
         formaArea: 'M30,35.4 L30.3,38 L34.4,37.8 L34.6,35.2 Z',
@@ -90,7 +91,7 @@ const ZONES = [
         nom: {
             ca: 'Barri del Pedreguet',
             es: 'Barrio del Pedreguet',
-            en: 'Pedreguet Neigborhood', fr: '',
+            en: 'Pedreguet Quarter', fr: 'Quartier du Pedreguet',
         },
         arxiuMapa: 'imatges/mapes-zones/zona-pedreguet.jpg',
         // Polígon de 5 punts per donar-li una forma lleugerament irregular
@@ -110,7 +111,7 @@ const ZONES = [
         nom: {
             ca: 'Zona Carrer Barroca',
             es: 'Zona Calle Barroca',
-            en: 'Barroca Street', fr: '',
+            en: 'Barroca Street Area', fr: 'Secteur de la rue Barroca',
         },
         arxiuMapa: 'imatges/mapes-zones/zona-barroca.jpg',
         formaArea: 'M85.2,44.6 L86.1,58.2 L98.8,59.1 L98.7,45 Z',

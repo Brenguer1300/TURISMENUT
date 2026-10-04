@@ -71,9 +71,9 @@ const PUNTS_INTERES = [
         imatge: 'imatges/punts-interes/pi-001.jpg',
         nom: {
             ca: 'Plaça de la Vila',
-            es: 'Plaza de la Vila',
-            en: 'Vila Square',
-            fr: 'Place de la Vila',
+            es: 'Plaça de la Vila',
+            en: 'Plaça de la Vila',
+            fr: 'Plaça de la Vila',
         },
         any: 1980,
         direccio: 'Plaça de la Vila',
@@ -85,23 +85,23 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Plaça de la Vila o plaça Porxada. <br><br>
-			
+
 			És l'espai emblemàtic d'Amer i la segona de les places porticades més grans de Catalunya. <br>
 			Les places porticades són molt típiques dels llocs on es feia mercat, aquesta no és excepció i se'n té constància des d'època medieval.
 			Heu d'imaginar, l'autoritat marca la mida que ha de tenir la plaça. Com més gran més parades i més ingressos. A l'hora de construir una casa que doni a la plaça
 			no pots ocupar l'espai reservat al mercat, igual que tampoc pots ocupar un carrer. Les arcades permeten guanyar uns metres
 			molt preciats als pisos superiors, mentre que compleixes amb la norma d'urbanisme perquè la porta de la casa està on toca.<br>
 			I els paradistes? Contents, més atapeïts sí, però contents que ara els dies de pluja no impedeixen el mercat. <br><br>
-			
+
 			La plaça va ser reurbanitzada l'any 1980, quan la dinàmica de tots els pobles era retirar les llambordes dels carrers per col·locar asfalt.
 			Amer va voler treure pit dels seus carrers amb llambordes i així la reforma de la plaça va fer-se incorporant llambordes al punt central del poble.
 			Com ja no se'n fabricaven es va fer una crida a ajuntaments de tot Catalunya per aconseguir-ne.
-			Així la plaça actual està composta per les llambordes retirades dels carrers de molts pobles i 
+			Així la plaça actual està composta per les llambordes retirades dels carrers de molts pobles i
 			ciutats catalanes. <br><br>
-			
+
 			En agraïment a cada poble que va respondre a la crida es va incloure una placa identificativa,
 			creieu que trobareu el vostre?`,
-            es: `Plaza de la Vila o plaza Porxada. <br><br>
+            es: `Plaza de la Villa o plaza Porxada. <br><br>
 
 			Es el espacio emblemático de Amer y la segunda plaza porticada más grande de Cataluña. <br>
 			Las plazas porticadas son muy típicas de los lugares donde se celebraba mercado; esta no es una excepción y hay constancia de ello desde época medieval.
@@ -118,24 +118,24 @@ const PUNTS_INTERES = [
 
 			En agradecimiento a cada pueblo que respondió al llamamiento se incluyó una placa identificativa.
 			¿Creéis que encontraréis el vuestro?`,
-            en: `Plaça de la Vila, also known as Plaça Porxada. <br><br>
-			
+            en: `Town Square (Plaça de la Vila), also known as Plaça Porxada. <br><br>
+
 			It is Amer's emblematic space and the second-largest arcaded square in Catalonia. <br>
 			Arcaded squares are very typical of places where markets were held; this one is no exception, and there are records of it going back to medieval times.
 			Just imagine: the authorities decided how big the square had to be. The bigger it was, the more stalls and the more income. When building a house facing the square
 			you could not take over the space reserved for the market, just as you could not build on a street. The arcades let owners gain a few
 			very precious metres on the upper floors, while still complying with the planning rules, because the front door stayed exactly where it should be.<br>
 			And the stallholders? Happy: more crowded, yes, but happy that rainy days no longer stopped the market. <br><br>
-			
+
 			The square was redeveloped in 1980, at a time when every town was removing the cobblestones from its streets to lay asphalt.
 			Amer wanted to show off its cobbled streets, so the square's renovation brought cobblestones into the very heart of the town.
 			Since they were no longer being made, an appeal was sent to town councils all over Catalonia to get hold of some.
-			So today's square is made of cobblestones taken up from the streets of many Catalan towns and 
+			So today's square is made of cobblestones taken up from the streets of many Catalan towns and
 			cities. <br><br>
-			
+
 			To thank every town that answered the appeal, an identifying plaque was added.
 			Do you think you'll find yours?`,
-            fr: `Place de la Vila, ou place Porxada. <br><br>
+            fr: `Place de la Ville (Plaça de la Vila), ou place Porxada. <br><br>
 
 			C'est le lieu emblématique d'Amer et la deuxième plus grande place à arcades de Catalogne. <br>
 			Les places à arcades sont très typiques des lieux où se tenait un marché ; celle-ci ne fait pas exception, et on en trouve la trace dès l'époque médiévale.
@@ -178,8 +178,8 @@ const PUNTS_INTERES = [
         descripcio: {
             ca: `Can Panosa<br><br>
 				Té estructura d'edifici modern on destaca una finestra gòtica al segon pis. El més probable és que la compressin i no acaba d'encaixar al conjunt. <br>
-			Però el finestral no en té cap culpa. La divisió en dos amb una columna ben fina els capitell de tipus vegetal.. bé nosaltres ens alegrem s'hagi conservat. <br>
-			
+			Però el finestral no en té cap culpa. La divisió en dos amb una columna ben fina els capitells de tipus vegetal.. bé nosaltres ens alegrem s'hagi conservat. <br>
+
 			Si us fixeu en les arcades de sota (aquesta casa i les contigües), veureu que n'hi ha de mig punt i ogivals i algunes amb capitell i relleus com si d'un claustre de monestir es tractés.
 			`,
             es: `Can Panosa<br><br>
@@ -191,7 +191,7 @@ const PUNTS_INTERES = [
             en: `Can Panosa<br><br>
 				It has the structure of a modern building, where a Gothic window on the second floor stands out. Most likely it was bought elsewhere, and it doesn't quite fit in with the rest. <br>
 			But the window is not to blame. Split in two by a very slender column, with plant-motif capitals... well, we're glad it has survived. <br>
-			
+
 			If you look at the arcades below (on this house and the neighbouring ones), you'll see round arches and pointed ones, some with capitals and reliefs, as if they belonged to a monastery cloister.
 			`,
             fr: `Can Panosa<br><br>
@@ -240,14 +240,14 @@ const PUNTS_INTERES = [
 			`,
             en: `Can Gultresa<br><br>
 			A building from 1883: you'll notice straight away that the arches of its portico are taller than those of the other houses.
-			As the Festa Major (the town's main festival) approaches, you may find the town's giants here, waiting to come out. <br>
+			As the Main Festival (Festa Major) approaches, you may find the town's giants here, waiting to come out. <br>
 			The façade has a base that imitates rusticated masonry made of fake bricks. All the windows have wide mouldings around them and medallions on the lintels. <br>
 			And the balcony railings? They could do with a lick of paint, yes... but had you noticed the decoration of vine, plane-tree and fig leaves?  <br>
 			On the door lintel we can read the name Pelegrín Altarriba; the crack running across it bears witness to how hard it is to make a good lintel.
 			`,
             fr: `Can Gultresa<br><br>
 			Bâtiment de 1883 : vous remarquerez d'emblée que les arcs de son porche sont plus hauts que ceux des autres maisons.
-			À l'approche de la fête patronale, vous pourrez y trouver les géants de la ville attendant de sortir. <br>
+			À l'approche de la Fête majeure (Festa Major), vous pourrez y trouver les géants de la ville attendant de sortir. <br>
 			La façade repose sur une base imitant un bossage de fausses briques. Toutes les fenêtres sont entourées de larges moulures et ornées de médaillons sur les linteaux. <br>
 			Et la rambarde des balcons ? Un coup de peinture, oui… mais aviez-vous remarqué le décor de feuilles de vigne, de platane et de figuier ?  <br>
 			Sur le linteau de la porte, on peut lire le nom de Pelegrín Altarriba ; la fissure qui le traverse témoigne de la difficulté de réaliser un bon linteau.
@@ -267,7 +267,7 @@ const PUNTS_INTERES = [
             en: 'Can Mundet Lintel',
             fr: 'Linteau de Can Mundet',
         },
-        any: 'S. XIV',
+        any: 1775,
         direccio: 'Plaça de la Vila 26',
         estil: {
             ca: 'Gòtic',
@@ -277,13 +277,13 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Llinda de Can Mundet<br><br>
-				
-			Aquesta llinda de l'any 1775, té una decoració poc freqüent a base d'ovals i una figura central de caire vegetal. 
+
+			Aquesta llinda de l'any 1775, té una decoració poc freqüent a base d'ovals i una figura central de caire vegetal.
 			La inscripció de la mateixa està feta amb lletres hebrees. <br>
 			La trobareu a la finestra dels baixos del carrer de Can Ventura (mirant l'edifici a la dreta).  <br>
 			Quan hagueu visitat la resta de llindes del poble torneu a revisar aquesta!
 			`,
-		
+
             es: `Dintel de Can Mundet<br><br>
 
 			Este dintel del año 1775 tiene una decoración poco frecuente a base de óvalos y una figura central de tipo vegetal.
@@ -292,10 +292,10 @@ const PUNTS_INTERES = [
 			¡Cuando hayáis visitado el resto de dinteles del pueblo, volved a mirar este!
 			`,
             en: `Lintel of Can Mundet<br><br>
-				
-			This lintel from 1775 has an unusual decoration of ovals and a central plant-like figure. 
+
+			This lintel from 1775 has an unusual decoration of ovals and a central plant-like figure.
 			Its inscription is written in Hebrew letters. <br>
-			You'll find it on the ground-floor window on Carrer de Can Ventura (to the right as you face the building).  <br>
+			You'll find it on the ground-floor window on Can Ventura Street (to the right as you face the building).  <br>
 			Once you've seen the rest of the town's lintels, come back and take another look at this one!
 			`,
             fr: `Linteau de Can Mundet<br><br>
@@ -315,10 +315,10 @@ const PUNTS_INTERES = [
         coordenades: { x:  34.8,   y:  48 },          // Nord de la zona: molí prop del rec
         imatge: 'imatges/punts-interes/pi-005.jpg',
         nom: {
-            ca: 'Ca Espinet',
-            es: 'Ca Espinet',
-            en: 'Ca Espinet',
-            fr: 'Ca Espinet',
+            ca: 'Ca l\'Espinet',
+            es: 'Ca l\'Espinet',
+            en: 'Ca l\'Espinet',
+            fr: 'Ca l\'Espinet',
         },
         any: 'S.XIX',
         direccio: 'Plaça de la Vila 20',
@@ -330,11 +330,11 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Ca l'Espinet<br><br>
-			Edifici estret amb una façana d'estil romàntic, 
+			Edifici estret amb una façana d'estil romàntic,
 			decorada amb dues falses pilastres i coronada amb una cornisa decorada, damunt la qual hi ha una barana d'obra entre dos gerros.
 			Les llindes dels dos primers pisos estan ornamentades amb relleus vegetals i figures femenines. <br>
 			Casa estreta no és motiu per no engalanar-la!
-			
+
 `,
             es: `Ca l'Espinet<br><br>
 			Edificio estrecho con una fachada de estilo romántico,
@@ -344,11 +344,11 @@ const PUNTS_INTERES = [
 
 `,
             en: `Ca l'Espinet<br><br>
-			A narrow building with a Romantic-style façade, 
+			A narrow building with a Romantic-style façade,
 			decorated with two false pilasters and crowned by an ornate cornice, topped by a masonry balustrade between two urns.
 			The lintels of the first two floors are adorned with plant reliefs and female figures. <br>
 			Being a narrow house is no reason not to dress it up!
-			
+
 `,
             fr: `Ca l'Espinet<br><br>
 			Bâtiment étroit à la façade de style romantique,
@@ -372,7 +372,7 @@ const PUNTS_INTERES = [
             en: 'Can Guifre',
             fr: 'Can Guifre',
         },
-        any: 1930,
+        any: 'S.XIX',
         direccio: 'Plaça de la Vila 13',
         estil: {
             ca: 'Eclèctic',
@@ -384,7 +384,7 @@ const PUNTS_INTERES = [
             ca: `Can Guifre <br>
 			     Construït al segon terç del S.XIX és l'única casa de la plaça amb tribuna. Els vitralls de colors amb la seva sanefa i la barana del balcó tímidament decorada
 				 ens deixen entreveure un propietari enamorat de casa seva.
-				 <br>La singularitat de la casa la veureu si us poseu sota la seva porxada, us heu plantejat mai 
+				 <br>La singularitat de la casa la veureu si us poseu sota la seva porxada, us heu plantejat mai
 				 com era viure sense porters automàtics? <br>
 				 <strong> Mireu al sostre!</strong>`,
             es: `Can Guifre <br>
@@ -396,7 +396,7 @@ const PUNTS_INTERES = [
             en: `Can Guifre <br>
 			     Built in the second third of the 19th century, it is the only house on the square with a tribune (an enclosed bay window). The coloured stained glass with its decorative border and the timidly decorated balcony railing
 				 hint at an owner who was in love with his home.
-				 <br>You'll discover what makes this house unique if you stand under its portico: have you ever wondered 
+				 <br>You'll discover what makes this house unique if you stand under its portico: have you ever wondered
 				 what life was like without door-entry intercoms? <br>
 				 <strong> Look up at the ceiling!</strong>`,
             fr: `Can Guifre <br>
@@ -407,7 +407,7 @@ const PUNTS_INTERES = [
 				 <strong> Regardez le plafond !</strong>`,
         },
     },
-	
+
 	    {
         id: 'pi-007',
         idZona: 'zona-vila',
@@ -420,7 +420,7 @@ const PUNTS_INTERES = [
             en: 'Can Junquera',
             fr: 'Can Junquera',
         },
-        any: 1930,
+        any: 1895,
         direccio: 'Carrer Narcís Junquera 1',
         estil: {
             ca: 'Eclèctic',
@@ -431,8 +431,8 @@ const PUNTS_INTERES = [
         descripcio: {
             ca: `Can Junquera<br><br>
 			     Edifici de l'any 1895 d'estil eclèctic (que barreja estils i no ens mullem vaja).  <br>
-				 Una simetria i unes proporcions molt treballades, l'ornamentació destaca pels frisos esgrafiats de color vermell i els guardapols del pis principal. 
-				A la porta veureu un escut amb les inicials del propietari, una evolució moderna de les llindes dels segles anteriors. <br>				 
+				 Una simetria i unes proporcions molt treballades, l'ornamentació destaca pels frisos esgrafiats de color vermell i els guardapols del pis principal.
+				A la porta veureu un escut amb les inicials del propietari, una evolució moderna de les llindes dels segles anteriors. <br>
 				 Va ser la casa de la família Junquera, d'on era l'alcalde perpetu durant el Franquisme.
 `,
             es: `Can Junquera<br><br>
@@ -443,8 +443,8 @@ const PUNTS_INTERES = [
 `,
             en: `Can Junquera<br><br>
 			     A building from 1895 in the eclectic style (one that mixes styles without committing to any, let's say).  <br>
-				 Its symmetry and proportions are very carefully worked; the ornamentation stands out for its red sgraffito friezes and the hood mouldings on the main floor. 
-				On the door you'll see a shield with the owner's initials, a modern evolution of the carved lintels of earlier centuries. <br>				 
+				 Its symmetry and proportions are very carefully worked; the ornamentation stands out for its red sgraffito friezes and the hood mouldings on the main floor.
+				On the door you'll see a shield with the owner's initials, a modern evolution of the carved lintels of earlier centuries. <br>
 				 It was the home of the Junquera family, to which the town's "perpetual mayor" during the Franco regime belonged.
 `,
             fr: `Can Junquera<br><br>
@@ -455,7 +455,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 	 {
         id: 'pi-008',
         idZona: 'zona-vila',
@@ -479,7 +479,7 @@ const PUNTS_INTERES = [
         descripcio: {
             ca: `Can Soler <br><br>
 			     Edifici molt ben conservat, tots els balcons amb la barana bombada, tan típica de l'època.
-				 L'ornamentació està basada en uns plafons i un fals encoixinat que juguen amb els colors blanc i vermell, 
+				 L'ornamentació està basada en uns plafons i un fals encoixinat que juguen amb els colors blanc i vermell,
 				 invertits entre el primer i el segon pis. <br>
 				 Molt típic de l'època també és la falsa teulada que sobresurt a dalt de tot, una petita joia que a més protegeix la façana de la pluja.
 `,
@@ -491,7 +491,7 @@ const PUNTS_INTERES = [
 `,
             en: `Can Soler <br><br>
 			     A very well-preserved building, with bulging railings on every balcony, so typical of the period.
-				 The ornamentation is based on panels and false rustication that play with white and red, 
+				 The ornamentation is based on panels and false rustication that play with white and red,
 				 reversed between the first and second floors. <br>
 				 Also very typical of the period is the false roof jutting out at the very top, a little gem that also protects the façade from the rain.
 `,
@@ -503,7 +503,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 	 {
         id: 'pi-009',
         idZona: 'zona-vila',
@@ -586,7 +586,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
     // ============================================================
     // ZONA: CARRER DE LA BARROCA zona-barroca
     // Mapa de zona: imatges/mapes-zones/zona-vila.svg
@@ -614,8 +614,8 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `La Torre  <br>
-			
-			     Ni Amer vam escapar de la primeríssima moda de les cases d'estiueig! Aquesta formada per diferents cossos i terrasses, dels quals el més destacat, i que ha donat nom a la casa, 
+
+			     Ni Amer vam escapar de la primeríssima moda de les cases d'estiueig! Aquesta formada per diferents cossos i terrasses, dels quals el més destacat, i que ha donat nom a la casa,
 				 és una torratxa mirador, de planta quadrada, circumdada per un balcó i amb coronament piramidal.
 `,
             es: `La Torre  <br>
@@ -624,8 +624,8 @@ const PUNTS_INTERES = [
 				 es una torrecilla mirador de planta cuadrada, rodeada por un balcón y con remate piramidal.
 `,
             en: `La Torre (The Tower)  <br>
-			
-			     Not even Amer escaped the very first fashion for summer houses! This one is made up of several volumes and terraces, the most striking of which, and the one that gave the house its name, 
+
+			     Not even Amer escaped the very first fashion for summer houses! This one is made up of several volumes and terraces, the most striking of which, and the one that gave the house its name,
 				 is a small lookout tower, square in plan, surrounded by a balcony and topped with a pyramid-shaped roof.
 `,
             fr: `La Torre (La Tour)  <br>
@@ -635,7 +635,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 {
         id: 'pi-011',
         idZona: 'zona-barroca',
@@ -658,10 +658,10 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Pujades <br>
-			
-			     Casa d'estiugeig petita amb tots els detalls possibles: façana coronada amb una barana de tres trams,
+
+			     Casa d'estiueig petita amb tots els detalls possibles: façana coronada amb una barana de tres trams,
 				 les finestres estan decorades com si d'un castell es tractés, a les llindes de cada una relleus de caire vegetal. <br>
-				 Fins i tot estan decorades les mènsules que sostenen la cornisa de la barana del balco!
+				 Fins i tot estan decorades les mènsules que sostenen la cornisa de la barana del balcó!
 `,
             es: `Can Pujades <br>
 
@@ -670,7 +670,7 @@ const PUNTS_INTERES = [
 				 ¡Incluso están decoradas las ménsulas que sostienen la cornisa de la barandilla del balcón!
 `,
             en: `Can Pujades <br>
-			
+
 			     A small summer house with every possible detail: a façade crowned by a three-section balustrade,
 				 windows decorated as if it were a castle, and plant-motif reliefs on each of their lintels. <br>
 				 Even the corbels supporting the cornice of the balcony railing are decorated!
@@ -683,7 +683,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 
     // ============================================================
     // ZONA: Zona del Monestir (zona-monestir)
@@ -698,7 +698,7 @@ const PUNTS_INTERES = [
         coordenades: { x: 50, y: 6},          // Centre de la zona: encreuament de carrers
         imatge: 'imatges/punts-interes/pi-012.jpg',
         nom: {
-            ca: 'Absis Monestir',
+            ca: 'Absis del Monestir',
             es: 'Ábside del Monasterio',
             en: 'Monastery Apse',
             fr: 'Abside du monastère',
@@ -713,7 +713,7 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Absis del Monestir  <br>
-			
+
 			     És la part que conserva de forma més íntegra l'aspecte original del temple romànic. <br>
 				 Fixeu-vos en les petites finestres quasi sense decoració, 	únicament disposen just a sota la teulada d'aquestes petits arcs de pedres, en l'anomenada decoració llombarda, molt típica del romànic català primerenc. <br>
 				 A la construcció inicial es van fer tres absis, essent el quart un afegit posterior. <br> Sabríeu diferenciar pel tipus i color de la pedra quin és?
@@ -725,7 +725,7 @@ const PUNTS_INTERES = [
 				 En la construcción inicial se hicieron tres ábsides; el cuarto es un añadido posterior. <br> ¿Sabríais distinguir cuál es por el tipo y el color de la piedra?
 `,
             en: `Apse of the Monastery  <br>
-			
+
 			     This is the part that most fully preserves the original appearance of the Romanesque church. <br>
 				 Notice the small, almost undecorated windows; the only ornament is the row of small stone arches just below the roof, the so-called Lombard band decoration, very typical of early Catalan Romanesque. <br>
 				 The original building had three apses, the fourth being a later addition. <br> Could you tell which one it is from the type and colour of the stone?
@@ -738,8 +738,8 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
-	
+
+
 	 {
         id: 'pi-013',
         idZona: 'zona-monestir',
@@ -762,16 +762,16 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Món <br>
-				
+
 				 Qualsevol guia us parlaria d'edifici eclèctic, diguem que és la definició exacta d'urbanisme d'aprofitament. <br>
 				 És un edifici format per dos cossos en L, el que fa de pont per entrar a la plaça i el que té aquesta portalada digna d'una església amb dues finestres obliques a sobre.<br>
 				 Aquesta última és el que queda de l'antic palau de l'Abat, la portalada és d'estil renaixentista i un frontó triangular purament ornamental. <br>
 				 Les ordres monàstiques podien fer vot de pobresa, però l'abat estava sempre per sobre i tenia el seu palau, servents, etc. Encaixa més pensar-hi com un senyor feudal que com un monjo. <br>
-				 De l'edifici que fa de pont té a la banda del Monestir un balcó amb un guardapols fantàstic. <br> 
-				 <br> Potser fins ara no impressiona, però creueu la casa per sota i a l'altra banda 
-				 veureu una façana que manté un únic estil que vol simular les antigues cases del gòtic (és de finals del s. XIX), imagineu-vos com seria aquest casalot per dins! 
-				 
-			     
+				 De l'edifici que fa de pont té a la banda del Monestir un balcó amb un guardapols fantàstic. <br>
+				 <br> Potser fins ara no impressiona, però creueu la casa per sota i a l'altra banda
+				 veureu una façana que manté un únic estil que vol simular les antigues cases del gòtic (és de finals del s. XIX), imagineu-vos com seria aquest casalot per dins!
+
+
 `,
             es: `Can Món <br>
 
@@ -785,16 +785,16 @@ const PUNTS_INTERES = [
 
 `,
             en: `Can Món <br>
-				
+
 				 Any guide would call it an eclectic building; let's say it is the very definition of making the most of whatever was already there. <br>
 				 It is made up of two wings in an L shape: the one that forms a bridge into the square, and the one with a doorway worthy of a church and two oblique windows above it.<br>
 				 The latter is what remains of the old Abbot's palace: the doorway is Renaissance in style, with a purely ornamental triangular pediment. <br>
 				 Monastic orders could take a vow of poverty, but the abbot was always above all that and had his own palace, servants and so on. It makes more sense to think of him as a feudal lord than as a monk. <br>
-				 On the Monastery side, the bridge building has a balcony with a fantastic hood moulding. <br> 
-				 <br> Maybe it isn't impressive so far, but walk through under the house and on the other side 
-				 you'll see a façade in a single style that sets out to imitate old Gothic houses (it dates from the late 19th century). Just imagine what this great mansion must be like inside! 
-				 
-			     
+				 On the Monastery side, the bridge building has a balcony with a fantastic hood moulding. <br>
+				 <br> Maybe it isn't impressive so far, but walk through under the house and on the other side
+				 you'll see a façade in a single style that sets out to imitate old Gothic houses (it dates from the late 19th century). Just imagine what this great mansion must be like inside!
+
+
 `,
             fr: `Can Món <br>
 
@@ -832,8 +832,8 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Boles <br>
-			
-			     Edifici del segle XVI, amb modificacions posteriors (hi ha llindes amb dates del segle XVIII), 
+
+			     Edifici del segle XVI, amb modificacions posteriors (hi ha llindes amb dates del segle XVIII),
 				 podríem dir que entre aquest edifici i l'església hauríem trobat el claustre del monestir. <br>
 				 És un gran casal sense gaires pretensions arquitectòniques però sí que destaca el vell escut heràldic i les pedres tan treballades que envolten les finestres.
 `,
@@ -844,8 +844,8 @@ const PUNTS_INTERES = [
 				 Es un gran caserón sin muchas pretensiones arquitectónicas, pero sí destacan el viejo escudo heráldico y las piedras tan trabajadas que enmarcan las ventanas.
 `,
             en: `Can Boles <br>
-			
-			     A 16th-century building with later alterations (some lintels bear 18th-century dates); 
+
+			     A 16th-century building with later alterations (some lintels bear 18th-century dates);
 				 the monastery cloister would probably have stood between this building and the church. <br>
 				 It is a large manor house without much architectural pretension, but the old heraldic shield and the finely worked stones framing the windows do stand out.
 `,
@@ -857,7 +857,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 	 {
         id: 'pi-015',
         idZona: 'zona-monestir',
@@ -880,9 +880,9 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Creu de terme <br><br>
-			
+
 			     Antigament l'hauríem trobada a l'entrada del terme municipal donant la benvinguda.<br>
-				 L'original està dipositada al Museu Diocesà de Girona, aquí en podeu observar una reproducció força malmesa per les inclemències del temps. 
+				 L'original està dipositada al Museu Diocesà de Girona, aquí en podeu observar una reproducció força malmesa per les inclemències del temps.
 				 La creu, si hi poseu imaginació encara ho podreu veure, presenta el Crist crucificat a una cara i la Mare de Déu a l'altra.
 `,
             es: `Cruz de término <br><br>
@@ -892,9 +892,9 @@ const PUNTS_INTERES = [
 				 La cruz (si le ponéis imaginación, todavía lo podréis ver) presenta a Cristo crucificado en una cara y a la Virgen en la otra.
 `,
             en: `Boundary Cross <br><br>
-			
+
 			     In the past we would have found it at the entrance to the municipality, welcoming travellers.<br>
-				 The original is kept at the Girona Diocesan Museum; here you can see a replica, quite worn by the weather. 
+				 The original is kept at the Girona Diocesan Museum; here you can see a replica, quite worn by the weather.
 				 If you use your imagination you can still make it out: the cross shows the crucified Christ on one side and the Virgin Mary on the other.
 `,
             fr: `Croix de terme <br><br>
@@ -905,7 +905,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 	{
         id: 'pi-016',
         idZona: 'zona-monestir',
@@ -928,7 +928,7 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Terme <br>
-			
+
 			    Actualment acull el Museu Etnològic d'Amer. <br>
 				Era l'antiga sacristia, un edifici molt reformat que conserva alguns elements antics del segle XVII. <br>
 				Si us hi acosteu i l'examineu hauríeu de trobar un escut, una figura geomètrica de pedra i una llinda amb la data de 1662.
@@ -940,7 +940,7 @@ const PUNTS_INTERES = [
 				Si os acercáis y lo examináis, deberíais encontrar un escudo, una figura geométrica de piedra y un dintel con la fecha de 1662.
 `,
             en: `Can Terme <br>
-			
+
 			    It currently houses the Amer Ethnological Museum. <br>
 				It was the old sacristy, a heavily renovated building that still keeps some old 17th-century features. <br>
 				If you get close and take a good look, you should find a coat of arms, a geometric stone figure and a lintel dated 1662.
@@ -953,7 +953,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 	{
         id: 'pi-017',
         idZona: 'zona-monestir',
@@ -966,7 +966,7 @@ const PUNTS_INTERES = [
             en: 'Monastery',
             fr: 'Monastère',
         },
-        any: "S.IX",
+        any: "S.X",
         direccio: 'Plaça del Monestir',
         estil: {
             ca: 'Romànic',
@@ -976,13 +976,13 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Antic Monestir Santa Maria d'Amer <br>
-			
-			     De l'antic monestir benedictí consagrat l'any 949 queda principalment l'actual església de Santa Maria, ha patit moltes reformes. 
+
+			     De l'antic monestir benedictí consagrat l'any 949 queda principalment l'actual església de Santa Maria, ha patit moltes reformes.
 				 Destaquem la forma imponent, les motllures de les portes i finestres i també el treball de ferro de les finestres.
-				 Si teniu ocasió entreu-hi dins (horari de missa).<br> Amb el creixement de població es va prendre la decisió de modificar els pilars interiors romànics (amples i robustos) 
+				 Si teniu ocasió entreu-hi dins (horari de missa).<br> Amb el creixement de població es va prendre la decisió de modificar els pilars interiors romànics (amples i robustos)
 				 per permetre que des dels laterals es pogués seguir missa per quatre columnetes ornamentades que costa creure aguantin el mateix pes.  És realment una decisió insòlita que val la pena observar.
-				 
-				 
+
+
 `,
             es: `Antiguo Monasterio de Santa Maria d'Amer <br>
 
@@ -993,13 +993,13 @@ const PUNTS_INTERES = [
 
 `,
             en: `Former Monastery of Santa Maria d'Amer <br>
-			
-			     Of the old Benedictine monastery consecrated in 949, what mainly remains is today's church of Santa Maria, which has undergone many alterations. 
+
+			     Of the old Benedictine monastery consecrated in 949, what mainly remains is today's church of Santa Maria, which has undergone many alterations.
 				 We would highlight its imposing shape, the mouldings of the doors and windows, and the ironwork on the windows.
-				 If you get the chance, go inside (during Mass times).<br> As the population grew, the decision was taken to replace the wide, sturdy Romanesque interior pillars 
+				 If you get the chance, go inside (during Mass times).<br> As the population grew, the decision was taken to replace the wide, sturdy Romanesque interior pillars
 				 with four slender ornamented columns, so that Mass could be followed from the side aisles; it's hard to believe they bear the same weight.  It is a truly unusual decision and well worth seeing.
-				 
-				 
+
+
 `,
             fr: `Ancien monastère de Santa Maria d'Amer <br>
 
@@ -1011,7 +1011,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 		{
         id: 'pi-018',
         idZona: 'zona-monestir',
@@ -1034,7 +1034,7 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Ca l'Espígol <br>
-			
+
 			     La consideraríem una masia si no estigués en nucli urbà. Destaca l'emmarcament de pedra de la porta i de totes les finestres.
 				 De pedra treballada, llindes a totes les finestres i mantenint una coherència del conjunt.<br>
 				 La porta ens agrada especialment per la seva forma rodona.<br>
@@ -1048,7 +1048,7 @@ const PUNTS_INTERES = [
 				 ¡Con todo, no consta ninguna inscripción!
 `,
             en: `Ca l'Espígol <br>
-			
+
 			     We would call it a masia (a traditional farmhouse) if it weren't in the town centre. The stone framing of the door and of every window stands out.
 				 Worked stone, lintels on every window, and a consistent look throughout.<br>
 				 We especially like the door for its rounded shape.<br>
@@ -1063,7 +1063,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 	{
         id: 'pi-019',
         idZona: 'zona-monestir',
@@ -1086,13 +1086,13 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Gasull <br>
-			
-			    Correspon a un dels antics edificis del Monestir d'Amer, concretament era la infermeria, amb façana a la plaça i al carrer de Sant Benet, si feu la volta veureu una placa de l'ajuntament que indica que als baixos s'usaven com a cavallerisses. 
-				Ara és un casalot que conserva alguna finestra antiga, però hem vist fotografies de qui hi va viure i aquesta casa posseïa un dels finestrals renaixentistes més interessants de l'arquitectura civil catalana, 
+
+			    Correspon a un dels antics edificis del Monestir d'Amer, concretament era la infermeria, amb façana a la plaça i al carrer de Sant Benet, si feu la volta veureu una placa de l'ajuntament que indica que als baixos s'usaven com a cavallerisses.
+				Ara és un casalot que conserva alguna finestra antiga, però hem vist fotografies de qui hi va viure i aquesta casa posseïa un dels finestrals renaixentistes més interessants de l'arquitectura civil catalana,
 				amb temàtica vinculada a les epidèmies de pesta.<br>
 				Lamentablement, aquesta finestra i una altra de tipus conopial, van ser venudes per l'antic propietari. <br>
 				Des del carrer Sant Benet veureu l'altra cara de la casa i encara conserva un finestral ben bonic (costa de trobar un punt amb visió!).
-				
+
 `,
             es: `Can Gasull <br>
 
@@ -1104,13 +1104,13 @@ const PUNTS_INTERES = [
 
 `,
             en: `Can Gasull <br>
-			
-			    This was one of the old buildings of the Monastery of Amer, specifically the infirmary, with façades on the square and on Carrer de Sant Benet. If you walk round, you'll see a plaque from the town council indicating that the ground floor was used as stables. 
-				Today it is a large house that keeps a few old windows, but we have seen photographs from people who lived there, and this house had one of the most interesting Renaissance windows in Catalan civil architecture, 
+
+			    This was one of the old buildings of the Monastery of Amer, specifically the infirmary, with façades on the square and on Sant Benet Street. If you walk round, you'll see a plaque from the town council indicating that the ground floor was used as stables.
+				Today it is a large house that keeps a few old windows, but we have seen photographs from people who lived there, and this house had one of the most interesting Renaissance windows in Catalan civil architecture,
 				with themes linked to plague epidemics.<br>
 				Sadly, this window and another ogee-arched one were sold by the former owner. <br>
-				From Carrer de Sant Benet you'll see the other side of the house, which still keeps a lovely window (it's hard to find a spot with a good view!).
-				
+				From Sant Benet Street you'll see the other side of the house, which still keeps a lovely window (it's hard to find a spot with a good view!).
+
 `,
             fr: `Can Gasull <br>
 
@@ -1147,7 +1147,7 @@ const PUNTS_INTERES = [
         descripcio: {
             ca: `Placa de l'arbitratge Remença <br><br>
 				La trobareu col·locada a un lateral de Can Boles.<br>
-				Preparats per una parrafada històrica? Amer no va ser el centre de grans esdeveniments, i tampoc aquest ho és!, però ens fa il·lusió que fos escenari 
+				Preparats per una parrafada històrica? Amer no va ser el centre de grans esdeveniments, i tampoc aquest ho és!, però ens fa il·lusió que fos escenari
 				de quan el poble menut va dir prou i va obligar els senyors feudals a negociar a la baixa els seus drets:<br>
 			    Ferran II d'Aragó va firmar el 1486 la sentència arbitral de Guadalupe amb la que es posava fi a la segona guerra remença.
 				Aquí Amer un any abans s'havia pactat la fi de les hostilitats acceptant els remences que acatarien el dictamen del rei.
@@ -1167,7 +1167,7 @@ const PUNTS_INTERES = [
 `,
             en: `Plaque of the Remença Arbitration <br><br>
 				You'll find it on one side of Can Boles.<br>
-				Ready for a bit of history? Amer was never the centre of great events, and this one isn't either!, but we love that it was the setting 
+				Ready for a bit of history? Amer was never the centre of great events, and this one isn't either!, but we love that it was the setting
 				for the moment when ordinary people said enough and forced the feudal lords to negotiate their rights downwards:<br>
 			    In 1486 Ferdinand II of Aragon signed the Sentence of Guadalupe, an arbitration ruling that ended the second Remença War (the Catalan peasants' uprising).
 				Here in Amer, a year earlier, an end to hostilities had been agreed, with the remença peasants accepting that they would abide by the king's ruling.
@@ -1187,7 +1187,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 	    // ============================================================
     // ZONA: Zona del Pedreguet (zona-pedreguet)
     // Mapa de zona: imatges/mapes-zones/zona-pedreguet.jpg
@@ -1215,20 +1215,20 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Carrer Girona  <br><br>
-			
+
 			    El carrer Girona és un carrer llarg i estret originat a l'edat mitjana i que articula el barri del
 				Pedreguet fins arribar a la capella de la Mare de Déu de la Pietat. <br>
-				
-				És un carrer molt interessant 
+
+				És un carrer molt interessant
 				que ha preservat la seva estructura antiga i molts dels seus edificis conserven elements destacables com les llindes de les portes i finestres.<br>
 				La majoria de les cases originàriament eren d'una planta baixa dedicada al bestiar i paller i un primer pis d'habitacions. <br>
 				En aquestes poden trobar el nom dels seus antics propietaris i de l'any en què es feren, en ocasions la casa i en d'altres la reforma, principalment entre els segles XVII-XIX.<br><br>
-				
-				 
-				La fesomia particular del carrer, quasi sense sortida lateral, es deu que es van anar construint les cases 
+
+
+				La fesomia particular del carrer, quasi sense sortida lateral, es deu que es van anar construint les cases
 				al llarg de l'antiga carretera que duia a Girona. Tothom volia estar el més a prop possible de la plaça i el Monestir,
 				i per tant cada nova casa es feia paret amb paret amb l'última sense que ningú pensés a deixar un carrer enmig. <br><br>
-				
+
 				Us recomanem un passeig tranquil tant per aquest com pel superior carrer de l'Abat Vilafreser. <br>
 				La juguesca consisteix a ser el primer a trobar i llegir la següent inscripció. <br>
 				Penseu que per petita i estreta que fos una casa, l'orgull de fer-la o reformar-la portava a pagar un picapedrer per deixar-ne constància.<br>
@@ -1255,22 +1255,22 @@ const PUNTS_INTERES = [
 				<strong>Atención:</strong> ¡no solo encontraréis inscripciones en las puertas!		<br><br>
 				<strong>No perdáis de vista a los niños</strong>: por tranquila que parezca, es una calle con tráfico rodado.
 `,
-            en: `Carrer Girona  <br><br>
-			
-			    Carrer Girona is a long, narrow street dating back to the Middle Ages that runs through the
-				Pedreguet neighbourhood up to the chapel of Mare de Déu de la Pietat. <br>
-				
-				It is a very interesting street 
+            en: `Girona Street  <br><br>
+
+			    Girona Street is a long, narrow street dating back to the Middle Ages that runs through the
+				Pedreguet quarter up to the chapel of Mare de Déu de la Pietat. <br>
+
+				It is a very interesting street
 				that has kept its old layout, and many of its buildings preserve notable features such as the lintels of their doors and windows.<br>
 				Most of the houses originally had a ground floor for livestock and hay, and a first floor with the bedrooms. <br>
 				On the lintels you can find the names of their former owners and the year they were made (sometimes of the house itself, sometimes of a renovation), mainly between the 17th and 19th centuries.<br><br>
-				
-				 
-				The street's particular character, with almost no side exits, is because the houses were built one after another 
+
+
+				The street's particular character, with almost no side exits, is because the houses were built one after another
 				along the old road to Girona. Everyone wanted to be as close as possible to the square and the Monastery,
 				so each new house was built wall-to-wall with the previous one, and nobody thought of leaving a street in between. <br><br>
-				
-				We recommend a leisurely stroll along this street and along Carrer de l'Abat Vilafreser just above it. <br>
+
+				We recommend a leisurely stroll along this street and along Abat Vilafreser Street just above it. <br>
 				The game is to be the first to find and read the next inscription. <br>
 				Bear in mind that, however small and narrow a house was, the pride of building or renovating it led people to pay a stonemason to leave a record of it.<br>
 				<strong>Watch out:</strong> you won't only find inscriptions on doors!		<br><br>
@@ -1321,7 +1321,7 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can La  <br><br>
-			
+
 			    És una de les cases més interessants del carrer Girona, una masia en un entorn urbà. <br>
 				No hi consta cap llinda amb el nom del propietari, però destaca el seu portal adovellat i un finestral digne d'un palau del segle XVI amb la
 				típica traceria gòtica i un guardapols motllurat recte. <br>
@@ -1335,22 +1335,22 @@ const PUNTS_INTERES = [
 				¡Aquí se movía dinero!
 `,
             en: `Can La  <br><br>
-			
-			    It is one of the most interesting houses on Carrer Girona: a farmhouse in an urban setting. <br>
+
+			    It is one of the most interesting houses on Girona Street: a farmhouse in an urban setting. <br>
 				There is no lintel with the owner's name, but its voussoired doorway stands out, as does a window worthy of a 16th-century palace, with the
 				typical Gothic tracery and a straight moulded hood. <br>
 				There was money here!
 `,
             fr: `Can La  <br><br>
 
-			    C'est l'une des maisons les plus intéressantes de la rue de Girona : un mas en milieu urbain. <br>
+			    C'est l'une des maisons les plus intéressantes de la rue de Gérone : un mas en milieu urbain. <br>
 				Aucun linteau ne porte le nom du propriétaire, mais on remarque son portail à claveaux et une fenêtre digne d'un palais du XVIe siècle, avec le
 				réseau gothique typique et un larmier mouluré droit. <br>
 				Ici, il y avait de l'argent !
 `,
         },
     },
-	
+
 	{
         id: 'pi-023',
         idZona: 'zona-pedreguet',
@@ -1373,7 +1373,7 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Plana  <br><br>
-			
+
 			    Edifici reformat modernament però que ha conservat alguns elements antics d'interès, com els muntants amb permòdols del portal o la finestra petita també amb llinda sobre permòdols.
 				Pel que fa a la balconera cal destacar la llinda conopial de tradició gòtica envoltada amb un guardapols motllurat.
 `,
@@ -1383,7 +1383,7 @@ const PUNTS_INTERES = [
 				En cuanto a la puerta balconera, hay que destacar el dintel conopial de tradición gótica rodeado por un guardapolvo moldurado.
 `,
             en: `Can Plana  <br><br>
-			
+
 			    A building renovated in modern times that has kept some interesting old features, such as the doorway jambs with corbels, or the small window whose lintel also rests on corbels.
 				As for the balcony door, the ogee lintel in the Gothic tradition, framed by a moulded hood, is worth a look.
 `,
@@ -1394,7 +1394,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 		{
         id: 'pi-024',
         idZona: 'zona-pedreguet',
@@ -1416,12 +1416,12 @@ const PUNTS_INTERES = [
             fr: 'Baroque',
         },
         descripcio: {
-            ca: `Ermita Mare de Déu de la Pietat  
-			
-			    Capella situada als afores del poble. Va ser construïda al segle XVII, tot i que el seu origen pot ser més antic, i reformada al XIX. 
-				Té planta rectangular coberta amb volta de canó i capçada amb un absis semicircular. Hi té adossat un cos que fa de sagristia. 
+            ca: `Ermita Mare de Déu de la Pietat
+
+			    Capella situada als afores del poble. Va ser construïda al segle XVII, tot i que el seu origen pot ser més antic, i reformada al XIX.
+				Té planta rectangular coberta amb volta de canó i capçada amb un absis semicircular. Hi té adossat un cos que fa de sagristia.
 				Davant la porta hi ha un porxo per sota del qual passa el carrer. A la llinda de la porta hi ha la data de la reforma, 1844.
-				
+
 				Aquí és on es revestien els bisbes i abats en entrar a la vila, d'aquesta manera es mostraven sempre impol·luts davant el poble encara que haguessin fet un llarg camí.
 
 `,
@@ -1434,12 +1434,12 @@ const PUNTS_INTERES = [
 				Aquí es donde se revestían los obispos y abades al entrar en la villa; de este modo se mostraban siempre impolutos ante el pueblo, aunque hubieran hecho un largo camino.
 
 `,
-            en: `Hermitage of Mare de Déu de la Pietat  
-			
-			    A chapel on the outskirts of the town. It was built in the 17th century, although its origins may be older, and renovated in the 19th. 
-				It has a rectangular floor plan covered by a barrel vault and ends in a semicircular apse. A small building serving as the sacristy is attached to it. 
+            en: `Hermitage of Mare de Déu de la Pietat
+
+			    A chapel on the outskirts of the town. It was built in the 17th century, although its origins may be older, and renovated in the 19th.
+				It has a rectangular floor plan covered by a barrel vault and ends in a semicircular apse. A small building serving as the sacristy is attached to it.
 				In front of the door there is a porch under which the street passes. The door lintel bears the date of the renovation, 1844.
-				
+
 				This is where bishops and abbots put on their vestments before entering the town, so that they always appeared spotless before the people, even after a long journey.
 
 `,
@@ -1454,7 +1454,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 		{
         id: 'pi-026',
         idZona: 'zona-pedreguet',
@@ -1477,9 +1477,9 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Llepart  <br><br>
-			
+
 			   Edifici de grans dimensions construït al segle XVIII (1758), restaurat modernament.
-			   La façana que dóna al carrer Abat Vilafreser hi ha una llinda on s'hi llegeix la data i el nom de Joseph Clusehs. 
+			   La façana que dóna al carrer Abat Vilafreser hi ha una llinda on s'hi llegeix la data i el nom de Joseph Clusehs.
 			   De la façana de la plaça en destaca el balcó de fusta, protegit per un destacat voladís.
 
 `,
@@ -1491,22 +1491,22 @@ const PUNTS_INTERES = [
 
 `,
             en: `Can Llepart  <br><br>
-			
+
 			   A large building constructed in the 18th century (1758) and restored in modern times.
-			   On the façade facing Carrer Abat Vilafreser there is a lintel bearing the date and the name Joseph Clusehs. 
+			   On the façade facing Abat Vilafreser Street there is a lintel bearing the date and the name Joseph Clusehs.
 			   On the façade facing the square, the wooden balcony stands out, sheltered by a prominent overhang.
 
 `,
             fr: `Can Llepart  <br><br>
 
 			   Grand bâtiment construit au XVIIIe siècle (1758) et restauré à l'époque moderne.
-			   Sur la façade donnant sur la rue Abat Vilafreser, un linteau porte la date et le nom de Joseph Clusehs.
+			   Sur la façade donnant sur la rue de l'Abat Vilafreser, un linteau porte la date et le nom de Joseph Clusehs.
 			   Sur la façade de la place, on remarque le balcon en bois, protégé par un large avant-toit.
 
 `,
         },
     },
-	
+
 	{
         id: 'pi-027',
         idZona: 'zona-pedreguet',
@@ -1529,10 +1529,10 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Cantí <br><br>
-			
+
 			   Exemple de llinda amb la inscripció més senzilla: 1743.<br>
 			   Podria ser l'any de construcció o probablement de reforma de la casa.
-			   Aviat farà 200 anys que es va fer aquesta pedra treballada i polida per aguantar el pes de la casa i permetre una porta més que decent. <br>
+			   Fa gairebé 300 anys que es va fer aquesta pedra treballada i polida per aguantar el pes de la casa i permetre una porta més que decent. <br>
 			   Compareu-la amb la de la finestra superior molt més estreta.
 
 `,
@@ -1540,15 +1540,15 @@ const PUNTS_INTERES = [
 
 			   Ejemplo de dintel con la inscripción más sencilla: 1743.<br>
 			   Podría ser el año de construcción o, probablemente, de reforma de la casa.
-			   Pronto hará 200 años que se hizo esta piedra trabajada y pulida para aguantar el peso de la casa y permitir una puerta más que decente. <br>
+			   Hace casi 300 años que se hizo esta piedra trabajada y pulida para aguantar el peso de la casa y permitir una puerta más que decente. <br>
 			   Comparadla con la de la ventana superior, mucho más estrecha.
 
 `,
             en: `Can Cantí <br><br>
-			
+
 			   An example of a lintel with the simplest possible inscription: 1743.<br>
 			   It could be the year the house was built or, more likely, renovated.
-			   It will soon be 200 years since this stone was carved and polished to bear the weight of the house and allow for a more than decent door. <br>
+			   It has been almost 300 years since this stone was carved and polished to bear the weight of the house and allow for a more than decent door. <br>
 			   Compare it with the much narrower one on the window above.
 
 `,
@@ -1556,13 +1556,13 @@ const PUNTS_INTERES = [
 
 			   Exemple de linteau avec l'inscription la plus simple qui soit : 1743.<br>
 			   Il pourrait s'agir de l'année de construction ou, plus probablement, de rénovation de la maison.
-			   Cela fera bientôt 200 ans que cette pierre a été taillée et polie pour supporter le poids de la maison et permettre une porte plus que convenable. <br>
+			   Cela fait près de 300 ans que cette pierre a été taillée et polie pour supporter le poids de la maison et permettre une porte plus que convenable. <br>
 			   Comparez-la avec celle de la fenêtre au-dessus, beaucoup plus étroite.
 
 `,
         },
     },
-	
+
 	{
         id: 'pi-028',
         idZona: 'zona-pedreguet',
@@ -1585,7 +1585,7 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Joanet Zai <br><br>
-			
+
 			   La llinda més decorada que veureu avui, fixeu-vos que les pedres que emmarquen la casa estan treballades per fer simular un marc. <br>
 			   La serra, que envolta l'any i el nom del constructor, el martell i l'escaire ens indiquen que qui la va fer era mestre de cases. <br>
 			   No se'ns acut millor reclam per als propers clients!
@@ -1599,7 +1599,7 @@ const PUNTS_INTERES = [
 
 `,
             en: `Can Joanet Zai <br><br>
-			
+
 			   The most decorated lintel you'll see today; notice how the stones around the doorway are carved to look like a frame. <br>
 			   The saw surrounding the year and the builder's name, together with the hammer and the set square, tell us that whoever made it was a master builder. <br>
 			   We can't think of a better advert for future clients!
@@ -1614,7 +1614,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 	{
         id: 'pi-029',
         idZona: 'zona-pedreguet',
@@ -1637,7 +1637,7 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Carrer Girona 64 <br><br>
-			
+
 			   Recordeu com de mala idea és fer una llinda de fusta? <br> Doncs aquesta de fusta ens porta la contrària des de mil set-cents… cinquanta-dos? <br>
 			   Les de les finestres immediatament superiors també ho són i malgrat estar a la intempèrie ni es veuen bufades ni han començat a doblegar-se.<br>
 			   Ens agradaria saber de quina fusta es tracta i us seguim recomanant que per casa vostra en poseu una de pedra (les de les altres dues finestres sí que les han hagut de canviar).
@@ -1648,13 +1648,13 @@ const PUNTS_INTERES = [
 			   Los de las ventanas inmediatamente superiores también lo son y, a pesar de estar a la intemperie, ni se ven hinchados ni han empezado a doblarse.<br>
 			   Nos gustaría saber de qué madera se trata, y os seguimos recomendando que en vuestra casa pongáis uno de piedra (los de las otras dos ventanas sí que los han tenido que cambiar).
 `,
-            en: `Carrer Girona 64 <br><br>
-			
+            en: `64 Girona Street <br><br>
+
 			   Remember what a bad idea it is to make a wooden lintel? <br> Well, this wooden one has been proving us wrong since seventeen… fifty-two? <br>
 			   The ones on the windows just above are wooden too, and despite being exposed to the elements they are neither swollen nor starting to bend.<br>
 			   We'd love to know what wood it is, but we still recommend you use stone in your own home (the lintels on the other two windows did have to be replaced).
 `,
-            fr: `Rue de Girona 64 <br><br>
+            fr: `64, rue de Gérone <br><br>
 
 			   Vous vous souvenez à quel point c'est une mauvaise idée de faire un linteau en bois ? <br> Eh bien, celui-ci nous donne tort depuis mille sept cent… cinquante-deux ? <br>
 			   Ceux des fenêtres juste au-dessus sont aussi en bois et, bien qu'exposés aux intempéries, ils ne sont ni gonflés ni en train de se déformer.<br>
@@ -1662,7 +1662,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 	{
         id: 'pi-030',
         idZona: 'zona-pedreguet',
@@ -1685,7 +1685,7 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Can Cisteller de Dalt <br><br>
-			
+
 			   <strong>MIQUEL CUDINA ME FECIT. ANY 1737.</strong><br>
 			   No tenim paraules per descriure com ens fa sentir aquesta inscripció. <br>
 			   No només consta l'any, també està de forma totalment innecessària la paraula any abans de la data. <br>
@@ -1701,7 +1701,7 @@ const PUNTS_INTERES = [
 			   Si las casas pudieran acudir al registro a inscribirse ellas mismas, todas harían una inscripción así.
 `,
             en: `Can Cisteller de Dalt <br><br>
-			
+
 			   <strong>MIQUEL CUDINA ME FECIT. ANY 1737.</strong> ("Miquel Cudina made me. Year 1737.")<br>
 			   We have no words to describe how this inscription makes us feel. <br>
 			   Not only is the year recorded, but the word "ANY" (year) is also carved, quite unnecessarily, before the date. <br>
@@ -1718,7 +1718,7 @@ const PUNTS_INTERES = [
 `,
         },
     },
-	
+
 	   // ============================================================
     // ZONA: Zona Rodalies Amer (zona-rodalia)
     // Mapa de zona: imatges/mapes-zones/zona-rodalia.jpg
@@ -1747,12 +1747,12 @@ const PUNTS_INTERES = [
         descripcio: {
             ca: `Font Picant   <br> <br>
 				La trobareu sortint del poble en direcció Olot veureu un trencall a l'esquerra amb un petit cartell groc: Fonter <br>
-			
+
 			    Al fons del petit polígon industrial de Fonter hi ha una àrea de lleure amb la Font Picant com a punt central. <br>
-				Fa temps que hi convindria una inversió en manteniment. Trobareu que no és exactament el mateix sabor que la comercialitzada però a casa 
+				Fa temps que hi convindria una inversió en manteniment. Trobareu que no és exactament el mateix sabor que la comercialitzada però a casa
 				sempre hem trobat més bona aquesta. Recomanem dur ampolla/garrafa d'aigua per omplir.<br>
 				Tingueu en compte que des de la sequera no sempre raja aigua, si ho fa	podeu trobar cua!
- 
+
 				`,
             es: `Font Picant   <br> <br>
 				La encontraréis saliendo del pueblo en dirección a Olot: veréis un desvío a la izquierda con un pequeño cartel amarillo: Fonter <br>
@@ -1765,12 +1765,12 @@ const PUNTS_INTERES = [
 				`,
             en: `Font Picant   <br> <br>
 				To find it, leave the town heading towards Olot and look for a turn-off on the left with a small yellow sign: Fonter <br>
-			
+
 			    At the far end of the small Fonter industrial estate there is a picnic area with the Font Picant (a naturally sparkling spring) as its centrepiece. <br>
-				It has needed some investment in maintenance for a while. You'll find it doesn't taste exactly like the bottled version, but at home 
-				we've always preferred this one. We recommend bringing a bottle to fill up.<br>
+				It has needed some investment in maintenance for a while. You'll find it doesn't taste exactly like the bottled version, but at home
+				we've always preferred this one. We recommend bringing a bottle or water jug to fill.<br>
 				Bear in mind that since the drought the water doesn't always flow, and when it does	you may find a queue!
- 
+
 				`,
             fr: `Font Picant   <br> <br>
 				Pour la trouver, sortez du village en direction d'Olot : vous verrez un embranchement à gauche avec un petit panneau jaune : Fonter <br>
@@ -1805,56 +1805,56 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Font de la Teula.    <br> <br>
-			    La trobareu en una corba a meitat del camí a Sant Martí Sacalm <br><br>
+			    La trobareu en una corba a meitat del camí a Sant Martí Sacalm <br>
 			    Gairebé tothom s'atura en aquest lloc tan bonic, <br>
 				a beure i reposar un xic. <br>
 				Si ningú no hi deixés merda, <br>
 				l'aigua seria més pura  <br>
 				i l'herba força més verda. <br>
 				L'ajuntament no es fa responsable de la potabilitat de la mateixa, però la trobem molt bona. <br>
-				<br>Si heu arribat fins aquí acabeu el camí fins a Sant Martí Sacalm, just sota el Far. <br>
+				Si heu arribat fins aquí acabeu el camí fins a Sant Martí Sacalm, just sota el Far. <br>
 				La composició de masies de pedra soltes fa rememorar el passat medieval.
- 
+
 				`,
             es: `Font de la Teula.    <br> <br>
-			    Encontraréis la fuente en una curva a mitad del camino a Sant Martí Sacalm <br><br>
-			    Gairebé tothom s'atura en aquest lloc tan bonic, (Casi todo el mundo se para en este lugar tan bonito) <br>
-				a beure i reposar un xic. (a beber y descansar un poquito) <br>
-				Si ningú no hi deixés merda, (Si nadie dejara mierda) <br>
+			    La encontraréis en una curva a mitad del camino a Sant Martí Sacalm <br>
+			    Gairebé tothom s'atura en aquest lloc tan bonic, (Casi todo el mundo se para en este lugar tan bonito,) <br>
+				a beure i reposar un xic. (a beber y a reposar un poco.) <br>
+				Si ningú no hi deixés merda, (Si nadie dejara porquería,) <br>
 				l'aigua seria més pura  (el agua sería más pura) <br>
-				i l'herba força més verda. (y la hierba bastante más verde) <br>
+				i l'herba força més verda. (y la hierba bastante más verde.) <br>
 				El ayuntamiento no se hace responsable de la potabilidad del agua, pero a nosotros nos parece muy buena. <br>
-				<br>Si habéis llegado hasta aquí, acabad el camino hasta Sant Martí Sacalm, justo debajo de El Far. <br>
+				Si habéis llegado hasta aquí, acabad el camino hasta Sant Martí Sacalm, justo debajo de El Far. <br>
 				El conjunto de masías de piedra dispersas hace rememorar el pasado medieval.
 
 				`,
             en: `Font de la Teula.    <br> <br>
-			    You'll the fountain on a bend halfway along the road to Sant Martí Sacalm <br>
-			    Gairebé tothom s'atura en aquest lloc tan bonic, (Almost everyone stops at this lovely spot) <br><br>
-				a beure i reposar un xic. (to drink and rest a little bit) <br>
-				Si ningú no hi deixés merda, (If nobody left behind their muck) <br>
+			    You'll find it on a bend halfway along the road to Sant Martí Sacalm <br>
+			    Gairebé tothom s'atura en aquest lloc tan bonic, (Almost everyone stops at this lovely spot,) <br>
+				a beure i reposar un xic. (to drink and rest a little while.) <br>
+				Si ningú no hi deixés merda, (If nobody left their muck behind,) <br>
 				l'aigua seria més pura  (the water would be purer) <br>
-				i l'herba força més verda. (and the grass a lot more greener) <br>
+				i l'herba força més verda. (and the grass a good deal greener.) <br>
 				The town council takes no responsibility for whether the water is drinkable, but we find it very good. <br>
-				<br>If you've made it this far, carry on to Sant Martí Sacalm, just below El Far. <br>
+				If you've made it this far, carry on to Sant Martí Sacalm, just below El Far. <br>
 				Its cluster of scattered stone farmhouses brings the medieval past to mind.
- 
+
 				`,
             fr: `Font de la Teula.    <br> <br>
 			    Vous la trouverez dans un virage, à mi-chemin sur la route de Sant Martí Sacalm <br>
-			    Gairebé tothom s'atura en aquest lloc tan bonic, (Presque tout le monde s'arrête en ce si joli lieu) <br><br>
-				a beure i reposar un xic. (pour boire et se reposer un peu) <br>
-				Si ningú no hi deixés merda, (Si personne n'y laissait de saletés) <br>
+			    Gairebé tothom s'atura en aquest lloc tan bonic, (Presque tout le monde s'arrête en ce si joli lieu,) <br>
+				a beure i reposar un xic. (pour boire et se reposer un peu.) <br>
+				Si ningú no hi deixés merda, (Si personne n'y laissait de saletés,) <br>
 				l'aigua seria més pura  (l'eau serait plus pure) <br>
-				i l'herba força més verda. (et l'herbe bien plus verte) <br>
+				i l'herba força més verda. (et l'herbe bien plus verte.) <br>
 				La mairie décline toute responsabilité quant à la potabilité de l'eau, mais nous la trouvons très bonne. <br>
-				<br>Si vous êtes arrivés jusqu'ici, poussez jusqu'à Sant Martí Sacalm, juste sous El Far. <br>
+				Si vous êtes arrivés jusqu'ici, poussez jusqu'à Sant Martí Sacalm, juste sous El Far. <br>
 				Son ensemble de mas en pierre dispersés évoque le passé médiéval.
 
 				`,
         },
     },
-	
+
 		{
         id: 'pi-102',
         idZona: 'zona-rodalia',
@@ -1877,12 +1877,12 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Ermita de Santa Brígida  <br> <br>
-			
+
 			    Depenent del Monestir de Santa Maria d'Amer va ser reformada al s. XVII i restaurada el 2001 pel grup excursionista d'Amer. <br>
 				Edifici senzill d'una sola nau amb volta de canó. És molt reverenciada pels amerencs i les vistes a la vall molt bones. <br>
 				Arribar-hi és una mitja excursió on fareu cames! <br>
 				Als nens els podeu entretenir a fer-los buscar petxines fossilitzades pel camí.
- 
+
 				`,
             es: `Ermita de Santa Brígida  <br> <br>
 
@@ -1893,12 +1893,12 @@ const PUNTS_INTERES = [
 
 				`,
             en: `Hermitage of Santa Brígida  <br> <br>
-			
+
 			    Once dependent on the Monastery of Santa Maria d'Amer, it was renovated in the 17th century and restored in 2001 by Amer's hiking club. <br>
 				A simple single-nave building with a barrel vault. It is much loved by the people of Amer, and the views over the valley are superb. <br>
 				Getting there is a proper little hike that will work your legs! <br>
 				You can keep the kids entertained by getting them to look for fossilised shells along the path.
- 
+
 				`,
             fr: `Ermitage de Santa Brígida  <br> <br>
 
@@ -1910,7 +1910,7 @@ const PUNTS_INTERES = [
 				`,
         },
     },
-	
+
 	{
         id: 'pi-104',
         idZona: 'zona-rodalia',
@@ -1933,17 +1933,17 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Ermita de Sant Climent d'Amer <br> <br>
-			
+
 			    Antigament dedicada a Sant Climent i Sant Julià, documentada del 1066 va ser completament reformada al 1877.<br>
 				Era el punt neuràlgic de totes les masies d'aquesta zona. <br>
 				Ara us pot semblar desert, però hi havia prou veïns a la zona com per aixecar-se la seva pròpia ermita i evitar anar i tornar d'Amer per anar a missa. <br>
-				Penseu que les masies eren habitades per la família (pares, fills i nets) en ocasions també la família extensa (germans i tiets) i sobretot tots els treballadors (bracers i jornalers) 
+				Penseu que les masies eren habitades per la família (pares, fills i nets) en ocasions també la família extensa (germans i tiets) i sobretot tots els treballadors (bracers i jornalers)
 				que treballaven la terra i tenien cura del bestiar i s'hi estaven amb la família. <br>
 				Fins al 1941 tots els batejos, casaments i defuncions es realitzaven aquí.
-				
+
 				Arquitectònicament és destacable la porta d'estil neoclàssic amb les dues columnes impostes a banda i banda.<br>
 				Recomanem acostar-s'hi, principalment, per l'entorn agrari.
- 
+
 				`,
             es: `Ermita de Sant Climent d'Amer <br> <br>
 
@@ -1959,17 +1959,17 @@ const PUNTS_INTERES = [
 
 				`,
             en: `Hermitage of Sant Climent d'Amer <br> <br>
-			
+
 			    Formerly dedicated to Saint Clement and Saint Julian, it is documented from 1066 and was completely rebuilt in 1877.<br>
 				It was the focal point for all the farmhouses in this area. <br>
 				It may look deserted now, but there were once enough neighbours around here to build their own hermitage and avoid travelling to and from Amer to go to Mass. <br>
-				Bear in mind that the farmhouses were home to the family (parents, children and grandchildren), sometimes the extended family too (siblings, aunts and uncles), and above all the workers (farmhands and day labourers) 
+				Bear in mind that the farmhouses were home to the family (parents, children and grandchildren), sometimes the extended family too (siblings, aunts and uncles), and above all the workers (farmhands and day labourers)
 				who worked the land, looked after the livestock and lived there with the family. <br>
 				Until 1941, all baptisms, weddings and funerals were held here.
-				
+
 				Architecturally, the neoclassical-style doorway with a column set on either side is noteworthy.<br>
 				We recommend going there mainly for the farming landscape.
- 
+
 				`,
             fr: `Ermitage de Sant Climent d'Amer <br> <br>
 
@@ -1986,7 +1986,7 @@ const PUNTS_INTERES = [
 				`,
         },
     },
-	
+
 {
         id: 'pi-105',
         idZona: 'zona-rodalia',
@@ -2009,13 +2009,13 @@ const PUNTS_INTERES = [
         },
         descripcio: {
             ca: `Estació d'Amer del Carrilet <br> <br>
-			
+
 			    Molt ben restaurat, era la parada del tren que unia Olot i Sant Feliu de Guíxols, petit tren d'una única via: popularment el Carrilet. <br>
-				Us imagineu una locumotora a vapor anunciant la seva arribada al poble?<br>
+				Us imagineu una locomotora a vapor anunciant la seva arribada al poble?<br>
 				Va ser una revolució en les comunicacions a la comarca, el seu tancament encara és lamentat pels que ho van viure. <br>
 				El Carrilet va funcionar del 1895 fins 1966, avui via verda molt usada pels ciclistes.
 				L'edifici és actualment dependències municipals.
- 
+
 				`,
             es: `Estación del Carrilet de Amer <br> <br>
 
@@ -2027,13 +2027,13 @@ const PUNTS_INTERES = [
 
 				`,
             en: `Amer Carrilet Station <br> <br>
-			
+
 			    Beautifully restored, this was the stop on the railway linking Olot and Sant Feliu de Guíxols, a small single-track train popularly known as the Carrilet. <br>
 				Can you imagine a steam locomotive announcing its arrival in town?<br>
 				It was a revolution in transport for the region, and its closure is still mourned by those who lived through it. <br>
 				The Carrilet ran from 1895 to 1966; today its route is a greenway very popular with cyclists.
 				The building currently houses municipal offices.
- 
+
 				`,
             fr: `Gare du Carrilet d'Amer <br> <br>
 

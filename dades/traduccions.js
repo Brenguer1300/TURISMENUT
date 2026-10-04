@@ -90,7 +90,7 @@ const UI = {
  * @type {Object.<string, {ca: string, es: string, en: string}>}
  */
 const NOMS_SECCIONS = {
-    'introduccio':          { ca: 'Presentació',         es: 'Presentación',           en: 'Welcome', fr: 'Présentation'           },
+    'introduccio':          { ca: 'Presentació',         es: 'Presentación',           en: 'Introduction', fr: 'Présentation'           },
     'mapa':                 { ca: 'Mapa Centre',         es: 'Mapa Centro',            en: 'Town Centre Map',        fr: 'Carte du centre'    },
     'mapa-rodalia':         { ca: 'Mapa Rodalia',        es: 'Mapa Alrededores',       en: 'Surroundings Map',   fr: 'Carte des environs' },
     'historia':             { ca: 'Història',            es: 'Historia',               en: 'History', fr: 'Histoire'                },
@@ -99,7 +99,7 @@ const NOMS_SECCIONS = {
     'equipament':           { ca: 'Equipament',          es: 'Equipamiento',           en: 'Facilities', fr: 'Équipements'  },
     'festes-tradicions':    { ca: 'Festes i tradicions', es: 'Fiestas y tradiciones',  en: 'Festivals & traditions', fr: 'Fêtes et traditions' },
     'informacio-practica':  { ca: 'Informació pràctica', es: 'Información práctica',   en: 'Practical information', fr: 'Informations pratiques'         },
-	'sardana':  			{ ca: 'Sardanes', 			 es: 'Sardanas',        	  en: 'Sardanes', fr: 'Sardanes'      		   },
+	'sardana':  			{ ca: 'Sardanes', 			 es: 'Sardanas',        	  en: 'Sardanas', fr: 'Sardanes'      		   },
 };	
 
 
@@ -130,7 +130,7 @@ const CONTINGUT_SECCIONS = {
 			 <p>Aquí trobareu la història de la gent menuda, que no tenia un escrivà que li guardés registre, acompanyeu-nos a trobar-la.</p>
 			 <br><br>
 			 <p> Nota bibliogràfica: <br>
-			 La informació que trobareu s'ha extret d'invarquit (Cercador de Patrimoni de la Generalitat), la web de Catalunya Medieval, la fantàstica guia de pobles de Catalunya i una mica de la Viquipèdia.
+			 La informació que trobareu s'ha extret d'invarquit (Cercador de Patrimoni de la Generalitat), la web de Catalunya Medieval, la fantàstica guia de Pobles de Catalunya i una mica de la Viquipèdia.
 			Tot sacsejat i barrejat al nostre gust de forma que cap acadèmic ho validaria. <br>
 			No us prengueu res al peu de la lletra: quedeu-vos amb la "història" i gaudiu de la visita.</p>
 			 `,
@@ -146,7 +146,7 @@ const CONTINGUT_SECCIONS = {
 			 <p>Aquí encontraréis la historia de la gente humilde, que no tenía un escribano que dejara constancia de ella. Acompañadnos a descubrirla.</p>
 			 <br><br>
 			 <p> Nota bibliográfica: <br>
-			 La información que encontraréis se ha extraído de invarquit (Buscador de Patrimonio de la Generalitat), la web de Catalunya Medieval, la fantástica guía de pueblos de Cataluña y un poco de la Wikipedia.
+			 La información que encontraréis se ha extraído de invarquit (Buscador de Patrimonio de la Generalitat), la web de Catalunya Medieval, la fantástica guía de "Pobles de Catalunya" y un poco de la Wikipedia.
 			Todo agitado y mezclado a nuestro gusto, de forma que ningún académico lo validaría. <br>
 			No os toméis nada al pie de la letra: quedaos con la "historia" y disfrutad de la visita.</p>
 			 `,
@@ -161,7 +161,7 @@ const CONTINGUT_SECCIONS = {
 			 <p>Here you will find the history of humble folk, who had no scribe to keep a record of them. Join us as we go looking for it.</p>
 			 <br><br>
 			 <p> Bibliographical note: <br>
-			 The information you will find here comes from invarquit (the Generalitat's Heritage Search Engine), the Catalunya Medieval website, the fantastic guide to the villages of Catalonia and a little Wikipedia.
+			 The information you will find here comes from invarquit (the Generalitat's Heritage Search Engine), the Catalunya Medieval website, the fantastic guide to the "Pobles de Catalunya" (villages of Catalonia) and a little Wikipedia.
 			All shaken and stirred to our own taste, in a way no academic would ever approve. <br>
 			Don't take anything too literally: hold on to the "story" and enjoy your visit.</p>
 			 `,
@@ -176,7 +176,7 @@ const CONTINGUT_SECCIONS = {
 			 <p>Vous trouverez ici l'histoire des petites gens, qui n'avaient pas de scribe pour en garder la trace. Accompagnez-nous à sa découverte.</p>
 			 <br><br>
 			 <p> Note bibliographique : <br>
-			 Les informations que vous trouverez ici proviennent d'invarquit (le moteur de recherche du patrimoine de la Generalitat), du site Catalunya Medieval, de l'excellent guide des villages de Catalogne et d'un peu de Wikipédia.
+			 Les informations que vous trouverez ici proviennent d'invarquit (le moteur de recherche du patrimoine de la Generalitat), du site Catalunya Medieval, de l'excellent guide des "Pobles de Catalunya" (villages de Catalogne) et d'un peu de Wikipédia.
 			Le tout secoué et mélangé à notre goût, d'une manière qu'aucun universitaire ne validerait. <br>
 			Ne prenez rien au pied de la lettre : retenez l'« histoire » et profitez de la visite.</p>
 			 `,
@@ -406,7 +406,7 @@ const CONTINGUT_SECCIONS = {
 			 Si tens una llinda, tens una casa. És un orgull.<br>
 			 <br><strong>Per què no copiem la porta ovalada de l'església?</strong><br>
 			 Tu… tu tens quartos eh, això et permet una entrada per on pot passar un carro!<br>
-			 La tecnologia tampoc és moderna, els romans ja la usaven: fas petites peces de pedra en forma trapezoidal que reparteixen el pes dels pisos superiros cap a cada costat de la porta. Però... necessites pedra de qualitat i un bon picapedrer també!<br>
+			 La tecnologia tampoc és moderna, els romans ja la usaven: fas petites peces de pedra en forma trapezoidal que reparteixen el pes dels pisos superiors cap a cada costat de la porta. Però... necessites pedra de qualitat i un bon picapedrer també!<br>
 			 En podeu trobar, típicament, a les masies reformades al s. XVIII
 			 abans de la fil·loxera (un insecte provinent del continent americà que matava els ceps), quan l'exportació de vi donava bons beneficis.
 			 `,
@@ -506,10 +506,10 @@ const CONTINGUT_SECCIONS = {
         ca: `
 			<p><strong>Telèfons d'interès</strong><br>
 			Emergències: 112 <br>
-             Ajuntament: 972 431 112 / informaciot@amer.cat <br>
+             Ajuntament: 972 431 112 / informaciot@amer.cat / Plaça de la Vila 2<br>
 			 Policia - Mossos d'Esquadra: 972 181 675 / Carrer Francesc Moragas 65-67, Santa Coloma de Farners <br>
 			 Atenció Primària:  972 421 498 / Jardins de Can Cendra, Anglès <br>
-			 Farmàcia d'Amer: 972 430 316 / Av. de la Selva 63, Amer
+			 Farmàcia d'Amer: 972 430 316 / Avinguda de la Selva 63, Amer
              </p>
              <p><strong>Aparcament</strong><br>
              Amb excepció dels migdies laborables no hauríeu de trobar problemes d'aparcament.
@@ -522,7 +522,7 @@ const CONTINGUT_SECCIONS = {
 			 
 			 </p> 
 			 <p><strong>Alimentació</strong><br>
-			 A la plaça del poble cada dimecres es fa el mercat al matí. <br>
+			 A la plaça de la Vila cada dimecres es fa el mercat al matí. <br>
 			 També a la plaça de dilluns a dissabte trobareu el Suma obert. <br>
 			 I al carrer Junquera, tocant a la plaça, està Can Batet. Carnisseria que recomanem. <br>
 			 En general, les botigues són aquí multiopció: als forns de pa tenen brics de llet i pasta seca, l'estanc fa de llibreria...
@@ -551,22 +551,22 @@ const CONTINGUT_SECCIONS = {
         es: `
 			<p><strong>Teléfonos de interés</strong><br>
 			Emergencias: 112 <br>
-             Ayuntamiento: 972 431 112 / informacio@amer.cat <br>
-			 Policía - Mossos d'Esquadra: 972 181 675 / Calle Francesc Moragas 65-67, Santa Coloma de Farners <br>
-			 Atención Primaria:  972 421 498 / Jardines de Can Cendra, Anglès <br>
-			 Farmacia de Amer: 972 430 316 / Avenida de la Selva 63, Amer
+             Ayuntamiento: 972 431 112 / informaciot@amer.cat / Plaça de la Vila 2 <br>
+			 Policía - Mossos d'Esquadra: 972 181 675 / Carrer Francesc Moragas 65-67, Santa Coloma de Farners <br>
+			 Atención Primaria:  972 421 498 / Jardins de Can Cendra, Anglès <br>
+			 Farmacia de Amer: 972 430 316 / Avinguda de la Selva 63, Amer
              </p>
              <p><strong>Aparcamiento</strong><br>
              Salvo a mediodía en días laborables, no deberíais tener problemas para aparcar.
-			Aun así, siempre encontraréis sitio en el aparcamiento municipal, a la derecha de la carretera en dirección Olot, con entrada por la Calle del Riu Rogent, s/n,
+			Aun así, siempre encontraréis sitio en el aparcamiento municipal, a la derecha de la carretera en dirección Olot, con entrada por la Carrer del Riu Rogent, s/n,
              <br>
-			 a 5 minutos andando de la Plaza de la Villa.</p>
+			 a 5 minutos andando de la Plaça de la Vila.</p>
              <p><strong>Gasolineras</strong><br>
              A la salida del pueblo en dirección Olot encontraréis una gasolinera Repsol que también tiene tienda, abierta de 6 a 21 h.<br>
 			 Aun así, a la entrada de Anglès, en la primera rotonda, encontraréis dos gasolineras low cost que compiten entre ellas.
 			 </p> 
 			 <p><strong>Alimentación</strong><br>
-			 En la plaza del pueblo, cada miércoles por la mañana se hace el mercado. <br>
+			 En la plaza de la Vila, cada miércoles por la mañana se hace el mercado. <br>
 			 También en la plaza, de lunes a sábado, encontraréis abierto el Suma. <br>
 			 Y en la calle Junquera, junto a la plaza, está Can Batet, una carnicería que recomendamos. <br>
 			 En general, aquí las tiendas son multiopción: en las panaderías tienen bricks de leche y pasta seca, el estanco hace de librería...
@@ -574,14 +574,14 @@ const CONTINGUT_SECCIONS = {
 			 Aquí el pan es bueno: hay más de 6 panaderías. Cada familia tiene la suya de referencia... no nos vamos a mojar, ¡pero salid por la mañana a buscar un cruasán recién hecho y comprad también pan!
 			 </p>
 			 <p><strong>Especialidad de Amer</strong><br>
-             Si queréis llevaros un detalle típico de Amer, os recomendamos los Capricis; los encontraréis en la <i>Pastisseria Puigdemont</i>, en Sant Miquel 6.  <br>
-			 Destacamos también los Rocs de la <i>Pastisseria Martoni</i>, Plaza de la Villa 31.
+             Si queréis llevaros un detalle típico de Amer, os recomendamos los Capricis; los encontraréis en la <i>Pastisseria Puigdemont</i>, en plaça Sant Miquel 6.  <br>
+			 Destacamos también los Rocs de la <i>Pastisseria Martoni</i>, Plaça de la Vila 31.
 			 </p>
 			 
 			 <p><strong>Dónde comer</strong><br>
 			 En el <i>Snack Bar</i> (junto a la farmacia) tienen un horario amplio: podréis desayunar, comer, cenar y tomar una cerveza al fresco a buen precio. <br>
 			 En <i>Can Co-Absis</i>, detrás del ábside del Monasterio, encontraréis una cocina tradicional catalana hecha a fuego lento. <br>
-			 En <i>Can Franc1</i>, plaza Pompeu Fabra, hacen tapas modernas, pizzas, etc. Todo en un ambiente desenfadado.
+			 En <i>Can Franc1</i>, plaça Pompeu Fabra, hacen tapas modernas, pizzas, etc. Todo en un ambiente desenfadado.
 			 </p>
 			 
              <p><strong>Alojamiento</strong><br>
@@ -590,14 +590,14 @@ const CONTINGUT_SECCIONS = {
         en: `
 			<p><strong>Useful phone numbers</strong><br>
 			Emergencies: 112 <br>
-             Town Hall: 972 431 112 / informacio@amer.cat <br>
-			 Police - Mossos d'Esquadra (Catalan police): 972 181 675 / Francesc Moragas Street 65-67, Santa Coloma de Farners <br>
-			 Primary Health Care Centre:  972 421 498 / Can Cendra Gardens, Anglès <br>
-			 Amer Pharmacy: 972 430 316 / Selva Avenue 63, Amer
+             Town Hall: 972 431 112 / informaciot@amer.cat / Plaça de la Vila 2 <br>
+			 Police - Mossos d'Esquadra: 972 181 675 / Carrer Francesc Moragas 65-67, Santa Coloma de Farners <br>
+			 Primary Health Care Centre:  972 421 498 / Jardins de Can Cendra, Anglès <br>
+			 Amer Pharmacy: 972 430 316 / Avinguda de la Selva 63, Amer
              </p>
              <p><strong>Parking</strong><br>
              Except around midday on weekdays, you shouldn't have any trouble parking.
-			Even so, you will always find space in the municipal car park, on the right of the road towards Olot, with the entrance on Riu Rogent Street, s/n,
+			Even so, you will always find space in the municipal car park, on the right of the road towards Olot, with the entrance on Carrer Riu Rogent, s/n,
              <br>
 			 a 5-minute walk from the Town Square.</p>
              <p><strong>Petrol stations</strong><br>
@@ -605,22 +605,22 @@ const CONTINGUT_SECCIONS = {
 			 Alternatively, at the entrance to Anglès, on the first roundabout, you will find two low-cost petrol stations competing with each other.
 			 </p> 
 			 <p><strong>Food shopping</strong><br>
-			 There is a market in the village square every Wednesday morning. <br>
+			 There is a market in the Vila square every Wednesday morning. <br>
 			 Also on the square, the Suma supermarket is open Monday to Saturday. <br>
-			 And on Junquera Street, right by the square, is Can Batet, a butcher's we recommend. <br>
+			 And on Carrer Junquera, right by the square, is Can Batet, a butcher's we recommend. <br>
 			 In general, shops here sell a bit of everything: bakeries stock cartons of milk and dried pasta, the tobacconist doubles as a bookshop...
               <br>
 			 The bread here is good: there are more than 6 bakeries. Every family has its favourite... we won't take sides, but head out in the morning for a freshly baked croissant and pick up some bread while you're at it!
 			 </p>
 			 <p><strong>Amer specialities</strong><br>
-             If you'd like to take home a typical treat from Amer, we recommend the Capricis, which you will find at <i>Pastisseria Puigdemont</i>, Sant Miquel Street 6.  <br>
-			 We'd also highlight the Rocs from <i>Pastisseria Martoni</i>, Town Square 31.
+             If you'd like to take home a typical treat from Amer, we recommend the Capricis, which you will find at <i>Pastisseria Puigdemont</i>, Carrer Sant Miquel 6.  <br>
+			 We'd also highlight the Rocs from <i>Pastisseria Martoni</i>, Plaça de la Vila 31.
 			 </p>
 			 
 			 <p><strong>Where to eat</strong><br>
 			 The <i>Snack Bar</i> (next to the pharmacy) has long opening hours: you can have breakfast, lunch or dinner there, or enjoy a beer outdoors at a good price. <br>
 			 At <i>Can Co-Absis</i>, behind the apse of the Monastery, you will find traditional Catalan slow-cooked food. <br>
-			 At <i>Can Franc1</i>, Pompeu Fabra Square, they serve modern tapas, pizzas and more, all in a relaxed atmosphere.
+			 At <i>Can Franc1</i>, Plaça Pompeu Fabra, they serve modern tapas, pizzas and more, all in a relaxed atmosphere.
 			 </p>
 			 
              <p><strong>Accommodation</strong><br>
@@ -629,37 +629,37 @@ const CONTINGUT_SECCIONS = {
         fr: `
 			<p><strong>Numéros utiles</strong><br>
 			Urgences : 112 <br>
-             Mairie : 972 431 112 / informacio@amer.cat <br>
-			 Police - Mossos d'Esquadra (police catalane) : 972 181 675 / rue Francesc Moragas 65-67, Santa Coloma de Farners <br>
-			 Centre de soins primaires :  972 421 498 / jardins de Can Cendra, Anglès <br>
-			 Pharmacie d'Amer : 972 430 316 / avenue de la Selva 63, Amer
+             Mairie : 972 431 112 / informaciot@amer.cat / Plaça de la Vila 2<br>
+			 Police - Mossos d'Esquadra : 972 181 675 / Carrer Francesc Moragas 65-67, Santa Coloma de Farners <br>
+			 Centre de soins primaires :  972 421 498 / Jardins de Can Cendra, Anglès <br>
+			 Pharmacie d'Amer : 972 430 316 / Avinguda de la Selva 63, Amer
              </p>
              <p><strong>Stationnement</strong><br>
              Sauf à midi les jours ouvrables, vous ne devriez pas avoir de mal à vous garer.
-			Quoi qu'il en soit, vous trouverez toujours de la place au parking municipal, à droite de la route en direction d'Olot, avec entrée par la rue du Riu Rogent, s/n,
+			Quoi qu'il en soit, vous trouverez toujours de la place au parking municipal, à droite de la route en direction d'Olot, avec entrée par la Carrer del Riu Rogent, s/n,
              <br>
-			 à 5 minutes à pied de la place de la Ville.</p>
+			 à 5 minutes à pied de la place de la Vila.</p>
              <p><strong>Stations-service</strong><br>
              À la sortie du village en direction d'Olot, vous trouverez une station-service Repsol avec une boutique ouverte de 6 h à 21 h.<br>
 			 Sinon, à l'entrée d'Anglès, au premier rond-point, vous trouverez deux stations low cost qui se font concurrence.
 			 </p> 
 			 <p><strong>Alimentation</strong><br>
-			 Le marché se tient sur la place du village tous les mercredis matin. <br>
+			 Le marché se tient sur la place du Vila tous les mercredis matin. <br>
 			 Sur la place également, le supermarché Suma est ouvert du lundi au samedi. <br>
-			 Et rue Junquera, tout près de la place, se trouve Can Batet, une boucherie que nous recommandons. <br>
+			 Et Carrer Junquera, tout près de la place, se trouve Can Batet, une boucherie que nous recommandons. <br>
 			 En général, ici les commerces vendent un peu de tout : les boulangeries ont des briques de lait et des pâtes sèches, le bureau de tabac fait aussi librairie...
               <br>
 			 Ici, le pain est bon : il y a plus de 6 boulangeries. Chaque famille a la sienne... nous ne prendrons pas parti, mais sortez le matin chercher un croissant tout juste sorti du four et achetez-y aussi du pain !
 			 </p>
 			 <p><strong>Spécialités d'Amer</strong><br>
-             Pour rapporter une douceur typique d'Amer, nous vous recommandons les Capricis, que vous trouverez à la <i>Pastisseria Puigdemont</i>, rue Sant Miquel 6.  <br>
-			 Nous vous signalons aussi les Rocs de la <i>Pastisseria Martoni</i>, place de la Ville 31.
+             Pour rapporter une douceur typique d'Amer, nous vous recommandons les Capricis, que vous trouverez à la <i>Pastisseria Puigdemont</i>, Carrer Sant Miquel 6.  <br>
+			 Nous vous signalons aussi les Rocs de la <i>Pastisseria Martoni</i>, Plaça de la Vila 31.
 			 </p>
 			 
 			 <p><strong>Où manger</strong><br>
 			 Le <i>Snack Bar</i> (à côté de la pharmacie) a de larges horaires : vous pourrez y prendre le petit-déjeuner, déjeuner, dîner ou boire une bière au frais à bon prix. <br>
 			 À <i>Can Co-Absis</i>, derrière l'abside du Monastère, vous trouverez une cuisine catalane traditionnelle mijotée à feu doux. <br>
-			 À <i>Can Franc1</i>, place Pompeu Fabra, on sert des tapas modernes, des pizzas, etc. Le tout dans une ambiance décontractée.
+			 À <i>Can Franc1</i>, plaça Pompeu Fabra, on sert des tapas modernes, des pizzas, etc. Le tout dans une ambiance décontractée.
 			 </p>
 			 
              <p><strong>Hébergement</strong><br>
@@ -846,7 +846,7 @@ const CONTINGUT_SECCIONS = {
              Se celebra cada any a principis de setembre al barri del Pedreguet. <br>
 			 És una festa molt arrelada, el punt neuràlgic és la plantada del vern a la Plaça de la Pietat. <br>
              Té una gastronomia pròpia que val la pena tastar. Només direm que no són albergínies! <br>
-			 Per més informació: <a href="https://www.festes.org/ca/calendari/festes-d-estiu/1940/article/1142/festa-de-l-alberginia"> Festa Esberguínia</a>
+			 Per més informació: <a href="https://www.festes.org/ca/calendari/festes-d-estiu/1940/article/1142/festa-de-l-alberginia"> Festa de l'Albergínia</a>
              </p>
 			 
 			   <p><strong>Marxa de les Ermites</strong><br>
